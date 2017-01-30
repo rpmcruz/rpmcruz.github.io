@@ -1,0 +1,32 @@
+# shapes
+lines.color: 808080
+patch.edgecolor: 808080
+patch.facecolor: 808080
+
+# font
+font.family: serif
+text.color: 999999
+xtick.color: 999999
+ytick.color: 999999
+axes.labelcolor: 999999
+
+# background
+axes.facecolor: black
+figure.facecolor: black
+savefig.facecolor: black
+
+# disable axes
+axes.spines.left: False
+axes.spines.bottom: False
+axes.spines.top: False
+axes.spines.right: False
+
+# grid
+axes.grid: True
+grid.color: 808080
+grid.linestyle: -
+axes.axisbelow: True
+
+# saving
+figure.figsize: 7, 5
+figure.autolayout: True
