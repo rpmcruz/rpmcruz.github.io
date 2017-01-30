@@ -1,0 +1,53 @@
+#
+# This file contains configuration flags to customize the site
+#
+
+name: Ricardo Cruz
+description: Programmer, data-scientist, human being
+avatar: https://avatars2.githubusercontent.com/u/11894291
+
+# Includes an icon in the footer for each username you enter
+footer-links:
+  dribbble:
+  email: ricardo.pdm.cruz@gmail.com
+  facebook:
+  flickr:
+  github: rpmcruz
+  instagram:
+  linkedin:
+  pinterest:
+  rss: # just type anything here for a working RSS icon
+  twitter:
+  stackoverflow: users/2680707/ricardo-cruz
+  youtube: # channel/<your_long_string> or user/<user-name>
+  googleplus: # anything in your profile username that comes after plus.google.com/
+
+
+# Enter your Disqus shortname (not your username) to enable commenting on posts
+# You can find your shortname on the Settings page of your Disqus account
+disqus: https-rpmcruz-github-io
+
+# Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
+google_analytics: UA-91161109-1
+
+# Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
+# Used for Sitemap.xml and your RSS feed
+url: https://rpmcruz.github.io/
+
+# Jekyll 3 now only supports Kramdown for Markdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    # Use existing pygments syntax highlighting css
+    css_class: 'highlight'
+
+sass:
+  style: :expanded
+
+gems:
+  - jekyll-feed
+
+# Exclude these files from your production _site
+exclude:
+  - code
