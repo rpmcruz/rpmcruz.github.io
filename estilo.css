@@ -1,0 +1,96 @@
+/* Borda a volta */
+
+body
+{
+font-size: 11pt;
+font-family: serif;
+}
+
+div.content
+{
+width: 750px;
+margin-left: auto;
+margin-right: auto;
+border-width: 1px;
+border-style: solid;
+margin-top: 50px;
+padding: 20px;
+}
+
+div.clear
+{
+clear: both;
+}
+
+
+/* Paragrafos */
+
+p
+{
+margin: 2px 2px;
+}
+
+p a
+{
+text-decoration: none;
+color: #262666;
+}
+
+p a:hover
+{
+text-decoration: underline;
+}
+
+h1
+{
+font-size: 18pt;
+font-variant: small-caps;
+}
+
+h2
+{
+font-size: 11pt;
+font-variant: small-caps;
+}
+
+hr
+{
+height:1px;
+border:none;
+color:#000;
+background-color:#000;
+margin: 20px 0 20px 0;
+}
+
+
+/* Items projetos */
+
+a.proj
+{
+text-decoration: none;
+color: black;
+}
+
+div.proj
+{
+border-style: solid;
+border-color: gray;
+color: gray;
+border-width: 1px;
+float: left;
+width: 240px;
+margin: 0 0 4px 4px;
+padding: 2px;
+}
+
+div.proj:hover
+{
+background-color: lightgray;
+color: black;
+}
+
+div.proj p.text
+{
+font-size: 9pt;
+}
+
