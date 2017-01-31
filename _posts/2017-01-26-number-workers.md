@@ -30,7 +30,7 @@ This simulation is something I could never understand. I asked about this on [st
 
 I tested in another computer. The gain is mostly up to the number of physical cores. But there are still small marginal gains afterwards, and, surprisingly, no marginal cost.
 
-Maybe my tests are wrong? Here is my code. My task is to calculate the number of $\pi$ digits, up to a certain amount, which I called `task_complexity`. For whatever reason, I need to do this `tasks` times.
+Maybe my tests are wrong? Here is my code. My task is to calculate the number of $$\pi$$ digits, up to a certain amount, which I called `task_complexity`. For whatever reason, I need to do this `tasks` times.
 
 ```python
 def pi(n):
