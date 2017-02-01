@@ -6,6 +6,7 @@ import numpy as np
 df = pd.DataFrame(columns=('car', 'price'))
 
 for page in range(1, 10+1):  # keep running until no "next" pages or maximum
+    print(page)
     url = 'https://www.olx.pt/carros-motos-e-barcos/carros/?page=%d' % page
     text = urllib.request.urlopen(url).read()
     tree = html.fromstring(text)
@@ -26,6 +27,6 @@ for page in range(1, 10+1):  # keep running until no "next" pages or maximum
     if not prices:
         break
 
-ax = df.groupby('car').mean().sort_values('price').plot(kind='bar', color='white')
+ax = df.groupby('car').mean().sort_values('price').plot(kind='bar', color='black')
 fig = ax.get_figure()
 fig.savefig('plot.png')
