@@ -1,10 +1,31 @@
 ---
 ---
 
+/* HEADER AND FOOTER */
 
+img.header {
+    float: left;
+    width: 110px;
+    height: 110px;
+    margin-top: 15px;
+}
 
 header {
     cursor: default;
+    margin-top: 10px;
+    margin-left: 120px;
+}
+
+h1.header {
+    margin: 0;
+    color: black;
+    font-size: 40px;
+}
+
+p.header {
+    margin: -5px 0 0 0;
+    color: gray;
+    font-size: 20px;
 }
 
 .wrapper-footer {
@@ -19,23 +40,30 @@ footer {
   text-align: center;
 }
 
-.site-avatar {
-  float: left;
-  width: 80px;
-  height: 80px;
-  margin-right: 15px;
+/* BLOG */
+
+div.post {
+    padding: 10px;
+    margin-bottom: 30px;
+    background-color: rgb(240, 240, 240);
 }
 
-.site-name {
-  margin: 0;
-  color: black;
-  font-size: 40px;
+h3.post {
+    margin-top: 5px;
+    margin-bottom: 0px;
 }
 
-.site-description {
-  margin: -5px 0 0 0;
-  color: gray;
-  font-size: 20px;
+p.summary {
+    font-size: 75%;
+    margin-top: 0px;
+}
+
+.date {
+    font-weight: bold;
+}
+
+p.readmore {
+    margin-bottom: 0px;
 }
 
 

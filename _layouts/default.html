@@ -13,14 +13,14 @@
 
 <body class="container">
 {% comment %} header {% endcomment %}
+<img class="header" src="{{ site.avatar }}" />
 <header>
-<img class="site-avatar" src="{{ site.avatar }}" />
-<h1 class="site-name">{{ site.name }}</h1>
-<p class="site-description">{{ site.description }}</p>
+<h1 class="header">{{ site.name }}</h1>
+<p class="header">{{ site.description }}</p>
 
 {% comment %} navigation bar {% endcomment %}
 {% assign current = page.url | downcase | split: '/' %}
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-inverse">
 <ul class="nav navbar-nav">
 <li {% if page.active == "about" %}class="active"{% endif %}><a href="{{ site.baseurl }}/">About me</a></li>
 <li {% if page.active == "blog" %}class="active"{% endif %}><a href="{{ site.baseurl }}/blog.html">Blog</a></li>
