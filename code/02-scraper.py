@@ -27,6 +27,6 @@ for page in range(1, 10+1):  # keep running until no "next" pages or maximum
     if not prices:
         break
 
-ax = df.groupby('car').mean().sort_values('price').plot(kind='bar', color='black')
+ax = df.groupby('car').mean().sort_values('price').plot(kind='bar')
 fig = ax.get_figure()
 fig.savefig('plot.png')
