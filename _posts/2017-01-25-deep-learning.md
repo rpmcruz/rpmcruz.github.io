@@ -38,7 +38,7 @@ This is usually expressed in a diagram of the form:
 
 How you do find the weights $$w$$?
 
-Usually you try to minimize some error function: $$\sum |y - f(x)|$$, where $$y$$ are the values from our sample. In other words, we need to have a big real-world sample to compare our model against and fix it. Often, we use squared error because it is easy to create the derivative: $$\sum (y - f(x))^2$$.
+Usually you try to minimize some error function: $$\sum \|y - f(x)\|$$, where $$y$$ are the values from our sample. In other words, we need to have a big real-world sample to compare our model against and fix it. Often, we use squared error because it is easy to create the derivative: $$\sum (y - f(x))^2$$.
 
 To find weights, simply find when the derivative of the error function relative to the weights is zero. This is high school mathematics. (The derivative is the velocity of the function, and the function will reach a peak when the velocity goes from positive to negative, or vice-versa, i.e. it is zero.)
 
