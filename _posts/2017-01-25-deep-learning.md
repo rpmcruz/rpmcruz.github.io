@@ -14,15 +14,15 @@ Artificial neural networks are logistic regressions on steroids. A logistic regr
 
 Example of a logistic regression. Let's say we want to predict if someone will buy an house. We can write an equation of the form:
 
-P(Will_Buy_House | Monthly_Income, Number_Rooms) = f(-10 + 0.01\*Monthly_Income + 1\*Number_Rooms)
+P(Will_Buy_House \| Monthly_Income, Number_Rooms) = f(-10 + 0.01\*Monthly_Income + 1\*Number_Rooms)
 
-(P(Will_Buy_House | Monthly_Income, Number_Rooms) means the probability of someone buying a house given their monthly income and the number of rooms of the house.)
+(P(Will_Buy_House \| Monthly_Income, Number_Rooms) means the probability of someone buying a house given their monthly income and the number of rooms of the house.)
 
 Two people come into the real estate office. These are the probabilities they will buy the house:
 
-P(Will_Buy_House | Monthly_Income=600, Number_Rooms=2) = 0.12
+P(Will_Buy_House \| Monthly_Income=600, Number_Rooms=2) = 0.12
 
-P(Will_Buy_House | Monthly_Income=1000, Number_Rooms=2) = 0.88
+P(Will_Buy_House \| Monthly_Income=1000, Number_Rooms=2) = 0.88
 
 The tricky part here is finding the coefficients to multiply the variables. These are also known as weights.
 
