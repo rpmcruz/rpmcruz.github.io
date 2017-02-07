@@ -13,7 +13,9 @@ Note that `bootstrap=False` disables random forest resampling of observations, a
 But the poster says, according to his tests, the scores were not the same:
 
 > predict(foo10)   # 0.906060606061
+
 > predict(foo100)  # 0.933333333333
+
 > predict(foo200)  # 0.915151515152
 
 This puzzled me as well.
