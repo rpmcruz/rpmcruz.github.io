@@ -90,7 +90,7 @@ The difficulty of this model is finding the weights *w* which are multiplied by 
 
 Square error is easier because we can have a system of equations based on the derivatives of X relative to each $$w$$. Then, we solve for $w$, which is very easy because we have now a system of linear equations, which can be solved using matrix inversion, i.e. $$AX=B$$ can be solved for $$A$$ via $$A=BX^{-1}$$.
 
-In actually, even [simpler methods](https://en.wikipedia.org/wiki/Simple_linear_regression) exist. For more complicated cases, such as logistic regressions or [artificial neural networks](/machine%20learning/2017/01/25/deep-learning.html), which involve non-linear transformations of the weights, then something like gradient descent has to be used. It is an iterative method, where we perform small steps in the direction of the derivative.
+In actually, even [simpler methods](https://en.wikipedia.org/wiki/Simple_linear_regression) exist when using a single explanatory variable. For more complicated cases, such as logistic regressions or [artificial neural networks](/machine%20learning/2017/01/25/deep-learning.html), which involve non-linear transformations of the weights, then something like gradient descent has to be used. It is an iterative method, where we perform small steps in the direction of the derivative.
 
 ```python
 from sklearn.neighbors import KNeighborsRegressor
