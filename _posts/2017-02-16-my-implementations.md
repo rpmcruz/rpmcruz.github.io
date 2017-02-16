@@ -24,7 +24,8 @@ I work mostly on classification, but most of these could be adapted for regressi
 
 Here I have:
 
-- **bagging:** random forests only for now
+- **bagging:** a random forest implementation only
+- **boosting:** a AdaBoost, and a gradient boosting implementation (with a couple of different loss functions for the latter)
 - **extreme-learning:** [extreme machine learning](https://en.wikipedia.org/wiki/Extreme_learning_machine) model
 - **multiclass:** one-vs-all and multiordinal ensembles, which turn binary classifiers into multiclass models
 - **neuralnet:** here I have a simple neural network implemented in pure Python and in C++ with Python-bindings, implemented both with batch and online iteration
