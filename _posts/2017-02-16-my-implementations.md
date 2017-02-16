@@ -13,12 +13,12 @@ I am still unsure about how to structure the repository, but these was how it ac
 - ranking
 - quantile
 
-# Preprocessing
+## Preprocessing
 
 - **smote:** [SMOTE](https://www.jair.org/media/953/live-953-2037-jair.pdf) is a famous oversampling technique that generates new synthetic samples when you have too few observations of one class; I have implemented SMOTE and the MSMOTE variation
 - **metacost:** this is a clever method by [Pedro Domingos](https://homes.cs.washington.edu/~pedrod/) to add costs support to a classifier by changing the classes
 
-# Classification
+## Classification
 
 I work mostly on classification, but most of these could be adapted for regression problems as well.
 
@@ -29,7 +29,7 @@ Here I have:
 - **multiclass:** one-vs-all and multiordinal ensembles, which turn binary classifiers into multiclass models
 - **neuralnet:** here I have a simple neural network implemented in pure Python and in C++ with Python-bindings, implemented both with batch and online iteration
 
-# Ranking
+## Ranking
 
 Ranking are models used to produce a ranking list, for instance in searches.
 
@@ -40,7 +40,7 @@ The models I have implemented are called "pairwise scoring rankers" which are tr
 - **RankNet:** adapation of a neural network for ranking (I have also a C++ implementation in the classification folder)
 - **RankSVM:** adapation of SVM with linear kernel for ranking
 
-# Quantile
+## Quantile
 
 These are models which, instead of predict the average expected value, they produce the expected value for a given quantile. For instance, what the median prediction is, or what the lowest-10% value you can expect, et cetra.
 
