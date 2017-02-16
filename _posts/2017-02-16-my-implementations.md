@@ -12,6 +12,7 @@ I am still unsure about how to structure the repository, but these was how it ac
 - classification
 - ranking
 - quantile
+- timeseries
 
 ## Preprocessing
 
@@ -51,6 +52,13 @@ I have here classification and regression models:
 - **QBC** and **QBR:** gradient boosting adapations for quantiles
 
 And that's it!
+
+## Timeseries
+
+These are some easy, but cumbersome, methods for timeseries that are sorely missing from python packages and that are always a pain to implement.
+
+- **GrowingWindow** and **SlidingWindow:** timeseries cross validation methods
+- **delay:** function to add a delay to a time-indexed variable, to use on an autoregressive model
 
 -----------------
 
