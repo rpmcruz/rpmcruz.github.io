@@ -14,6 +14,9 @@ I am still unsure about how to structure the repository, but these was how it ac
 - quantile
 - timeseries
 
+A good amount of them were developed when writting:
+* R. Cruz, K. Fernandes, J. S. Cardoso, and J. F. P. Costa. [Tackling Class Imbalance with Ranking](http://vcmi.inescporto.pt/reproducible_research/ijcnn2016/ClassImbalance/). In International Joint Conference on Neural Networks (IJCNN). IEEE, 2016. They were written with the supervision of [Kelwin Fernandes](https://github.com/kelwinfc) and James S. Cardoso.
+
 ## Preprocessing
 
 - **smote:** [SMOTE](https://www.jair.org/media/953/live-953-2037-jair.pdf) is a famous oversampling technique that generates new synthetic samples when you have too few observations of one class; I have implemented SMOTE and the MSMOTE variation
