@@ -12,6 +12,12 @@ img.header {
     margin-top: 15px;
 }
 
+img.stretch {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 header {
     cursor: default;
     margin-top: 10px;
