@@ -80,3 +80,25 @@ hr.sep {
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";
 @import "svg-icons";
+
+
+// FEED tables
+
+table{
+    border:2px solid black;
+}
+
+th{
+    border:1px solid black;
+}
+
+td{
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}
+
+code.highlighter-rouge {
+    background-color: rgb(250, 250, 250);
+    color: black;
+    font-weight: bold;
+}
