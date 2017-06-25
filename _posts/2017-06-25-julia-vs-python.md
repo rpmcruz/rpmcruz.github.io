@@ -105,6 +105,8 @@ function predict(self::SVM, X::Array{Float64,2})
 end
 ```
 
+Julia's implementation runs about 30 times faster. This is an extrapolation based on a single dataset.
+
 Notes:
 
 1. Julia does not work with classes: it uses something such as prototypes from Javascript.
