@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Easy scrapping
+title: Easy scraping
 category: machine learning
 ---
 
