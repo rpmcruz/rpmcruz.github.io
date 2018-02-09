@@ -73,8 +73,7 @@ print(m.predict_proba(Xts[yts == 2]))
  ...
 ```
 
-
-As the documentation says, the way it generates probabilities is the number of samples of a given class $k$ on a given leaf $\ell$, $n_k^{(\ell)}$, over the number of samples in that leaf $n^{(\ell)}$: $P(y=k|X)=\frac{n_k^{(\ell)}}{n^{(\ell)}}$.
+As the documentation says, the way it generates probabilities is the number of samples of a given class $$k$$ on a given leaf $$\ell$$, $$n_k^{(\ell)}$$, over the number of samples in that leaf $$n^{(\ell)}$$: $$P(y=k|X)=\frac{n_k^{(\ell)}}{n^{(\ell)}}$$.
 
 ```python
 from sklearn.tree import export_graphviz
