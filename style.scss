@@ -12,6 +12,8 @@ body {
     border-left: 2px solid gray;
     border-right: 2px solid gray;
     border-bottom: 2px solid gray;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 /* HEADER AND FOOTER */
@@ -48,16 +50,7 @@ p.header {
     font-size: 20px;
 }
 
-.wrapper-footer {
-  margin-top: 50px;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-  background-color: lightgray;
-  height: 80px;
-}
-
 footer {
-  padding: 20px 0;
   text-align: center;
 }
 
