@@ -3,6 +3,16 @@
 
 .spacer { margin:0; padding:0; height:40px; }
 
+body {
+    background-color: lightgray;
+}
+
+.page {
+    background-color: white;
+    margin-left: 2px solid gray;
+    margin-right: 2px solid gray;
+}
+
 /* HEADER AND FOOTER */
 
 img.header {

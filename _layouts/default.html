@@ -11,7 +11,9 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
 </head>
 
-<body class="container">
+<body>
+<div class="page">
+
 {% comment %} header {% endcomment %}
 <img class="header" src="{{ site.avatar }}" />
 <header>
@@ -33,15 +35,12 @@
 
 {% comment %} footer {% endcomment %}
 <div class="wrapper-footer">
-<div class="container">
 <footer class="footer">
 {% include svg-icons.html %}
 </footer>
 </div>
-</div>
-
-</div>
 
 {% include analytics.html %}
+</div>
 </body>
 </html>
