@@ -30,7 +30,7 @@ y = np.random.randn(n)
 I just added a little trend to the second plot:
 
 ```python
-trend = np.cumsum(100*np.abs(np.random.randn(n)))
+trend = np.arange(n)
 y += trend
 ```
 

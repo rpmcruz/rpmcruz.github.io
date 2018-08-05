@@ -4,7 +4,7 @@ import numpy as np
 n = 500
 y1 = np.random.randn(n)
 
-trend = np.cumsum(100*np.abs(np.random.randn(n)))
+trend = np.arange(n)
 y2 = y1 + trend
 
 plt.plot(y1)
