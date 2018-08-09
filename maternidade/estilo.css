@@ -1,0 +1,13 @@
+div.jumbotron, div.galeria {
+    background-color: #fff5db;
+    padding-top: 60px;
+}
+
+div.caption, figcaption {
+    font-size: small;
+}
+
+div.thumbnail > a > img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
