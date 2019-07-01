@@ -5,29 +5,38 @@
 <meta charset="utf-8" />
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
 {% feed_meta %}
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 </head>
 
 <body>
 <div class="page container">
 
 {% comment %} header {% endcomment %}
-<img class="header" src="{{ site.avatar }}" />
+<img class="header" src="{{ site.avatar }}">
 <header>
 <h1 class="header">{{ site.name }}</h1>
 <p class="header">{{ site.description }}</p>
 
 {% comment %} navigation bar {% endcomment %}
 {% assign current = page.url | downcase | split: '/' %}
-<nav class="navbar navbar-inverse">
-<ul class="nav navbar-nav">
-<li {% if page.active == "about" %}class="active"{% endif %}><a href="{{ site.baseurl }}/">About me</a></li>
-<li {% if page.active == "work" %}class="active"{% endif %}><a href="{{ site.baseurl }}/work.html">Work</a></li>
-<li {% if page.active == "blog" %}class="active"{% endif %}><a href="{{ site.baseurl }}/blog.html">Blog</a></li>
-</ul>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item{% if page.active == "about" %} active{% endif %}">
+        <a class="nav-link" href="{{ site.baseurl }}/">About me</a>
+      </li>
+      <li class="nav-item{% if page.active == "work" %} active{% endif %}">
+        <a class="nav-link" href="{{ site.baseurl }}/work.html">Work</a>
+      </li>
+      <li class="nav-item{% if page.active == "blog" %} active{% endif %}">
+        <a class="nav-link" href="{{ site.baseurl }}/blog.html">Blog</a>
+      </li>
+    </ul>
+  </div>
 </nav>
 </header>
 
