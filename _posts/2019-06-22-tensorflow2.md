@@ -5,7 +5,7 @@ category: machine learning
 ---
 
 {% raw  %}
-A breath of fresh as TensorFlow is about to debut its 2.0 version. I take the opportunity to do a small comparison between TensorFlow v1, PyTorch and TensorFlow v2.
+A breath of fresh air as TensorFlow is about to debut its 2.0 version. I take the opportunity to do a small comparison between TensorFlow v1, PyTorch and TensorFlow v2.
 
 Let us say we want to calculate the derivative of $$f(x)=x^2$$ when $$x=5$$.
 
