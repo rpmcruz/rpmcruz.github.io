@@ -49,14 +49,14 @@ active: cv
 <h5 class="cv">Awards</h5>
 <ul>
 {% for item in awards %}
-  <li><b>{{ item.date }} &mdash; {{ item.title }}</b> &mdash; {{ item.description }}</li>
+  <li><b>{{ item.date }} &mdash; {{ item.by }}</b> &mdash; {{ item.description }}</li>
 {% endfor %}
 </ul>
 
 <h5 class="cv">Grants</h5>
 <ul>
 {% for item in grants %}
-  <li><b>{{ item.date }} &mdash; {{ item.title }}</b> &mdash; {{ item.description }}</li>
+  <li><b>{{ item.date }} &mdash; {{ item.by }}</b> &mdash; {{ item.description }}</li>
 {% endfor %}
 </ul>
 

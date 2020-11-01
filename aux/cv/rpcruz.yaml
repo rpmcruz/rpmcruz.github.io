@@ -119,29 +119,25 @@ teaching:
 grants:
     -
         date: Nov 2015 - Dec 2016
-        title: "Research Grant at INESC TEC"
-        description: "Research grant working on machine learning under Prof. Jaime S. Cardoso"
-    -
-        date: Jan-Aug 2015
-        title: "Flykt consulting"
-        description: Text mining search engine
+        by: "FCT Grant at INESC TEC"
+        description: "Class imbalance and risk aversion in machine learning with Prof. Jaime S. Cardoso"
     -
         date: Sept-Dec 2014
-        title: "Research grant at the Centre of Mathematics of the University of Porto"
+        by: "FCT Grant at the Centre of Mathematics of the University of Porto"
         description: "Mathematical HIV immune response modelling"
     -
-        date: 2008
-        title: "Google Grant"
-        description: "Summer of Code program: Redesign of OpenOffice.org layout engine (C++)"
-    -
         date: 2007
-        title: "Google Grant"
-        description: "Summer of Code program: Port of YaST from Qt to GTK+"
+        by: "Google Summer of Code"
+        description: "Redesign of OpenOffice.org layout engine (C++) with Michael Meeks"
+    -
+        date: 2006
+        by: "Google Summer of Code"
+        description: "Port of YaST from Qt to GTK+ with Michael Meeks"
 awards:
     -
         date: 2020-10-30
-        title: "Best Oral Presentation: Training Convolutional Neural Networks to be Background Invariant"
-        by: Conference RECPAD 2020
+        by: RECPAD 2020 conference
+        description: "Best Oral Presentation: Training Convolutional Neural Networks to be Background Invariant"
         link: https://recpad2020.uevora.pt/
 news:
     -
