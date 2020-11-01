@@ -154,10 +154,10 @@ news:
         link: http://bip-archive.inesctec.pt/en/196/fora-de-serie.html
 portfolio:
     -
-        title: Google Summer of Code 2006 and 2007
-        description: My experience participating in two editions of Google Summer of Code.
-        link: https://youtu.be/euX8TukTiEA
-        image: portfolio-yast2-gtk.png
+        title: Web development
+        description: This is a web application I have developed while an assistant teacher at FEUP, teaching Python for first-year students.
+        link: https://youtu.be/NR-jLv9v9Mw
+        image: portfolio-fproweb.png
     -
         title: Apoo and other GUI applications
         description: Apoo was an Assembly virtual machine whose user interface I developed. I also show other of my past graphical user interfaces.
@@ -169,10 +169,10 @@ portfolio:
         link: https://youtu.be/sbtkC9wCWrs
         image: portfolio-supertux.jpg
     -
-        title: Web applications
-        description: This is a web application I have developed while an assistant teacher at FEUP, teaching Python for first-year students.
-        link: https://youtu.be/NR-jLv9v9Mw
-        image: portfolio-fproweb.png
+        title: Google Summer of Code 2006 and 2007
+        description: My experience participating in two editions of Google Summer of Code.
+        link: https://youtu.be/euX8TukTiEA
+        image: portfolio-yast2-gtk.png
 skills:
     programming: [C, C++, Java, Android, Python, R, MATLAB, SQL]
     mathematics: [machine learning, computer vision, data mining, statistics, modeling, optimization]
