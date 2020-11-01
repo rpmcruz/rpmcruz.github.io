@@ -30,7 +30,7 @@ We will answer that in the following section (in very broad strokes). Back to th
 
 This is usually expressed in a diagram of the form:
 
-![nnet](/img/2017-01-25/03-nnet.jpeg)
+![nnet](/imgs/blog/2017-01-25/03-nnet.jpeg)
 
 (This image is diagram that everybody copies around. It's impossible to say who created this image at this point hehe.)
 
@@ -60,7 +60,7 @@ What is the vanishing gradient problem?
 
 The sigmoid function can saturate. Let's look at the logistic function (green) and its derivative (blue):
 
-![sigmoid](/img/2017-01-25/03-sigmoid.png)
+![sigmoid](/imgs/blog/2017-01-25/03-sigmoid.png)
 
 Why is this a problem? Consider the situation when $w*x=1000$. Then, $$f(1000)=0.9999999$$. The derivative? $$f'(1000)=0.00000001$$.
 

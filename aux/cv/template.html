@@ -1,0 +1,68 @@
+---
+layout: default
+title: Ricardo Cruz - CV
+active: cv
+---
+
+<h5 class="cv">Education</h5>
+<ul>
+{% for item in education %}
+  <li><b>{{ item.date }} &mdash; {{ item.title }}</b> &mdash; {{ item.university }}{% if item.observation %} <small>[{{ item.observation }}]</small>{% endif %}</li>
+{% endfor %}
+</ul>
+
+<h5 class="cv">Teaching</h5>
+<ul>
+{% for item in teaching %}
+  <li><b>{{ item.date }} &mdash; {{ item.title }}</b> &mdash; {{ item.courses }}</li>
+{% endfor %}
+</ul>
+
+<h5 class="cv">Portfolio</h5>
+<div class="list-group">
+{% for item in portfolio %}
+  <a href="{{ item.link }}" class="cv list-group-item list-group-item-action">
+    <img class="float-left mr-2" width="200px" src="imgs/cv/{{ item.image }}">
+    <h6>{{ item.title }}</h6>
+    <div class="small">{{ item.description }}</div>
+  </a>
+{% endfor %}
+</div>
+
+<p class="mt-2"><b>&#x26A0; This list is still being worked on...</b></p>
+
+<p class="mt-2 text-muted">Consult <a href="https://github.com/rpmcruz?tab=repositories">my GitHub for a listing of open-source projects</a>.</p>
+
+<h5 class="cv">Publications</h5>
+<div class="list-group">
+{% for item in publications %}
+  <a href="{{ item.link }}" class="cv list-group-item list-group-item-action">
+    <img class="float-right" width="200px" src="imgs/cv/{{ item.image }}">
+    <h6>{{ loop.index }}. {{ item.title }}</h6>
+    <div class="small"><b>Authors:</b> {{ item.authors }}</div>
+    <div class="small"><b>Year:</b> {{ item.year }}</div>
+    <div class="small"><b>Published in:</b> {{ item.publisher }}</div>
+  </a>
+{% endfor %}
+</div>
+
+<h5 class="cv">Awards</h5>
+<ul>
+{% for item in awards %}
+  <li><b>{{ item.date }} &mdash; {{ item.title }}</b> &mdash; {{ item.description }}</li>
+{% endfor %}
+</ul>
+
+<h5 class="cv">Grants</h5>
+<ul>
+{% for item in grants %}
+  <li><b>{{ item.date }} &mdash; {{ item.title }}</b> &mdash; {{ item.description }}</li>
+{% endfor %}
+</ul>
+
+<h5 class="cv">Skills</h5>
+
+<b>Programming:</b> {{ skills.programming|join(', ') }}<br>
+<b>Mathematics:</b> {{ skills.mathematics|join(', ') }}
+
+</div>

@@ -1,0 +1,185 @@
+personal:
+    name: Ricardo Pereira de Magalhães Cruz
+    address: Rua Eduardo Joaquim Reis Figueira, 1104, AV, 4440-647 Valongo, Portugal
+    phone: "+351 934741617"
+    email: ricardo.pdm.cruz@gmail.com
+    webpage: https://rpmcruz.github.io
+    birthdate: "15 August 1985"
+education:
+    -
+        date: 2016 - present
+        title: PhD student in Computer Science
+        university: co-joint PhD from the Universities of Porto, Minho and Aveiro
+    -
+        date: 2012 - 2015
+        title: Master of Science in Mathematical Engineering
+        university: Faculty of Sciences, University of Porto
+        observation: Grade=18/20, top 10%
+    -
+        date: 2009 - 2012
+        title: Bachelor of Science in Computer Science
+        university: Faculty of Sciences, University of Porto
+        observation: Grade=16/20, top 10%
+publications:
+    -
+        year: 2019
+        title: Automatic Augmentation by Hill Climbing
+        authors: Ricardo Cruz, Joaquim F. Pinto Costa and Jaime S. Cardoso
+        publisher: 28th International Conference on Artificial Neural Networks (ICANN). Springer, 2019.
+        link: "https://link.springer.com/chapter/10.1007/978-3-030-30484-3_10"
+        image: 2019-automatic-augmentation.png
+    -
+        year: 2019
+        title: Averse Deep Semantic Segmentation
+        authors: Ricardo Cruz, Joaquim F. Pinto Costa and Jaime S. Cardoso
+        publisher: 41st Engineering in Medicine and Biology Conference (EMBC). IEEE, 2019.
+        link: "https://ieeexplore.ieee.org/abstract/document/8857385"
+        image: 2019-averse-segmentation.png
+    -
+        year: 2019
+        title: Insulator visual non-conformity detection in overhead power distribution lines using deep learning
+        authors: Ricardo M. Prates, Ricardo Cruz, André P. Marotta, Rodrigo P. Ramos, Eduardo F. Simas Filho, Jaime S. Cardoso
+        publisher: Computers & Electrical Engineering. Springer, 2019.
+        link: "https://www.sciencedirect.com/science/article/pii/S004579061930967X?dgcid=coauthor"
+        image: 2019-insulators.png
+    -
+        year: 2018
+        title: A Class Imbalance Ordinal Method for Alzheimer’s Disease Classification
+        authors: Ricardo Cruz, Margarida Silveira, and Jaime S. Cardoso
+        publisher: 2018 International Workshop on Pattern Recognition in Neuroimaging (PRNI). IEEE, 2018.
+        link: "https://ieeexplore.ieee.org/abstract/document/8423960/"
+        image: 2018-imbalance-alzheimer.png
+    -
+        year: 2018
+        title: 'Binary ranking for ordinal class imbalance'
+        authors: Ricardo Cruz, Kelwin Fernandes, Joaquim F. Pinto Costa, María Pérez Ortiz and Jaime S. Cardoso
+        publisher: 'Pattern Analysis and Applications. Springer, 2018.'
+        link: "https://link.springer.com/epdf/10.1007/s10044-018-0705-4?author_access_token=p2L5jwabAzmA-hENM_mugfe4RwlQNchNByi7wbcMAY42mOH72RPQeb098_tyy79R09eJLVa1A5i0Fl8_sgW1ks0WseTTuEtHZyi1eB8zBX3Z7vgZBxHJZ3x26EzyODMrDn4oUkmT-tVcZK4oD3u4vQ%3D%3D"
+        image: 2018-imbalance-ordinal.png
+    -
+        year: 2018
+        title: Deep image segmentation by quality inference
+        authors: Kelwin Fernandes, Ricardo Cruz, and Jaime S. Cardoso
+        publisher: 2018 International Joint Conference on Neural Networks (IJCNN). IEEE, 2018.
+        link: "https://ieeexplore.ieee.org/abstract/document/8489696/"
+        image: 2018-oracle.png
+    -
+        year: 2017
+        title: "Constraining type II error: building intentionally biased classifiers"
+        authors: Ricardo Cruz, Kelwin Fernandes, Joaquim F. Pinto Costa and Jaime S. Cardoso
+        publisher: International work-conference on artificial neural networks. Springer, Cham, 2017.
+        link: "https://link.springer.com/chapter/10.1007/978-3-319-59147-6_47"
+        image: 2017-averse.png
+    -
+        year: 2017
+        title: "Fine-to-coarse ranking in ordinal and imbalanced domains: an application to liver transplantation"
+        authors: María Pérez-Ortiz, Kelwin Fernandes, Ricardo Cruz, Jaime S. Cardoso
+        publisher: International work-conference on artificial neural networks. Springer, Cham, 2017.
+        link: "https://link.springer.com/chapter/10.1007/978-3-319-59147-6_45"
+        image: 2017-imbalance-coarse.png
+    -
+        year: 2017
+        title: Combining ranking with traditional methods for ordinal class imbalance
+        authors: Ricardo Cruz, Kelwin Fernandes, Joaquim F. Pinto Costa, María Pérez-Ortiz and Jaime S. Cardoso
+        publisher: International work-conference on artificial neural networks. Springer, Cham, 2017.
+        description: Ricardo Cruz et al. "Combining ranking with traditional methods for ordinal class imbalance." International work-conference on artificial neural networks. Springer, Cham, 2017.
+        link: "https://link.springer.com/chapter/10.1007/978-3-319-59147-6_46"
+        image: 2017-imbalance-combine.png
+    -
+        year: 2017
+        title: Ordinal class imbalance with ranking
+        authors: Ricardo Cruz, Kelwin Fernandes, Joaquim F. Pinto Costa, María Pérez-Ortiz and Jaime S. Cardoso
+        publisher: Iberian conference on pattern recognition and image analysis. Springer, Cham, 2017.
+        link: "https://link.springer.com/chapter/10.1007/978-3-319-58838-4_1"
+        image: 2017-imbalance-ordinal.png
+    -
+        year: 2016
+        title: Tackling class imbalance with ranking
+        authors: Ricardo Cruz, Kelwin Fernandes, Joaquim F. Pinto Costa and Jaime S. Cardoso
+        publisher: 2016 International joint conference on neural networks (IJCNN). IEEE, 2016.
+        link: "http://ieeexplore.ieee.org/abstract/document/7727469/"
+        image: 2016-imbalance-binary.png
+teaching:
+    -
+        date: Sept 2020 - Aug 2021 (two semesters)
+        title: Guest Assistant at FEUP (University of Porto)
+        courses: Programming Fundamentals (with Prof. João Correia Lopes, Rui Camacho) and Programming (with Prof. Jorge Silva)
+    -
+        date: Sept 2019 - Aug 2020 (two semesters)
+        title: Guest Assistant at FEUP (University of Porto)
+        courses: Programming Fundamentals (with Prof. João Correia Lopes, Rui Camacho) and Programming (with Prof. Jorge Silva)
+    -
+        date: Nov 2018 - Jan 2019 (one semester)
+        title: Guest Assistant at FEUP (University of Porto)
+        courses: Programming Fundamentals (with Prof. João Correia Lopes, Rui Camacho)
+    -
+        date: Oct 2018 - Jan 2019
+        title: Mentor at Coursera
+        courses: "Andrew Ng's course on Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization"
+grants:
+    -
+        date: Nov 2015 - Dec 2016
+        title: "Research Grant at INESC TEC"
+        description: "Research grant working on machine learning under Prof. Jaime S. Cardoso"
+    -
+        date: Jan-Aug 2015
+        title: "Flykt consulting"
+        description: Text mining search engine
+    -
+        date: Sept-Dec 2014
+        title: "Research grant at the Centre of Mathematics of the University of Porto"
+        description: "Mathematical HIV immune response modelling"
+    -
+        date: 2008
+        title: "Google Grant"
+        description: "Summer of Code program: Redesign of OpenOffice.org layout engine (C++)"
+    -
+        date: 2007
+        title: "Google Grant"
+        description: "Summer of Code program: Port of YaST from Qt to GTK+"
+awards:
+    -
+        date: 2020-10-30
+        title: "Best Oral Presentation: Training Convolutional Neural Networks to be Background Invariant"
+        by: Conference RECPAD 2020
+        link: https://recpad2020.uevora.pt/
+news:
+    -
+        date: 2020-10-21
+        title: INESC TEC coorganizou workshop sobre interpretabilidade de algoritmos de inteligência artificial
+        link: http://bip.inesctec.pt/noticias/inesc-tec-coorganizou-workshop-sobre-interpretabilidade-de-algoritmos-de-inteligencia-artificial/
+    -
+        date: 2018-Sept
+        title: INESC TEC Limelight nominee
+        link: http://bip-archive.inesctec.pt/en/196/fora-de-serie.html
+portfolio:
+    -
+        title: Google Summer of Code 2006 and 2007
+        description: My experience participating in two editions of Google Summer of Code.
+        link: https://youtu.be/euX8TukTiEA
+        image: portfolio-yast2-gtk.png
+    -
+        title: Apoo and other GUI applications
+        description: Apoo was an Assembly virtual machine whose user interface I developed. I also show other of my past graphical user interfaces.
+        link: https://youtu.be/0aqVEiaFqCQ
+        image: portfolio-apoo.png
+    -
+        title: Multimedia/games
+        description: Some games I developed as a kid, and also some games developed by my first-year students when I was an assistant teacher at FEUP during my PhD, teaching Python.
+        link: https://youtu.be/sbtkC9wCWrs
+        image: portfolio-supertux.jpg
+    -
+        title: Web applications
+        description: This is a web application I have developed while an assistant teacher at FEUP, teaching Python for first-year students.
+        link: https://youtu.be/NR-jLv9v9Mw
+        image: portfolio-fproweb.png
+skills:
+    programming: [C, C++, Java, Android, Python, R, MATLAB, SQL]
+    mathematics: [machine learning, computer vision, data mining, statistics, modeling, optimization]
+    softskills: [2015 EBEC Competition Fundraising coordinator @ FEUP, 2014 President of the organizing committee of the International Conference DGS III]
+others:
+    -
+        date: 2020
+        title: Co-editor of iMIMIC 2020 workshop proceedings
+        description: Interpretable and Annotation-Efficient Learning for Medical Image Computing
+        link: "https://www.springer.com/gp/book/9783030611651"

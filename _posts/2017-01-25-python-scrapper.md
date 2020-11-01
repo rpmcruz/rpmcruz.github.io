@@ -56,7 +56,7 @@ df.groupby('car').mean().sort_values('price').plot(kind='bar')
 
 And voila:
 
-![Scraper result](/img/2017-01-25/02-scraper.png)
+![Scraper result](/imgs/blog/2017-01-25/02-scraper.png)
 
 I won't go line over line because the code is fairly straightforward. The code could be much simpler if the web design was simpler. I had to first go to the table I am interested, because OLX creates a promoted-ads table as well, and I don't want that table otherwise I would have duplicate information when going through the pages. I also have to do some gymnastics to reach the sibling of a node I was interested in because there was no way to refer to it directly.
 

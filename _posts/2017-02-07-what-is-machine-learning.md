@@ -78,7 +78,7 @@ plt.title(data['DESCR'].splitlines()[0])
 plt.show()
 ```
 
-![Data visualization](/img/2017-02/data.png)
+![Data visualization](/imgs/blog/2017-02/data.png)
 
 ### Linear Regression
 
@@ -113,7 +113,7 @@ plt.legend()
 plt.show()
 ```
 
-![Linear regression example](/img/2017-02/linear.png)
+![Linear regression example](/imgs/blog/2017-02/linear.png)
 
 Two points:
 
@@ -153,7 +153,7 @@ plt.legend()
 plt.show()
 ```
 
-![kNN example](/img/2017-02/knn.png)
+![kNN example](/imgs/blog/2017-02/knn.png)
 
 ### Decision Trees
 
@@ -192,16 +192,16 @@ plt.legend()
 plt.show()
 ```
 
-![Decision tree example](/img/2017-02/tree.png)
+![Decision tree example](/imgs/blog/2017-02/tree.png)
 
 Small trees can be interpreted very nicely:
 
-![Decision tree diagram depth=2](/img/2017-02/tree-2.png)
+![Decision tree diagram depth=2](/imgs/blog/2017-02/tree-2.png)
 
 
 However, as they get very big, they become awful to interpret:
 
-![Decision tree diagram with much depth](/img/2017-02/tree-all.png)
+![Decision tree diagram with much depth](/imgs/blog/2017-02/tree-all.png)
 
 Some attempts exist at combining decision trees to build interactions between variables, and then linear regressions at the nodes. These models are known as [MARS.](https://en.wikipedia.org/wiki/Multivariate_adaptive_regression_splines)
 

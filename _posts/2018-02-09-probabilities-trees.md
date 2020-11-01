@@ -82,7 +82,7 @@ export_graphviz(m, 'tree-full.dot', label='none', impurity=False, rotate=True, l
 os.system('dot -Tpng tree-full.dot -o tree-full.png')
 ```
 
-![Decision tree fully trained](/img/2018-02/tree-full.png)
+![Decision tree fully trained](/imgs/blog/2018-02/tree-full.png)
 
 (In blue, it's the probabilities generated written by me.) 
 
@@ -102,7 +102,7 @@ export_graphviz(m, 'tree-full.dot', label='none', impurity=False, rotate=True, l
 os.system('dot -Tpng tree-full.dot -o tree-full.png')
 ```
 
-![Truncated decision tree](/img/2018-02/tree-truncated.png)
+![Truncated decision tree](/imgs/blog/2018-02/tree-truncated.png)
 
 It's still rather awful. All observations within the same node will have the same probabilities.
 

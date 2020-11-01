@@ -6,7 +6,7 @@ category: machine learning
 
 Data augmentation is a popular technique when working with images. Since the number of images is limited, we often create new images by slightly rotating, deforming, changing color, etc of existing images.
 
-<img src="/img/2018-05/cat.jpg"> <img src="/img/2018-05/cat.jpg" style="transform: scaleX(-1)">
+<img src="/imgs/blog/2018-05/cat.jpg"> <img src="/imgs/blog/2018-05/cat.jpg" style="transform: scaleX(-1)">
 
 For example: A cat is still a cat if you flip the photo.
 

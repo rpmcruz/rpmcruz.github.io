@@ -12,7 +12,7 @@ For each support vector $i$, we maximize the distance to the hyperplane, $$y_i \
 
 I will not consider kernels here.
 
-![Optimal hyperplane](/img/2017-06/svm-optimal-hyperplane.png)
+![Optimal hyperplane](/imgs/blog/2017-06/svm-optimal-hyperplane.png)
 
 To solve this, we can use gradient descent. We use the first-derivative of this function we want to minimize and give small steps to its zero.
 

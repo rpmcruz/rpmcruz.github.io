@@ -14,9 +14,9 @@ One very common error I see my colleagues making all the time is the following. 
 
 Consider these two graphics:
 
-![Figure 1](/img/2018-08/y1.png)
+![Figure 1](/imgs/blog/2018-08/y1.png)
 
-![Figure 2](/img/2018-08/y2.png)
+![Figure 2](/imgs/blog/2018-08/y2.png)
 
 The first one is more volatile than the second, right?
 
@@ -40,6 +40,6 @@ For example, the stock market is *very* volatile if you want to buy a stock toda
 
 But if you buy a stock to sell in five years, then the stock markets all the sudden looks pretty well behaved, because there is a trend. For example, consider the [S&P 500 index](https://www.google.com/search?tbm=fin&q=INDEXCBOE:+.INX&stick=H4sIAAAAAAAAAONgecRowi3w8sc9YSntSWtOXmNU5eIKzsgvd80rySypFBLnYoOyeKW4uTj1c_UNDM0qi4t5AEZhN345AAAA&sa=X&ved=0ahUKEwiA6tHpg9bcAhVIzoUKHSOeCxsQ0uIBCGgwBA&biw=1865&bih=990#scso=uid_XP1mW4rfEOmNlwT-nI-ADg_5:0):
 
-![Stock market](/img/2018-08/stock.png)
+![Stock market](/imgs/blog/2018-08/stock.png)
 
 I think before looking at the data, we should define the range we use for the graphics. Otherwise, we are very prone to being fooled by data, especially when the series is stationary.

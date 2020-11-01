@@ -1,0 +1,43 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper, margin=3cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\setlength{\parindent}{0cm}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\definecolor{dark-blue}{rgb}{0.15,0.15,0.4}
+\hypersetup{colorlinks, linkcolor={dark-blue}, citecolor={dark-blue}, urlcolor={dark-blue}}
+\usepackage{enumitem}
+\setlist{nosep}
+
+\begin{document}
+
+\fbox{\begin{minipage}{0.15\linewidth}
+\includegraphics[width=\linewidth]{imgs/photo.jpg}
+\end{minipage}
+\begin{minipage}{0.85\linewidth}
+\textbf{{'{'}}{{ personal['name'] }}{{'}'}}\\
+\raisebox{-0.25\height}{\includegraphics[width=1em]{imgs/email.pdf}} \href{mailto:{{ personal['email'] }}{{'}'}}{{'{'}}{{ personal['email'] }}{{'}'}}\\
+\raisebox{-0.25\height}{\includegraphics[width=1em]{imgs/www.pdf}} \href{{'{'}}{{ personal['webpage'] }}{{'}'}}{{'{'}}{{ personal['webpage'] }}{{'}'}}\\
+\raisebox{-0.25\height}{\includegraphics[width=1em]{imgs/github.pdf}} \href{{'{'}}{{ personal.github }}?tab=repositories}{{'{'}}{{ personal['github'] }}{{'}'}}\\
+\end{minipage}}
+
+{% for entry in career %}
+\bigskip
+
+\begin{center}
+\textbf{{'{'}}{{ entry['section'] }}{{'}'}}
+\end{center}
+
+{% for item in entry['items'] %}
+\begin{description}
+\item[{{ item['date'] }}] \textbf{{'{'}}{{ item['title'] }}:{{'}'}} {{ item['description'].replace('&', '\&') }}{% if 'link' in item %} {\footnotesize [\href{{'{'}}{{ item['link'] }}{{'}'}}{link}]}{% endif %}
+\end{description}
+{% endfor %}
+{% endfor %}
+
+\end{document}
+

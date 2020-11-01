@@ -1,62 +1,42 @@
 ---
 ---
 
-.spacer { margin:0; padding:0; height:40px; }
+/************* PAGE LAYOUT *************/
 
 body {
-    background-color: lightgray;
-    overflow-y: scroll;
+  background-color: lightgray;
+  overflow-y: scroll;
 }
 
-.page {
-    background-color: white;
-    border: 2px solid gray;
-    margin-bottom: 20px;
-}
-
-/* HEADER AND FOOTER */
-
-img.header {
-    float: left;
-    width: 110px;
-    height: 110px;
-    margin-top: 15px;
-}
-
-a img {
-  border: 2px solid #006bcf;
-}
-
-img.stretch {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-header {
-    cursor: default;
-    margin-top: 10px;
-    margin-left: 130px;
-    margin-bottom: 40px;
-}
-
-h1.header {
-    margin: 0;
-    color: black;
-    font-size: 40px;
-}
-
-p.header {
-    margin: -5px 0 0 0;
-    color: gray;
-    font-size: 20px;
+div.page {
+  background-color: white;
+  border: 1px solid black;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 footer {
   text-align: center;
+  font-size: small;
+  margin-bottom: 10px;
 }
 
-/* BLOG */
+footer a {
+  margin-left: 40px;
+  color: black;
+}
+
+/************* CV *************/
+
+h5.cv {
+    border-bottom: 2px solid black;
+}
+
+.cv.list-group-item-action {
+    color: black;
+}
+
+/************* BLOG *************/
 
 h3.post {
     margin-top: 5px;

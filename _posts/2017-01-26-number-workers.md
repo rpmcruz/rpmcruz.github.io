@@ -14,7 +14,7 @@ I am going to focus on CPU-bound processes here. How much should I run? Maybe we
 
 Regardless, I will expect that as we increase the size of the pool of workers, something like this would happen:
 
-![expected workers behavior](/img/2017-01-26/05-expected.png)
+![expected workers behavior](/imgs/blog/2017-01-26/05-expected.png)
 
 1. negative slope as tasks take advantage of parallelization
 2. positive slope as context switching starts being a pain
@@ -22,7 +22,7 @@ Regardless, I will expect that as we increase the size of the pool of workers, s
 
 But... what I actually get is something like this:
 
-![real workers behavior](/img/2017-01-26/05-time.png)
+![real workers behavior](/imgs/blog/2017-01-26/05-time.png)
 
 This is a simulation whose code is given below. The CPU is an Intel Core i7-6700@3.40GHz with 4 physical cores and 8 virtual cores. The operating system is Ubuntu 16.04 with Linux 4.4.0.
 

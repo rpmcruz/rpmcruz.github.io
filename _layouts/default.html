@@ -5,21 +5,20 @@
 <meta charset="utf-8" />
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
 {% feed_meta %}
-<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_CHTML"></script>
 </head>
 
 <body>
 <div class="page container">
 
 {% comment %} header {% endcomment %}
-<img class="header" src="{{ site.avatar }}">
-<header>
-<h1 class="header">{{ site.name }}</h1>
-<p class="header">{{ site.description }}</p>
+<header class="mb-4">
+<img class="float-left mt-2 mr-2" width="120px" src="{{ site.avatar }}">
+<h1 class="header my-0">{{ site.name }}</h1>
+<p class="header my-0">{{ site.description }}</p>
 
 {% comment %} navigation bar {% endcomment %}
 {% assign current = page.url | downcase | split: '/' %}
@@ -43,9 +42,7 @@
 
 {% comment %} footer {% endcomment %}
 <footer class="footer">
-{% include svg-icons.html %}
+{% include footer.html %}
 </footer>
-
-{% include analytics.html %}
 </body>
 </html>

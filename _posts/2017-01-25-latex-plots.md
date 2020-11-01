@@ -48,7 +48,7 @@ These are a couple of examples from two manuscripts of mine:
 \end{tikzpicture}
 ```
 
-![scatter](/img/2017-01-25/04-pgfplots-scatter.png)
+![scatter](/imgs/blog/2017-01-25/04-pgfplots-scatter.png)
 
 ```LaTeX
 \begin{tikzpicture}
@@ -66,6 +66,6 @@ These are a couple of examples from two manuscripts of mine:
 \end{tikzpicture}
 ```
 
-![plot](/img/2017-01-25/04-pgfplots-plot.png)
+![plot](/imgs/blog/2017-01-25/04-pgfplots-plot.png)
 
 There is another cool latex package called pgfplotstable, which is an extension to support importing CSV files and others. Furthermore, tables can be directly built from such files. But I haven't yet used that package.
