@@ -15,14 +15,15 @@
 <div class="page container">
 
 {% comment %} header {% endcomment %}
-<header class="mb-4">
-<img class="float-left mt-2 mr-2" width="120px" src="{{ site.avatar }}">
+<header>
+<img class="float-left mt-2 mr-2 mb-0" width="100px" src="{{ site.avatar }}">
 <h1 class="header my-0">{{ site.name }}</h1>
 <p class="header my-0">{{ site.description }}</p>
+</header>
 
 {% comment %} navigation bar {% endcomment %}
 {% assign current = page.url | downcase | split: '/' %}
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="mb-4 navbar navbar-expand-lg navbar-dark bg-dark">
   <ul class="navbar-nav mr-auto">
     <li class="nav-item{% if page.active == "about" %} active{% endif %}">
       <a class="nav-link" href="{{ site.baseurl }}/">About me</a>
@@ -35,7 +36,6 @@
     </li>
   </ul>
 </nav>
-</header>
 
 {{ content }}
 </div>
