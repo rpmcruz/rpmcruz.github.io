@@ -169,6 +169,13 @@ portfolio:
         description: My experience participating in two editions of Google Summer of Code.
         link: https://youtu.be/euX8TukTiEA
         image: portfolio-yast2-gtk.png
+projects:
+    -
+        name: Google Summer of Code 2006 (openSUSE)
+    -
+        name: Google Summer of Code 2007 (OpenOffice.org, now LibreOffice)
+    -
+        name: Apoo -- interface for assembly virtual machine (University of Porto)
 skills:
     programming: [C, C++, Java, Android, Python, R, MATLAB, SQL]
     mathematics: [machine learning, computer vision, data mining, statistics, modeling, optimization]

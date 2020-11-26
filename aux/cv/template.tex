@@ -13,30 +13,61 @@
 \usepackage{enumitem}
 \setlist{nosep}
 
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\cfoot{\thepage\ of \pageref{LastPage}}
+
 \begin{document}
 
 \fbox{\begin{minipage}{0.15\linewidth}
-\includegraphics[width=\linewidth]{imgs/photo.jpg}
+\includegraphics[width=\linewidth]{imgs/photo}
 \end{minipage}
 \begin{minipage}{0.85\linewidth}
-\textbf{{'{'}}{{ personal['name'] }}{{'}'}}\\
-\raisebox{-0.25\height}{\includegraphics[width=1em]{imgs/email.pdf}} \href{mailto:{{ personal['email'] }}{{'}'}}{{'{'}}{{ personal['email'] }}{{'}'}}\\
-\raisebox{-0.25\height}{\includegraphics[width=1em]{imgs/www.pdf}} \href{{'{'}}{{ personal['webpage'] }}{{'}'}}{{'{'}}{{ personal['webpage'] }}{{'}'}}\\
-\raisebox{-0.25\height}{\includegraphics[width=1em]{imgs/github.pdf}} \href{{'{'}}{{ personal.github }}?tab=repositories}{{'{'}}{{ personal['github'] }}{{'}'}}\\
+\textbf{{'{'}}\large {{ personal['name'] }}{{'}'}}\\
+\raisebox{-0.25\height}{\includegraphics[width=1em]{imgs/email}} \href{mailto:{{ personal.email }}{{'}'}}{{'{'}}{{ personal.email }}{{'}'}}\\
+\raisebox{-0.25\height}{\includegraphics[width=1em]{imgs/www}} \href{{'{'}}{{ personal.webpage }}{{'}'}}{{'{'}}{{ personal.webpage }}{{'}'}}\\
+{{ personal.phone }} $\bullet$ Valongo, Portugal
 \end{minipage}}
 
-{% for entry in career %}
 \bigskip
-
-\begin{center}
-\textbf{{'{'}}{{ entry['section'] }}{{'}'}}
-\end{center}
-
-{% for item in entry['items'] %}
+\begin{center}\textbf{{'{'}}Education{{'}'}}\end{center}
+{% for item in education %}
 \begin{description}
-\item[{{ item['date'] }}] \textbf{{'{'}}{{ item['title'] }}:{{'}'}} {{ item['description'].replace('&', '\&') }}{% if 'link' in item %} {\footnotesize [\href{{'{'}}{{ item['link'] }}{{'}'}}{link}]}{% endif %}
+\item[{{ item.date }}:] \textbf{{'{'}}{{ item.title }}:{{'}'}} {{ item.university }} {{'{'}}\small ({{ item.observation|replace('%', '\\%') }}){{'}'}}
 \end{description}
 {% endfor %}
+
+\bigskip
+\begin{center}\textbf{{'{'}}Teaching{{'}'}}\end{center}
+{% for item in teaching %}
+\begin{description}
+\item[{{ item.date }}:] \textbf{{'{'}}{{ item.title }}:{{'}'}} {{ item.courses }}
+\end{description}
+{% endfor %}
+
+\bigskip
+\begin{center}\textbf{{'{'}}Publications{{'}'}}\end{center}
+{% for item in publications %}
+\begin{description}
+\item[{{ item.year }}] {{ item.authors }} ``{{ item.title }}'' \textit{{'{'}}{{ item.publisher|replace('&', '\\&') }}{{'}'}}
+\end{description}
+{% endfor %}
+
+\bigskip
+\begin{center}\textbf{{'{'}}Awards{{'}'}}\end{center}
+{% for item in awards %}
+\begin{description}
+\item[{{ item.date }}] ``{{ item.description }}'' ({{ item.by }})
+\end{description}
+{% endfor %}
+
+\bigskip
+\begin{center}\textbf{{'{'}}Portfolio{{'}'}}\end{center}
+{% for item in projects %}
+\begin{itemize}
+\item {{ item.name }}
+\end{itemize}
 {% endfor %}
 
 \end{document}
