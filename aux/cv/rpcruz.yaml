@@ -139,6 +139,14 @@ awards:
         by: RECPAD 2020 conference
         description: "Best Oral Presentation: Training Convolutional Neural Networks to be Background Invariant"
         link: https://recpad2020.uevora.pt/
+    -
+        date: 2020
+        by: FEUP
+        description: "Pedagogic Student Survey Winner"
+    -
+        date: 2020
+        by: FEUP
+        description: "Contest for Sustainable Ideas"
 news:
     -
         date: 2020-10-21
