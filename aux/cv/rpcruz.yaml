@@ -45,7 +45,7 @@ publications:
         date: 2019
         title: Insulator visual non-conformity detection in overhead power distribution lines using deep learning
         authors: R. Prates, R. Cruz, A. Marotta, R. Ramos, E. Filho, J. Cardoso
-        publisher: Computers & Electrical Engineering, Springer
+        publisher: Journal Computers & Electrical Engineering, Springer
         link: "https://www.sciencedirect.com/science/article/pii/S004579061930967X?dgcid=coauthor"
         image: 2019-insulators.png
     -
@@ -59,7 +59,7 @@ publications:
         date: 2018
         title: 'Binary ranking for ordinal class imbalance'
         authors: R. Cruz, K. Fernandes, J. Costa, M. Pérez Ortiz, J. Cardoso
-        publisher: Pattern Analysis and Applications, Springer
+        publisher: Journal Pattern Analysis and Applications, Springer
         link: "https://link.springer.com/epdf/10.1007/s10044-018-0705-4?author_access_token=p2L5jwabAzmA-hENM_mugfe4RwlQNchNByi7wbcMAY42mOH72RPQeb098_tyy79R09eJLVa1A5i0Fl8_sgW1ks0WseTTuEtHZyi1eB8zBX3Z7vgZBxHJZ3x26EzyODMrDn4oUkmT-tVcZK4oD3u4vQ%3D%3D"
         image: 2018-imbalance-ordinal.png
     -
