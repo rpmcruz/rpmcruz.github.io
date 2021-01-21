@@ -3,14 +3,14 @@
 
 /************* PAGE LAYOUT *************/
 
-.container {
-  padding-left: 0;
-  padding-right: 0;
-}
-
 body {
   background-color: black;
   overflow-y: scroll;
+}
+
+.container {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 header {
@@ -30,7 +30,7 @@ div.page {
   background-color: white;
   margin-top: 10px;
   margin-bottom: 20px;
-  padding-bottom: 16px;
+  padding-bottom: 8px;
   border: 8px white solid;
 }
 
@@ -48,13 +48,17 @@ footer a {
 
 /************* CV *************/
 
-h5.cv {
-  border-bottom: 2px solid black;
-  font-family: monospace;
+.card-body {
+    padding: 8px;
 }
 
-.cv.list-group-item-action {
-  color: black;
+.card:hover {
+    background-color: gray;
+}
+
+.card > a {
+    color: inherit;
+    text-decoration: none;
 }
 
 /************* BLOG *************/
@@ -96,15 +100,15 @@ hr.sep {
 
 // FEED tables
 
-table{
+table {
     border:2px solid black;
 }
 
-th{
+th {
     border:1px solid black;
 }
 
-td{
+td {
     border-left: 1px solid #000;
     border-right: 1px solid #000;
 }

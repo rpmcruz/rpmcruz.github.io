@@ -7,7 +7,7 @@ active: cv
 <h5 class="cv" name="education">Education</h5>
 <ul>
 {% for item in education %}
-  <li><b>{{ item.date }} &mdash; {{ item.title }}</b> &mdash; {{ item.university }}{% if item.observation %} <small>[{{ item.observation }}]</small>{% endif %}</li>
+  <li><b>{{ item.date }} &mdash; {{ item.title }}</b> &mdash; {{ item.university }}{% if item.observation %} <small>{{ item.observation }}</small>{% endif %}</li>
 {% endfor %}
 </ul>
 
@@ -19,32 +19,33 @@ active: cv
 </ul>
 
 <h5 class="cv" name="portfolio">Portfolio</h5>
-<div class="list-group">
+<p class="mt-2">&#x26A0; This list is still being worked on...</p>
+
+<div class="no-gutters row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
 {% for item in portfolio %}
-  <a href="{{ item.link }}" class="cv list-group-item list-group-item-action">
-    <img class="float-left mr-2" width="200px" src="imgs/cv/{{ item.image }}">
-    <h6>{{ item.title }}</h6>
-    <div class="small">{{ item.description }}</div>
+  <div class="col">
+  <a href="{{ item.link }}">
+  <div class="card h-100">
+    <div class="card-body">
+      <h6 class="card-title">{{ item.title }}</h6>
+      <p class="card-text">{{ item.description }}</p>
+      <img class="card-img-top" src="imgs/cv/{{ item.image }}">
+    </div>
   </a>
+  </div>
+  </div>
 {% endfor %}
 </div>
 
-<p class="mt-2"><b>&#x26A0; This list is still being worked on...</b></p>
-
-<p class="mt-2 text-muted">&#x2b95; Consult <a href="https://github.com/rpmcruz?tab=repositories">my GitHub for a listing of open-source projects</a>.</p>
+<p class="mt-3 text-muted">&#x2b95; Consult <a href="https://github.com/rpmcruz?tab=repositories">my GitHub for a listing of open-source projects</a>.</p>
 
 <h5 class="cv" name="publications">Publications</h5>
-<div class="list-group">
+
+<ol>
 {% for item in publications %}
-  <a href="{{ item.link }}" class="cv list-group-item list-group-item-action">
-    <img class="float-right" width="200px" src="imgs/cv/{{ item.image }}">
-    <h6>{{ loop.index }}. {{ item.title }}</h6>
-    <div class="small"><b>Authors:</b> {{ item.authors }}</div>
-    <div class="small"><b>Year:</b> {{ item.date }}</div>
-    <div class="small"><b>Published in:</b> {{ item.publisher }}</div>
-  </a>
+  <li><b><a href="{{ item.link }}" style="color:inherit">{{ item.title }}</a></b><br/>{{ item.authors }}<br/>{{ item.publisher }}</li>
 {% endfor %}
-</div>
+</ol>
 
 <h5 class="cv" name="awards">Awards</h5>
 <ul>
