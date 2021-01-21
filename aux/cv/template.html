@@ -11,10 +11,10 @@ active: cv
 {% endfor %}
 </ul>
 
-<h5 class="cv" name="teaching">Teaching</h5>
+<h5 class="cv" name="career">Career</h5>
 <ul>
-{% for item in teaching %}
-  <li><b>{{ item.date }} &mdash; {{ item.title }}</b> &mdash; {{ item.courses }}</li>
+{% for item in career %}
+  <li><b>{{ item.date }} &mdash; {{ item.title }}</b> &mdash; {{ item.where }}</li>
 {% endfor %}
 </ul>
 
@@ -40,7 +40,7 @@ active: cv
     <img class="float-right" width="200px" src="imgs/cv/{{ item.image }}">
     <h6>{{ loop.index }}. {{ item.title }}</h6>
     <div class="small"><b>Authors:</b> {{ item.authors }}</div>
-    <div class="small"><b>Year:</b> {{ item.year }}</div>
+    <div class="small"><b>Year:</b> {{ item.date }}</div>
     <div class="small"><b>Published in:</b> {{ item.publisher }}</div>
   </a>
 {% endfor %}
@@ -49,14 +49,7 @@ active: cv
 <h5 class="cv" name="awards">Awards</h5>
 <ul>
 {% for item in awards %}
-  <li><b>{{ item.date }} &mdash; {{ item.by }}</b> &mdash; {{ item.description }}</li>
-{% endfor %}
-</ul>
-
-<h5 class="cv" name="grants">Grants</h5>
-<ul>
-{% for item in grants %}
-  <li><b>{{ item.date }} &mdash; {{ item.by }}</b> &mdash; {{ item.description }}</li>
+  <li><b>{{ item.date }} &mdash; {{ item.title }}</b> &mdash; {{ item.where }}</li>
 {% endfor %}
 </ul>
 
