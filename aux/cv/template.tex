@@ -1,74 +1,135 @@
 \documentclass[11pt]{article}
 
-\usepackage[a4paper, margin=3cm]{geometry}
+\usepackage[a4paper, margin=2cm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[english]{babel}
+\usepackage[scaled=0.85]{beramono}  % bold tt
+\renewcommand{\familydefault}{\ttdefault}
 \setlength{\parindent}{0cm}
+
+\usepackage[english]{babel}
 \usepackage{graphicx}
 \usepackage[hidelinks]{hyperref}
 \usepackage{xcolor}
 \definecolor{dark-blue}{rgb}{0.15,0.15,0.4}
 \hypersetup{colorlinks, linkcolor={dark-blue}, citecolor={dark-blue}, urlcolor={dark-blue}}
-\usepackage{enumitem}
-\setlist{nosep}
 
 \usepackage{lastpage}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-\cfoot{\thepage\ of \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0pt}
+\cfoot{Page \thepage\ of \pageref{LastPage}}
+
+\usepackage{tikz}
+\usetikzlibrary{tikzmark, calc}
+
+\newcommand{\caixa}[1]{\bigskip\tikzmark{{'{#'}}1}%
+\raisebox{-0.8mm}{\begin{tikzpicture}
+\draw[thick] (0,0) rectangle (0.35,0.35);
+\draw[thick] (0.1,0.175) -- (0.25,0.175);
+\end{tikzpicture}}}
+
 
 \begin{document}
 
-\fbox{\begin{minipage}{0.15\linewidth}
+% photo and personal information
+\begin{minipage}{0.12\linewidth}
 \includegraphics[width=\linewidth]{imgs/photo}
 \end{minipage}
-\begin{minipage}{0.85\linewidth}
+\begin{minipage}{0.88\linewidth}
 \textbf{{'{'}}\large {{ personal['name'] }}{{'}'}}\\
 \raisebox{-0.25\height}{\includegraphics[width=1em]{imgs/email}} \href{mailto:{{ personal.email }}{{'}'}}{{'{'}}{{ personal.email }}{{'}'}}\\
 \raisebox{-0.25\height}{\includegraphics[width=1em]{imgs/www}} \href{{'{'}}{{ personal.webpage }}{{'}'}}{{'{'}}{{ personal.webpage }}{{'}'}}\\
 {{ personal.phone }} $\bullet$ Valongo, Portugal
-\end{minipage}}
+\end{minipage}
 
 \bigskip
-\begin{center}\textbf{{'{'}}Education{{'}'}}\end{center}
+\textcolor{black!80}{\colorbox{black!10}{\begin{minipage}{\linewidth}
+{{ introduction }}
+\end{minipage}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\filbreak
+\caixa{education} Education
+
+\bigskip
+\begin{tabular}{p{1mm}lp{46em}}
 {% for item in education %}
-\begin{description}
-\item[{{ item.date }}:] \textbf{{'{'}}{{ item.title }}:{{'}'}} {{ item.university }} {{'{'}}\small ({{ item.observation|replace('%', '\\%') }}){{'}'}}
-\end{description}
+& \tikzmark{e{{ loop.index }}}\textbf{ {{ item.date }} } & {{ item.title }} {{ item.observation }} \\
+& & \textcolor{gray}{ {{ item.university }} } \\
 {% endfor %}
+\end{tabular}
+
+\begin{tikzpicture}[remember picture, overlay]
+{% for item in education %}
+\draw[dashed] let \p1=(pic cs:e{{ loop.index }}) in ({2mm,\y1+1mm}) -- ++ (2.5mm,0);
+{% endfor %}
+\draw[dashed] let \p1=(pic cs:education), \p2=(pic cs:e{{ education|length }}) in ({2mm,\y1-1mm}) -- ({2mm,\y2+1mm});
+\end{tikzpicture}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\filbreak
+\caixa{career} Career
 
 \bigskip
-\begin{center}\textbf{{'{'}}Teaching{{'}'}}\end{center}
-{% for item in teaching %}
-\begin{description}
-\item[{{ item.date }}:] \textbf{{'{'}}{{ item.title }}:{{'}'}} {{ item.courses }}
-\end{description}
+\begin{tabular}{p{1mm}lp{46em}}
+{% for item in career %}
+& \tikzmark{c{{ loop.index }}}\textbf{ {{ item.date }} } & {{ item.title }} \\
+& & \textcolor{gray}{ {{ item.where }} } \\
 {% endfor %}
+\end{tabular}
+
+\begin{tikzpicture}[remember picture, overlay]
+{% for item in career %}
+\draw[dashed] let \p1=(pic cs:c{{ loop.index }}) in ({2mm,\y1+1mm}) -- ++ (2.5mm,0);
+{% endfor %}
+\draw[dashed] let \p1=(pic cs:career), \p2=(pic cs:c{{ career|length }}) in ({2mm,\y1-1mm}) -- ({2mm,\y2+1mm});
+\end{tikzpicture}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\filbreak
+\caixa{awards} Awards
 
 \bigskip
-\begin{center}\textbf{{'{'}}Publications{{'}'}}\end{center}
-{% for item in publications %}
-\begin{description}
-\item[{{ item.year }}] {{ item.authors }} ``{{ item.title }}'' \textit{{'{'}}{{ item.publisher|replace('&', '\\&') }}{{'}'}}
-\end{description}
-{% endfor %}
-
-\bigskip
-\begin{center}\textbf{{'{'}}Awards{{'}'}}\end{center}
+\begin{tabular}{p{1mm}lp{46em}}
 {% for item in awards %}
-\begin{description}
-\item[{{ item.date }}] ``{{ item.description }}'' ({{ item.by }})
-\end{description}
+& \tikzmark{a{{ loop.index }}}\textbf{ {{ item.date }} } & {{ item.title }} \\
+& & \textcolor{gray}{ {{ item.where }} } \\
 {% endfor %}
+\end{tabular}
+
+\begin{tikzpicture}[remember picture, overlay]
+{% for item in awards %}
+\draw[dashed] let \p1=(pic cs:a{{ loop.index }}) in ({2mm,\y1+1mm}) -- ++ (2.5mm,0);
+{% endfor %}
+\draw[dashed] let \p1=(pic cs:awards), \p2=(pic cs:a{{ awards|length }}) in ({2mm,\y1-1mm}) -- ({2mm,\y2+1mm});
+\end{tikzpicture}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\filbreak
+\caixa{publications} Publications
 
 \bigskip
-\begin{center}\textbf{{'{'}}Portfolio{{'}'}}\end{center}
-{% for item in projects %}
-\begin{itemize}
-\item {{ item.name }}
-\end{itemize}
+\begin{tabular}{p{1mm}lp{46em}}
+{% for item in publications %}
+& \tikzmark{p{{ loop.index }}}\textbf{ {{ item.date }} } & {{ item.title }} \\
+& & \textcolor{gray}{ {{ item.authors }} } \\
+& & \textcolor{gray}{ {{ item.publisher|replace('&', '\\&') }} } \\
 {% endfor %}
+\end{tabular}
+
+\begin{tikzpicture}[remember picture, overlay]
+{% for item in publications %}
+\draw[dashed] let \p1=(pic cs:p{{ loop.index }}) in ({2mm,\y1+1mm}) -- ++ (2.5mm,0);
+{% endfor %}
+\draw[dashed] let \p1=(pic cs:publications), \p2=(pic cs:p{{ publications|length }}) in ({2mm,\y1-1mm}) -- ({2mm,\y2+1mm});
+\end{tikzpicture}
+
+
 
 \end{document}
 

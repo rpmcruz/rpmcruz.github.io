@@ -3,20 +3,39 @@
 
 /************* PAGE LAYOUT *************/
 
+.container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 body {
-  background-color: lightgray;
+  background-color: black;
   overflow-y: scroll;
+}
+
+header {
+  color: lightgreen;
+}
+
+nav {
+  font-family: monospace;
+  font-size: large;
+}
+
+.navbar-dark .navbar-nav .active > .nav-link {
+  color: lightgreen;
 }
 
 div.page {
   background-color: white;
-  border: 1px solid black;
   margin-top: 10px;
   margin-bottom: 20px;
   padding-bottom: 16px;
+  border: 8px white solid;
 }
 
 footer {
+  color: lightgray;
   text-align: center;
   font-size: small;
   margin-bottom: 10px;
@@ -24,24 +43,30 @@ footer {
 
 footer a {
   margin-left: 40px;
-  color: black;
+  color: lightgray;
 }
 
 /************* CV *************/
 
 h5.cv {
-    border-bottom: 4px solid black;
+  border-bottom: 2px solid black;
+  font-family: monospace;
 }
 
 .cv.list-group-item-action {
-    color: black;
+  color: black;
 }
 
 /************* BLOG *************/
 
-h3.post {
-    margin-top: 5px;
-    margin-bottom: 0px;
+h3 {
+  margin-top: 5px;
+  margin-bottom: 0px;
+  font-family: monospace;
+}
+
+h3 > a, p.readmore > a {
+  color: green;
 }
 
 p.summary {
@@ -60,7 +85,7 @@ p.readmore {
 hr.sep {
     background-color: black;
     border: none;
-    height: 8px;
+    height: 4px;
 }
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS

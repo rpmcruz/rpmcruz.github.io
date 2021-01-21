@@ -1,117 +1,136 @@
 personal:
     name: Ricardo Pereira de Magalhães Cruz
     address: Rua Eduardo Joaquim Reis Figueira, 1104, AV, 4440-647 Valongo, Portugal
-    phone: "+351 934741617"
+    phone: "(+351)934741617"
     email: ricardo.pdm.cruz@gmail.com
     webpage: https://rpmcruz.github.io
     birthdate: "15 August 1985"
+introduction: "My PhD topic is on using deep learning for computer vision. I use TensorFlow and PyTorch, and I have several fundamental publications on the area. Furthermore, I teach programming: Python and C++. I have participated in several projects working on web development, databases, multimedia and others."
 education:
     -
-        date: 2016 - present
-        title: PhD student in Computer Science
-        university: co-joint PhD from the Universities of Porto, Minho and Aveiro
+        date: ---
+        title: student of PhD in Computer Science
+        university: co-joint University of Porto, Minho and Aveiro (PT)
     -
-        date: 2012 - 2015
-        title: Master of Science in Mathematical Engineering
-        university: Faculty of Sciences, University of Porto
-        observation: Grade=18/20, top 10%
+        date: 2015
+        title: MSc in Applied Mathematics
+        university: Faculty of Sciences, University of Porto (PT)
+        observation: (Grade=18/20)
     -
-        date: 2009 - 2012
-        title: Bachelor of Science in Computer Science
-        university: Faculty of Sciences, University of Porto
-        observation: Grade=16/20, top 10%
+        date: 2012
+        title: BSc in Computer Science
+        university: Faculty of Sciences, University of Porto (PT)
+        observation: (Grade=16/20)
 publications:
     -
-        year: 2019
+        date: 2020
+        title: Background Invariance by Adversarial Learning
+        authors: R. Cruz, R. Prates, E. Filho, J. Costa, J. Cardoso
+        publisher: 25th International Conference on Pattern Recognition (ICPR), IEEE
+    -
+        date: 2019
         title: Automatic Augmentation by Hill Climbing
-        authors: Ricardo Cruz, Joaquim F. Pinto Costa and Jaime S. Cardoso
-        publisher: 28th International Conference on Artificial Neural Networks (ICANN). Springer, 2019.
+        authors: R. Cruz, J. Costa, J. Cardoso
+        publisher: 28th International Conference on Artificial Neural Networks (ICANN), Springer
         link: "https://link.springer.com/chapter/10.1007/978-3-030-30484-3_10"
         image: 2019-automatic-augmentation.png
     -
-        year: 2019
+        date: 2019
         title: Averse Deep Semantic Segmentation
-        authors: Ricardo Cruz, Joaquim F. Pinto Costa and Jaime S. Cardoso
-        publisher: 41st Engineering in Medicine and Biology Conference (EMBC). IEEE, 2019.
+        authors: R. Cruz, J. Costa, J. Cardoso
+        publisher: 41st Engineering in Medicine and Biology Conference (EMBC), IEEE
         link: "https://ieeexplore.ieee.org/abstract/document/8857385"
         image: 2019-averse-segmentation.png
     -
-        year: 2019
+        date: 2019
         title: Insulator visual non-conformity detection in overhead power distribution lines using deep learning
-        authors: Ricardo M. Prates, Ricardo Cruz, André P. Marotta, Rodrigo P. Ramos, Eduardo F. Simas Filho, Jaime S. Cardoso
-        publisher: Computers & Electrical Engineering. Springer, 2019.
+        authors: R. Prates, R. Cruz, A. Marotta, R. Ramos, E. Filho, J. Cardoso
+        publisher: Computers & Electrical Engineering, Springer
         link: "https://www.sciencedirect.com/science/article/pii/S004579061930967X?dgcid=coauthor"
         image: 2019-insulators.png
     -
-        year: 2018
+        date: 2018
         title: A Class Imbalance Ordinal Method for Alzheimer’s Disease Classification
-        authors: Ricardo Cruz, Margarida Silveira, and Jaime S. Cardoso
-        publisher: 2018 International Workshop on Pattern Recognition in Neuroimaging (PRNI). IEEE, 2018.
+        authors: R. Cruz, M. Silveira, J. Cardoso
+        publisher: 2018 International Workshop on Pattern Recognition in Neuroimaging (PRNI), IEEE
         link: "https://ieeexplore.ieee.org/abstract/document/8423960/"
         image: 2018-imbalance-alzheimer.png
     -
-        year: 2018
+        date: 2018
         title: 'Binary ranking for ordinal class imbalance'
-        authors: Ricardo Cruz, Kelwin Fernandes, Joaquim F. Pinto Costa, María Pérez Ortiz and Jaime S. Cardoso
-        publisher: 'Pattern Analysis and Applications. Springer, 2018.'
+        authors: R. Cruz, K. Fernandes, J. Costa, M. Pérez Ortiz, J. Cardoso
+        publisher: Pattern Analysis and Applications, Springer
         link: "https://link.springer.com/epdf/10.1007/s10044-018-0705-4?author_access_token=p2L5jwabAzmA-hENM_mugfe4RwlQNchNByi7wbcMAY42mOH72RPQeb098_tyy79R09eJLVa1A5i0Fl8_sgW1ks0WseTTuEtHZyi1eB8zBX3Z7vgZBxHJZ3x26EzyODMrDn4oUkmT-tVcZK4oD3u4vQ%3D%3D"
         image: 2018-imbalance-ordinal.png
     -
-        year: 2018
+        date: 2018
         title: Deep image segmentation by quality inference
-        authors: Kelwin Fernandes, Ricardo Cruz, and Jaime S. Cardoso
-        publisher: 2018 International Joint Conference on Neural Networks (IJCNN). IEEE, 2018.
+        authors: K. Fernandes, R. Cruz, J. Cardoso
+        publisher: International Joint Conference on Neural Networks (IJCNN), IEEE
         link: "https://ieeexplore.ieee.org/abstract/document/8489696/"
         image: 2018-oracle.png
     -
-        year: 2017
+        date: 2017
         title: "Constraining type II error: building intentionally biased classifiers"
-        authors: Ricardo Cruz, Kelwin Fernandes, Joaquim F. Pinto Costa and Jaime S. Cardoso
-        publisher: International work-conference on artificial neural networks. Springer, Cham, 2017.
+        authors: R. Cruz, K. Fernandes, J. Costa, J. Cardoso
+        publisher: International Work-conference on Artificial Neural Networks (IWANN), Springer
         link: "https://link.springer.com/chapter/10.1007/978-3-319-59147-6_47"
         image: 2017-averse.png
     -
-        year: 2017
+        date: 2017
         title: "Fine-to-coarse ranking in ordinal and imbalanced domains: an application to liver transplantation"
-        authors: María Pérez-Ortiz, Kelwin Fernandes, Ricardo Cruz, Jaime S. Cardoso
-        publisher: International work-conference on artificial neural networks. Springer, Cham, 2017.
+        authors: M. Pérez-Ortiz, K. Fernandes, R. Cruz, J. Cardoso
+        publisher: International Work-conference on Artificial Neural Networks (IWANN), Springer
         link: "https://link.springer.com/chapter/10.1007/978-3-319-59147-6_45"
         image: 2017-imbalance-coarse.png
     -
-        year: 2017
+        date: 2017
         title: Combining ranking with traditional methods for ordinal class imbalance
-        authors: Ricardo Cruz, Kelwin Fernandes, Joaquim F. Pinto Costa, María Pérez-Ortiz and Jaime S. Cardoso
-        publisher: International work-conference on artificial neural networks. Springer, Cham, 2017.
-        description: Ricardo Cruz et al. "Combining ranking with traditional methods for ordinal class imbalance." International work-conference on artificial neural networks. Springer, Cham, 2017.
+        authors: R. Cruz, K. Fernandes, J. Costa, M. Pérez-Ortiz, J. Cardoso
+        publisher: International Work-conference on Artificial Neural Networks (IWANN), Springer
         link: "https://link.springer.com/chapter/10.1007/978-3-319-59147-6_46"
         image: 2017-imbalance-combine.png
     -
-        year: 2017
+        date: 2017
         title: Ordinal class imbalance with ranking
-        authors: Ricardo Cruz, Kelwin Fernandes, Joaquim F. Pinto Costa, María Pérez-Ortiz and Jaime S. Cardoso
-        publisher: Iberian conference on pattern recognition and image analysis. Springer, Cham, 2017.
+        authors: R. Cruz, K. Fernandes, J. Costa, M. Pérez-Ortiz, J. Cardoso
+        publisher: Iberian conference on pattern recognition and image analysis (Ibpria), Springer
         link: "https://link.springer.com/chapter/10.1007/978-3-319-58838-4_1"
         image: 2017-imbalance-ordinal.png
     -
-        year: 2016
+        date: 2016
         title: Tackling class imbalance with ranking
-        authors: Ricardo Cruz, Kelwin Fernandes, Joaquim F. Pinto Costa and Jaime S. Cardoso
-        publisher: 2016 International joint conference on neural networks (IJCNN). IEEE, 2016.
+        authors: R. Cruz, K. Fernandes, J. Costa, J. Cardoso
+        publisher: International Joint Conference on Neural Networks (IJCNN), IEEE
         link: "http://ieeexplore.ieee.org/abstract/document/7727469/"
         image: 2016-imbalance-binary.png
-teaching:
+career:
     -
-        date: Sept 2020 - Aug 2021 (two semesters)
-        title: Guest Assistant at FEUP (University of Porto)
+        date: 2018--2021
+        title: Teacher Assistant
+        where: Faculty of Engineering, University of Porto (PT)
         courses: Programming Fundamentals (with Prof. João Correia Lopes, Rui Camacho) and Programming (with Prof. Jorge Silva)
     -
-        date: Sept 2019 - Aug 2020 (two semesters)
-        title: Guest Assistant at FEUP (University of Porto)
-        courses: Programming Fundamentals (with Prof. João Correia Lopes, Rui Camacho) and Programming (with Prof. Jorge Silva)
+        date: 2016--2020
+        title: PhD Grant
+        where: INESC TEC
     -
-        date: Nov 2018 - Jan 2019 (one semester)
-        title: Guest Assistant at FEUP (University of Porto)
-        courses: Programming Fundamentals (with Prof. João Correia Lopes, Rui Camacho)
+        date: 2015
+        title: Research Grant
+        where: INESC TEC
+    -
+        date: 2014
+        title: Research Grant
+        where: Faculty of Science, University of Porto (PT)
+    -
+        date: 2007
+        title: "Google Grant: Summer of Code"
+        where: OpenOffice.org
+    -
+        date: 2006
+        title: "Google Grant: Summer of Code"
+        where: Novell / openSUSE
+misc:
     -
         date: Oct 2018 - Jan 2019
         title: Mentor at Coursera
@@ -135,18 +154,18 @@ grants:
         description: "Port of YaST from Qt to GTK+ with Michael Meeks"
 awards:
     -
-        date: 2020-10-30
-        by: RECPAD 2020 conference
-        description: "Best Oral Presentation: Training Convolutional Neural Networks to be Background Invariant"
+        date: 2020
+        title: "Best Oral Presentation: Training Convolutional Neural Networks to be Background Invariant"
+        where: RECPAD 2020 conference
         link: https://recpad2020.uevora.pt/
     -
         date: 2020
-        by: FEUP
-        description: "Pedagogic Student Survey Winner"
+        title: Pedagogical Recognition Award
+        where: Faculty of Engineering, University of Porto
     -
         date: 2020
-        by: FEUP
-        description: "Contest for Sustainable Ideas"
+        title: Sustainable Ideas
+        where: Faculty of Engineering, University of Porto
 news:
     -
         date: 2020-10-21

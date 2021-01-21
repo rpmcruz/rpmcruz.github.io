@@ -12,18 +12,17 @@
 </head>
 
 <body>
-<div class="page container">
 
+<div class="container">
 {% comment %} header {% endcomment %}
-<header>  {% comment %} class="clearfix" if this to be self-contained {% endcomment %}
-<img class="float-left mt-2 mr-2 mb-0" width="110px" src="{{ site.avatar }}">
-<h1 class="header my-0">{{ site.name }}</h2>
-<p class="header my-0">{{ site.description }}</p>
+<header class="mt-4">  {% comment %} class="clearfix" if this to be self-contained {% endcomment %}
+<img class="float-right" width="110px" src="{{ site.avatar }}">
+<h1 class="header text-monospace">/home/Ricardo Cruz<span id="blink"></span></h2>
 </header>
 
 {% comment %} navigation bar {% endcomment %}
 {% assign current = page.url | downcase | split: '/' %}
-<nav class="mb-4 navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark bg-dark">
   <ul class="navbar-nav mr-auto">
     <li class="nav-item{% if page.active == "about" %} active{% endif %}">
       <a class="nav-link" href="{{ site.baseurl }}/">About me</a>
@@ -36,7 +35,9 @@
     </li>
   </ul>
 </nav>
+</div>
 
+<div class="page container">
 {{ content }}
 </div>
 
@@ -45,4 +46,18 @@
 {% include footer.html %}
 </footer>
 </body>
+
+<script>
+setInterval(timer, 1000);
+function blink() {
+    var el = document.getElementById("blink");
+    if(el.innerHTML == '_')
+        el.innerHTML = ' ';
+    else
+        el.innerHTML = '_';
+}
+function timer() {
+  setTimeout(blink, 2000);
+}
+</script>
 </html>

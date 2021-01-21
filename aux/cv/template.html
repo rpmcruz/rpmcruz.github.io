@@ -4,21 +4,21 @@ title: Ricardo Cruz - CV
 active: cv
 ---
 
-<h5 class="cv">Education</h5>
+<h5 class="cv" name="education">Education</h5>
 <ul>
 {% for item in education %}
   <li><b>{{ item.date }} &mdash; {{ item.title }}</b> &mdash; {{ item.university }}{% if item.observation %} <small>[{{ item.observation }}]</small>{% endif %}</li>
 {% endfor %}
 </ul>
 
-<h5 class="cv">Teaching</h5>
+<h5 class="cv" name="teaching">Teaching</h5>
 <ul>
 {% for item in teaching %}
   <li><b>{{ item.date }} &mdash; {{ item.title }}</b> &mdash; {{ item.courses }}</li>
 {% endfor %}
 </ul>
 
-<h5 class="cv">Portfolio</h5>
+<h5 class="cv" name="portfolio">Portfolio</h5>
 <div class="list-group">
 {% for item in portfolio %}
   <a href="{{ item.link }}" class="cv list-group-item list-group-item-action">
@@ -33,7 +33,7 @@ active: cv
 
 <p class="mt-2 text-muted">&#x2b95; Consult <a href="https://github.com/rpmcruz?tab=repositories">my GitHub for a listing of open-source projects</a>.</p>
 
-<h5 class="cv">Publications</h5>
+<h5 class="cv" name="publications">Publications</h5>
 <div class="list-group">
 {% for item in publications %}
   <a href="{{ item.link }}" class="cv list-group-item list-group-item-action">
@@ -46,21 +46,21 @@ active: cv
 {% endfor %}
 </div>
 
-<h5 class="cv">Awards</h5>
+<h5 class="cv" name="awards">Awards</h5>
 <ul>
 {% for item in awards %}
   <li><b>{{ item.date }} &mdash; {{ item.by }}</b> &mdash; {{ item.description }}</li>
 {% endfor %}
 </ul>
 
-<h5 class="cv">Grants</h5>
+<h5 class="cv" name="grants">Grants</h5>
 <ul>
 {% for item in grants %}
   <li><b>{{ item.date }} &mdash; {{ item.by }}</b> &mdash; {{ item.description }}</li>
 {% endfor %}
 </ul>
 
-<h5 class="cv">Skills</h5>
+<h5 class="cv" name="skills">Skills</h5>
 
 <b>Programming:</b> {{ skills.programming|join(', ') }}<br>
 <b>Mathematics:</b> {{ skills.mathematics|join(', ') }}
