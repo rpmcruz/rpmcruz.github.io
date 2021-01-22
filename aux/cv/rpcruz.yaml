@@ -178,6 +178,11 @@ news:
         link: http://bip-archive.inesctec.pt/en/196/fora-de-serie.html
 portfolio:
     -
+        title: PhD work
+        description: A summary of my work as a PhD student and researcher.
+        link: https://youtu.be/UmacXvbCfgQ
+        image: 2020-backinv.png
+    -
         title: Web development
         description: This is a web application I have developed while an assistant teacher at FEUP, teaching Python for first-year students.
         link: https://youtu.be/NR-jLv9v9Mw
@@ -193,10 +198,20 @@ portfolio:
         link: https://youtu.be/sbtkC9wCWrs
         image: portfolio-supertux.jpg
     -
+        title: Java small games
+        description: Some small games I did in Java Mobile Edition and Android.
+        link: https://youtu.be/9hzaNDnzvqI
+        image: portfolio-j2me
+    -
         title: Google Summer of Code 2006 and 2007
         description: My experience participating in two editions of Google Summer of Code.
         link: https://youtu.be/euX8TukTiEA
         image: portfolio-yast2-gtk.png
+    -
+        title: Scraping
+        description: My experience doing some scraping work; that is, extracting information from the internet.
+        link: https://youtu.be/nPaxHV3ktI0
+        image: portfolio-scrap.png
 projects:
     -
         name: Google Summer of Code 2006 (openSUSE)
