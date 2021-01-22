@@ -201,7 +201,7 @@ portfolio:
         title: Java small games
         description: Some small games I did in Java Mobile Edition and Android.
         link: https://youtu.be/9hzaNDnzvqI
-        image: portfolio-j2me
+        image: portfolio-j2me.png
     -
         title: Google Summer of Code 2006 and 2007
         description: My experience participating in two editions of Google Summer of Code.
