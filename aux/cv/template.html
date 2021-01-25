@@ -22,7 +22,7 @@ active: cv
 
 <ol>
 {% for item in publications %}
-  <li><b><a href="{{ item.link }}" style="color:inherit">{{ item.title }}</a></b><br/>{{ item.authors }}<br/>{{ item.publisher }}</li>
+  <li><b><a href="{{ item.link }}" style="color:inherit">{{ item.title }}</a></b><br/>{{ item.authors }}<br/>{{ item.publisher }}, {{ item.date }}</li>
 {% endfor %}
 </ol>
 
