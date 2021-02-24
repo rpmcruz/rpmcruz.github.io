@@ -57,7 +57,7 @@
 \begin{tabular}{p{1mm}lp{46em}}
 {% for item in education %}
 & \tikzmark{e{{ loop.index }}}\textbf{ {{ item.date }} } & {{ item.title }} {{ item.observation }} \\
-& & \textcolor{gray}{ {{ item.university }} } \\
+& & \textcolor{black!60}{ {{ item.university }} } \\
 {% endfor %}
 \end{tabular}
 
@@ -77,7 +77,7 @@
 \begin{tabular}{p{1mm}lp{46em}}
 {% for item in career %}
 & \tikzmark{c{{ loop.index }}}\textbf{ {{ item.date }} } & {{ item.title }} \\
-& & \textcolor{gray}{ {{ item.where }} } \\
+& & \textcolor{black!60}{ {{ item.where }} } \\
 {% endfor %}
 \end{tabular}
 
@@ -97,7 +97,7 @@
 \begin{tabular}{p{1mm}lp{46em}}
 {% for item in awards %}
 & \tikzmark{a{{ loop.index }}}\textbf{ {{ item.date }} } & {{ item.title }} \\
-& & \textcolor{gray}{ {{ item.where }} } \\
+& & \textcolor{black!60}{ {{ item.where }} } \\
 {% endfor %}
 \end{tabular}
 
@@ -117,8 +117,8 @@
 \begin{tabular}{p{1mm}lp{46em}}
 {% for item in publications %}
 & \tikzmark{p{{ loop.index }}}\textbf{ {{ item.date }} } & {{ item.title }} \\
-& & \textcolor{gray}{ {{ item.authors }} } \\
-& & \textcolor{gray}{ {{ item.publisher|replace('&', '\\&') }} } \\
+& & \textcolor{black!60}{ {{ item.authors }} } \\
+& & \textcolor{black!60}{ {{ item.publisher|replace('&', '\\&') }} } \\
 {% endfor %}
 \end{tabular}
 

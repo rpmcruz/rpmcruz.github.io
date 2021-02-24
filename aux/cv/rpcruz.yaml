@@ -5,21 +5,21 @@ personal:
     email: ricardo.pdm.cruz@gmail.com
     webpage: https://rpmcruz.github.io
     birthdate: "15 August 1985"
-introduction: "My PhD topic is on using deep learning for computer vision. I use TensorFlow and PyTorch, and I have several fundamental publications on the area. Furthermore, I teach programming: Python and C++. I have participated in several projects working on web development, databases, multimedia and others."
+introduction: "My PhD topic is on using deep learning for computer vision. I use TensorFlow and PyTorch, and I have several fundamental publications on the area. I have been teacher assistant at FEUP, teaching Python, C and C++. I have participated in several projects working on web development (flask), databases (mongo, postgres), multimedia (sdl, gtk, qt) and others."
 education:
     -
-        date: 2021?
-        title: PhD candidate in Computer Science
-        university: co-joint University of Porto, Minho and Aveiro (PT)
+        date: (2021)
+        title: PhD in Computer Science (currently waiting for defense!)
+        university: co-joint University of Porto, Minho and Aveiro
     -
         date: 2015
         title: MSc in Applied Mathematics
-        university: Faculty of Sciences, University of Porto (PT)
+        university: Faculty of Sciences, University of Porto
         observation: (Grade=18/20)
     -
         date: 2012
         title: BSc in Computer Science
-        university: Faculty of Sciences, University of Porto (PT)
+        university: Faculty of Sciences, University of Porto
         observation: (Grade=16/20)
 publications:
     -
@@ -108,28 +108,28 @@ publications:
 career:
     -
         date: 2018--2021
-        title: Teacher Assistant
-        where: Faculty of Engineering, University of Porto (PT)
+        title: Teacher Assistant (Python and C/C++)
+        where: Faculty of Engineering, University of Porto
         courses: Programming Fundamentals (with Prof. João Correia Lopes, Rui Camacho) and Programming (with Prof. Jorge Silva)
     -
         date: 2016--2020
-        title: PhD Grant
+        title: PhD Grant (deep learning and computer vision)
         where: INESC TEC
     -
         date: 2015
-        title: Research Grant
+        title: Research Grant (machine learning)
         where: INESC TEC
     -
         date: 2014
-        title: Research Grant
-        where: Faculty of Science, University of Porto (PT)
+        title: Research Grant (epidemiology modelling)
+        where: Mathematics Center of the University of Porto
     -
         date: 2007
-        title: "Google Grant: Summer of Code"
+        title: "Google Grant: Summer of Code (dynamic layouts)"
         where: OpenOffice.org
     -
         date: 2006
-        title: "Google Grant: Summer of Code"
+        title: "Google Grant: Summer of Code (YaST GTK port)"
         where: Novell / openSUSE
 misc:
     -
@@ -160,11 +160,11 @@ awards:
         where: RECPAD 2020 conference
         link: https://recpad2020.uevora.pt/
     -
-        date: 2020
+        date: 2021
         title: Pedagogical Recognition Award
         where: Faculty of Engineering, University of Porto
     -
-        date: 2020
+        date: 2021
         title: Sustainable Ideas
         where: Faculty of Engineering, University of Porto
 news:
