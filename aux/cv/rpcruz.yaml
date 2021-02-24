@@ -138,9 +138,17 @@ career:
         where: Novell / openSUSE
 misc:
     -
-        date: Oct 2018 - Jan 2019
+        date: 2018-2020
+        title: Consulting for a geography team at FLUP
+        description: In total, I have done seven scraping and automation jobs.
+    -
+        date: 2018-2019
         title: Mentor at Coursera
-        courses: "Andrew Ng's course on Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization"
+        description: "Andrew Ng's course on Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization"
+    -
+        date: 2014
+        title: Consulting at Flykt
+        description: Search algorithms for travel destinations.
 grants:
     -
         date: Nov 2015 - Dec 2016

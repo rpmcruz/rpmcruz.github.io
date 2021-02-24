@@ -1,4 +1,4 @@
-\documentclass[11pt]{article}
+\documentclass[10pt]{article}
 
 \usepackage[a4paper, margin=2cm]{geometry}
 \usepackage[T1]{fontenc}
@@ -63,7 +63,7 @@
 
 \begin{tikzpicture}[remember picture, overlay]
 {% for item in education %}
-\draw[dashed] let \p1=(pic cs:e{{ loop.index }}) in ({2mm,\y1+1mm}) -- ++ (2.5mm,0);
+\draw[dashed] let \p1=(pic cs:e{{ loop.index }}) in ({2mm,\y1+1mm}) -- ++ (4mm,0);
 {% endfor %}
 \draw[dashed] let \p1=(pic cs:education), \p2=(pic cs:e{{ education|length }}) in ({2mm,\y1-1mm}) -- ({2mm,\y2+1mm});
 \end{tikzpicture}
@@ -83,9 +83,29 @@
 
 \begin{tikzpicture}[remember picture, overlay]
 {% for item in career %}
-\draw[dashed] let \p1=(pic cs:c{{ loop.index }}) in ({2mm,\y1+1mm}) -- ++ (2.5mm,0);
+\draw[dashed] let \p1=(pic cs:c{{ loop.index }}) in ({2mm,\y1+1mm}) -- ++ (4mm,0);
 {% endfor %}
 \draw[dashed] let \p1=(pic cs:career), \p2=(pic cs:c{{ career|length }}) in ({2mm,\y1-1mm}) -- ({2mm,\y2+1mm});
+\end{tikzpicture}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\filbreak
+\caixa{others} Other related work
+
+\bigskip
+\begin{tabular}{p{1mm}lp{46em}}
+{% for item in misc %}
+& \tikzmark{o{{ loop.index }}}\textbf{ {{ item.date }} } & {{ item.title }} \\
+& & \textcolor{black!60}{ {{ item.description }} } \\
+{% endfor %}
+\end{tabular}
+
+\begin{tikzpicture}[remember picture, overlay]
+{% for item in misc %}
+\draw[dashed] let \p1=(pic cs:o{{ loop.index }}) in ({2mm,\y1+1mm}) -- ++ (4mm,0);
+{% endfor %}
+\draw[dashed] let \p1=(pic cs:others), \p2=(pic cs:o{{ misc|length }}) in ({2mm,\y1-1mm}) -- ({2mm,\y2+1mm});
 \end{tikzpicture}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -103,7 +123,7 @@
 
 \begin{tikzpicture}[remember picture, overlay]
 {% for item in awards %}
-\draw[dashed] let \p1=(pic cs:a{{ loop.index }}) in ({2mm,\y1+1mm}) -- ++ (2.5mm,0);
+\draw[dashed] let \p1=(pic cs:a{{ loop.index }}) in ({2mm,\y1+1mm}) -- ++ (4mm,0);
 {% endfor %}
 \draw[dashed] let \p1=(pic cs:awards), \p2=(pic cs:a{{ awards|length }}) in ({2mm,\y1-1mm}) -- ({2mm,\y2+1mm});
 \end{tikzpicture}
@@ -124,11 +144,15 @@
 
 \begin{tikzpicture}[remember picture, overlay]
 {% for item in publications %}
-\draw[dashed] let \p1=(pic cs:p{{ loop.index }}) in ({2mm,\y1+1mm}) -- ++ (2.5mm,0);
+\draw[dashed] let \p1=(pic cs:p{{ loop.index }}) in ({2mm,\y1+1mm}) -- ++ (4mm,0);
 {% endfor %}
 \draw[dashed] let \p1=(pic cs:publications), \p2=(pic cs:p{{ publications|length }}) in ({2mm,\y1-1mm}) -- ({2mm,\y2+1mm});
 \end{tikzpicture}
 
+\bigskip
+\textcolor{black!80}{\colorbox{black!10}{\begin{minipage}{\linewidth}
+Recommendation contacts will be provided if requested.
+\end{minipage}}}
 
 
 \end{document}
