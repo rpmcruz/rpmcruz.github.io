@@ -24,7 +24,12 @@ education:
 publications:
     -
         date: 2021
-        title: Background Invariance by Adversarial Learning
+        title: Ordinal Losses for Classification of Cervical Cancer Risk [accepted]
+        authors: T. Albuquerque, R. Cruz, J. Cardoso
+        publisher: PeerJ Computer Science
+    -
+        date: 2021
+        title: Background Invariance by Adversarial Learning [accepted]
         authors: R. Cruz, R. Prates, E. Filho, J. Costa, J. Cardoso
         publisher: 25th International Conference on Pattern Recognition (ICPR), IEEE
         image: 2020-backinv.png
