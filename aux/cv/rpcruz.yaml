@@ -5,7 +5,11 @@ personal:
     email: ricardo.pdm.cruz@gmail.com
     webpage: https://rpmcruz.github.io
     birthdate: "15 August 1985"
-introduction: "My PhD topic is on using deep learning for computer vision. I use TensorFlow and PyTorch, and I have several fundamental publications on the area. I have been teacher assistant at FEUP, teaching Python, C and C++. I have participated in several projects working on web development (flask), databases (mongo, postgres), multimedia (sdl, gtk, qt) and others."
+introduction: "For the last five years, I have been working as a machine learning researcher at INESC TEC. I have just finished my Ph.D. thesis which I will defend very soon. Meanwhile, I also have been helping at FEUP as a teacher assistant: teaching Python and C++.
+
+As a machine learning researcher, I have worked mostly on deep learning applied to computer vision, using both TensorFlow and PyTorch. In the past, I have participated in many open-source projects and also did much consulting work: on web development (flask), databases (mongo, postgres), multimedia (sdl, gtk, qt), server administration (hpc) and others.
+
+In terms of education, I am about to finish my Ph.D. in computer science. I have a masters in applied mathematics and a bachelors in computer science."
 education:
     -
         date: (2021)
