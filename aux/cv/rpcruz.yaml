@@ -5,9 +5,9 @@ personal:
     email: ricardo.pdm.cruz@gmail.com
     webpage: https://rpmcruz.github.io
     birthdate: "15 August 1985"
-introduction: "For the last five years, I have been working as a machine learning researcher at INESC TEC. I have just finished my Ph.D. thesis which I will defend very soon. Meanwhile, I have also been working at FEUP as a teacher assistant (TA): teaching Python and C++.
+summary: "For the last five years, I have been working as a machine learning researcher at INESC TEC. I have just finished my Ph.D. thesis which I will defend very soon. Meanwhile, I have also been working at FEUP as a teacher assistant (TA): teaching Python and C++.
 
-As a machine learning researcher, I have worked mostly on deep learning applied to computer vision, using both TensorFlow and PyTorch. In the past, I have participated in many open-source projects and also did much consulting work: on web development (flask), databases (mongo, postgres), multimedia (sdl, gtk, qt), server administration (hpc) and others.
+As a machine learning researcher, I have worked mostly on deep learning applied to computer vision, using both TensorFlow and PyTorch. In the past, I have participated in many open-source projects and also did much freelance work: on web development (flask), databases (mongo, postgres), multimedia (sdl, gtk, qt), server administration (hpc) and others.
 
 In terms of education, I am about to finish my Ph.D. in computer science. I have a masters in applied mathematics and a bachelors in computer science."
 education:
@@ -19,12 +19,12 @@ education:
         date: 2015
         title: MSc in Applied Mathematics
         university: Faculty of Sciences, University of Porto
-        observation: (Grade=18/20)
+        observation: (grade=18/20)
     -
         date: 2012
         title: BSc in Computer Science
         university: Faculty of Sciences, University of Porto
-        observation: (Grade=16/20)
+        observation: (grade=16/20)
 publications:
     -
         date: 2021
@@ -173,8 +173,8 @@ grants:
 awards:
     -
         date: 2020
-        title: "Best Oral Presentation: Training Convolutional Neural Networks to be Background Invariant"
-        where: RECPAD 2020 conference
+        title: "Best Oral Presentation at RECPAD 2020"
+        where: '"Training Convolutional Neural Networks to be Background Invariant"'
         link: https://recpad2020.uevora.pt/
     -
         date: 2021
@@ -237,9 +237,18 @@ projects:
     -
         name: Apoo -- interface for assembly virtual machine (University of Porto)
 skills:
-    programming: [C, C++, Java, Android, Python, R, MATLAB, SQL]
-    mathematics: [machine learning, computer vision, data mining, statistics, modeling, optimization]
-    softskills: [2015 EBEC Competition Fundraising coordinator @ FEUP, 2014 President of the organizing committee of the International Conference DGS III]
+    -
+        skill: Machine learning
+        subskills: [computer vision, tensorflow, pytorch, opencv]
+    -
+        skill: Programming
+        subskills: [C, C++, Java, Android, Python, R, MATLAB, SQL]
+    -
+        skill: Web development
+        subskills: [Javascript, Flask, MySQL, Postgresql, MongoDB]
+    -
+        skill: Scraping
+        subskills: [Selenium]
 others:
     -
         date: 2020

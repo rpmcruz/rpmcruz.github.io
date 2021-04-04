@@ -3,8 +3,9 @@
 \usepackage[a4paper, margin=2cm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage{lmodern}
 \usepackage[scaled=0.85]{beramono}  % bold tt
-\renewcommand{\familydefault}{\ttdefault}
+%\renewcommand{\familydefault}{\ttdefault}
 \setlength{\parindent}{0cm}
 
 \usepackage[english]{babel}
@@ -37,27 +38,31 @@
 \includegraphics[width=\linewidth]{imgs/photo}
 \end{minipage}
 \begin{minipage}{0.88\linewidth}
-\textbf{{'{'}}\large {{ personal['name'] }}{{'}'}}\\
+\tt
+\textbf{{ '{' }}\large {{ personal['name'] }}{{ '}' }}\\
 \raisebox{-0.25\height}{\includegraphics[width=1em]{imgs/email}} \href{mailto:{{ personal.email }}{{'}'}}{{'{'}}{{ personal.email }}{{'}'}}\\
-\raisebox{-0.25\height}{\includegraphics[width=1em]{imgs/www}} \href{{'{'}}{{ personal.webpage }}{{'}'}}{{'{'}}{{ personal.webpage }}{{'}'}}\\
+\raisebox{-0.25\height}{\includegraphics[width=1em]{imgs/www}} \href{{ '{' }}{{ personal.webpage }}{{ '}' }}{{ '{' }}{{ personal.webpage }}{{ '}' }}\\
 {{ personal.phone }} $\bullet$ Valongo, Portugal
 \end{minipage}
 
 \bigskip
-\textcolor{black!80}{\colorbox{black!10}{\begin{minipage}{\linewidth}
-{{ introduction }}
-\end{minipage}}}
+\begin{itemize}
+\itemsep0em
+{% for line in summary.split('\n') %}
+\item {{ line }}
+{% endfor %}
+\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \filbreak
-\caixa{education} Education
+\caixa{education} \textbf{Education}
 
 \bigskip
 \begin{tabular}{p{1mm}lp{46em}}
 {% for item in education %}
-& \tikzmark{e{{ loop.index }}}\textbf{ {{ item.date }} } & {{ item.title }} {{ item.observation }} \\
-& & \textcolor{black!60}{ {{ item.university }} } \\
+& \tikzmark{e{{ loop.index }}}{{ item.date }} & \textbf{{ '{' }}{{ item.title }}{{ '}' }} {{ item.observation }} \\
+& & {{ item.university }} \\
 {% endfor %}
 \end{tabular}
 
@@ -71,13 +76,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \filbreak
-\caixa{career} Career
+\caixa{career} \textbf{Career}
 
 \bigskip
 \begin{tabular}{p{1mm}lp{46em}}
 {% for item in career %}
-& \tikzmark{c{{ loop.index }}}\textbf{ {{ item.date }} } & {{ item.title }} \\
-& & \textcolor{black!60}{ {{ item.where }} } \\
+& \tikzmark{c{{ loop.index }}} {{ item.date }} & \textbf{{ '{' }}{{ item.title }}{{ '}' }} \\
+& & {{ item.where }} \\
 {% endfor %}
 \end{tabular}
 
@@ -88,36 +93,18 @@
 \draw[dashed] let \p1=(pic cs:career), \p2=(pic cs:c{{ career|length }}) in ({2mm,\y1-1mm}) -- ({2mm,\y2+1mm});
 \end{tikzpicture}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\filbreak
-\caixa{others} Other related work
-
-\bigskip
-\begin{tabular}{p{1mm}lp{46em}}
-{% for item in misc %}
-& \tikzmark{o{{ loop.index }}}\textbf{ {{ item.date }} } & {{ item.title }} \\
-& & \textcolor{black!60}{ {{ item.description }} } \\
-{% endfor %}
-\end{tabular}
-
-\begin{tikzpicture}[remember picture, overlay]
-{% for item in misc %}
-\draw[dashed] let \p1=(pic cs:o{{ loop.index }}) in ({2mm,\y1+1mm}) -- ++ (4mm,0);
-{% endfor %}
-\draw[dashed] let \p1=(pic cs:others), \p2=(pic cs:o{{ misc|length }}) in ({2mm,\y1-1mm}) -- ({2mm,\y2+1mm});
-\end{tikzpicture}
+I have also done much freelance work through the years; with emphasis on travel destinations search algorithms (Flykt) and I do regular consulting work for a geography team. See my github for my open-source projects: \url{https://github.com/rpmcruz}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \filbreak
-\caixa{awards} Awards
+\caixa{awards} \textbf{Awards}
 
 \bigskip
 \begin{tabular}{p{1mm}lp{46em}}
 {% for item in awards %}
-& \tikzmark{a{{ loop.index }}}\textbf{ {{ item.date }} } & {{ item.title }} \\
-& & \textcolor{black!60}{ {{ item.where }} } \\
+& \tikzmark{a{{ loop.index }}} {{ item.date }} & \textbf{{ '{' }}{{ item.title }}{{ '}' }} \\
+& & {{ item.where }} \\
 {% endfor %}
 \end{tabular}
 
@@ -131,14 +118,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \filbreak
-\caixa{publications} Publications
+\caixa{publications} \textbf{Publications}
 
 \bigskip
 \begin{tabular}{p{1mm}lp{46em}}
 {% for item in publications %}
-& \tikzmark{p{{ loop.index }}}\textbf{ {{ item.date }} } & {{ item.title }} \\
-& & \textcolor{black!60}{ {{ item.authors }} } \\
-& & \textcolor{black!60}{ {{ item.publisher|replace('&', '\\&') }} } \\
+& \tikzmark{p{{ loop.index }}} {{ item.date }} & \textbf{{ '{' }}{{ item.title }}{{ '}' }} \\
+& & {{ item.authors }} \\
+& & {{ item.publisher|replace('&', '\\&') }} \\
 {% endfor %}
 \end{tabular}
 
@@ -148,13 +135,6 @@
 {% endfor %}
 \draw[dashed] let \p1=(pic cs:publications), \p2=(pic cs:p{{ publications|length }}) in ({2mm,\y1-1mm}) -- ({2mm,\y2+1mm});
 \end{tikzpicture}
-
-\bigskip
-\textcolor{black!80}{\colorbox{black!10}{\begin{minipage}{\linewidth}
-Recommendation contacts will be provided upon request.\\
-Consult my github for more projects: \url{https://github.com/rpmcruz}.
-\end{minipage}}}
-
 
 \end{document}
 
