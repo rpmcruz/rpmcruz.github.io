@@ -52,6 +52,7 @@
 \item {{ line }}
 {% endfor %}
 \end{itemize}
+%I detail some of my work in my youtube channel: \url{https://youtube.com/playlist?list=PL-aMvQIpqXk3aNtEK89y2RclCz_oN_EFh}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -93,7 +94,7 @@
 \draw[dashed] let \p1=(pic cs:career), \p2=(pic cs:c{{ career|length }}) in ({2mm,\y1-1mm}) -- ({2mm,\y2+1mm});
 \end{tikzpicture}
 
-I have also done much freelance work through the years; with emphasis on travel destinations search algorithms (Flykt) and I do regular consulting work for a geography team. See my github for my open-source projects: \url{https://github.com/rpmcruz}.
+I have also done soma freelance work through the years; with emphasis on travel destinations search algorithms (Flykt) and I do regular consulting work for a geography team. See my github for my open-source projects: \url{https://github.com/rpmcruz}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -104,7 +105,10 @@ I have also done much freelance work through the years; with emphasis on travel 
 \begin{tabular}{p{1mm}lp{46em}}
 {% for item in awards %}
 & \tikzmark{a{{ loop.index }}} {{ item.date }} & \textbf{{ '{' }}{{ item.title }}{{ '}' }} \\
-& & {{ item.where }} \\
+%& & {{ item.where }} \\
+{% if item.link %}
+& & \footnotesize\url{{'{'}}{{ item.link }}{{'}'}} \\
+{% endif %}
 {% endfor %}
 \end{tabular}
 
@@ -126,6 +130,9 @@ I have also done much freelance work through the years; with emphasis on travel 
 & \tikzmark{p{{ loop.index }}} {{ item.date }} & \textbf{{ '{' }}{{ item.title }}{{ '}' }} \\
 & & {{ item.authors }} \\
 & & {{ item.publisher|replace('&', '\\&') }} \\
+{% if item.link %}
+& & \footnotesize\url{{'{'}}{{ item.link }}{{'}'}} \\
+{% endif %}
 {% endfor %}
 \end{tabular}
 

@@ -28,6 +28,11 @@ education:
 publications:
     -
         date: 2021
+        title: "Active Supervision: Human in the Loop [submitted]"
+        authors: R. Cruz, ASM Shihavuddin, J. Cardoso
+        publisher: ICANN
+    -
+        date: 2021
         title: Ordinal Losses for Classification of Cervical Cancer Risk [accepted]
         authors: T. Albuquerque, R. Cruz, J. Cardoso
         publisher: PeerJ Computer Science
@@ -172,18 +177,25 @@ grants:
         description: "Port of YaST from Qt to GTK+ with Michael Meeks"
 awards:
     -
+        date: 2021
+        title: "INESC TEC: Nominated researcher extraordinaire"
+        link: https://bip.inesctec.pt/en/especiaisdecorrida/ricardo-cruz-ctm-2/
+    -
+        date: 2021
+        title: "FEUP: Pedagogical Recognition Award"
+        link: https://bip.inesctec.pt/en/noticias/feup-acknowledges-19-inesc-tec-researchers-on-feups-day/
+    -
+        date: 2021
+        title: "FEUP: Sustainable Ideas Award"
+        where: Faculty of Engineering, University of Porto
+    -
         date: 2020
-        title: "Best Oral Presentation at RECPAD 2020"
-        where: '"Training Convolutional Neural Networks to be Background Invariant"'
-        link: https://recpad2020.uevora.pt/
+        title: "Best Oral Presentation at RECPAD 2020 conference"
+        #link: https://recpad2020.uevora.pt/
     -
-        date: 2021
-        title: Pedagogical Recognition Award
-        where: Faculty of Engineering, University of Porto
-    -
-        date: 2021
-        title: Sustainable Ideas
-        where: Faculty of Engineering, University of Porto
+        date: 2018
+        title: "INESC TEC: Nominated for researcher limelight"
+        link: http://bip-archive.inesctec.pt/en/196/fora-de-serie.html
 news:
     -
         date: 2020-10-21
