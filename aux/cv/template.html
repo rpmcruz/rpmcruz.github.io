@@ -8,7 +8,7 @@ active: cv
 
 @% macro escrever(item_id, item, depth) -%@
 @% if item.image %@<p class="float-right"><img src="imgs/cv/@@ item.image @@" width="100"></p>@% endif %@
-<li>@% if item.date %@@@ (item.date|string).replace('--', '&emdash;') @@, @% endif %@@% if item.link %@<a href="@@ item.link @@">@% endif %@<b>@@ item.title @@</b>@% if item.link %@</a>@% endif %@@% if item.subtitle %@<br>@@ item.subtitle @@@% endif %@@% if item.description %@<br><small>@@ item.description @@</small>@% endif %@</li>
+<li>@% if item.date %@@@ (item.date|string).replace('--', '&ndash;') @@, @% endif %@@% if item.link %@<a href="@@ item.link @@">@% endif %@<b>@@ item.title @@</b>@% if item.link %@</a>@% endif %@@% if item.subtitle %@<br>@@ item.subtitle @@@% endif %@@% if item.description %@<br><small>@@ item.description @@</small>@% endif %@</li>
 
 @% if item.tree %@
 <ul>

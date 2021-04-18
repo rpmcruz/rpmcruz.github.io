@@ -4,7 +4,7 @@
         -
             title: PhD in Computer Science [waiting for defense]
             subtitle: co-joint degree between the University of Porto, Minho and Aveiro
-            date: 2021(june?)
+            date: 2016--2021(june?)
             description: >
                 The PhD thesis was on machine learning -- more specifically computer vision (Rethinking a Deep Learning Pipeline for Images).
                 The major highlights from the thesis:
@@ -23,7 +23,7 @@
         -
             title: MSc in Mathematical Engineering [graduated with honors; 18/20]
             subtitle: University of Porto
-            date: 2015
+            date: 2013--2015
             description: >
                 The master's focuses on data:
                 <ol>
@@ -34,7 +34,7 @@
         -
             title: BSc in Computer Science [graduated with honors; 16/20]
             subtitle: University of Porto
-            date: 2012
+            date: 2009--2012
             description: >
                 Curriculum:
                 <ol>
@@ -51,7 +51,7 @@
     tree:
         -
             title: Machine learning
-            subtitle: Weka, SciKit-Learn, PyTorch, TensorFlow
+            subtitle: Weka, Scikit-Learn, PyTorch, TensorFlow
         -
             title: Computer vision
             subtitle: OpenCV, MATLAB
