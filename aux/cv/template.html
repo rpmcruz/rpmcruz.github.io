@@ -1,63 +1,29 @@
 ---
 layout: default
-title: Ricardo Cruz - Work
-active: work
+title: Ricardo Cruz - CV
+active: cv
 ---
 
 <p class="float-right"><img src="imgs/pdf.svg" width="18" height="18"><a href="rpcruz-cv.pdf">PDF version</a></p>
 
-<h5 class="cv" name="education">Education</h5>
-<ul>
-{% for item in education %}
-  <li><b>{{ item.date }} &mdash; {{ item.title }}</b> &mdash; {{ item.university }}{% if item.observation %} <small>{{ item.observation }}</small>{% endif %}</li>
-{% endfor %}
-</ul>
+@% macro escrever(item_id, item, depth) -%@
+@% if item.image %@<p class="float-right"><img src="imgs/cv/@@ item.image @@" width="100"></p>@% endif %@
+<li>@% if item.date %@@@ item.date @@, @% endif %@@% if item.link %@<a href="@@ item.link @@">@% endif %@<b>@@ item.title @@</b>@% if item.link %@</a>@% endif %@@% if item.subtitle %@<br>@@ item.subtitle @@@% endif %@@% if item.description %@<br><small>@@ item.description @@</small>@% endif %@</li>
 
-<h5 class="cv" name="career">Career</h5>
+@% if item.tree %@
 <ul>
-{% for item in career %}
-  <li><b>{{ item.date }} &mdash; {{ item.title }}</b> &mdash; {{ item.where }}</li>
-{% endfor %}
+@% for subitem in item.tree %@
+@% set subitem_id = item_id + loop.index|string %@
+@@ escrever(subitem_id, subitem, 0) @@
+@% endfor %@
 </ul>
-
-<h5 class="cv" name="publications">Publications</h5>
+@% endif %@
+@%- endmacro %@
 
 <ol>
-{% for item in publications %}
-  <li><b><a href="{{ item.link }}" style="color:inherit">{{ item.title }}</a></b><br/>{{ item.authors }}<br/>{{ item.publisher }}, {{ item.date }}</li>
-{% endfor %}
+@% for item in cv %@
+@@ escrever('cv' + loop.index|string, item, 0) @@
+@% endfor %@
 </ol>
-
-<h5 class="cv" name="awards">Awards</h5>
-<ul>
-{% for item in awards %}
-  <li><b>{{ item.date }} &mdash; {{ item.title }}</b> &mdash; {{ item.where }}</li>
-{% endfor %}
-</ul>
-
-<h5 class="cv" name="portfolio">Portfolio</h5>
-
-<div class="no-gutters row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
-{% for item in portfolio %}
-  <div class="col">
-  <a href="{{ item.link }}">
-  <div class="card h-100">
-    <div class="card-body">
-      <h6 class="card-title">{{ item.title }}</h6>
-      <p class="card-text">{{ item.description }}</p>
-      <img class="card-img-top" src="imgs/cv/{{ item.image }}">
-    </div>
-  </a>
-  </div>
-  </div>
-{% endfor %}
-</div>
-
-<p class="mt-3 text-muted">&#x2b95; Consult <a href="https://github.com/rpmcruz?tab=repositories">my GitHub for a listing of open-source projects</a>.</p>
-
-<h5 class="cv" name="skills">Skills</h5>
-
-<b>Programming:</b> {{ skills.programming|join(', ') }}<br>
-<b>Mathematics:</b> {{ skills.mathematics|join(', ') }}
 
 </div>

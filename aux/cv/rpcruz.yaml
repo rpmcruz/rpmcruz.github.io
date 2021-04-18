@@ -1,269 +1,210 @@
-personal:
-    name: Ricardo Pereira de Magalhães Cruz
-    address: Rua Eduardo Joaquim Reis Figueira, 1104, AV, 4440-647 Valongo, Portugal
-    phone: "(+351)934741617"
-    email: ricardo.pdm.cruz@gmail.com
-    webpage: https://rpmcruz.github.io
-    birthdate: "15 August 1985"
-summary: "For the last five years, I have been working as a machine learning researcher at INESC TEC. I have just finished my Ph.D. thesis which I will defend very soon. Meanwhile, I have also been working at FEUP as a teacher assistant (TA): teaching Python and C++.
-
-As a machine learning researcher, I have worked mostly on deep learning applied to computer vision, using both TensorFlow and PyTorch. In the past, I have participated in many open-source projects and also did much freelance work: on web development (flask), databases (mongo, postgres), multimedia (sdl, gtk, qt), server administration (hpc) and others.
-
-In terms of education, I am about to finish my Ph.D. in computer science. I have a masters in applied mathematics and a bachelors in computer science."
-education:
-    -
-        date: (2021)
-        title: PhD in Computer Science (currently waiting for the defense!)
-        university: co-joint University of Porto, Minho and Aveiro
-    -
-        date: 2015
-        title: MSc in Applied Mathematics
-        university: Faculty of Sciences, University of Porto
-        observation: (grade=18/20)
-    -
-        date: 2012
-        title: BSc in Computer Science
-        university: Faculty of Sciences, University of Porto
-        observation: (grade=16/20)
-publications:
-    -
-        date: 2021
-        title: "Active Supervision: Human in the Loop [submitted]"
-        authors: R. Cruz, ASM Shihavuddin, J. Cardoso
-        publisher: ICANN
-    -
-        date: 2021
-        title: Ordinal Losses for Classification of Cervical Cancer Risk [accepted]
-        authors: T. Albuquerque, R. Cruz, J. Cardoso
-        publisher: PeerJ Computer Science
-    -
-        date: 2021
-        title: Background Invariance by Adversarial Learning [accepted]
-        authors: R. Cruz, R. Prates, E. Filho, J. Costa, J. Cardoso
-        publisher: 25th International Conference on Pattern Recognition (ICPR), IEEE
-        image: 2020-backinv.png
-    -
-        date: 2019
-        title: Automatic Augmentation by Hill Climbing
-        authors: R. Cruz, J. Costa, J. Cardoso
-        publisher: 28th International Conference on Artificial Neural Networks (ICANN), Springer
-        link: "https://link.springer.com/chapter/10.1007/978-3-030-30484-3_10"
-        image: 2019-automatic-augmentation.png
-    -
-        date: 2019
-        title: Averse Deep Semantic Segmentation
-        authors: R. Cruz, J. Costa, J. Cardoso
-        publisher: 41st Engineering in Medicine and Biology Conference (EMBC), IEEE
-        link: "https://ieeexplore.ieee.org/abstract/document/8857385"
-        image: 2019-averse-segmentation.png
-    -
-        date: 2019
-        title: Insulator visual non-conformity detection in overhead power distribution lines using deep learning
-        authors: R. Prates, R. Cruz, A. Marotta, R. Ramos, E. Filho, J. Cardoso
-        publisher: Journal Computers & Electrical Engineering, Springer
-        link: "https://www.sciencedirect.com/science/article/pii/S004579061930967X?dgcid=coauthor"
-        image: 2019-insulators.png
-    -
-        date: 2018
-        title: A Class Imbalance Ordinal Method for Alzheimer’s Disease Classification
-        authors: R. Cruz, M. Silveira, J. Cardoso
-        publisher: 2018 International Workshop on Pattern Recognition in Neuroimaging (PRNI), IEEE
-        link: "https://ieeexplore.ieee.org/abstract/document/8423960/"
-        image: 2018-imbalance-alzheimer.png
-    -
-        date: 2018
-        title: 'Binary ranking for ordinal class imbalance'
-        authors: R. Cruz, K. Fernandes, J. Costa, M. Pérez Ortiz, J. Cardoso
-        publisher: Journal Pattern Analysis and Applications, Springer
-        link: "https://link.springer.com/epdf/10.1007/s10044-018-0705-4?author_access_token=p2L5jwabAzmA-hENM_mugfe4RwlQNchNByi7wbcMAY42mOH72RPQeb098_tyy79R09eJLVa1A5i0Fl8_sgW1ks0WseTTuEtHZyi1eB8zBX3Z7vgZBxHJZ3x26EzyODMrDn4oUkmT-tVcZK4oD3u4vQ%3D%3D"
-        image: 2018-imbalance-ordinal.png
-    -
-        date: 2018
-        title: Deep image segmentation by quality inference
-        authors: K. Fernandes, R. Cruz, J. Cardoso
-        publisher: International Joint Conference on Neural Networks (IJCNN), IEEE
-        link: "https://ieeexplore.ieee.org/abstract/document/8489696/"
-        image: 2018-oracle.png
-    -
-        date: 2017
-        title: "Constraining type II error: building intentionally biased classifiers"
-        authors: R. Cruz, K. Fernandes, J. Costa, J. Cardoso
-        publisher: International Work-conference on Artificial Neural Networks (IWANN), Springer
-        link: "https://link.springer.com/chapter/10.1007/978-3-319-59147-6_47"
-        image: 2017-averse.png
-    -
-        date: 2017
-        title: "Fine-to-coarse ranking in ordinal and imbalanced domains: an application to liver transplantation"
-        authors: M. Pérez-Ortiz, K. Fernandes, R. Cruz, J. Cardoso
-        publisher: International Work-conference on Artificial Neural Networks (IWANN), Springer
-        link: "https://link.springer.com/chapter/10.1007/978-3-319-59147-6_45"
-        image: 2017-imbalance-coarse.png
-    -
-        date: 2017
-        title: Combining ranking with traditional methods for ordinal class imbalance
-        authors: R. Cruz, K. Fernandes, J. Costa, M. Pérez-Ortiz, J. Cardoso
-        publisher: International Work-conference on Artificial Neural Networks (IWANN), Springer
-        link: "https://link.springer.com/chapter/10.1007/978-3-319-59147-6_46"
-        image: 2017-imbalance-combine.png
-    -
-        date: 2017
-        title: Ordinal class imbalance with ranking
-        authors: R. Cruz, K. Fernandes, J. Costa, M. Pérez-Ortiz, J. Cardoso
-        publisher: Iberian conference on pattern recognition and image analysis (Ibpria), Springer
-        link: "https://link.springer.com/chapter/10.1007/978-3-319-58838-4_1"
-        image: 2017-imbalance-ordinal.png
-    -
-        date: 2016
-        title: Tackling class imbalance with ranking
-        authors: R. Cruz, K. Fernandes, J. Costa, J. Cardoso
-        publisher: International Joint Conference on Neural Networks (IJCNN), IEEE
-        link: "http://ieeexplore.ieee.org/abstract/document/7727469/"
-        image: 2016-imbalance-binary.png
-career:
-    -
-        date: 2018--2021
-        title: Teacher Assistant (Python and C/C++)
-        where: Faculty of Engineering, University of Porto
-        courses: Programming Fundamentals (with Prof. João Correia Lopes, Rui Camacho) and Programming (with Prof. Jorge Silva)
-    -
-        date: 2016--2020
-        title: PhD Grant (deep learning and computer vision)
-        where: INESC TEC
-    -
-        date: 2015
-        title: Research Grant (machine learning)
-        where: INESC TEC
-    -
-        date: 2014
-        title: Research Grant (epidemiology modelling)
-        where: Mathematics Center of the University of Porto
-    -
-        date: 2007
-        title: "Google Grant: Summer of Code (dynamic layouts)"
-        where: OpenOffice.org
-    -
-        date: 2006
-        title: "Google Grant: Summer of Code (YaST GTK port)"
-        where: Novell / openSUSE
-misc:
-    -
-        date: 2018-2020
-        title: Consulting for a geography team at FLUP
-        description: In total, I have done seven scraping and automation jobs.
-    -
-        date: 2018-2019
-        title: Mentor at Coursera
-        description: "Andrew Ng's course on Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization"
-    -
-        date: 2014
-        title: Consulting at Flykt
-        description: Search algorithms for travel destinations.
-grants:
-    -
-        date: Nov 2015 - Dec 2016
-        by: "FCT Grant at INESC TEC"
-        description: "Class imbalance and risk aversion in machine learning with Prof. Jaime S. Cardoso"
-    -
-        date: Sept-Dec 2014
-        by: "FCT Grant at the Centre of Mathematics of the University of Porto"
-        description: "Mathematical HIV immune response modelling"
-    -
-        date: 2007
-        by: "Google Summer of Code"
-        description: "Redesign of OpenOffice.org layout engine (C++) with Michael Meeks"
-    -
-        date: 2006
-        by: "Google Summer of Code"
-        description: "Port of YaST from Qt to GTK+ with Michael Meeks"
-awards:
-    -
-        date: 2021
-        title: "INESC TEC: Nominated researcher extraordinaire"
-        link: https://bip.inesctec.pt/en/especiaisdecorrida/ricardo-cruz-ctm-2/
-    -
-        date: 2021
-        title: "FEUP: Pedagogical Recognition Award"
-        link: https://bip.inesctec.pt/en/noticias/feup-acknowledges-19-inesc-tec-researchers-on-feups-day/
-    -
-        date: 2021
-        title: "FEUP: Sustainable Ideas Award"
-        where: Faculty of Engineering, University of Porto
-    -
-        date: 2020
-        title: "Best Oral Presentation at RECPAD 2020 conference"
-        #link: https://recpad2020.uevora.pt/
-    -
-        date: 2018
-        title: "INESC TEC: Nominated for researcher limelight"
-        link: http://bip-archive.inesctec.pt/en/196/fora-de-serie.html
-news:
-    -
-        date: 2020-10-21
-        title: INESC TEC coorganizou workshop sobre interpretabilidade de algoritmos de inteligência artificial
-        link: http://bip.inesctec.pt/noticias/inesc-tec-coorganizou-workshop-sobre-interpretabilidade-de-algoritmos-de-inteligencia-artificial/
-    -
-        date: 2018-Sept
-        title: INESC TEC Limelight nominee
-        link: http://bip-archive.inesctec.pt/en/196/fora-de-serie.html
-portfolio:
-    -
-        title: PhD work
-        description: A summary of my work as a PhD student and researcher.
-        link: https://youtu.be/UmacXvbCfgQ
-        image: 2020-backinv.png
-    -
-        title: Web development
-        description: This is a web application I have developed while an assistant teacher at FEUP, teaching Python for first-year students.
-        link: https://youtu.be/NR-jLv9v9Mw
-        image: portfolio-fproweb.png
-    -
-        title: Apoo and other GUI applications
-        description: Apoo was an Assembly virtual machine whose user interface I developed. I also show other of my past graphical user interfaces.
-        link: https://youtu.be/0aqVEiaFqCQ
-        image: portfolio-apoo.png
-    -
-        title: Multimedia/games
-        description: Some games I developed as a kid, and also some games developed by my first-year students when I was an assistant teacher at FEUP during my PhD, teaching Python.
-        link: https://youtu.be/sbtkC9wCWrs
-        image: portfolio-supertux.jpg
-    -
-        title: Java small games
-        description: Some small games I did in Java Mobile Edition and Android.
-        link: https://youtu.be/9hzaNDnzvqI
-        image: portfolio-j2me.png
-    -
-        title: Google Summer of Code 2006 and 2007
-        description: My experience participating in two editions of Google Summer of Code.
-        link: https://youtu.be/euX8TukTiEA
-        image: portfolio-yast2-gtk.png
-    -
-        title: Scraping
-        description: My experience doing some scraping work; that is, extracting information from the internet.
-        link: https://youtu.be/nPaxHV3ktI0
-        image: portfolio-scrap.png
-projects:
-    -
-        name: Google Summer of Code 2006 (openSUSE)
-    -
-        name: Google Summer of Code 2007 (OpenOffice.org, now LibreOffice)
-    -
-        name: Apoo -- interface for assembly virtual machine (University of Porto)
-skills:
-    -
-        skill: Machine learning
-        subskills: [computer vision, tensorflow, pytorch, opencv]
-    -
-        skill: Programming
-        subskills: [C, C++, Java, Android, Python, R, MATLAB, SQL]
-    -
-        skill: Web development
-        subskills: [Javascript, Flask, MySQL, Postgresql, MongoDB]
-    -
-        skill: Scraping
-        subskills: [Selenium]
-others:
-    -
-        date: 2020
-        title: Co-editor of iMIMIC 2020 workshop proceedings
-        description: Interpretable and Annotation-Efficient Learning for Medical Image Computing
-        link: "https://www.springer.com/gp/book/9783030611651"
+-
+    title: Education
+    tree:
+        -
+            title: PhD in Computer Science [waiting for defense]
+            subtitle: co-joint degree between the University of Porto, Minho and Aveiro
+            date: 2021(june?)
+            description: >
+                The PhD thesis was on machine learning -- more specifically computer vision (Rethinking a Deep Learning Pipeline for Images).
+                The major highlights from the thesis:
+            tree:
+                -
+                    title: Background invariant training applied to electrical insulator detection
+                    description: >
+                        Deep learning methods are vulnerable to changes in background, even if they do not affect the object of interest. We show that adversarial training (similar to GANs) can be used to greatly ameliorate this problem. The method was applied to electrical insulator detection, in collaboration with a team from Brazil.
+                    image: cv-prates.jpg
+                -
+                    title: Improving accuracy under class imbalance conditions using ranking
+                    description: "Sometimes not all groups are well-represented in the data: consider patients with differing disease severity, or fraud and fault detection where the anomaly is rare, or racial under-representation. We have borrowed concepts from the ranking literature to improve on the classification accuracy of these under-represented cases."
+                -
+                    title: Iterative inference
+                    description: "Deep learning predictions are typically produced in a single-shot during the forward-pass. The proposed method allows for predictions to take place during the backward-pass and be, therefore, iterative. This allows incremental improvements of the decisions, including those generated by third-party machine learning models."
+        -
+            title: MSc in Mathematical Engineering [graduated with honors; 18/20]
+            subtitle: University of Porto
+            date: 2015
+            description: >
+                The masters focuses on data:
+                <ol>
+                <li>from machine learning to statistics</li>
+                <li>optimization and mathematical modelling.</li>
+                </ol>
+                My thesis consisted of a critical review on a wide range of families of models (differential equations, stochastic simulations, cellular automata, etc) applied to epidemiology, more specifically HIV-1 immune response. The thesis was funded by a grant from the Mathematics Center of the University of Porto (CMUP).
+        -
+            title: BSc in Computer Science [graduated with honors; 16/20]
+            subtitle: University of Porto
+            date: 2012
+            description: >
+                Curriculum:
+                <ol>
+                <li>Practical programming foundations: C, Java, design patterns, web development, SQL, etc</li>
+                <li>Theoretical computer science: data structures, automata theory, lambda calculus.</li>
+                </ol>
+            tree:
+                -
+                    title: Apoo, a virtual machine
+                    description: During my bachelors, I helped with the development of Apoo (together with Profs Rogério Reis and Nelma Moreira), a virtual machine that is currently being used to teach Assembly. Apoo is written in Python and GTK+.
+                    image: cv-apoo.png
+-
+    title: Skills
+    tree:
+        -
+            title: Machine learning
+            subtitle: scikit-learn, pytorch, tensorflow
+        -
+            title: Computer vision
+            subtitle: OpenCV, MATLAB
+        -
+            title: Programming
+            subtitle: Python, C/C++, Java, R, HTML/Javascript
+        -
+            title: Databases
+            subtitle: Postgres, Mongo, MySQL
+        -
+            title: Web development
+            subtitle: Flask
+-
+    title: Career
+    tree:
+        -
+            title: Teacher Assistant @ Faculty of Engineering, University of Porto
+            subtitle: Teaching Python (EIC0005) and C/C++ (EIC0012) to 1st-year students. I teach one/two classes per semester, I have developed an assignment website (in Flask and Postgres), and I help with the materials and assist students in their projects.
+            date: 2018--2021
+            tree:
+                -
+                    date: 2021
+                    title: "Award: Pedagogical Recognition Award @ FEUP"
+                    description: https://bip.inesctec.pt/en/noticias/feup-acknowledges-19-inesc-tec-researchers-on-feups-day/
+                -
+                    date: 2021
+                    title: "Award: Sustainable Ideas Award @ FEUP"
+        -
+            title: PhD grant @ INESC TEC
+            subtitle: Published over ten papers (see below) on machine learning and computer vision.
+            date: 2016-2021
+            tree:
+                -
+                    date: 2021
+                    title: "Award: Nominated researcher extraordinaire @ INESC TEC"
+                    description: https://bip.inesctec.pt/en/especiaisdecorrida/ricardo-cruz-ctm-2/
+                -
+                    date: 2020
+                    title: "Award: Best Oral Presentation at conference RECPAD 2020"
+                -
+                    date: 2018
+                    title: "Award: Nominated for researcher limelight @ INESC TEC"
+                    description: http://bip-archive.inesctec.pt/en/196/fora-de-serie.html
+        -
+            title: Research grant @ INESC TEC
+            subtitle: Research on class imbalance and risk aversion.
+            date: 2015
+        -
+            title: Research grant @ the Mathematics Center of the University of Porto
+            subtitle: "Research on epidemiological models: from differential equations to stochastic simulations and cellular automata."
+            date: 2014
+        -
+            title: "Google Grant: Summer of Code program"
+            subtitle: This program from Google funds open-source contributions. I have participated in two editions, both with Novell to improve SUSE (YaST) and LibreOffice.
+            date: 2006 and 2007
+            tree:
+                -
+                    title: "YaST GTK+ port"
+                    description: I have worked with Michael Meeks from Novell to develop the GTK+ module for YaST, which is a configuration tool written in C++.
+                -
+                    title: "LibreOffice dynamic layouts"
+                    description: I have worked with Michael Meeks from Novell to add dynamic geometry layouts to LibreOffice (at the time, OpenOffice.org) -- this is an office suite written in C++.
+        -
+            title: Freelance and startup
+            subtitle: I have participated in a startup aimed at searching for low-cost travel destinations (doing NLP) and I have done regular consulting work, especially for a geography group.
+-
+    title: Open Source and Competitions
+    tree:
+        -
+            title: Avito NLP competition @ Kaggle
+            subtitle: Machine learning competition involving text (NLP). Received bronze award for results and silver award for engagement.
+        -
+            title: EatFeed
+            subtitle: RSS/Atom reader written in C++ and GTK+. https://github.com/rpmcruz/eatfeed
+            image: cv-eatfeed.png
+            link: https://github.com/rpmcruz/eatfeed
+        -
+            title: J2ME and Android games
+            subtitle: A couple of games written in Java for Android and older mobile phones.
+            link: https://github.com/rpmcruz/android-games
+        -
+            title: SuperTux, co-author
+            subtitle: As a kid, I was one of the initial team authors who came together in an internet forum and organized the development of this game. It is written in C++, SDL and OpenGL. https://www.supertux.org/
+            image: cv-supertux.jpg
+            link: https://www.supertux.org/
+-
+    title: Publications
+    subtitle: 'These are publications in international publications. They are quite broad since the PhD consisted of "re-thinking" the deep learning/computer vision pipeline; they range from active learning to ordinal classification, adversarial learning, hyperparameter search and class imbalance.'
+    tree:
+        -
+            date: 2021
+            title: "Active Supervision: Human in the Loop [submitted]"
+            subtitle: R. Cruz, ASM Shihavuddin, J. Cardoso. ICANN
+        -
+            date: 2021
+            title: Ordinal Losses for Classification of Cervical Cancer Risk [accepted]
+            subtitle: T. Albuquerque, R. Cruz, J. Cardoso. PeerJ Computer Science
+        -
+            date: 2021
+            title: Background Invariance by Adversarial Learning [accepted]
+            subtitle: R. Cruz, R. Prates, E. Filho, J. Costa, J. Cardoso. 25th International Conference on Pattern Recognition (ICPR), IEEE
+        -
+            date: 2019
+            title: Automatic Augmentation by Hill Climbing
+            subtitle: R. Cruz, J. Costa, J. Cardoso. 28th International Conference on Artificial Neural Networks (ICANN), Springer
+            link: "https://link.springer.com/chapter/10.1007/978-3-030-30484-3_10"
+        -
+            date: 2019
+            title: Averse Deep Semantic Segmentation
+            subtitle: R. Cruz, J. Costa, J. Cardoso. 41st Engineering in Medicine and Biology Conference (EMBC), IEEE
+            link: "https://ieeexplore.ieee.org/abstract/document/8857385"
+        -
+            date: 2019
+            title: Insulator visual non-conformity detection in overhead power distribution lines using deep learning
+            subtitle: R. Prates, R. Cruz, A. Marotta, R. Ramos, E. Filho, J. Cardoso. Journal Computers & Electrical Engineering, Springer
+            link: "https://www.sciencedirect.com/science/article/pii/S004579061930967X?dgcid=coauthor"
+        -
+            date: 2018
+            title: A Class Imbalance Ordinal Method for Alzheimer’s Disease Classification
+            subtitle: R. Cruz, M. Silveira, J. Cardoso. 2018 International Workshop on Pattern Recognition in Neuroimaging (PRNI), IEEE
+            link: "https://ieeexplore.ieee.org/abstract/document/8423960/"
+        -
+            date: 2018
+            title: 'Binary ranking for ordinal class imbalance'
+            subtitle: R. Cruz, K. Fernandes, J. Costa, M. Pérez Ortiz, J. Cardoso. Journal Pattern Analysis and Applications, Springer
+            link: "https://link.springer.com/epdf/10.1007/s10044-018-0705-4?author_access_token=p2L5jwabAzmA-hENM_mugfe4RwlQNchNByi7wbcMAY42mOH72RPQeb098_tyy79R09eJLVa1A5i0Fl8_sgW1ks0WseTTuEtHZyi1eB8zBX3Z7vgZBxHJZ3x26EzyODMrDn4oUkmT-tVcZK4oD3u4vQ%3D%3D"
+        -
+            date: 2018
+            title: Deep image segmentation by quality inference
+            subtitle: K. Fernandes, R. Cruz, J. Cardoso. International Joint Conference on Neural Networks (IJCNN), IEEE
+            link: "https://ieeexplore.ieee.org/abstract/document/8489696/"
+        -
+            date: 2017
+            title: "Constraining type II error: building intentionally biased classifiers"
+            subtitle: R. Cruz, K. Fernandes, J. Costa, J. Cardoso. International Work-conference on Artificial Neural Networks (IWANN), Springer
+            link: "https://link.springer.com/chapter/10.1007/978-3-319-59147-6_47"
+        -
+            date: 2017
+            title: "Fine-to-coarse ranking in ordinal and imbalanced domains: an application to liver transplantation"
+            subtitle: M. Pérez-Ortiz, K. Fernandes, R. Cruz, J. Cardoso. International Work-conference on Artificial Neural Networks (IWANN), Springer
+            link: "https://link.springer.com/chapter/10.1007/978-3-319-59147-6_45"
+        -
+            date: 2017
+            title: Combining ranking with traditional methods for ordinal class imbalance
+            subtitle: R. Cruz, K. Fernandes, J. Costa, M. Pérez-Ortiz, J. Cardoso. International Work-conference on Artificial Neural Networks (IWANN), Springer
+            link: "https://link.springer.com/chapter/10.1007/978-3-319-59147-6_46"
+        -
+            date: 2017
+            title: Ordinal class imbalance with ranking
+            subtitle: R. Cruz, K. Fernandes, J. Costa, M. Pérez-Ortiz, J. Cardoso. Iberian conference on pattern recognition and image analysis (Ibpria), Springer
+            link: "https://link.springer.com/chapter/10.1007/978-3-319-58838-4_1"
+        -
+            date: 2016
+            title: Tackling class imbalance with ranking
+            subtitle: R. Cruz, K. Fernandes, J. Costa, J. Cardoso. International Joint Conference on Neural Networks (IJCNN), IEEE
+            link: "http://ieeexplore.ieee.org/abstract/document/7727469/"

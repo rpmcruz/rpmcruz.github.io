@@ -1,19 +1,16 @@
-\documentclass[10pt]{article}
+\documentclass[11pt]{article}
 
 \usepackage[a4paper, margin=2cm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage{lmodern}
-\usepackage[scaled=0.85]{beramono}  % bold tt
-%\renewcommand{\familydefault}{\ttdefault}
-\setlength{\parindent}{0cm}
-
 \usepackage[english]{babel}
 \usepackage{graphicx}
 \usepackage[hidelinks]{hyperref}
 \usepackage{xcolor}
 \definecolor{dark-blue}{rgb}{0.15,0.15,0.4}
 \hypersetup{colorlinks, linkcolor={dark-blue}, citecolor={dark-blue}, urlcolor={dark-blue}}
+\usepackage[scaled=0.85]{beramono}
+\setlength{\parindent}{0cm}
 
 \usepackage{lastpage}
 \usepackage{fancyhdr}
@@ -21,127 +18,90 @@
 \renewcommand{\headrulewidth}{0pt}
 \cfoot{Page \thepage\ of \pageref{LastPage}}
 
+\usepackage{changepage}
 \usepackage{tikz}
 \usetikzlibrary{tikzmark, calc}
 
-\newcommand{\caixa}[1]{\bigskip\tikzmark{{'{#'}}1}%
-\raisebox{-0.8mm}{\begin{tikzpicture}
-\draw[thick] (0,0) rectangle (0.35,0.35);
-\draw[thick] (0.1,0.175) -- (0.25,0.175);
-\end{tikzpicture}}}
+\newcommand{\caixaaberta}[1]{\tikzmark{#1}%
+\begin{tikzpicture}[thick, black!70, xshift=-1.5em, overlay, baseline=0.5pt]
+\draw (0,0) rectangle (0.3,0.3);
+\draw (0.1,0.15) -- (0.2,0.15);
+\end{tikzpicture}}
 
+\newcommand{\caixafechada}[1]{\tikzmark{#1}%
+\begin{tikzpicture}[thick, black!70, xshift=-1.5em, overlay, baseline=0.5pt]
+\draw (0,0) rectangle (0.3,0.3);
+\draw (0.1,0.15) -- (0.2,0.15);
+\draw (0.15,0.1) -- (0.15,0.2);
+\end{tikzpicture}}
 
 \begin{document}
 
 % photo and personal information
-\begin{minipage}{0.12\linewidth}
-\includegraphics[width=\linewidth]{imgs/photo}
-\end{minipage}
-\begin{minipage}{0.88\linewidth}
+\fcolorbox{black!25}{black!5}{\begin{minipage}{\linewidth}
 \tt
-\textbf{{ '{' }}\large {{ personal['name'] }}{{ '}' }}\\
-\raisebox{-0.25\height}{\includegraphics[width=1em]{imgs/email}} \href{mailto:{{ personal.email }}{{'}'}}{{'{'}}{{ personal.email }}{{'}'}}\\
-\raisebox{-0.25\height}{\includegraphics[width=1em]{imgs/www}} \href{{ '{' }}{{ personal.webpage }}{{ '}' }}{{ '{' }}{{ personal.webpage }}{{ '}' }}\\
-{{ personal.phone }} $\bullet$ Valongo, Portugal
-\end{minipage}
-
-\bigskip
-\begin{itemize}
-\itemsep0em
-{% for line in summary.split('\n') %}
-\item {{ line }}
-{% endfor %}
-\end{itemize}
-%I detail some of my work in my youtube channel: \url{https://youtube.com/playlist?list=PL-aMvQIpqXk3aNtEK89y2RclCz_oN_EFh}
+\textbf{\large Ricardo Cruz}\\
+\raisebox{-0.25\height}{\includegraphics[width=1em]{imgs/email}} \href{mailto:ricardo.pdm.cruz@gmail.com}{ricardo.pdm.cruz@gmail.com}\\
+\raisebox{-0.25\height}{\includegraphics[width=1em]{imgs/www}} \href{https://rpmcruz.github.io/}{https://rpmcruz.github.io/}\\
++351 934741617 $\bullet$ Valongo, Portugal
+\end{minipage}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+@% macro massajar(text) -%@
+@@ myurlize(text
+    .replace('<i>', '\\textit{').replace('</i>', '}')
+    .replace('<b>', '\\textbf{').replace('</b>', '}')
+    .replace('<ol>', '\\begin{itemize}').replace('</ol>', '\end{itemize}')
+    .replace('<li>', '\\item ').replace('</li>', '')
+    .replace('&', '\\& ')
+    .replace(' "', ' ``').replace('" ', "'' ")
+    .replace('\n', '\n\n'), '\\\\url{', '}') @@
+@%- endmacro %@
+
+@% macro escrever(item_id, item, depth) -%@
+@% if depth < 2 %@
+\smallskip
+@% if item.tree %@\caixaaberta{@@ item_id @@}@% else %@\caixafechada{@@ item_id @@}@% endif %@
+@% if item.date %@@@ item.date @@, @% endif %@\textbf{@@ item.title @@}@% if item.subtitle %@\\@%if item.image %@\begin{minipage}[t]{0.88\linewidth}@% endif %@@@ massajar(item.subtitle) @@@%if item.image %@\end{minipage}\hfill\begin{minipage}[t]{0.1\linewidth}\strut\vspace*{-\baselineskip}\newline\includegraphics[width=\linewidth]{imgs/@@ item.image @@}\end{minipage}@% endif %@@% endif %@
+
+@% if item.description %@\begin{adjustwidth}{1.5em}{}\footnotesize @@ massajar(item.description) @@\end{adjustwidth}@% endif %@
+@% else %@
+\begin{minipage}[t]{@%if item.image %@0.88@% endif %@\linewidth}
+@% if item.tree %@\caixaaberta{@@ item_id @@}@% else %@\caixafechada{@@ item_id @@}@% endif %@\color{black!70}\footnotesize@% if item.date %@ @@ item.date @@, @% endif %@\textbf{@@ item.title @@@% if item.description %@:@% endif %@}@% if item.description %@ @@ massajar(item.description) @@@% endif %@
+\vspace{2pt}\end{minipage}@%if item.image %@\hfill\begin{minipage}[t]{0.1\linewidth}\strut\vspace*{-\baselineskip}\newline\includegraphics[width=\linewidth]{imgs/@@ item.image @@}\end{minipage}@% endif %@
+@% endif %@
+
+@% if item.tree %@%
+\begin{adjustwidth}{1.5em}{}%
+@% for subitem in item.tree %@@% set subitem_id = item_id + loop.index|string %@%
+@@ escrever(subitem_id, subitem, depth+1) @@%
+@% endfor %@%
+\end{adjustwidth}%
+@% endif %@
+@%- endmacro %@
+
+@% macro desenhar(item_id, item, depth) -%@
+@% if item.tree %@%
+@% for subitem in item.tree %@@% set subitem_id = item_id + loop.index|string %@%
+@@ desenhar(subitem_id, subitem, depth+1) @@%
+\draw[dashed, black!60] let \p1=(pic cs:@@ subitem_id @@) in ({\x1-9mm,\y1+1mm}) -- (\x1-6mm,\y1+1mm);
+@% endfor %@%
+\draw[dashed, black!60] let \p1=(pic cs:@@ item_id @@), \p2=(pic cs:@@ item_id @@@@ item.tree|length @@) in ({\x1-4mm,\y1-1mm}) -- ({\x1-4mm,\y2+1mm});
+@% endif %@%
+@%- endmacro %@
+
+
+\medskip
+\begin{adjustwidth}{1.5em}{}%
+@% for item in cv %@
 \filbreak
-\caixa{education} \textbf{Education}
-
-\bigskip
-\begin{tabular}{p{1mm}lp{46em}}
-{% for item in education %}
-& \tikzmark{e{{ loop.index }}}{{ item.date }} & \textbf{{ '{' }}{{ item.title }}{{ '}' }} {{ item.observation }} \\
-& & {{ item.university }} \\
-{% endfor %}
-\end{tabular}
-
-\begin{tikzpicture}[remember picture, overlay]
-{% for item in education %}
-\draw[dashed] let \p1=(pic cs:e{{ loop.index }}) in ({2mm,\y1+1mm}) -- ++ (4mm,0);
-{% endfor %}
-\draw[dashed] let \p1=(pic cs:education), \p2=(pic cs:e{{ education|length }}) in ({2mm,\y1-1mm}) -- ({2mm,\y2+1mm});
-\end{tikzpicture}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\filbreak
-\caixa{career} \textbf{Career}
-
-\bigskip
-\begin{tabular}{p{1mm}lp{46em}}
-{% for item in career %}
-& \tikzmark{c{{ loop.index }}} {{ item.date }} & \textbf{{ '{' }}{{ item.title }}{{ '}' }} \\
-& & {{ item.where }} \\
-{% endfor %}
-\end{tabular}
-
-\begin{tikzpicture}[remember picture, overlay]
-{% for item in career %}
-\draw[dashed] let \p1=(pic cs:c{{ loop.index }}) in ({2mm,\y1+1mm}) -- ++ (4mm,0);
-{% endfor %}
-\draw[dashed] let \p1=(pic cs:career), \p2=(pic cs:c{{ career|length }}) in ({2mm,\y1-1mm}) -- ({2mm,\y2+1mm});
-\end{tikzpicture}
-
-I have also done soma freelance work through the years; with emphasis on travel destinations search algorithms (Flykt) and I do regular consulting work for a geography team. See my github for my open-source projects: \url{https://github.com/rpmcruz}.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\filbreak
-\caixa{awards} \textbf{Awards}
-
-\bigskip
-\begin{tabular}{p{1mm}lp{46em}}
-{% for item in awards %}
-& \tikzmark{a{{ loop.index }}} {{ item.date }} & \textbf{{ '{' }}{{ item.title }}{{ '}' }} \\
-%& & {{ item.where }} \\
-{% if item.link %}
-& & \footnotesize\url{{'{'}}{{ item.link }}{{'}'}} \\
-{% endif %}
-{% endfor %}
-\end{tabular}
-
-\begin{tikzpicture}[remember picture, overlay]
-{% for item in awards %}
-\draw[dashed] let \p1=(pic cs:a{{ loop.index }}) in ({2mm,\y1+1mm}) -- ++ (4mm,0);
-{% endfor %}
-\draw[dashed] let \p1=(pic cs:awards), \p2=(pic cs:a{{ awards|length }}) in ({2mm,\y1-1mm}) -- ({2mm,\y2+1mm});
-\end{tikzpicture}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\filbreak
-\caixa{publications} \textbf{Publications}
-
-\bigskip
-\begin{tabular}{p{1mm}lp{46em}}
-{% for item in publications %}
-& \tikzmark{p{{ loop.index }}} {{ item.date }} & \textbf{{ '{' }}{{ item.title }}{{ '}' }} \\
-& & {{ item.authors }} \\
-& & {{ item.publisher|replace('&', '\\&') }} \\
-{% if item.link %}
-& & \footnotesize\url{{'{'}}{{ item.link }}{{'}'}} \\
-{% endif %}
-{% endfor %}
-\end{tabular}
-
-\begin{tikzpicture}[remember picture, overlay]
-{% for item in publications %}
-\draw[dashed] let \p1=(pic cs:p{{ loop.index }}) in ({2mm,\y1+1mm}) -- ++ (4mm,0);
-{% endfor %}
-\draw[dashed] let \p1=(pic cs:publications), \p2=(pic cs:p{{ publications|length }}) in ({2mm,\y1-1mm}) -- ({2mm,\y2+1mm});
-\end{tikzpicture}
+@@ escrever('cv' + loop.index|string, item, 0) @@
+\begin{tikzpicture}[overlay, remember picture]
+@@ desenhar('cv' + loop.index|string, item, 0) @@
+\end{tikzpicture}%
+@% endfor %@
+\end{adjustwidth}%
 
 \end{document}
 
