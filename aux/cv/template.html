@@ -8,7 +8,7 @@ active: cv
 
 @% macro escrever(item_id, item, depth) -%@
 @% if item.image %@<p class="float-right"><img src="imgs/cv/@@ item.image @@" width="100"></p>@% endif %@
-<li>@% if item.date %@@@ item.date @@, @% endif %@@% if item.link %@<a href="@@ item.link @@">@% endif %@<b>@@ item.title @@</b>@% if item.link %@</a>@% endif %@@% if item.subtitle %@<br>@@ item.subtitle @@@% endif %@@% if item.description %@<br><small>@@ item.description @@</small>@% endif %@</li>
+<li>@% if item.date %@@@ (item.date|string).replace('--', '&emdash;') @@, @% endif %@@% if item.link %@<a href="@@ item.link @@">@% endif %@<b>@@ item.title @@</b>@% if item.link %@</a>@% endif %@@% if item.subtitle %@<br>@@ item.subtitle @@@% endif %@@% if item.description %@<br><small>@@ item.description @@</small>@% endif %@</li>
 
 @% if item.tree %@
 <ul>
@@ -20,10 +20,16 @@ active: cv
 @% endif %@
 @%- endmacro %@
 
-<ol>
+@####### MAIN #######@
+
 @% for item in cv %@
-@@ escrever('cv' + loop.index|string, item, 0) @@
+<h5 class="cv" name="@@ item.title.replace(' ', '').lower() @@">@@ item.title @@</h5>
+@% if item.subtitle %@<p>@@ item.subtitle @@</p>@% endif %@
+<ol>
+@% for subitem in item.tree %@
+@@ escrever('cv' + loop.index|string, subitem, 0) @@
 @% endfor %@
 </ol>
+@% endfor %@
 
 </div>
