@@ -51,13 +51,13 @@
     tree:
         -
             title: Machine learning
-            subtitle: scikit-learn, pytorch, tensorflow
+            subtitle: Weka, SciKit-Learn, PyTorch, TensorFlow
         -
             title: Computer vision
             subtitle: OpenCV, MATLAB
         -
             title: Programming
-            subtitle: Python, C/C++, Java, R, HTML/Javascript
+            subtitle: Python, C/C++, Java, R, VBA, HTML/Javascript
         -
             title: Databases
             subtitle: Postgres, Mongo, MySQL
