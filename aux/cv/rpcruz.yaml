@@ -69,7 +69,7 @@
     tree:
         -
             title: Teacher Assistant @ Faculty of Engineering, University of Porto
-            subtitle: Teaching Python (EIC0005) and C/C++ (EIC0012) to 1st-year students. I teach one/two classes per semester, I have developed an assignment website (in Flask and Postgres), and I help with the materials and assist students in their projects.
+            subtitle: Teaching Python (EIC0005) and C/C++ (EIC0012) to 1st-year students. I teach one/two classes per semester, I have developed an assignment website (in Flask and Postgres), and I also help with the materials and assist students in their projects.
             date: 2018--2021
             tree:
                 -
@@ -139,7 +139,7 @@
             link: https://www.supertux.org/
 -
     title: Publications
-    subtitle: 'These are publications in international publications. They are quite broad since the PhD consisted of "re-thinking" the deep learning/computer vision pipeline; they range from active learning to ordinal classification, adversarial learning, hyperparameter search and class imbalance.'
+    subtitle: 'These are papers in international conferences and journals. The PhD consisted of "re-thinking" several aspects of the deep learning/computer vision pipeline; they range from active learning to ordinal classification, adversarial learning, hyperparameter search and class imbalance.'
     tree:
         -
             date: 2021

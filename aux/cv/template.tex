@@ -25,14 +25,14 @@
 \newcommand{\caixaaberta}[1]{\tikzmark{#1}%
 \begin{tikzpicture}[thick, black!70, xshift=-1.5em, overlay, baseline=0.5pt]
 \draw (0,0) rectangle (0.3,0.3);
-\draw (0.1,0.15) -- (0.2,0.15);
+\draw (0.1-0.02,0.15) -- (0.2+0.02,0.15);
 \end{tikzpicture}}
 
 \newcommand{\caixafechada}[1]{\tikzmark{#1}%
 \begin{tikzpicture}[thick, black!70, xshift=-1.5em, overlay, baseline=0.5pt]
 \draw (0,0) rectangle (0.3,0.3);
-\draw (0.1,0.15) -- (0.2,0.15);
-\draw (0.15,0.1) -- (0.15,0.2);
+\draw (0.1-0.02,0.15) -- (0.2+0.02,0.15);
+\draw (0.15,0.1-0.02) -- (0.15,0.2+0.02);
 \end{tikzpicture}}
 
 \begin{document}
@@ -65,7 +65,7 @@
 @% if item.tree %@\caixaaberta{@@ item_id @@}@% else %@\caixafechada{@@ item_id @@}@% endif %@
 @% if item.date %@@@ item.date @@, @% endif %@\textbf{@@ item.title @@}@% if item.subtitle %@\\@%if item.image %@\begin{minipage}[t]{0.88\linewidth}@% endif %@@@ massajar(item.subtitle) @@@%if item.image %@\end{minipage}\hfill\begin{minipage}[t]{0.1\linewidth}\strut\vspace*{-\baselineskip}\newline\includegraphics[width=\linewidth]{imgs/@@ item.image @@}\end{minipage}@% endif %@@% endif %@
 
-@% if item.description %@\begin{adjustwidth}{1.5em}{}\footnotesize @@ massajar(item.description) @@\end{adjustwidth}@% endif %@
+@% if item.description %@\begin{adjustwidth}{1.5em}{}\color{black!70}\footnotesize @@ massajar(item.description) @@\end{adjustwidth}@% endif %@
 @% else %@
 \begin{minipage}[t]{@%if item.image %@0.88@% endif %@\linewidth}
 @% if item.tree %@\caixaaberta{@@ item_id @@}@% else %@\caixafechada{@@ item_id @@}@% endif %@\color{black!70}\footnotesize@% if item.date %@ @@ item.date @@, @% endif %@\textbf{@@ item.title @@@% if item.description %@:@% endif %@}@% if item.description %@ @@ massajar(item.description) @@@% endif %@
