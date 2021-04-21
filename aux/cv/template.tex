@@ -60,22 +60,31 @@
 @%- endmacro %@
 
 @% macro escrever(item_id, item, depth) -%@
+@% if item.image %@
+\begin{minipage}[t]{0.82\linewidth}
+@% endif %@
 @% if depth < 2 %@
 \smallskip
 @% if item.tree %@\caixaaberta{@@ item_id @@}@% else %@\caixafechada{@@ item_id @@}@% endif %@
-@% if item.date %@@@ item.date @@, @% endif %@\textbf{@@ item.title @@}@% if item.subtitle %@\\@%if item.image %@\begin{minipage}[t]{0.88\linewidth}@% endif %@@@ massajar(item.subtitle) @@@%if item.image %@\end{minipage}\hfill\begin{minipage}[t]{0.1\linewidth}\strut\vspace*{-\baselineskip}\newline\includegraphics[width=\linewidth]{imgs/@@ item.image @@}\end{minipage}@% endif %@@% endif %@
+@% if item.date %@@@ item.date @@, @% endif %@\textbf{@@ item.title @@}@% if item.subtitle %@\\@@ massajar(item.subtitle) @@@% endif %@
 
 @% if item.description %@\begin{adjustwidth}{1.5em}{}\color{black!70}\footnotesize @@ massajar(item.description) @@\end{adjustwidth}@% endif %@
 @% else %@
-\begin{minipage}[t]{@%if item.image %@0.88@% endif %@\linewidth}
 @% if item.tree %@\caixaaberta{@@ item_id @@}@% else %@\caixafechada{@@ item_id @@}@% endif %@\color{black!70}\footnotesize@% if item.date %@ @@ item.date @@, @% endif %@\textbf{@@ item.title @@@% if item.description %@:@% endif %@}@% if item.description %@ @@ massajar(item.description) @@@% endif %@
-\vspace{2pt}\end{minipage}@%if item.image %@\hfill\begin{minipage}[t]{0.1\linewidth}\strut\vspace*{-\baselineskip}\newline\includegraphics[width=\linewidth]{imgs/@@ item.image @@}\end{minipage}@% endif %@
 @% endif %@
 
-@% if item.tree %@%
+@% if item.image %@
+\vspace{2pt}\end{minipage}\hfill%
+\begin{minipage}[t]{0.15\linewidth}
+\vspace{0pt}\includegraphics[width=\linewidth]{imgs/@@ item.image @@}
+\end{minipage}
+@% endif %@
+
+@% if item.tree %@
 \begin{adjustwidth}{1.5em}{}%
-@% for subitem in item.tree %@@% set subitem_id = item_id + loop.index|string %@%
-@@ escrever(subitem_id, subitem, depth+1) @@%
+@% for subitem in item.tree %@@% set subitem_id = item_id + loop.index|string %@
+@@ escrever(subitem_id, subitem, depth+1) @@
+
 @% endfor %@%
 \end{adjustwidth}%
 @% endif %@

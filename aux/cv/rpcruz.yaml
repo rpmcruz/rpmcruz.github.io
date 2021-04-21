@@ -50,24 +50,20 @@
     title: Skills
     tree:
         -
-            title: Machine learning
-            subtitle: Weka, Scikit-Learn, PyTorch, TensorFlow
+            title: "Machine learning: Weka, Scikit-Learn, PyTorch, TensorFlow"
         -
-            title: Computer vision
-            subtitle: OpenCV, MATLAB
+            title: "Computer vision: OpenCV, MATLAB"
         -
-            title: Programming
-            subtitle: Python, C/C++, Java, R, VBA, HTML/Javascript
+            title: "Programming: Python, C/C++, Java, R, VBA, HTML/Javascript"
         -
-            title: Databases
-            subtitle: Postgres, Mongo, MySQL
+            title: "Databases: Postgres, Mongo, MySQL"
         -
-            title: Web development
-            subtitle: Flask
+            title: "Web development: Flask"
 -
     title: Career
     tree:
         -
+            image: career-feup.jpg
             title: Teacher Assistant @ Faculty of Engineering, University of Porto
             subtitle: Teaching Python (EIC0005) and C/C++ (EIC0012) to 1st-year students. I teach one/two classes per semester, I have developed an assignment website (in Flask and Postgres), and I also help with the materials and assist students in their projects.
             date: 2018--2021
@@ -80,6 +76,7 @@
                     date: 2021
                     title: "Award: Sustainable Ideas Award @ FEUP"
         -
+            image: career-inesctec.png
             title: Researcher @ INESC TEC
             subtitle: Published over ten papers (see below) on machine learning and computer vision.
             date: 2015-2021
