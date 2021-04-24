@@ -140,8 +140,9 @@
             subtitle: R. Cruz, ASM Shihavuddin, J. Cardoso. ICANN
         -
             date: 2021
-            title: Ordinal Losses for Classification of Cervical Cancer Risk [accepted]
+            title: Ordinal Losses for Classification of Cervical Cancer Risk
             subtitle: T. Albuquerque, R. Cruz, J. Cardoso. PeerJ Computer Science
+            link: https://peerj.com/articles/cs-457/
         -
             date: 2021
             title: Background Invariance by Adversarial Learning [accepted]
