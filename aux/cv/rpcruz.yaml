@@ -132,73 +132,76 @@
             link: https://www.supertux.org/
 -
     title: Publications
-    subtitle: 'These are papers in international conferences and journals. The PhD consisted of "re-thinking" several aspects of the deep learning/computer vision pipeline; they range from active learning to ordinal classification, adversarial learning, hyperparameter search, and class imbalance.'
+    subtitle: >
+        These are papers in international conferences and journals. The PhD consisted of "re-thinking" several aspects of the deep learning/computer vision pipeline; they range from active learning to ordinal classification, adversarial learning, hyperparameter search, and class imbalance.
+        
+        CAPES Qualis rank: https://ppgcc.github.io/discentesPPGCC/pt-BR/qualis/
     tree:
         -
             date: 2021
             title: "Active Supervision: Human in the Loop [submitted]"
-            subtitle: R. Cruz, ASM Shihavuddin, J. Cardoso. ICANN
+            subtitle: "R. Cruz, ASM Shihavuddin, J. Cardoso. ICANN [CAPES: B1]"
         -
             date: 2021
             title: Ordinal Losses for Classification of Cervical Cancer Risk
-            subtitle: T. Albuquerque, R. Cruz, J. Cardoso. PeerJ Computer Science
+            subtitle: "T. Albuquerque, R. Cruz, J. Cardoso. PeerJ Computer Science [IF: 3.09]"
             link: https://peerj.com/articles/cs-457/
         -
             date: 2021
             title: Background Invariance by Adversarial Learning [accepted]
-            subtitle: R. Cruz, R. Prates, E. Filho, J. Costa, J. Cardoso. 25th International Conference on Pattern Recognition (ICPR), IEEE
+            subtitle: "R. Cruz, R. Prates, E. Filho, J. Costa, J. Cardoso. 25th International Conference on Pattern Recognition (ICPR), IEEE [CAPES: A2]"
         -
             date: 2019
             title: Automatic Augmentation by Hill Climbing
-            subtitle: R. Cruz, J. Costa, J. Cardoso. 28th International Conference on Artificial Neural Networks (ICANN), Springer
+            subtitle: "R. Cruz, J. Costa, J. Cardoso. 28th International Conference on Artificial Neural Networks (ICANN), Springer [CAPES: B1]"
             link: "https://link.springer.com/chapter/10.1007/978-3-030-30484-3_10"
         -
             date: 2019
             title: Averse Deep Semantic Segmentation
-            subtitle: R. Cruz, J. Costa, J. Cardoso. 41st Engineering in Medicine and Biology Conference (EMBC), IEEE
+            subtitle: "R. Cruz, J. Costa, J. Cardoso. 41st Engineering in Medicine and Biology Conference (EMBC), IEEE [CAPES: A2]"
             link: "https://ieeexplore.ieee.org/abstract/document/8857385"
         -
             date: 2019
             title: Insulator visual non-conformity detection in overhead power distribution lines using deep learning
-            subtitle: R. Prates, R. Cruz, A. Marotta, R. Ramos, E. Filho, J. Cardoso. Journal Computers & Electrical Engineering, Springer
+            subtitle: "R. Prates, R. Cruz, A. Marotta, R. Ramos, E. Filho, J. Cardoso. Journal Computers & Electrical Engineering, Springer [IF: 2.66]"
             link: "https://www.sciencedirect.com/science/article/pii/S004579061930967X?dgcid=coauthor"
         -
             date: 2018
             title: A Class Imbalance Ordinal Method for Alzheimer’s Disease Classification
-            subtitle: R. Cruz, M. Silveira, J. Cardoso. 2018 International Workshop on Pattern Recognition in Neuroimaging (PRNI), IEEE
+            subtitle: "R. Cruz, M. Silveira, J. Cardoso. 2018 International Workshop on Pattern Recognition in Neuroimaging (PRNI), IEEE"
             link: "https://ieeexplore.ieee.org/abstract/document/8423960/"
         -
             date: 2018
             title: 'Binary ranking for ordinal class imbalance'
-            subtitle: R. Cruz, K. Fernandes, J. Costa, M. Pérez Ortiz, J. Cardoso. Journal Pattern Analysis and Applications, Springer
+            subtitle: "R. Cruz, K. Fernandes, J. Costa, M. Pérez Ortiz, J. Cardoso. Journal Pattern Analysis and Applications, Springer [IF: 1.51]"
             link: "https://link.springer.com/epdf/10.1007/s10044-018-0705-4?author_access_token=p2L5jwabAzmA-hENM_mugfe4RwlQNchNByi7wbcMAY42mOH72RPQeb098_tyy79R09eJLVa1A5i0Fl8_sgW1ks0WseTTuEtHZyi1eB8zBX3Z7vgZBxHJZ3x26EzyODMrDn4oUkmT-tVcZK4oD3u4vQ%3D%3D"
         -
             date: 2018
             title: Deep image segmentation by quality inference
-            subtitle: K. Fernandes, R. Cruz, J. Cardoso. International Joint Conference on Neural Networks (IJCNN), IEEE
+            subtitle: "K. Fernandes, R. Cruz, J. Cardoso. International Joint Conference on Neural Networks (IJCNN), IEEE [CAPES: A2]"
             link: "https://ieeexplore.ieee.org/abstract/document/8489696/"
         -
             date: 2017
             title: "Constraining type II error: building intentionally biased classifiers"
-            subtitle: R. Cruz, K. Fernandes, J. Costa, J. Cardoso. International Work-conference on Artificial Neural Networks (IWANN), Springer
+            subtitle: "R. Cruz, K. Fernandes, J. Costa, J. Cardoso. International Work-conference on Artificial Neural Networks (IWANN), Springer [CAPES: B1]"
             link: "https://link.springer.com/chapter/10.1007/978-3-319-59147-6_47"
         -
             date: 2017
             title: "Fine-to-coarse ranking in ordinal and imbalanced domains: an application to liver transplantation"
-            subtitle: M. Pérez-Ortiz, K. Fernandes, R. Cruz, J. Cardoso. International Work-conference on Artificial Neural Networks (IWANN), Springer
+            subtitle: "M. Pérez-Ortiz, K. Fernandes, R. Cruz, J. Cardoso. International Work-conference on Artificial Neural Networks (IWANN), Springer [CAPES: B1]"
             link: "https://link.springer.com/chapter/10.1007/978-3-319-59147-6_45"
         -
             date: 2017
             title: Combining ranking with traditional methods for ordinal class imbalance
-            subtitle: R. Cruz, K. Fernandes, J. Costa, M. Pérez-Ortiz, J. Cardoso. International Work-conference on Artificial Neural Networks (IWANN), Springer
+            subtitle: "R. Cruz, K. Fernandes, J. Costa, M. Pérez-Ortiz, J. Cardoso. International Work-conference on Artificial Neural Networks (IWANN), Springer [CAPES: B1]"
             link: "https://link.springer.com/chapter/10.1007/978-3-319-59147-6_46"
         -
             date: 2017
             title: Ordinal class imbalance with ranking
-            subtitle: R. Cruz, K. Fernandes, J. Costa, M. Pérez-Ortiz, J. Cardoso. Iberian conference on pattern recognition and image analysis (Ibpria), Springer
+            subtitle: "R. Cruz, K. Fernandes, J. Costa, M. Pérez-Ortiz, J. Cardoso. Iberian conference on pattern recognition and image analysis (Ibpria), Springer [CAPES: B2]"
             link: "https://link.springer.com/chapter/10.1007/978-3-319-58838-4_1"
         -
             date: 2016
             title: Tackling class imbalance with ranking
-            subtitle: R. Cruz, K. Fernandes, J. Costa, J. Cardoso. International Joint Conference on Neural Networks (IJCNN), IEEE
+            subtitle: "R. Cruz, K. Fernandes, J. Costa, J. Cardoso. International Joint Conference on Neural Networks (IJCNN), IEEE [CAPES: A2]"
             link: "http://ieeexplore.ieee.org/abstract/document/7727469/"
