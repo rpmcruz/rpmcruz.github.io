@@ -135,7 +135,7 @@
     subtitle: >
         These are papers in international conferences and journals. The PhD consisted of "re-thinking" several aspects of the deep learning/computer vision pipeline; they range from active learning to ordinal classification, adversarial learning, hyperparameter search, and class imbalance.
         
-        CAPES Qualis rank: https://ppgcc.github.io/discentesPPGCC/pt-BR/qualis/
+        The listed CAPES Qualis rank is from https://ppgcc.github.io/discentesPPGCC/pt-BR/qualis/
     tree:
         -
             date: 2021
