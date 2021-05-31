@@ -148,8 +148,9 @@
             link: https://peerj.com/articles/cs-457/
         -
             date: 2021
-            title: Background Invariance by Adversarial Learning [accepted]
+            title: Background Invariance by Adversarial Learning
             subtitle: "R. Cruz, R. Prates, E. Filho, J. Costa, J. Cardoso. 25th International Conference on Pattern Recognition (ICPR), IEEE [CAPES: A2]"
+            link: https://ieeexplore.ieee.org/document/9413004
         -
             date: 2019
             title: Automatic Augmentation by Hill Climbing
