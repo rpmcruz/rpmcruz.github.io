@@ -1,7 +1,6 @@
 \documentclass[11pt]{article}
 
-\usepackage[a4paper, margin=2cm]{geometry}
-\usepackage[T1]{fontenc}
+\usepackage[a4paper, lmargin=1cm, rmargin=1cm, tmargin=2cm, bmargin=3cm]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 \usepackage{graphicx}
@@ -9,8 +8,11 @@
 \usepackage{xcolor}
 \definecolor{dark-blue}{rgb}{0.15,0.15,0.4}
 \hypersetup{colorlinks, linkcolor={dark-blue}, citecolor={dark-blue}, urlcolor={dark-blue}}
-\usepackage[scaled=0.85]{beramono}
+\usepackage{changepage}  % \begin{adjustwidth}
+\usepackage{multicol}  % \begin{multicols}{2}
+
 \setlength{\parindent}{0cm}
+\setlength{\parskip}{1em}
 
 \usepackage{lastpage}
 \usepackage{fancyhdr}
@@ -18,99 +20,133 @@
 \renewcommand{\headrulewidth}{0pt}
 \cfoot{Page \thepage\ of \pageref{LastPage}}
 
-\usepackage{changepage}
 \usepackage{tikz}
 \usetikzlibrary{tikzmark, calc}
 
-\newcommand{\caixaaberta}[1]{\tikzmark{#1}%
-\begin{tikzpicture}[thick, black!70, xshift=-1.5em, overlay, baseline=0.5pt]
-\draw (0,0) rectangle (0.3,0.3);
-\draw (0.1-0.02,0.15) -- (0.2+0.02,0.15);
-\end{tikzpicture}}
-
-\newcommand{\caixafechada}[1]{\tikzmark{#1}%
-\begin{tikzpicture}[thick, black!70, xshift=-1.5em, overlay, baseline=0.5pt]
-\draw (0,0) rectangle (0.3,0.3);
-\draw (0.1-0.02,0.15) -- (0.2+0.02,0.15);
-\draw (0.15,0.1-0.02) -- (0.15,0.2+0.02);
-\end{tikzpicture}}
-
-\begin{document}
-
-% photo and personal information
-\fcolorbox{black!25}{black!5}{\begin{minipage}{\linewidth}
-\tt
-\textbf{\large Ricardo Cruz}\\
-\raisebox{-0.25\height}{\includegraphics[width=1em]{imgs/email}} \href{mailto:ricardo.pdm.cruz@gmail.com}{ricardo.pdm.cruz@gmail.com}\\
-\raisebox{-0.25\height}{\includegraphics[width=1em]{imgs/www}} \href{https://rpmcruz.github.io/}{https://rpmcruz.github.io/}\\
-+351 934741617 $\bullet$ Valongo, Portugal
-\end{minipage}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-@% macro massajar(text) -%@
-@@ myurlize(text
+@% macro markup(text) -%@
+@@ text
     .replace('<i>', '\\textit{').replace('</i>', '}')
     .replace('<b>', '\\textbf{').replace('</b>', '}')
     .replace('<ol>', '\\begin{itemize}').replace('</ol>', '\end{itemize}')
     .replace('<li>', '\\item ').replace('</li>', '')
     .replace('&', '\\& ')
     .replace(' "', ' ``').replace('" ', "'' ")
-    .replace('\n', '\n\n'), '\\\\url{', '}') @@
+    .replace('\n', '\n\n') @@
 @%- endmacro %@
 
-@% macro escrever(item_id, item, depth) -%@
-@% if item.image %@
-\begin{minipage}[t]{0.82\linewidth}
+@% macro fill_tree(items, desc, draw, tiny_subtitle) -%@
+@% for item in items %@
+\tikzmark{@@ desc @@@@ loop.index @@}@% if item.year %@\textbf{@@ item.year @@} $\vert$ @% endif %@@@ markup(item.title) @@
+@% if item.subtitle %@\\\tikzmark{@@ desc @@@@ loop.index @@}{@% if tiny_subtitle %@\footnotesize@% else %@\small@% endif %@ @@ markup(item.subtitle) @@}@% endif %@
+@% if draw %@\tikz[overlay, remember picture] \draw[dashed, black!60] ([shift={(0.5em,-1ex)}]pic cs:@@ desc @@) |- ([shift={(-0.3em,0.7ex)}]pic cs:@@ desc @@@@ loop.index @@);@% endif %@
+@% if item.link %@\\{\footnotesize \url{@@ item.link @@}}@% endif %@
+@% if item.image %@\\{\footnotesize \includegraphics[width=10em]{imgs/@@ item.image @@}}@% endif %@
+@% if item.summary or item.subitems %@
+\begin{adjustwidth}{1.5em}{}%
+\footnotesize
+@% if item.summary %@@@ markup(item.summary) @@\par@% endif %@
+@% if item.subitems %@
+@% if draw %@\vspace{-2ex}@% endif %@
+@@ fill_tree(item.subitems, desc + loop.index|string, true, true) @@
 @% endif %@
-@% if depth < 2 %@
-\smallskip
-@% if item.tree %@\caixaaberta{@@ item_id @@}@% else %@\caixafechada{@@ item_id @@}@% endif %@
-@% if item.date %@@@ item.date @@, @% endif %@\textbf{@@ item.title @@}@% if item.subtitle %@\\@@ massajar(item.subtitle) @@@% endif %@
-
-@% if item.description %@\begin{adjustwidth}{1.5em}{}\color{black!70}\footnotesize @@ massajar(item.description) @@\end{adjustwidth}@% endif %@
+\end{adjustwidth}
 @% else %@
-@% if item.tree %@\caixaaberta{@@ item_id @@}@% else %@\caixafechada{@@ item_id @@}@% endif %@\color{black!70}\footnotesize@% if item.date %@ @@ item.date @@, @% endif %@\textbf{@@ item.title @@@% if item.description %@:@% endif %@}@% if item.description %@ @@ massajar(item.description) @@@% endif %@
+@% if draw %@\\@% else %@\par@% endif %@
 @% endif %@
-
-@% if item.image %@
-\vspace{2pt}\end{minipage}\hfill%
-\begin{minipage}[t]{0.15\linewidth}
-\vspace{0pt}\includegraphics[width=\linewidth]{imgs/@@ item.image @@}
-\end{minipage}
-@% endif %@
-
-@% if item.tree %@
-\begin{adjustwidth}{1.5em}{}%
-@% for subitem in item.tree %@@% set subitem_id = item_id + loop.index|string %@
-@@ escrever(subitem_id, subitem, depth+1) @@
-
-@% endfor %@%
-\end{adjustwidth}%
-@% endif %@
-@%- endmacro %@
-
-@% macro desenhar(item_id, item, depth) -%@
-@% if item.tree %@%
-@% for subitem in item.tree %@@% set subitem_id = item_id + loop.index|string %@%
-@@ desenhar(subitem_id, subitem, depth+1) @@%
-\draw[dashed, black!60] let \p1=(pic cs:@@ subitem_id @@) in ({\x1-9mm,\y1+1mm}) -- (\x1-6mm,\y1+1mm);
-@% endfor %@%
-\draw[dashed, black!60] let \p1=(pic cs:@@ item_id @@), \p2=(pic cs:@@ item_id @@@@ item.tree|length @@) in ({\x1-4mm,\y1-1mm}) -- ({\x1-4mm,\y2+1mm});
-@% endif %@%
-@%- endmacro %@
-
-
-\medskip
-\begin{adjustwidth}{1.5em}{}%
-@% for item in cv %@
-\filbreak
-@@ escrever('cv' + loop.index|string, item, 0) @@
-\begin{tikzpicture}[overlay, remember picture]
-@@ desenhar('cv' + loop.index|string, item, 0) @@
-\end{tikzpicture}%
 @% endfor %@
-\end{adjustwidth}%
+@%- endmacro %@
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%% PERSONAL INFO %%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{tikzpicture}[remember picture,overlay]
+\fill[blue!10] (current page.north west) rectangle ([yshift=-37ex]current page.north east);
+\end{tikzpicture}
+
+\vspace{-12ex}
+\makebox[\textwidth]{%
+\begin{minipage}[t]{0.3\textwidth}
+\centering
+\includegraphics[width=10em]{imgs/photo}
+
+\bigskip
+\begin{minipage}{13em}
+$\bullet$ Machine learning specialist\\
+$\bullet$ Computer vision specialist\\
+$\bullet$ Programmer
+\end{minipage}
+\end{minipage}\hfill%
+\begin{minipage}[t]{0.6\textwidth}
+\vspace{-12ex}
+\textbf{\Huge Ricardo Cruz}\\[6.5ex]
+\raisebox{-0.25\height}{\includegraphics{imgs/icon-geo}} Valongo, Portugal\\
+\raisebox{-0.25\height}{\includegraphics{imgs/icon-phone}} +351 934741617\\
+\raisebox{-0.25\height}{\includegraphics{imgs/icon-mail}} \href{mailto:ricardo.pdm.cruz@gmail.com}{ricardo.pdm.cruz@gmail.com}\\
+\raisebox{-0.25\height}{\includegraphics{imgs/icon-home}} \url{http://rpmcruz.github.io}
+\end{minipage}}
+
+%%%%%%%%%%%%%%%%%%%%%%% SUMMARY %%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{2ex}
+
+@@ markup(cv.summary) @@
+
+\centerline{\rule{0.4\linewidth}{0.2pt}}
+
+%%%%%%%%%%%%%%%%%%%%%%% SKILLS %%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{minipage}[t]{0.08\linewidth}
+\textsc{Skills:}
+\end{minipage}
+\begin{minipage}[t]{0.92\linewidth}
+\small
+@@ cv.skills | join(' $\cdot$ ') @@
+\end{minipage}
+
+%%%%%%%%%%%%%%%%%%%%%%% WORK (part 1) %%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{minipage}[t]{0.55\textwidth}
+\setlength{\parskip}{1em}
+\centerline{\sc\large Work Experience}
+
+@@ fill_tree(cv.work, 'work', false, false) @@
+\end{minipage}
+%
+\hfill\raisebox{-0.47\textheight}{\rule{0.5pt}{0.48\textheight}}\hfill%
+%%%%%%%%%%%%%%%%%%%%%%% EDUCATION %%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\begin{minipage}[t]{0.40\textwidth}
+\setlength{\parskip}{1em}
+\centerline{\sc\large Education}
+
+@@ fill_tree(cv.education, 'education', false, true) @@
+\end{minipage}
+
+%%%%%%%%%%%%%%%%%%%%%%% OPEN-SOURCE %%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\centerline{\sc\large Selected Open-Source Portfolio}
+
+\begin{multicols}{2}
+\setlength{\columnseprule}{0.4pt}
+@@ fill_tree(cv.opensource, 'opensource', false, false) @@
+\end{multicols}
+
+Find more of my open-source code at \href{https://github.com/rpmcruz?tab=repositories}{https://github.com/rpmcruz}.
+
+%%%%%%%%%%%%%%%%%%%%%%% PUBLICATIONS %%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\centerline{\sc\large Publications}
+
+\begin{enumerate}
+\itemsep0em
+@% for item in cv.publications %@
+\item \textbf{@@ item.year @@:} @@ markup(item.title) @@\\
+@@ markup(item.subtitle) @@
+@% endfor %@
+\end{enumerate}
 
 \end{document}
 
