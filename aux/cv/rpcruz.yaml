@@ -90,10 +90,6 @@ opensource:
 publications:
     -
         year: 2021
-        title: "Active Supervision: Human in the Loop [submitted]"
-        subtitle: "R. Cruz, ASM Shihavuddin, J. Cardoso. ICANN [CAPES: B1]"
-    -
-        year: 2021
         title: Ordinal Losses for Classification of Cervical Cancer Risk
         subtitle: "T. Albuquerque, R. Cruz, J. Cardoso. PeerJ Computer Science [IF: 3.09]"
         link: https://peerj.com/articles/cs-457/
