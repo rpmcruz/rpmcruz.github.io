@@ -39,12 +39,13 @@
 
 @% macro fill_tree(items, desc, draw, tiny_subtitle) -%@
 @% for item in items %@
+@% if not draw %@\begin{samepage}@% endif %@
 \tikzmark{@@ desc @@@@ loop.index @@}@% if item.year %@\textbf{@@ item.year @@} $\vert$ @% endif %@@@ markup(item.title) @@
 @% if item.subtitle %@\\\tikzmark{@@ desc @@@@ loop.index @@}{@% if tiny_subtitle %@\footnotesize@% else %@\small@% endif %@ @@ markup(item.subtitle) @@}@% endif %@
 @% if draw %@\tikz[overlay, remember picture] \draw[dashed, black!60] ([shift={(0.5em,-1ex)}]pic cs:@@ desc @@) |- ([shift={(-0.3em,0.7ex)}]pic cs:@@ desc @@@@ loop.index @@);@% endif %@
 @% if item.link %@\\{\footnotesize \url{@@ item.link @@}}@% endif %@
-@% if item.image %@\\{\footnotesize \includegraphics[width=10em]{imgs/@@ item.image @@}}@% endif %@
-@% if item.summary or item.subitems %@
+@% if item.image %@\\{\footnotesize\begin{minipage}{0.35\linewidth}\includegraphics[width=\linewidth]{imgs/@@ item.image @@}\end{minipage}@% if item.summary %@\hfill\begin{minipage}{0.64\linewidth}@@ markup(item.summary) @@\end{minipage}@% endif %@}@% endif %@
+@% if not item.image and (item.summary or item.subitems) %@
 \begin{adjustwidth}{1.5em}{}%
 \footnotesize
 @% if item.summary %@@@ markup(item.summary) @@\par@% endif %@
@@ -56,6 +57,7 @@
 @% else %@
 @% if draw %@\\@% else %@\par@% endif %@
 @% endif %@
+@% if not draw %@\end{samepage}@% endif %@
 @% endfor %@
 @%- endmacro %@
 
@@ -113,10 +115,10 @@ $\bullet$ Programmer
 \setlength{\parskip}{1em}
 \centerline{\sc\large Work Experience}
 
-@@ fill_tree(cv.work, 'work', false, false) @@
+@@ fill_tree(cv.work[:3], 'work', false, false) @@
 \end{minipage}
 %
-\hfill\raisebox{-0.47\textheight}{\rule{0.5pt}{0.48\textheight}}\hfill%
+\hfill\raisebox{-0.54\textheight}{\rule{0.5pt}{0.55\textheight}}\hfill%
 %%%%%%%%%%%%%%%%%%%%%%% EDUCATION %%%%%%%%%%%%%%%%%%%%%%%%%
 %
 \begin{minipage}[t]{0.40\textwidth}
@@ -126,26 +128,44 @@ $\bullet$ Programmer
 @@ fill_tree(cv.education, 'education', false, true) @@
 \end{minipage}
 
+%%%%%%%%%%%%%%%%%%%%%%% WORK (cont'd) %%%%%%%%%%%%%%%%%%%%%%%%%
+
+\centerline{\sc\large Work Experience (cont'd)}
+\begin{multicols}{2}
+\setlength{\columnseprule}{0.4pt}
+@@ fill_tree(cv.work[3:], 'workc', false, false) @@
+\end{multicols}
+
+%%%%%%%%%%%%%%%%%%%%%%% WORKSHOPS %%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bigskip
+\centerline{\sc\large Some of my Workshops}
+\begin{multicols}{2}
+\setlength{\columnseprule}{0.4pt}
+@@ fill_tree(cv.workshops, 'workshops', false, false) @@
+\end{multicols}
+
 %%%%%%%%%%%%%%%%%%%%%%% OPEN-SOURCE %%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newpage
+\bigskip
 \centerline{\sc\large Selected Open-Source Portfolio}
-
 \begin{multicols}{2}
 \setlength{\columnseprule}{0.4pt}
 @@ fill_tree(cv.opensource, 'opensource', false, false) @@
-\end{multicols}
-
 \begin{itemize}
+\small
 \renewcommand{\labelitemi}{$\blacktriangleright$}
-\item Find more of my open-source code at \href{https://github.com/rpmcruz?tab=repositories}{\tt https://github.com/rpmcruz}.
+\setlength{\itemindent}{-1.5em}
+\itemsep0em 
+\item Find more of my open-source code at\\\href{https://github.com/rpmcruz?tab=repositories}{\tt https://github.com/rpmcruz}.
 \item Videos showing some of my work: \url{https://www.youtube.com/channel/UCLS6OCVgk_qPohhUqSPvLJw}.
 \end{itemize}
+\end{multicols}
 
 %%%%%%%%%%%%%%%%%%%%%%% PUBLICATIONS %%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newpage
-\centerline{\sc\large Publications}
+\centerline{\sc\large Publications (indexed)}
 
 \begin{enumerate}
 \itemsep0em
