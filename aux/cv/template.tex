@@ -166,13 +166,12 @@ $\bullet$ Programmer
 %%%%%%%%%%%%%%%%%%%%%%% PUBLICATIONS %%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newpage
-\centerline{\sc\large Publications (indexed)}
-
+\centerline{\sc\large Publications}
+These are my indexed publications (some publications in \textbf{bold} for emphasis).
 \begin{enumerate}
 \itemsep0em
 @% for item in cv.publications %@
-\item \textbf{@@ item.year @@:} @@ markup(item.title) @@\\
-@@ markup(item.subtitle) @@
+\item @% if item.highlight %@\textbf{@% endif %@@@ item.year @@. ``@@ markup(item.title) @@.'' @@ markup(item.subtitle) @@@% if item.highlight %@}@% endif %@
 @% endfor %@
 \end{enumerate}
 
