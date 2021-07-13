@@ -12,7 +12,7 @@ education:
             - title: "Supervisors: Jaime S. Cardoso and Joaquim F. Pinto Costa"
             - title: 12 publications, 1 best paper award
     -
-        year: 2013--2014
+        year: 2014--2015
         title: MSc in Mathematical Engineering
         subtitle: Faculty of Sciences, University of Porto
         subitems:
@@ -50,11 +50,11 @@ work:
             - title: Teaching Python (EIC0005) and C/C++ (EIC0012) for MIEIC
             - title: "2021: received FEUP pedagogic award, voted by students"
     -
-        year: 2015
+        year: Mar.--Jul. 2015
         title: Flykt Startup
         summary: I was involved in a non-successful startup whose goal was to search for travel destinations. I was involved in the NLP part.
     -
-        year: 2014 (6 months)
+        year: Sept. 2014--Feb. 2015
         title: Research Grant
         subtitle: Mathematics Center of the University of Porto
         summary: "Research on epidemiological models: from differential equations to stochastic simulations and cellular automata."
@@ -66,7 +66,11 @@ workshops:
     -
         year: Oct 2019
         title: DSPT Day
-        subtitle: Class imbalance lightning talk
+        subtitle: Lightning talk on class imbalance
+    -
+        year: August 2018
+        title: Universidade Junior
+        subtitle: '"Escondidos nos Dados:" Teaching data science to highschool students'
     -
         year: August 2018
         title: Porto Codes Meetups
