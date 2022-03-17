@@ -19,7 +19,7 @@ body {
   justify-content: center;
 }
 .header {
-  background-color: #F0F0F0;
+  background-color: #e8e6ff;
 }
 
 /*** Menu ***/
@@ -31,6 +31,7 @@ body {
 }
 .menu ul {
   display: flex;
+  flex-flow: row wrap;
   margin: 0;
   padding: 0;
 }
@@ -44,7 +45,7 @@ body {
   text-decoration: none;
 }
 .menu li a.active {
-  background-color: #F0F0F0;
+  background-color: #e8e6ff;
 }
 .menu li a:hover {
   background-color: #e3f0f0;
