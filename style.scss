@@ -1,120 +1,96 @@
 ---
 ---
 
-/************* PAGE LAYOUT *************/
-
+/*** Layout ***/
 body {
-  background-color: black;
-  overflow-y: scroll;
+  font-family: serif;
+  margin: 0;
+  text-align: justify;
+}
+.flex {
+  display: flex;
+}
+.content {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 10px;
+}
+.center {
+  justify-content: center;
+}
+.header {
+  background-color: #F0F0F0;
 }
 
-.container {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-header {
-  color: lightgreen;
-}
-
-nav {
-  font-family: monospace;
-  font-size: large;
-}
-
-.navbar-dark .navbar-nav .active > .nav-link {
-  color: lightgreen;
-}
-
-div.page {
-  background-color: white;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  padding-bottom: 8px;
-  border: 8px white solid;
-}
-
-footer {
-  color: lightgray;
-  text-align: center;
-  font-size: small;
+/*** Menu ***/
+.menu {
+  padding: 0;
   margin-bottom: 10px;
+  list-style: none;
+  border-bottom: 3px solid black;
+}
+.menu ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+.menu li {
+  display: inline;
+}
+.menu li a {
+  padding: 20px 18px;
+  display: inline-block;
+  color: black;
+  text-decoration: none;
+}
+.menu li a.active {
+  background-color: #F0F0F0;
+}
+.menu li a:hover {
+  background-color: #e3f0f0;
 }
 
-footer a {
-  margin-left: 40px;
-  color: lightgray;
+/*** Content ***/
+a.item {
+  display: block;
+  text-decoration: none;
+  color: black;
+  background-color: #f2f2f2;
 }
-
-/************* CV *************/
-
-.card-body {
-    padding: 8px;
+a.item:hover {
+  background-color: #cecece;
 }
-
-.card:hover {
-    background-color: gray;
+.item {
+  padding: 10px;
 }
-
-.card > a {
-    color: inherit;
-    text-decoration: none;
+.item > p {
+  margin: 0;
 }
-
-/************* BLOG *************/
-
-h3 {
-  margin-top: 5px;
-  margin-bottom: 0px;
-  font-family: monospace;
+.item > img {
+  max-width: 400px;
+  max-height: 300px;
 }
-
-h3 > a, p.readmore > a {
-  color: green;
+a.item.highlight {
+  border: 2px dashed black;
 }
-
-p.summary {
-    font-size: 75%;
-    margin-top: 0px;
+p.year {
+  margin: 5px;
+  font-weight: bold;
 }
-
-.date {
-    font-weight: bold;
+h2 {
+  margin-top: 40px;
 }
-
-p.readmore {
-    margin-bottom: 0px;
+ul {
+  margin: 0;
 }
-
-hr.sep {
-    background-color: black;
-    border: none;
-    height: 4px;
+.cvgroup {
+  margin-left: 10px;
+  padding-left: 10px;
+  border-left: 3px solid rgb(0.7,0.7,0.7);
 }
-
-// Settled on moving the import of syntax highlighting to the bottom of the CSS
-// ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
-@import "highlights";
-@import "svg-icons";
-
-
-// FEED tables
-
-table {
-    border:2px solid black;
+.cvlabel {
+  font-weight: bold;
 }
-
-th {
-    border:1px solid black;
-}
-
-td {
-    border-left: 1px solid #000;
-    border-right: 1px solid #000;
-}
-
-code.highlighter-rouge {
-    background-color: rgb(250, 250, 250);
-    color: black;
-    font-weight: bold;
+small {
+  color: gray;
 }

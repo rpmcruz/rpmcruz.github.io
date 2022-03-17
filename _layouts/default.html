@@ -1,59 +1,51 @@
-<!DOCTYPE html>
 <html>
 <head>
-<title>{{ page.title }}</title>
 <meta charset="utf-8" />
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
-{% feed_meta %}
+<title>Ricardo Cruz</title>
 </head>
 
 <body>
 
-<div class="container">
-{% comment %} header {% endcomment %}
-<header class="mt-4">  {% comment %} class="clearfix" if this to be self-contained {% endcomment %}
-<img class="float-right" width="110px" src="{{ site.avatar }}">
-<h1 class="header text-monospace">/home/Ricardo Cruz<span id="blink">_</span></h2>
-</header>
+<div class="header">
+<div class="content">
 
-{% comment %} navigation bar {% endcomment %}
-{% assign current = page.url | downcase | split: '/' %}
-<nav class="mb-1 navbar navbar-expand-lg navbar-dark bg-dark">
-  <ul class="navbar-nav mr-auto">
-    <li class="nav-item{% if page.active == "about" %} active{% endif %}">
-      <a class="nav-link" href="{{ site.baseurl }}/">About me</a>
-    </li>
-    <li class="nav-item{% if page.active == "cv" %} active{% endif %}">
-      <a class="nav-link" href="{{ site.baseurl }}/cv.html">CV</a>
-    </li>
-    <li class="nav-item{% if page.active == "blog" %} active{% endif %}">
-      <a class="nav-link" href="{{ site.baseurl }}/blog.html">Blog</a>
-    </li>
-  </ul>
-</nav>
+<div class="flex">
+<div>
+<img width="128" height="112" src="imgs/photo.png"><br>
+&bull; Post-doc Researcher<br>
+&bull; Invited Assistant Professor
 </div>
 
-<div class="page container">
+<div>
+<h1>Ricardo Cruz, PhD</h1>
+<img width="14" height="14" src="imgs/email.svg"> <a href="mailto:ricardo.pdm.cruz@gmail.com">ricardo.pdm.cruz@gmail.com</a><br>
+<img width="14" height="14" src="imgs/github.svg"> <a href="https://github.com/rpmcruz">github.com/rpmcruz</a><br>
+<img width="14" height="14" src="imgs/location.svg"> Porto, Portugal
+</div>
+
+</div>
+
+<p>Ricardo Cruz earned his Ph.D. in Computer Science in 2021 with special emphasis on computer vision and deep learning. He is currently a post-doc doing research on autonomous driving under the EU research project THEIA, and is also an Invited Assistant Professor at FEUP.</p>
+</div>
+</div>
+
+<div class="content menu">
+<ul>
+<li><a {% if page.active == "about" or page.active == "Publications" %}class="active"{% endif %} href="publications">Publications</a></li>
+<li><a {% if page.active == "Projects" %}class="active"{% endif %} href="projects">Projects</a></li>
+<li><a {% if page.active == "Teaching" %}class="active"{% endif %} href="teaching">Teaching</a></li>
+<li><a {% if page.active == "Supervisions" %}class="active"{% endif %} href="supervisions">Supervisions</a></li>
+<li><a {% if page.active == "Workshops" %}class="active"{% endif %} href="workshops">Workshops</a></li>
+<li><a {% if page.active == "Awards" %}class="active"{% endif %} href="awards">Awards</a></li>
+</ul>
+</div>
+
+<div class="content">
 {{ content }}
 </div>
 
-{% comment %} footer {% endcomment %}
-<footer class="footer">
-{% include footer.html %}
-</footer>
 </body>
-
-<script>
-setInterval(blink, 1000);
-function blink() {
-    var el = document.getElementById("blink");
-    if(el.innerHTML == '_')
-        el.innerHTML = ' ';
-    else
-        el.innerHTML = '_';
-}
-</script>
 </html>

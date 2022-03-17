@@ -4,8 +4,8 @@
 
 name: Ricardo Cruz
 author: Ricardo Cruz
-description: Programmer, data-scientist
-avatar: https://avatars2.githubusercontent.com/u/11894291
+description:
+avatar:
 
 # Includes an icon in the footer for each username you enter
 footer-links:
@@ -34,20 +34,6 @@ footer-links:
 # Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
 # Used for Sitemap.xml and your RSS feed
 url: https://rpmcruz.github.io/
-
-# Jekyll 3 now only supports Kramdown for Markdown
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
-  syntax_highlighter_opts:
-    css_class: 'highlight'
-  math_engine: mathjax
-
-sass:
-  style: :expanded
-
-gems:
-  - jekyll-feed
 
 # Exclude these files from your production _site
 exclude:
