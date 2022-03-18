@@ -3,7 +3,7 @@
 <meta charset="utf-8" />
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
+<link rel="stylesheet" type="text/css" href="style.css" />
 <title>Ricardo Cruz</title>
 </head>
 
@@ -34,18 +34,29 @@
 
 <div class="content menu">
 <ul>
-<li><a {% if page.active == "about" or page.active == "Publications" %}class="active"{% endif %} href="publications">Publications</a></li>
-<li><a {% if page.active == "Projects" %}class="active"{% endif %} href="projects">Projects</a></li>
-<li><a {% if page.active == "Teaching" %}class="active"{% endif %} href="teaching">Teaching</a></li>
-<li><a {% if page.active == "Supervisions" %}class="active"{% endif %} href="supervisions">Supervisions</a></li>
-<li><a {% if page.active == "Workshops" %}class="active"{% endif %} href="workshops">Workshops</a></li>
-<li><a {% if page.active == "Awards" %}class="active"{% endif %} href="awards">Awards</a></li>
+<li><a href="index.html">Publications</a></li>
+<li><a href="projects.html">Projects</a></li>
+<li><a href="teaching.html">Teaching</a></li>
+<li><a href="supervisions.html">Supervisions</a></li>
+<li><a class="active"href="videos.html">Videos</a></li>
+<li><a href="awards.html">Awards</a></li>
 </ul>
 </div>
 
 <div class="content">
-{{ content }}
-</div>
 
+<p class="year">2022</p>
+<a class="item" href="https://youtu.be/A9Pgp1YBcTk?t=1685">
+<img src="imgs/2022-vcmi-workshop.jpg">
+<p><b>VCMI Workshops</b></p>
+<p>One-Stage Object Detection</p>
+</a>
+<p class="year">2017</p>
+<a class="item" href="https://youtu.be/klr1z1EJ1yY">
+<img src="imgs/2017-lecture.jpg">
+<p><b>Python Meetup</b></p>
+<p>NumPy and Scikit-Learn</p>
+</a>
+</div>
 </body>
 </html>

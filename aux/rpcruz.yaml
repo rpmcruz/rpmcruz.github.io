@@ -100,7 +100,7 @@ supervisions:
         year: 2021/2022 (on-going)
         title: "Bachelor's Project: Internship at ANO"
         subtitle: Rafael Camelo
-workshops:
+videos:
     -
         year: 2022
         title: VCMI Workshops
@@ -115,34 +115,34 @@ workshops:
         link: https://youtu.be/klr1z1EJ1yY
 projects:
     -
-        year: 2022
+        year_: 2022
         title: objdetect package
         subtitle: Light-weight and versatile one-stage object detection framework
         description: I developed this one-stage object detection framework because existing frameworks, such as detectron2, are either for two-stage models or are not versatile and simple enough to adapt for new models. At the very least, I hope this package is educational for someone learning object detection.
         link: https://github.com/rpmcruz/objdetect
     -
-        year: 2010
-        title: Apoo, a virtual machine
-        subtitle: I helped with the development of Apoo (together with Profs Rogério Reis and Nelma Moreira), a virtual machine that is currently being used to teach Assembly. Apoo is written in Python and GTK+.
+        year_: 2010
+        title: Apoo (virtual machine) GTK+ interface
+        subtitle: I helped with the development of the GTK+ interface for Apoo (together with Profs Rogério Reis and Nelma Moreira), a virtual machine that is currently being used to teach Assembly. Apoo is written in Python and GTK+.
         image: cv-apoo.png
         link: https://www.dcc.fc.up.pt/~nam/apoo/node6.html
     -
-        year: 2009
+        year_: 2009
         title: EatFeed
         subtitle: RSS/Atom reader written in C++ and GTK+
         image: cv-eatfeed.png
         link: https://github.com/rpmcruz/eatfeed
     -
-        year: 2006/2007
+        year_: 2006/2007
         title: Google Summer of Code
         subtitle: "I was awarded twice a Google grant to work on open-source projects. LibreOffice dynamic layouts (2007) and YaST port from GTK+ to Qt (2006)."
     -
-        year: 2005
+        year_: 2005
         title: J2ME and Android games
         subtitle: Games written in Java Mobile Edition; more recently, I ported a couple of them to Android.
         link: https://github.com/rpmcruz/android-games
     -
-        year: 2005
+        year_: 2005
         title: SuperTux, co-author
         subtitle: While in high-school, I was part of the initial team developing this game. It is written in C++, SDL, and OpenGL.
         image: cv-supertux.jpg
