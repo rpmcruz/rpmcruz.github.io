@@ -75,23 +75,23 @@ supervisions:
     -
         year: 2021/2022 (on-going)
         title: "Master's Thesis: Human Feedback during Neural Networks Training"
-        subtitle: Pedro João Cruz Serrano e Silva
+        subtitle: "Pedro João Cruz Serrano e Silva (co-supervisor: Tiago Filipe Sousa Gonçalves)"
         description: "When systematic errors are detected in the predictions of a neural network, a common practice is to collect more images representative of these problematic cases, so that the neural network may be re-trained and, hopefully, avoid such mistakes. This process is expensive and is known as \"active learning\". Different \"data augmentation\" exist, but they are blind — i.e., they do not necessarily generate images in the space where the neural network is having more difficulty. Some work tries to intervene more directly by generating images closest to the decision boundary, using a generative model. The proposal here is to re-think how we can guide the neural network while it is being trained to avoid such mistakes — more specifically, we can use the derivatives as a form of sensitivity analysis to understand what parts of the images are contributing to increment/decrementing the class probability, and thus contributing to the mistake. These derivatives can then be regularized to avoid the network from focusing on a given part of the image or guide the network into focusing on another part of the image. This work is in collaboration with Prof. ASM Shihavuddin from the Green University of Bangladesh."
         image: alunos/201605633.jpg
     -
         year: 2021/2022 (on-going)
         title: "Master's Thesis: Environment Detection for Railway Applications based on Automotive Technology (internship at Continental)"
-        subtitle: João Malheiro Baptista Marcos da Silva
+        subtitle: "João Malheiro Baptista Marcos da Silva"
         image: alunos/201704946.jpg
     -
         year: 2021/2022 (on-going)
         title: "Master's Thesis: Phishing/Fraud detection model development (internship at E-goi)"
-        subtitle: Ana Luís Carvalho Matos Bezerra
+        subtitle: "Ana Luís Carvalho Matos Bezerra (main supervisor: Prof Joaquim Pinto da Costa)"
         image: alunos/201308078.jpg
     -
         year: 2021/2022 (on-going)
         title: "Bachelor's Project: Semantic Segmentation in Neural Networks using Iterative Visual Attention"
-        subtitle: Diana Raquel Teixeira e Silva
+        subtitle: "Diana Raquel Teixeira e Silva (co-supervisor: Tiago Filipe Sousa Gonçalves)"
         description: "Segmentar imagens usando redes neuronais é demorado (especialmente ao treinar) e requer muita memória quando as imagens são de alta-resolução. Cada vez é uma realidade mais comuns termos que trabalhar com imagens de alta-resolução, desde a área biomédica devido aos microscópios digitais de alta-resolução até à condução autónoma. A arquitectura mais comum para segmentar imagens é a U-Net, que, para cada pixel, produz a probabilidade desse pixel pertencer à região de interesse. Normalmente, quando a imagem é de alta-resolução o que se faz é dividir a imagem em patches e processar cada patch em separado. Estas abordagens têm dois problemas: (1) dispendem tanto tempo em regiões difíceis de segmentar, como em regiões fáceis de segmentar onde não se passa nada; (2) a fronteira entre patches é um problema e tem que ser lidada de forma especial. A proposta consiste em elaborar um novo método de segmentação que consiste em três fases: (1) usar uma U-Net para segmentar uma versão de baixa-resolução da imagem; (2) com base nas probabilidades produzidas por essa U-Net identificar patches da imagem mal-segmentados; (3) usar uma segunda U-Net para refinar esses patches (Figura 1 e 2). Portanto, a ideia é produzir um método de segmentação iterativo para redes neuronais. Já existem vários métodos iterativos para redes neuronais, mas é para outro tipo de problemas, em que se pretende focar na eficiência e não na rapidez. A ideia será aplicar o método produzido em datasets de imagem biomédica e também de condução autónoma."
         image: alunos/201805131.jpg
     -
