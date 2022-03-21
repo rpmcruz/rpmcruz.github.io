@@ -64,7 +64,7 @@ blocks = {
     'begin_item_link_hl': '<a class="item highlight" href="{}">',
     'end_item_link_hl': '</a>',
 
-    'image': '<img src="imgs/{}">',
+    'image': lambda imgs: ' '.join('<img src="imgs/{}">'.format(img) for img in imgs),
     'title': '<p><b>{}</b></p>',
     'subtitle': '<p>{}</p>',
     'description': '<p><small>{}</small></p>',

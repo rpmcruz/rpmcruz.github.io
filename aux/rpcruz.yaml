@@ -20,7 +20,7 @@ work:
         year: Oct. 2015--Jul. 2021
         title: INESC TEC
         subtitle: Machine Learning Specialist
-        summary: "INESC TEC is an R&D institute whose headquarters are located in Porto. I collaborated in the following projects:"
+        description: "INESC TEC is an R&D institute whose headquarters are located in Porto. I collaborated in the following projects:"
     -
         year: Sept. 2018--Aug. 2021
         title: FEUP
@@ -29,12 +29,12 @@ work:
     -
         year: Mar.--Jul. 2015
         title: Flykt Startup
-        summary: I was involved in a non-successful startup whose goal was to search for travel destinations. I was involved in the NLP part.
+        description: I was involved in a non-successful startup whose goal was to search for travel destinations. I was involved in the NLP part.
     -
         year: Sept. 2014--Feb. 2015
         title: Research Grant
         subtitle: Mathematics Center of the University of Porto
-        summary: "Research on epidemiological models: from differential equations to stochastic simulations and cellular automata."
+        description: "Research on epidemiological models: from differential equations to stochastic simulations and cellular automata."
 teaching:
     -
         year: 2021/2022
@@ -75,31 +75,41 @@ supervisions:
     -
         year: 2021/2022 (on-going)
         title: "Master's Thesis: Human Feedback during Neural Networks Training"
-        subtitle: Pedro Serrano Silva
+        subtitle: Pedro João Cruz Serrano e Silva
+        description: "When systematic errors are detected in the predictions of a neural network, a common practice is to collect more images representative of these problematic cases, so that the neural network may be re-trained and, hopefully, avoid such mistakes. This process is expensive and is known as \"active learning\". Different \"data augmentation\" exist, but they are blind — i.e., they do not necessarily generate images in the space where the neural network is having more difficulty. Some work tries to intervene more directly by generating images closest to the decision boundary, using a generative model. The proposal here is to re-think how we can guide the neural network while it is being trained to avoid such mistakes — more specifically, we can use the derivatives as a form of sensitivity analysis to understand what parts of the images are contributing to increment/decrementing the class probability, and thus contributing to the mistake. These derivatives can then be regularized to avoid the network from focusing on a given part of the image or guide the network into focusing on another part of the image. This work is in collaboration with Prof. ASM Shihavuddin from the Green University of Bangladesh."
+        image: alunos/201605633.jpg
     -
         year: 2021/2022 (on-going)
         title: "Master's Thesis: Environment Detection for Railway Applications based on Automotive Technology (internship at Continental)"
-        subtitle: João Silva
+        subtitle: João Malheiro Baptista Marcos da Silva
+        image: alunos/201704946.jpg
     -
         year: 2021/2022 (on-going)
         title: "Master's Thesis: Phishing/Fraud detection model development (internship at E-goi)"
-        subtitle: Ana Bezerra
+        subtitle: Ana Luís Carvalho Matos Bezerra
+        image: alunos/201308078.jpg
     -
         year: 2021/2022 (on-going)
         title: "Bachelor's Project: Semantic Segmentation in Neural Networks using Iterative Visual Attention"
-        subtitle: Diana Silva
+        subtitle: Diana Raquel Teixeira e Silva
+        description: "Segmentar imagens usando redes neuronais é demorado (especialmente ao treinar) e requer muita memória quando as imagens são de alta-resolução. Cada vez é uma realidade mais comuns termos que trabalhar com imagens de alta-resolução, desde a área biomédica devido aos microscópios digitais de alta-resolução até à condução autónoma. A arquitectura mais comum para segmentar imagens é a U-Net, que, para cada pixel, produz a probabilidade desse pixel pertencer à região de interesse. Normalmente, quando a imagem é de alta-resolução o que se faz é dividir a imagem em patches e processar cada patch em separado. Estas abordagens têm dois problemas: (1) dispendem tanto tempo em regiões difíceis de segmentar, como em regiões fáceis de segmentar onde não se passa nada; (2) a fronteira entre patches é um problema e tem que ser lidada de forma especial. A proposta consiste em elaborar um novo método de segmentação que consiste em três fases: (1) usar uma U-Net para segmentar uma versão de baixa-resolução da imagem; (2) com base nas probabilidades produzidas por essa U-Net identificar patches da imagem mal-segmentados; (3) usar uma segunda U-Net para refinar esses patches (Figura 1 e 2). Portanto, a ideia é produzir um método de segmentação iterativo para redes neuronais. Já existem vários métodos iterativos para redes neuronais, mas é para outro tipo de problemas, em que se pretende focar na eficiência e não na rapidez. A ideia será aplicar o método produzido em datasets de imagem biomédica e também de condução autónoma."
+        image: alunos/201805131.jpg
     -
         year: 2021/2022 (on-going)
         title: "Bachelor's Project: Mobile App using Object Detection for Car Driving"
         subtitle: "Filipe Pinto Campos, André Magalhães Cruz, Francisco Gonçalves Cerqueira, Vasco Marinho Rodrigues Gomes Alves"
+        image: [alunos/201905609.jpg, alunos/201705768.jpg, alunos/201905337.jpg, alunos/201808031.jpg]
+        description: "A technology race is \"on\" between car manufacturers to produce automatic systems to help human drivers. Currently, this technology goes from simple warnings and momentary assistance (SAE level 0) to fully self-driving systems on certain conditions (SAE level 3). However, these systems are expensive and the vast majority of the car fleet does not yet incorporate any of these systems. These systems typically use either RGB cameras or LiDAR sensors or both. Tesla has been focusing mostly on RGB cameras, while Bosch/Daimler has focused more on LiDAR sensors. Neural networks are then used to translate these sensorial inputs into semantic representations of the surroundings. Object detection systems already exist that provide high accuracy, even for mobile phone RGB cameras. The goal is to produce an Android application that produces an audible sound to warn the user in certain situations: when another car is in front of the user's car, when a pedestrian or another obstacle is in the road, and to notify on horizontal and vertical signs. Most Android phones are not powerful enough to run neural networks, but, if that is a problem, we can have the Android phone communicate with a server. The mobile phone needs to be somehow fixated in the tablier so that it moves as little as possible and be positioned in such a way that it provides a good front-view. The work would be divided into three stages. (1) Review stage [½ month]: students must review what Python packages exist for object detection, which models might be appropriate for the task, and which public datasets exist that can be used to train the models. (2) Implementation stage [1,5 months]: students form groups so that some try different object detection systems, while a couple of the students prepare the frontend/backend. (3) Evaluation and improvement stage [½ month]: due to resources limitations, we may need to scale down the image resolution (if the network is a problem) or perform other adjustments necessary for the system to work properly."
     -
         year: 2021/2022 (on-going)
         title: "Bachelor's Project: Internship at ANO"
-        subtitle: Bruno Gomes
+        subtitle: Bruno Campos Gomes
+        image: alunos/201906401.jpg
     -
         year: 2021/2022 (on-going)
         title: "Bachelor's Project: Internship at ANO"
-        subtitle: Rafael Camelo
+        subtitle: Rafael Fernando Ribeiro Camelo
+        image: alunos/201907729.jpg
 videos:
     -
         year: 2022

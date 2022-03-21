@@ -36,7 +36,8 @@ for si, section_name in enumerate(['Publications', 'Projects', 'Teaching', 'Supe
         else:
             print(blocks['begin_item' + hlsuffix], file=f)
         if 'image' in item:
-            print(blocks['image'].format(item['image']), file=f)
+            img = item['image'] if type(item['image']) is list else [item['image']]
+            print(blocks['image'](img), file=f)
         for field in ['title', 'subtitle', 'description']:
             if field in item:
                 print(blocks[field].format(item[field]), file=f)
