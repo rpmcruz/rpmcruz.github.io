@@ -3,78 +3,98 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="stylesheet" href="bootstrap.min.css">
 <title>Maternidade, Porto</title>
 <style>
-div.jumbotron, div.galeria {
+body {
+    margin: 0;
+}
+.jumbotron {
     background-color: #fff5db;
-    padding-top: 60px;
+    padding: 60px;
+    text-align: center;
 }
 
-div.caption, figcaption {
-    font-size: small;
+.info {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
 }
+.info .card {
+    display: inline-block;
+    width: 400px;
+}
+@media (max-width: 800px) { .info .card { width: 100%; } }
 
-div.thumbnail > a > img:hover {
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #fff5db;
+    padding: 20px;
+}
+.galeria .card {
+    display: inline-block;
+    width: 25%;
+    vertical-align: text-top;
+}
+@media (max-width: 768px) { .galeria .card { width: 33%; } }
+@media (max-width: 480px) { .galeria .card { width: 100%; } }
+.galeria img {
+    width: 90%;
+}
+.galeria img:hover {
     transform: scale(1.1);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+
 .bigfont {
     font-size: 30px;
 }
+.occupied {
+    color: red;
+}
+.vacant {
+    color: green;
+}
 </style>
 </head>
+
 <body>
-
 <div class="jumbotron">
-<div class="container">
 <h1>Rua da Maternidade, 83 &ndash; Porto</h1>
-<h5>In Porto Downtown!</h5>
-</div>
+<h3>In Porto Downtown!</h3>
 </div>
 
-<div class="container">
+<center>
 <p class="text-dark text-center bigfont"><img src="rooms.png"> 3 <img src="wc.png"> 1</p>
-</div>
+</center>
 
-<div class="container">
-<div class="row">
-<div class="col-md-6">
+<div class="info">
+<div class="card">
 &bull; Near stores, monuments, in the historical center of Porto!<br>
 &bull; 10 minutes walking for ICBAS/FFUP/FDUP<br>
 &bull; 15 minutes walking for FLUP/ISPUP<br>
 &bull; 20 minutes walking for FCUP/FAUP/FCNAUP
 </div>
-<div class="col-md-6">
+<div class="card">
 &bull; University Gym is in the street (see <a href="https://cdup.up.pt/upfit/o-programa">CDUP Boa Hora</a>)<br>
 &bull; You can cook at home or eat for cheap in the University cafeterias nearby<br>
 &bull; Washing machine+iron+drier.
 </div>
 </div>
-</div>
 
 <center><iframe width="560" height="315" src="https://www.youtube.com/embed/U_EkM3q_rLM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 
-<div class="container-fluid">
-<div class="row galeria">
-<div class="col-md-3 col-sm-4">
-<div class="thumbnail">
-<div class="caption">
+<div class="galeria">
+<div class="card">
 <p><b>Facade</b></p>
-</div>
-<a href="https://photos.app.goo.gl/emuvV8EiFTULrsEq7"><img class="img-fluid" src="https://lh3.googleusercontent.com/QZn1QvV10lwKth5MVVVYw-WmftGWD_sGHKCIHdgKn3-a1ErJ9uUHbnwVncBdlucksTIwJlP2lllLwtc94gh8BqPUk055Bv5db9WCa931kvx5nI5TCIVsXnSTb9z0uXNfEgqDKyVi=w1016-h762-no"></a>
-</div>
+<a href="https://photos.app.goo.gl/emuvV8EiFTULrsEq7"><img src="https://lh3.googleusercontent.com/QZn1QvV10lwKth5MVVVYw-WmftGWD_sGHKCIHdgKn3-a1ErJ9uUHbnwVncBdlucksTIwJlP2lllLwtc94gh8BqPUk055Bv5db9WCa931kvx5nI5TCIVsXnSTb9z0uXNfEgqDKyVi=w1016-h762-no"></a>
 </div>
 
-<div class="col-md-3 col-sm-4">
-<div class="thumbnail">
-<div class="caption">
-<p><b>Room #1 (<span class="bg-danger text-white">occupied until 31-august</span>)</b></p>
-</div>
-<a href="https://photos.app.goo.gl/tXBNrZ56wqPSNuJY6"><img class="img-fluid" src="https://lh3.googleusercontent.com/nxeTkek-r9BwqsWhPuK7o90tdbqkEATYI6HwVjWm9u9gTMKcffhrLjIl2b6mL3vDcCtTAKxraXWwG-KCe6gRs0v2nJLeKI8Hmz1iScwnD2BSsK2oZ8m4KC6opa_kAPuT3nPUAVUL=w1016-h762-no"></a>
-<div class="caption">
+<div class="card">
+<p><b>Room #1 (<span class="occupied">occupied</span>)</b></p>
+<a href="https://photos.app.goo.gl/tXBNrZ56wqPSNuJY6"><img src="https://lh3.googleusercontent.com/nxeTkek-r9BwqsWhPuK7o90tdbqkEATYI6HwVjWm9u9gTMKcffhrLjIl2b6mL3vDcCtTAKxraXWwG-KCe6gRs0v2nJLeKI8Hmz1iScwnD2BSsK2oZ8m4KC6opa_kAPuT3nPUAVUL=w1016-h762-no"></a>
 <ul>
-<li>300&euro;/month (bills included)</li>
+<li>320&euro;/month (bills included)</li>
 <li>Size: 4.1m x 3.1m</li>
 <li>Has a lot of natural light</li>
 <li>Blackouts provide full darkness for the night</li>
@@ -82,36 +102,24 @@ div.thumbnail > a > img:hover {
 <li>Weekly cleaning of the common areas</li>
 </ul>
 </div>
-</div>
-</div>
 
-<div class="col-md-3 col-sm-4">
-<div class="thumbnail">
-<div class="caption">
-<p><b>Room #2 (<span class="bg-danger text-white">occupied until 30-june</span>)</b></p>
-</div>
-<a href="https://photos.app.goo.gl/CZJAPttQrDueACyc7"><img class="img-fluid" src="https://lh3.googleusercontent.com/XYsu-h0RkA6XLjeuKLgIbDVDm8qB_SiwjdT5Uzdgx5MXI6qrENRmLsliHUpkzP58M4MAjbJn7qZKeeIvlipO6Hx7bL7yALW5p8G8y1sbfhIWu_0vYNHQ1LwtdrpXrDSTWgqV8lN8=w2400"></a>
-<div class="caption">
+<div class="card">
+<p><b>Room #2 (<span class="vacant">vacant in july</span>)</b></p>
+<a href="https://photos.app.goo.gl/CZJAPttQrDueACyc7"><img src="https://lh3.googleusercontent.com/XYsu-h0RkA6XLjeuKLgIbDVDm8qB_SiwjdT5Uzdgx5MXI6qrENRmLsliHUpkzP58M4MAjbJn7qZKeeIvlipO6Hx7bL7yALW5p8G8y1sbfhIWu_0vYNHQ1LwtdrpXrDSTWgqV8lN8=w2400"></a>
 <ul>
-<li>290&euro;/month (bills included)</li>
+<li>300&euro;/month (bills included)</li>
 <li>Size: 3.1m x 3.0m</li>
 <li>Blackouts provide full darkness for the night</li>
-<li>Furniture: bed+desk+closet including bed clothes <span class="text-secondary">(it has a second bed for a guest)</span></li>
+<li>Furniture: bed+desk+closet including bed clothes (it has a second bed for a guest)</li>
 <li>Weekly cleaning of the common areas</li>
 </ul>
 </div>
-</div>
-</div>
 
-<div class="col-md-3 col-sm-4">
-<div class="thumbnail">
-<div class="caption">
-<p><b>Room #3 (<span class="bg-danger text-white">occupied until 30-june</span>)</b></p>
-</div>
-<a href="https://photos.app.goo.gl/3v6htjE67yS2adgm8"><img class="img-fluid" src="https://lh3.googleusercontent.com/w5NDhH6Oy4AldB0kvsx5QeRd1Gwxjvuk-Gymm-No_qR_hK7ar5o9_IuUSFekMtCeQukzBwv-ONvR8vNJRqvroIIfKfRWvymmQ9J_ajFwJqW-mIvxfwwODyxPFopiLt8GekM6j90C=w718-h539-no"></a>
-<div class="caption">
+<div class="card">
+<p><b>Room #3 (<span class="vacant">vacant in july</span>)</b></p>
+<a href="https://photos.app.goo.gl/3v6htjE67yS2adgm8"><img src="https://lh3.googleusercontent.com/w5NDhH6Oy4AldB0kvsx5QeRd1Gwxjvuk-Gymm-No_qR_hK7ar5o9_IuUSFekMtCeQukzBwv-ONvR8vNJRqvroIIfKfRWvymmQ9J_ajFwJqW-mIvxfwwODyxPFopiLt8GekM6j90C=w718-h539-no"></a>
 <ul>
-<li>270&euro;/month (bills included)</li>
+<li>300&euro;/month (bills included)</li>
 <li>Size: 3.5m x 2.2m (small)</li>
 <li>Has a lot of natural light</li>
 <li>Blackouts provide full darkness for the night</li>
@@ -119,81 +127,56 @@ div.thumbnail > a > img:hover {
 <li>Weekly cleaning of the common areas</li>
 </ul>
 </div>
-</div>
-</div>
 
-<div class="col-md-3 col-sm-4">
-<div class="thumbnail">
-<div class="caption">
+<div class="card">
 <p><b>Kitchen</b></p>
-</div>
-<a href="https://photos.app.goo.gl/Zif8y62R9EhEW2pD6"><img class="img-fluid" src="https://lh3.googleusercontent.com/787yuosfDBGMlcEHyv3hOT6zUiDFS56SkMH3i-24jaLRm927GxDFuI0HskupnG_TwAIXhIOmUgvOnncsNeNwlCn1yKpugY6E9VEa6aurhaoCYd_Q9u5MDK1aZFB-7eFTzTtP1MiG=w2400"></a>
-<div class="caption">
+<a href="https://photos.app.goo.gl/Zif8y62R9EhEW2pD6"><img src="https://lh3.googleusercontent.com/787yuosfDBGMlcEHyv3hOT6zUiDFS56SkMH3i-24jaLRm927GxDFuI0HskupnG_TwAIXhIOmUgvOnncsNeNwlCn1yKpugY6E9VEa6aurhaoCYd_Q9u5MDK1aZFB-7eFTzTtP1MiG=w2400"></a>
 <ul>
 <li>Small kitchen for 4 people
 <li>Appliances: ceramic hob+micro-wave+oven+fridge</li>
 <li>Washing machine</li>
 </ul>
 </div>
-</div>
-</div>
 
-<div class="col-md-3 col-sm-4">
-<div class="thumbnail">
-<div class="caption">
+<div class="card">
 <p><b>Living room</b></p>
-</div>
-<a href="https://photos.app.goo.gl/JExis4EhbP2y5PNp6"><img class="img-fluid" src="https://lh3.googleusercontent.com/xhY5KrsQ_Nt3QfbQIE5730jsTlHxMxM3rhMyPQAy7T2CXflLxYLgoOIUuRRATaQ5zddqjjIkQz1R3c65q_njqUpedS2CMz4iXMF2Tu1q1IXRQTk94AFneqlfZ-MicdZQkKjMfrOg=w2400"></a>
-<div class="caption">
+<a href="https://photos.app.goo.gl/JExis4EhbP2y5PNp6"><img src="https://lh3.googleusercontent.com/xhY5KrsQ_Nt3QfbQIE5730jsTlHxMxM3rhMyPQAy7T2CXflLxYLgoOIUuRRATaQ5zddqjjIkQz1R3c65q_njqUpedS2CMz4iXMF2Tu1q1IXRQTk94AFneqlfZ-MicdZQkKjMfrOg=w2400"></a>
 <ul>
 <li>Small living room for 4 people
 <li>Furniture: television+sofa+puffes</li>
 </ul>
 </div>
-</div>
-</div>
 
-<div class="col-md-3 col-sm-4">
-<div class="thumbnail">
-<div class="caption">
+<div class="card">
 <p><b>WC</b></p>
-</div>
-<a href="https://photos.app.goo.gl/gdc1vkeBPpeUSQuc6"><img class="img-fluid" src="https://lh3.googleusercontent.com/ZpdsdQ1Rth2vhNckLnG9nALuan1rmTxjMPy2sZeM_KBhL0UuHNLCswrxkVCXxPDXLRgYoKo19ZrcxZPmYodEl2pzPu5zRxyD8nRAgogPOxb3TuL58OdF8PGW1rSh2371K6mN3Zyz=w1016-h762-no"></a>
-<div class="caption">
+<a href="https://photos.app.goo.gl/gdc1vkeBPpeUSQuc6"><img src="https://lh3.googleusercontent.com/ZpdsdQ1Rth2vhNckLnG9nALuan1rmTxjMPy2sZeM_KBhL0UuHNLCswrxkVCXxPDXLRgYoKo19ZrcxZPmYodEl2pzPu5zRxyD8nRAgogPOxb3TuL58OdF8PGW1rSh2371K6mN3Zyz=w1016-h762-no"></a>
 <ul>
 <li>Includes an hair dryer</li>
 </ul>
 </div>
-</div>
-</div>
 
 
-<div class="col-md-3 col-sm-4">
-<div class="thumbnail">
-<div class="caption">
-<p></p>
-</div>
+<div class="card">
+<center>
 Postal Address:<br>
-<small>Rua da Maternidade, 83</small><br>
-<small>4050-370 Porto</small><br>
-<small>Portugal</small>
-</div>
-</div>
-</div>
-
-
+<small>Rua da Maternidade, 83<br>
+4050-370 Porto<br>
+Portugal
+</small></center>
 </div>
 
 
-<div class="container">
+</div>
+
+
+<center>
 <div class="embed-responsive embed-responsive-16by9">
 <iframe class="embed-responsive-item" src="https://www.google.com/maps/d/u/0/embed?mid=1suqXq2rTb-bReey0rJTjQYsEGVGPjZed" width="600" height="400"></iframe>
 </div>
-</div>
+</center>
 
 
-<p class="lead text-center p-3 mb-2 bg-warning text-dark"><b>Contact:</b> &#x1F4E7; Ricardo Cruz &lt;<a href="mailto:ricardo.pdm.cruz@gmail.com">ricardo.pdm.cruz@gmail.com</a>&gt;&nbsp;&nbsp; <img src="whatsapp.png"> <a href="https://api.whatsapp.com/send?phone=351934741617">+351 934741617</a>&nbsp;&nbsp; <img src="facebook.png"> <a href="http://m.me/">rpmcruz</a></p>
+<p><b>Contact:</b> &#x1F4E7; Ricardo Cruz &lt;<a href="mailto:ricardo.pdm.cruz@gmail.com">ricardo.pdm.cruz@gmail.com</a>&gt;&nbsp;&nbsp; <img src="whatsapp.png"> <a href="https://api.whatsapp.com/send?phone=351934741617">+351 934741617</a>&nbsp;&nbsp; <img src="facebook.png"> <a href="http://m.me/">rpmcruz</a></p>
 
-</div>
 </body>
 </html>
