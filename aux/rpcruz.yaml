@@ -159,6 +159,11 @@ projects:
         link: https://www.supertux.org/
 publications:
     -
+        year: 2022
+        title: Quasi-Unimodal Distributions for Ordinal Classification
+        subtitle: "T. Albuquerque, R. Cruz, J. Cardoso. MDPI Mathematics"
+        link: https://www.mdpi.com/2227-7390/10/6/980
+    -
         year: 2021
         title: Ordinal Losses for Classification of Cervical Cancer Risk
         subtitle: "T. Albuquerque, R. Cruz, J. Cardoso. PeerJ Computer Science"
