@@ -12,10 +12,15 @@ if args.format == 'html':
 else:
     from blocks_tex import blocks
 
+sections_list = {
+    'html': ['Publications', 'Projects', 'Teaching', 'Supervisions', 'Videos', 'Awards'],
+    'tex': ['Work', 'Teaching', 'Publications', 'Projects', 'Awards'],
+}
+
 if blocks['same_file']:
     f = open(f'cv.{args.format}', 'w')
     print(blocks['begin_document'], file=f)
-for si, section_name in enumerate(['Publications', 'Projects', 'Teaching', 'Supervisions', 'Videos', 'Awards']):
+for si, section_name in enumerate(sections_list[args.format]):
     if not blocks['same_file']:
         filename = 'index.html' if si == 0 else f'{section_name.lower()}.{args.format}'
         f = open(filename, 'w')
@@ -40,7 +45,7 @@ for si, section_name in enumerate(['Publications', 'Projects', 'Teaching', 'Supe
             print(blocks['image'](img), file=f)
         for field in ['title', 'subtitle', 'description']:
             if field in item:
-                print(blocks[field].format(item[field]), file=f)
+                print(blocks[field].format(blocks['escape'](item[field])), file=f)
         if 'link' in item:
             print(blocks['end_item_link' + hlsuffix], file=f)
         else:
@@ -51,3 +56,4 @@ for si, section_name in enumerate(['Publications', 'Projects', 'Teaching', 'Supe
     print(blocks['end_section'].format(section_name), file=f)
 if blocks['same_file']:
     print(blocks['end_document'], file=f)
+f.close()

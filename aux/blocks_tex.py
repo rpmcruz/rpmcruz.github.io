@@ -1,4 +1,4 @@
-tex_blocks = {
+blocks = {
     'begin_document': r'''\documentclass[11pt]{article}
 
 \usepackage[a4paper, lmargin=1cm, rmargin=1cm, tmargin=2cm, bmargin=3cm]{geometry}
@@ -27,6 +27,7 @@ tex_blocks = {
 \usepackage{tikz}
 \usetikzlibrary{tikzmark, calc}
 
+\begin{document}
 \begin{tikzpicture}[remember picture,overlay]
 \fill[blue!10] (current page.north west) rectangle ([yshift=-37ex]current page.north east);
 \end{tikzpicture}
@@ -69,15 +70,27 @@ I have just completed my Ph.D. in Computer Science (june 2021). During the Ph.D.
 Python $\cdot$ C $\cdot$ C++ $\cdot$ Java $\cdot$ R $\cdot$ MATLAB $\cdot$ TensorFlow $\cdot$ PyTorch $\cdot$ OpenCV $\cdot$ SQL $\cdot$ Git
 \end{minipage}
 ''',
-    'year': '\\bigskip\n\\centerline{{\\sc\\large {}}}',
+    'end_document': r'\end{document}',
+    'year': '{{\\sc\\large {}}}\n\n',
+
+    'begin_section': lambda name: '\\section{%s}\\begin{multicols}{2}\\interlinepenalty=10000\n\n' % name,
+    'end_section': '\\end{{multicols}}\n\n',
 
     'begin_item': '',
-    'end_item': '',
-    'begin_item_hl': '\\colorbox{gray}{',
-    'end_item_hl': '}',
+    'end_item': '\n\n',
+    'begin_item_hl': '',
+    'end_item_hl': '\n\n',
+    'begin_item_link': r'',
+    'end_item_link': '\n\n',
+    'begin_item_link_hl': r'',
+    'end_item_link_hl': '\n\n',
+
+    'image': lambda imgs: ' '.join(r'\includegraphics[width=5cm]{{../imgs/{}}}'.format(img) for img in imgs),
 
     'title': '\\textbf{{{}}}',
     'subtitle': '\\\\{}',
     'description': '\\\\{{\small {}}}',
     'same_file': True,
+
+    'escape': lambda x: x.replace('&', r'\&'),
 }
