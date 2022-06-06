@@ -16,7 +16,6 @@
 <div>
 <img width="128" height="112" src="imgs/photo.png"><br>
 &bull; Post-doc Researcher<br>
-&bull; Invited Assistant Professor
 </div>
 
 <div>
@@ -35,55 +34,63 @@
 <div class="content menu">
 <ul>
 <li><a href="index.html">Publications</a></li>
+<li><a class="active" href="supervisions.html">Supervisions</a></li>
+<li><a href="career.html">Career</a></li>
 <li><a href="projects.html">Projects</a></li>
-<li><a href="teaching.html">Teaching</a></li>
-<li><a class="active"href="supervisions.html">Supervisions</a></li>
 <li><a href="videos.html">Videos</a></li>
 <li><a href="awards.html">Awards</a></li>
 </ul>
 </div>
-
 <div class="content">
 
-<p class="year">2021/2022 (on-going)</p>
-<div class="item">
+<p class="year">Master's Theses (on-going)</p>
+<ul>
+<li>
+<b>Human Feedback during Neural Networks Training</b>
+<br>Pedro João Cruz Serrano e Silva (co-supervisor: Tiago Filipe Sousa Gonçalves)
+<br>
 <img src="imgs/alunos/201605633.jpg">
-<p><b>Master's Thesis: Human Feedback during Neural Networks Training</b></p>
-<p>Pedro João Cruz Serrano e Silva (co-supervisor: Tiago Filipe Sousa Gonçalves)</p>
-<p><small>When systematic errors are detected in the predictions of a neural network, a common practice is to collect more images representative of these problematic cases, so that the neural network may be re-trained and, hopefully, avoid such mistakes. This process is expensive and is known as "active learning". Different "data augmentation" exist, but they are blind — i.e., they do not necessarily generate images in the space where the neural network is having more difficulty. Some work tries to intervene more directly by generating images closest to the decision boundary, using a generative model. The proposal here is to re-think how we can guide the neural network while it is being trained to avoid such mistakes — more specifically, we can use the derivatives as a form of sensitivity analysis to understand what parts of the images are contributing to increment/decrementing the class probability, and thus contributing to the mistake. These derivatives can then be regularized to avoid the network from focusing on a given part of the image or guide the network into focusing on another part of the image. This work is in collaboration with Prof. ASM Shihavuddin from the Green University of Bangladesh.</small></p>
-</div>
-<div class="item">
+</li>
+<li>
+<b>Environment Detection for Railway Applications based on Automotive Technology (Internship at Continental)</b>
+<br>João Malheiro Baptista Marcos da Silva
+<br>
 <img src="imgs/alunos/201704946.jpg">
-<p><b>Master's Thesis: Environment Detection for Railway Applications based on Automotive Technology (internship at Continental)</b></p>
-<p>João Malheiro Baptista Marcos da Silva</p>
-</div>
-<div class="item">
+</li>
+<li>
+<b>Phishing/Fraud detection model development (Internship at E-goi)</b>
+<br>Ana Luís Carvalho Matos Bezerra (main supervisor: Prof Joaquim Pinto da Costa)
+<br>
 <img src="imgs/alunos/201308078.jpg">
-<p><b>Master's Thesis: Phishing/Fraud detection model development (internship at E-goi)</b></p>
-<p>Ana Luís Carvalho Matos Bezerra (main supervisor: Prof Joaquim Pinto da Costa)</p>
-</div>
-<div class="item">
+</li>
+</ul>
+<p class="year">Bachelor's Projects (on-going)</p>
+<ul>
+<li>
+<b>Semantic Segmentation in Neural Networks using Iterative Visual Attention</b>
+<br>Diana Raquel Teixeira e Silva (co-supervisor: Tiago Filipe Sousa Gonçalves)
+<br>
 <img src="imgs/alunos/201805131.jpg">
-<p><b>Bachelor's Project: Semantic Segmentation in Neural Networks using Iterative Visual Attention</b></p>
-<p>Diana Raquel Teixeira e Silva (co-supervisor: Tiago Filipe Sousa Gonçalves)</p>
-<p><small>Segmentar imagens usando redes neuronais é demorado (especialmente ao treinar) e requer muita memória quando as imagens são de alta-resolução. Cada vez é uma realidade mais comuns termos que trabalhar com imagens de alta-resolução, desde a área biomédica devido aos microscópios digitais de alta-resolução até à condução autónoma. A arquitectura mais comum para segmentar imagens é a U-Net, que, para cada pixel, produz a probabilidade desse pixel pertencer à região de interesse. Normalmente, quando a imagem é de alta-resolução o que se faz é dividir a imagem em patches e processar cada patch em separado. Estas abordagens têm dois problemas: (1) dispendem tanto tempo em regiões difíceis de segmentar, como em regiões fáceis de segmentar onde não se passa nada; (2) a fronteira entre patches é um problema e tem que ser lidada de forma especial. A proposta consiste em elaborar um novo método de segmentação que consiste em três fases: (1) usar uma U-Net para segmentar uma versão de baixa-resolução da imagem; (2) com base nas probabilidades produzidas por essa U-Net identificar patches da imagem mal-segmentados; (3) usar uma segunda U-Net para refinar esses patches (Figura 1 e 2). Portanto, a ideia é produzir um método de segmentação iterativo para redes neuronais. Já existem vários métodos iterativos para redes neuronais, mas é para outro tipo de problemas, em que se pretende focar na eficiência e não na rapidez. A ideia será aplicar o método produzido em datasets de imagem biomédica e também de condução autónoma.</small></p>
-</div>
-<div class="item">
-<img src="imgs/alunos/201905609.jpg"> <img src="imgs/alunos/201705768.jpg"> <img src="imgs/alunos/201905337.jpg"> <img src="imgs/alunos/201808031.jpg">
-<p><b>Bachelor's Project: Mobile App using Object Detection for Car Driving</b></p>
-<p>Filipe Pinto Campos, André Magalhães Cruz, Francisco Gonçalves Cerqueira, Vasco Marinho Rodrigues Gomes Alves</p>
-<p><small>A technology race is "on" between car manufacturers to produce automatic systems to help human drivers. Currently, this technology goes from simple warnings and momentary assistance (SAE level 0) to fully self-driving systems on certain conditions (SAE level 3). However, these systems are expensive and the vast majority of the car fleet does not yet incorporate any of these systems. These systems typically use either RGB cameras or LiDAR sensors or both. Tesla has been focusing mostly on RGB cameras, while Bosch/Daimler has focused more on LiDAR sensors. Neural networks are then used to translate these sensorial inputs into semantic representations of the surroundings. Object detection systems already exist that provide high accuracy, even for mobile phone RGB cameras. The goal is to produce an Android application that produces an audible sound to warn the user in certain situations: when another car is in front of the user's car, when a pedestrian or another obstacle is in the road, and to notify on horizontal and vertical signs. Most Android phones are not powerful enough to run neural networks, but, if that is a problem, we can have the Android phone communicate with a server. The mobile phone needs to be somehow fixated in the tablier so that it moves as little as possible and be positioned in such a way that it provides a good front-view. The work would be divided into three stages. (1) Review stage [½ month]: students must review what Python packages exist for object detection, which models might be appropriate for the task, and which public datasets exist that can be used to train the models. (2) Implementation stage [1,5 months]: students form groups so that some try different object detection systems, while a couple of the students prepare the frontend/backend. (3) Evaluation and improvement stage [½ month]: due to resources limitations, we may need to scale down the image resolution (if the network is a problem) or perform other adjustments necessary for the system to work properly.</small></p>
-</div>
-<div class="item">
+</li>
+<li>
+<b>Mobile App using Object Detection for Car Driving</b>
+<br>Filipe Pinto Campos, André Magalhães Cruz, Francisco Gonçalves Cerqueira, Vasco Marinho Rodrigues Gomes Alves
+<br>
+<img src="imgs/alunos/201905609.jpg"><img src="imgs/alunos/201705768.jpg"><img src="imgs/alunos/201905337.jpg"><img src="imgs/alunos/201808031.jpg">
+</li>
+<li>
+<b>Internship at ANO</b>
+<br>Bruno Campos Gomes
+<br>
 <img src="imgs/alunos/201906401.jpg">
-<p><b>Bachelor's Project: Internship at ANO</b></p>
-<p>Bruno Campos Gomes</p>
-</div>
-<div class="item">
+</li>
+<li>
+<b>Internship at ANO</b>
+<br>Rafael Fernando Ribeiro Camelo
+<br>
 <img src="imgs/alunos/201907729.jpg">
-<p><b>Bachelor's Project: Internship at ANO</b></p>
-<p>Rafael Fernando Ribeiro Camelo</p>
-</div>
+</li>
+</ul>
 </div>
 </body>
 </html>

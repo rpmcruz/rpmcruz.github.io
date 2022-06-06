@@ -1,14 +1,13 @@
----
----
-
 /*** Layout ***/
 body {
-  font-family: serif;
-  margin: 0;
-  text-align: justify;
+  margin: 0px;
+  overflow-y: scroll; /* Show vertical scrollbar */
 }
 .flex {
   display: flex;
+}
+.flex > div {
+  padding-right: 18px;
 }
 .content {
   max-width: 1080px;
@@ -20,6 +19,9 @@ body {
 }
 .header {
   background-color: #e8e6ff;
+}
+.header p {
+    margin-bottom: 0;
 }
 
 /*** Menu ***/
@@ -52,27 +54,15 @@ body {
 }
 
 /*** Content ***/
-a.item {
-  display: block;
+a {
   text-decoration: none;
-  color: black;
-  background-color: #f2f2f2;
 }
-a.item:hover {
-  background-color: #cecece;
+a:hover {
+  text-decoration: underline;
 }
-.item {
-  padding: 10px;
-}
-.item > p {
-  margin: 0;
-}
-.item > img {
+li > img {
   max-width: 400px;
   max-height: 300px;
-}
-a.item.highlight {
-  border: 2px dashed black;
 }
 p.year {
   margin: 5px;
@@ -81,17 +71,9 @@ p.year {
 h2 {
   margin-top: 40px;
 }
-ul {
-  margin: 0;
+.highlight {
+  background-color: yellow;
 }
-.cvgroup {
-  margin-left: 10px;
-  padding-left: 10px;
-  border-left: 3px solid rgb(0.7,0.7,0.7);
-}
-.cvlabel {
-  font-weight: bold;
-}
-small {
+.description {
   color: gray;
 }
