@@ -7,7 +7,7 @@ import yaml
 cv = yaml.load(open(args.yaml), Loader=yaml.Loader)
 
 def escape(x):
-    return x.replace('&', r'\&')
+    return x.replace('&', r'\&').replace('~', r'$\sim$')
 
 f = open(f'{args.yaml[:-4]}tex', 'w')
 
@@ -79,7 +79,7 @@ print(r'''\centerline{\rule{0.4\linewidth}{0.2pt}}
 print(' $\cdot$ '.join(cv['skills']), file=f)
 print('\\end{minipage}\n', file=f)
 
-for section_name in ['Career', 'Education', 'Projects', 'Publications', 'Awards']:
+for section_name in ['Career', 'Teaching', 'Education', 'Projects', 'Publications', 'Awards']:
     if section_name == 'Career':
         print(r'\begin{minipage}[t]{0.53\textwidth}', file=f)
     elif section_name == 'Education':
@@ -136,10 +136,10 @@ for section_name in ['Career', 'Education', 'Projects', 'Publications', 'Awards'
 \end{itemize}''', file=f)
     if section_name in ['Projects', 'Awards']:
         print(r'\end{multicols}', file=f)
-    if section_name in ['Career', 'Education']:
+    if section_name in ['Teaching', 'Education']:
         print(r'\end{minipage}%', file=f)
-        if section_name == 'Career':
-            print(r'\hfill\raisebox{-0.54\textheight}{\rule{0.5pt}{0.55\textheight}}\hfill%', file=f)
+        if section_name == 'Teaching':
+            print(r'\hfill\raisebox{-0.60\textheight}{\rule{0.5pt}{0.59\textheight}}\hfill%', file=f)
         else:
             print('\\newpage\n', file=f)
 print(r'\end{document}', file=f)

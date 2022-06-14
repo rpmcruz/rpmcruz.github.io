@@ -11,9 +11,7 @@ def escape(x):
 
 sections = ['Publications', 'Supervisions', 'Career', 'Projects', 'Videos', 'Awards']
 
-for si, section_name in enumerate(sections):
-    filename = '../index.html' if si == 0 else f'../{section_name.lower()}.html'
-    f = open(filename, 'w')
+def print_begin(f, si):
     print(f'''<html>
 <head>
 <meta charset="utf-8" />
@@ -60,6 +58,7 @@ for si, section_name in enumerate(sections):
 <div class="content">
 ''', file=f)
 
+def print_section(f, section_name):
     if section_name == 'Publications':
         print('<p>Some of my favorite publications are <span class="highlight">highlighted</span>.</p>', file=f)
     for year in cv[section_name.lower()]:
@@ -88,7 +87,23 @@ for si, section_name in enumerate(sections):
                 print(''.join(f'<img src="imgs/{img}">' for img in imgs), file=f)
             print(f'</li>', file=f)
         print(f'</ul>', file=f)
+
+def print_end(f, section_name):
     if section_name == 'Projects':
         print('<p style="margin-top:20px">Find more of my code at <a href="https://github.com/rpmcruz?tab=repositories">github.com/rpmcruz</a></p>', file=f)
     print('''</div>\n</body>\n</html>''', file=f)
+
+for si, section_name in enumerate(sections):
+    filename = '../index.html' if si == 0 else f'../{section_name.lower()}.html'
+    f = open(filename, 'w')
+
+    print_begin(f, si)
+    print_section(f, section_name)
+
+    if section_name == 'Career':
+        print('<h3>Teaching</h3>', file=f)
+        print_section(f, 'Teaching')
+
+    print_end(f, section_name)
+
 f.close()

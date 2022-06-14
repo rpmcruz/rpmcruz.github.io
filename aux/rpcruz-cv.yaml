@@ -22,21 +22,11 @@ career:
         - title: Post-Doc Deep Learning Specialist
           subtitle: Faculty of Engineering, University of Porto
           description: "Object detection, point-cloud LiDAR parsing"
-    - year: Sept. 2021--Aug. 2022
-      items:
-        - title: Faculty of Engineering, University of Porto
-          subtitle: Invited Auxiliary Professor (part-time)
-          description: Practical tutorials on Python, C++ and data structures to first-year students.
     - year: Sept. 2015--Jul. 2021
       items:
         - title: INESC TEC (Porto)
           subtitle: Machine Learning and Computer Vision Researcher
           description: "INESC TEC is an R&D institute"
-    - year: Sept. 2018--Aug. 2020
-      items:
-        - title: Faculty of Engineering, University of Porto
-          subtitle: Invited Teacher Assistant (part-time)
-          description: Practical tutorials on Python and C++ to first-year students.
     - year: Mar.--Jul. 2015
       items:
         - title: Flykt Startup
@@ -46,6 +36,17 @@ career:
         - title: Research Grant
           subtitle: Mathematics Center of the University of Porto
           description: "Research on epidemiological models: from differential equations to stochastic simulations and cellular automata."
+teaching:
+    - year: Sept. 2021--Aug. 2022
+      items:
+        - title: Faculty of Engineering, University of Porto
+          subtitle: Invited Auxiliary Professor (~3h/week)
+          description: Practical tutorials on Python, C++ and data structures to first-year students.
+    - year: Sept. 2018--Aug. 2020
+      items:
+        - title: Faculty of Engineering, University of Porto
+          subtitle: Invited Teacher Assistant (~3h/week)
+          description: Practical tutorials on Python and C++ to first-year students.
 supervisions:
     - year: Master's Theses (on-going)
       items:
