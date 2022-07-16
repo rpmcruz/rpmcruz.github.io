@@ -98,7 +98,14 @@ for si, section_name in enumerate(sections):
     f = open(filename, 'w')
 
     print_begin(f, si)
-    print_section(f, section_name)
+
+    if section_name == 'Supervisions':
+        print("<h3>Master's Theses</h3>", file=f)
+        print_section(f, 'msc-supervisions')
+        print("<h3>Bachelor's Projects</h3>", file=f)
+        print_section(f, 'bsc-supervisions')
+    else:
+        print_section(f, section_name)
 
     if section_name == 'Career':
         print('<h3>Teaching</h3>', file=f)
