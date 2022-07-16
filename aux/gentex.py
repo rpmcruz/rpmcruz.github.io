@@ -79,7 +79,10 @@ print(r'''\centerline{\rule{0.4\linewidth}{0.2pt}}
 print(' $\cdot$ '.join(cv['skills']), file=f)
 print('\\end{minipage}\n', file=f)
 
-for section_name in ['Career', 'Teaching', 'Education', 'Projects', 'Publications', 'Awards']:
+sections = ['Career', 'Teaching', 'Education', 'Projects', 'Publications', 'Supervisions', 'Awards']
+multicols = {'Projects', 'Awards'}
+
+for section_name in sections:
     if section_name == 'Career':
         print(r'\begin{minipage}[t]{0.53\textwidth}', file=f)
     elif section_name == 'Education':
@@ -91,17 +94,25 @@ for section_name in ['Career', 'Teaching', 'Education', 'Projects', 'Publication
     else:
         print(f'\\centerline{{\\sc\\Large {section_name}}}', file=f)
 
-    if section_name in ['Projects', 'Awards']:
+    if section_name in multicols:
         print(r'\begin{multicols}{2}\setlength{\columnseprule}{0.4pt}\interlinepenalty=10000', file=f)
 
     if section_name == 'Publications':
         print(r'These are my indexed publications with some publications in \hl{\textbf{highlight}} for emphasis. You may find the papers in my Google Scholar: \url{https://scholar.google.pt/citations?user=pSFY_gQAAAAJ}', file=f)
 
-    print(r'\begin{itemize}[leftmargin=1em, itemsep=0em]', file=f)
+    if section_name != 'Supervisions':
+        print(r'\begin{itemize}[leftmargin=1em, itemsep=0em]', file=f)
+    prev_year = None
     for year in cv[section_name.lower()]:
         for item in year['items']:
+            if section_name == 'Supervisions' and year["year"] != prev_year:
+                if prev_year != None:
+                    print(r'\end{itemize}', file=f)
+                print(year["year"], file=f)
+                print(r'\begin{itemize}[leftmargin=1em, nosep]', file=f)
+                prev_year = year["year"]
             print(r'\item ', file=f)
-            if 'year' in year:
+            if 'year' in year and section_name != 'Supervisions':
                 print(f'{year["year"]} $\\vert$ ', file=f)
             if 'title' in item:
                 if item.get('highlight'):
@@ -113,9 +124,9 @@ for section_name in ['Career', 'Teaching', 'Education', 'Projects', 'Publication
                 if item.get('highlight'):
                     print('}', file=f)
             if 'subtitle' in item:
-                if section_name != 'Publications':
+                if section_name not in {'Publications', 'Supervisions'}:
                     print(r'\\', file=f)
-                if 'image' in item:
+                if 'image' in item and section_name != 'Supervisions':
                     imgs = item['image'] if type(item['image']) is list else [item['image']]
                     print(r'\begin{minipage}{0.20\linewidth}', file=f)
                     print(' '.join(f'\\includegraphics[width=\linewidth]{{../imgs/{img}}}' for img in imgs), file=f)
@@ -125,7 +136,7 @@ for section_name in ['Career', 'Teaching', 'Education', 'Projects', 'Publication
                     print(f'{escape(item["subtitle"])}.', file=f)
                 else:
                     print(escape(item["subtitle"]), file=f)
-                if 'image' in item:
+                if 'image' in item and section_name != 'Supervisions':
                     print(r'\end{minipage}', file=f)
             if 'description' in item:
                 print(f'\\\\{{\\small {escape(item["description"])}}}', file=f)
@@ -134,7 +145,7 @@ for section_name in ['Career', 'Teaching', 'Education', 'Projects', 'Publication
         print(r'''\begin{itemize}[leftmargin=1em, itemsep=0em, label=$\blacktriangleright$]\small
 \item Find more of my open-source code at\\\href{https://github.com/rpmcruz?tab=repositories}{\tt https://github.com/rpmcruz}.
 \end{itemize}''', file=f)
-    if section_name in ['Projects', 'Awards']:
+    if section_name in multicols:
         print(r'\end{multicols}', file=f)
     if section_name in ['Teaching', 'Education']:
         print(r'\end{minipage}%', file=f)
