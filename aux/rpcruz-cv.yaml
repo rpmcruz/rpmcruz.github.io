@@ -119,6 +119,11 @@ projects:
           image: cv-supertux.jpg
           link: https://www.supertux.org/
 publications:
+    - year: 2023
+      items:
+        - title: "Rethinking Low-Cost Microscopy Workflow: Image Enhancement using Deep Based Extended Depth of Field Methods"
+          subtitle: "T. Albuquerque, L. Rosado, R. Cruz, M. Vasconcelos, T. Oliveira, J. Cardoso. Intelligent Systems with Applications"
+          link: https://www.sciencedirect.com/science/article/pii/S2667305322001077
     - year: 2022
       items:
         - title: Quasi-Unimodal Distributions for Ordinal Classification
