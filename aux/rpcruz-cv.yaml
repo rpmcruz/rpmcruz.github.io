@@ -123,7 +123,7 @@ publications:
       items:
         - title: "Rethinking Low-Cost Microscopy Workflow: Image Enhancement using Deep Based Extended Depth of Field Methods"
           subtitle: "T. Albuquerque, L. Rosado, R. Cruz, M. Vasconcelos, T. Oliveira, J. Cardoso. Intelligent Systems with Applications"
-          link: https://www.sciencedirect.com/science/article/pii/S2667305322001077
+          link: https://doi.org/10.1016/j.iswa.2022.200170
     - year: 2022
       items:
         - title: Quasi-Unimodal Distributions for Ordinal Classification
