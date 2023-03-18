@@ -121,9 +121,19 @@ projects:
 publications:
     - year: 2023
       items:
+        - title: "Two-Stage Framework for Faster Semantic Segmentation"
+          subtitle: "R. Cruz, D. Silva, T. Gonçalves, D. Carneiro, J. Cardoso"
+          link: https://www.mdpi.com/1424-8220/23/6/3092
+    - year: 2023
+      items:
         - title: "Rethinking Low-Cost Microscopy Workflow: Image Enhancement using Deep Based Extended Depth of Field Methods"
           subtitle: "T. Albuquerque, L. Rosado, R. Cruz, M. Vasconcelos, T. Oliveira, J. Cardoso. Intelligent Systems with Applications"
           link: https://doi.org/10.1016/j.iswa.2022.200170
+    - year: 2022
+      items:
+        - title: "Two-stage Semantic Segmentation in Neural Networks"
+          subtitle: "R. Cruz, D. Silva, T. Gonçalves, D. Carneiro"
+          link: https://tiagofilipesousagoncalves.github.io/publications/pdf/dianartsilva2022icmv.pdf
     - year: 2022
       items:
         - title: Quasi-Unimodal Distributions for Ordinal Classification
