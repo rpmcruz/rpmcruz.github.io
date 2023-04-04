@@ -48,34 +48,38 @@ teaching:
           subtitle: Invited Teacher Assistant (~3h/week)
           description: Practical tutorials on Python and C++ to first-year students.
 msc-supervisions:
+    - year: on-going
+      items:
+        - title: "Introducing Domain Knowledge to Autonomous Driving"
+          subtitle: "Rafael Valente Cristino"
+        - title: "Iterative Inference for Point-Clouds"
+          subtitle: "Alankrita Asthana (University of Munich)"
+        - title: "Academic Internship in Out of Distribution Detection – Autonomous Driving (Internship at Bosch Car Multimedia)"
+          subtitle: "José António Barbosa da Fonseca Guerra"
     - year: 2022
       items:
         - title: "Human Feedback during Neural Networks Training"
           subtitle: "Pedro João Cruz Serrano e Silva (co-supervisor: Tiago Filipe Sousa Gonçalves)"
-          image: alunos/201605633.jpg
+          link: https://sigarra.up.pt/feup/pt/pub_geral.pub_view?pi_pub_base_id=570677
         -
           title: "Environment Detection for Railway Applications based on Automotive Technology (Internship at Continental)"
           subtitle: "João Malheiro Baptista Marcos da Silva"
-          image: alunos/201704946.jpg
+          link: https://sigarra.up.pt/feup/pt/pub_geral.pub_view?pi_pub_base_id=570251
         -
           title: "Phishing Detection with a Machine Learning Net (Internship at E-goi)"
           subtitle: "Ana Luís Carvalho Matos Bezerra (main supervisor: Prof Joaquim Pinto da Costa)"
-          image: alunos/201308078.jpg
+          link: https://repositorio-aberto.up.pt/handle/10216/147350
 bsc-supervisions:
     - year: 2022
       items:
         - title: "Semantic Segmentation in Neural Networks using Iterative Visual Attention"
           subtitle: "Diana Raquel Teixeira e Silva (co-supervisor: Tiago Filipe Sousa Gonçalves)"
-          image: alunos/201805131.jpg
         - title: "Mobile App using Object Detection for Car Driving"
           subtitle: "Filipe Pinto Campos, Francisco Gonçalves Cerqueira, Vasco Marinho Rodrigues Gomes Alves"
-          image: [alunos/201905609.jpg, alunos/201705768.jpg, alunos/201905337.jpg, alunos/201808031.jpg]
         - title: "Internship at ANO"
           subtitle: Bruno Campos Gomes
-          image: alunos/201906401.jpg
         - title: "Internship at ANO"
           subtitle: Rafael Fernando Ribeiro Camelo
-          image: alunos/201907729.jpg
 videos:
     - year: 2022
       items:

@@ -69,6 +69,7 @@ $\bullet$ Programmer
 
 \vspace{2ex}''', file=f)
 print(escape(cv['summary']), file=f)
+print(file=f)
 print(r'''\centerline{\rule{0.4\linewidth}{0.2pt}}
 
 \begin{minipage}[t]{0.08\linewidth}
