@@ -33,9 +33,9 @@ print(r'''\documentclass[11pt]{article}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \renewcommand{\headrulewidth}{0pt}
-\fancyfoot[L]{Last update: \today}
+\fancyfoot[L]{\scriptsize Last update: \today}
 \fancyfoot[C]{}
-\fancyfoot[R]{Page \thepage\ of \pageref{LastPage}}
+\fancyfoot[R]{\scriptsize Page \thepage\ of \pageref{LastPage}}
 
 \usepackage{tikz}
 \usetikzlibrary{tikzmark}
