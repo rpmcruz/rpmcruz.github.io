@@ -126,7 +126,7 @@ publications:
     - year: 2023
       items:
         - title: "Two-Stage Framework for Faster Semantic Segmentation"
-          subtitle: "R. Cruz, D. Silva, T. Gonçalves, D. Carneiro, J. Cardoso"
+          subtitle: "R. Cruz, D. Silva, T. Gonçalves, D. Carneiro, J. Cardoso. MDPI Sensors"
           link: https://www.mdpi.com/1424-8220/23/6/3092
     - year: 2023
       items:
@@ -136,7 +136,7 @@ publications:
     - year: 2022
       items:
         - title: "Two-stage Semantic Segmentation in Neural Networks"
-          subtitle: "R. Cruz, D. Silva, T. Gonçalves, D. Carneiro"
+          subtitle: "R. Cruz, D. Silva, T. Gonçalves, D. Carneiro. Proceedings of the Fifteenth International Conference on Machine Vision (ICMV 2022)"
           link: https://tiagofilipesousagoncalves.github.io/publications/pdf/dianartsilva2022icmv.pdf
     - year: 2022
       items:
