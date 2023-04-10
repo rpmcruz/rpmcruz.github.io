@@ -46,16 +46,19 @@ employment:
 teaching:
     - year: 2021--2022
       duration: 1 year
-      title: Guest Auxiliary Professor (~3h/week)
+      title: Invited Auxiliary Professor (~3h/week)
       subtitle: University of Porto (FEUP)
       summary:
-          - Python, C++ and data structures (first-year courses)
+          - Programming Fundamentals (Python) [L.EIC]
+          - Programming (C/C++) [L.EIC]
+          - Data Structures and Algorithms (C/C++) [L.EEC]
     - year: 2018--2021
       duration: 3 years
-      title: Guest Teacher Assistant (~3h/week)
+      title: Invited Teacher Assistant (~3h/week)
       subtitle: University of Porto (FEUP)
       summary:
-          - Python and C++ (first-year courses)
+          - Programming Fundamentals (Python) [L.EIC]
+          - Programming (C/C++) [L.EIC]
 supervisions:
     - year: on-going
       title: "Introducing Domain Knowledge to Autonomous Driving"
