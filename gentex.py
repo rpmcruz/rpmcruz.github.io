@@ -53,7 +53,7 @@ print(end='\n\n', file=f)
 print(r'\bigskip', file=f)
 print(r'\includegraphics[width=\linewidth]{imgs/lecture}', end='\n\n', file=f)
 
-for section in ['Education', 'Employment', 'Publications', 'Projects', 'Supervisions', 'Awards']:
+for section in ['Education', 'Employment', 'Teaching', 'Publications', 'Projects', 'Supervisions', 'Awards']:
     print(r'\bigskip', file=f)
     print(f'\\pdfbookmark{{{section}}}{{{section}}}\\includegraphics[width=2em]{{imgs/{section.lower()}.pdf}} \\textsc{{\large {section}}} \\hrulefill', end='\n\n', file=f)
     for item in cv[section.lower()]:

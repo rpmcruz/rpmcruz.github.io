@@ -52,7 +52,7 @@ print('</p>', file=f)
 
 print(r'<img width="100%" src="imgs/lecture.jpg">', file=f)
 
-for section in ['Education', 'Employment', 'Publications', 'Projects', 'Supervisions', 'Awards']:
+for section in ['Education', 'Employment', 'Teaching', 'Publications', 'Projects', 'Supervisions', 'Awards']:
     print(f'<h2><img width="40px" src="imgs/{section.lower()}.svg"> {section}</h2>', file=f)
     for item in cv[section.lower()]:
         print('<div class="columns">', file=f)
