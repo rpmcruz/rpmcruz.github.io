@@ -4,7 +4,7 @@ parser.add_argument('yaml')
 args = parser.parse_args()
 
 def escape(s):
-    return s.replace('&', r'\&')
+    return s.replace('&', r'\&').replace('~', r'$\sim$')
 
 import yaml
 cv = yaml.load(open(args.yaml), Loader=yaml.Loader)
