@@ -20,7 +20,7 @@ employment:
       subtitle: University of Porto (FEUP)
       summary:
           - Collaboration between the University of Porto and Bosch Car Multimedia to improve autonomous driving perception
-          - Frameworks developed for object detection using camera and LiDAR (2D discretization and raw point-clouds)
+          - Developed frameworks for object detection using camera and LiDAR (2D discretization and raw point-clouds)
           - Published new methods for efficient semantic segmentation and ordinal regression
           - Supervised six master's theses, four bachelor's projects, and other team members
           - Responsible for the HPC infrastructure (using Slurm)
@@ -111,7 +111,6 @@ projects:
     -  # 2022
       title: objdetect package
       subtitle: Light-weight and versatile one-stage object detection framework
-      description: I developed this one-stage object detection framework because existing frameworks, such as detectron2, are either for two-stage models or are not versatile and simple enough to adapt for new models. At the very least, I hope this package is educational for someone learning object detection.
       link: https://github.com/rpmcruz/objdetect
     -  # 2010
       title: Apoo (virtual machine) GTK+ interface
