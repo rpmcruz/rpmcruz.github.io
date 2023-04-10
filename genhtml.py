@@ -3,6 +3,9 @@ parser = argparse.ArgumentParser()
 parser.add_argument('yaml')
 args = parser.parse_args()
 
+sections = ['Education', 'Employment', 'Teaching', 'Publications', 'Projects',
+    'Supervisions', 'Awards']
+
 def escape(s):
     return s.replace('--', '&ndash;')
 
@@ -32,12 +35,22 @@ print('.bigskip {margin-top: 30px}', file=f)
 print('div.columns {display: flex}', file=f)
 print('div.left {width: 150px}', file=f)
 print('div.right {flex: 1}', file=f)
+print('ul.menu {position: fixed; top: 0; right: 0; list-style: none; margin-right: 30px}', file=f)
+print('ul.menu a {display: block}', file=f)
+print('@media screen and (min-width: 768px) {.desktop {display: block}}', file=f)
+print('@media screen and (max-width: 767px) {.desktop {display: none}}', file=f)
 print('</style>', file=f)
-
 print('</head>', file=f)
 print(file=f)
 
-print('<body>', file=f)
+print('<body id="top">', file=f)
+
+print('<ul class="menu desktop">', file=f)
+print(f'<li><a href="#top">Top</a></li>', file=f)
+for section in sections:
+    print(f'<li><a href="#{section.lower()}">{section}</a></li>', file=f)
+print('</ul>', file=f)
+
 print('<h1>Ricardo Cruz, PhD</h1>', file=f)
 print('<img height="20px" src="imgs/icon-mail.svg"> <a href="mailto:ricardo.pdm.cruz@gmail.com">ricardo.pdm.cruz@gmail.com</a> <img height="20px" src="imgs/pdf.svg"> <a href="rpcruz-cv.pdf">PDF version</a>', file=f)
 
@@ -52,8 +65,8 @@ print('</p>', file=f)
 
 print(r'<img width="100%" src="imgs/lecture.jpg">', file=f)
 
-for section in ['Education', 'Employment', 'Teaching', 'Publications', 'Projects', 'Supervisions', 'Awards']:
-    print(f'<h2><img width="40px" src="imgs/{section.lower()}.svg"> {section}</h2>', file=f)
+for section in sections:
+    print(f'<h2 id={section.lower()}><img width="40px" src="imgs/{section.lower()}.svg"> {section}</h2>', file=f)
     for item in cv[section.lower()]:
         print('<div class="columns">', file=f)
         print('<div class="left">', file=f)
