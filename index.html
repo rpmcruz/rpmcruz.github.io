@@ -5,7 +5,7 @@
 <title>Ricardo Cruz CV</title>
 
 <style>
-body {font-family: serif; text-align: justify; maintenance; max-width: 850px; margin: auto; margin-top: 20px; margin-bottom: 20px}
+body {font-family: serif; max-width: 850px; margin: auto; margin-top: 20px; margin-bottom: 20px}
 p {margin: 0}
 h1 {margin-bottom: 0}
 h2 {border-bottom: 2px solid}
@@ -14,14 +14,12 @@ a:hover {text-decoration: underline}
 .sc {font-variant: small-caps}
 .small {font-size: small; color: gray}
 .hl {background-color: yellow}
+.nobr {white-space: nowrap}
 .bigskip {margin-top: 30px}
-div.columns {display: flex}
-div.left {width: 150px}
-div.right {flex: 1}
 ul.menu {position: fixed; top: 0; right: 0; list-style: none; margin-right: 30px}
 ul.menu a {display: block}
-@media screen and (min-width: 768px) {.desktop {display: block}}
-@media screen and (max-width: 767px) {.desktop {display: none}}
+@media screen and (min-width: 768px) {body {margin: auto; text-align: justify} div.columns {display: flex} div.left {width: 150px} div.right {flex: 1} .desktop {display: block}}
+@media screen and (max-width: 767px) {body {margin-left: 6px; margin-right: 6px} .desktop {display: none}}
 </style>
 </head>
 
@@ -37,7 +35,7 @@ ul.menu a {display: block}
 <li><a href="#awards">Awards</a></li>
 </ul>
 <h1>Ricardo Cruz, PhD</h1>
-<img height="20px" src="imgs/icon-mail.svg"> <a href="mailto:ricardo.pdm.cruz@gmail.com">ricardo.pdm.cruz@gmail.com</a> <img height="20px" src="imgs/pdf.svg"> <a href="rpcruz-cv.pdf">PDF version</a>
+<img height="20px" src="imgs/icon-mail.svg"> <a href="mailto:ricardo.pdm.cruz@gmail.com">ricardo.pdm.cruz@gmail.com</a> <span class="nobr"><img height="20px" src="imgs/pdf.svg"> <a href="rpcruz-cv.pdf">PDF version</a></span>
 <p class="bigskip">I enjoy a good challenge. From mathematics to computer science, from research to engineering, from health applications to autonomous driving, I have been applying, proposing and teaching data science and artificial intelligence.</p>
 <p><span class="sc">Skills:</span> Python &middot; C &middot; C++ &middot; Java &middot; R &middot; MATLAB &middot; PyTorch &middot; TensorFlow &middot; OpenCV &middot; SQL &middot; Git</p>
 <img width="100%" src="imgs/lecture.jpg">
@@ -528,5 +526,5 @@ on-going
 <p></p>
 </div>
 </div>
-<center class="bigskip small">Last update: 2023-04-10</center>
+<center class="bigskip small">Last update: 2023-04-11</center>
 </body>
