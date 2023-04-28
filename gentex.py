@@ -38,7 +38,7 @@ print(file=f)
 print(r'\begin{document}', end='\n\n', file=f)
 
 print(r'\pdfbookmark{Summary}{Summary}{\Large Ricardo Cruz, PhD}', end='\n\n', file=f)
-print(r'{\footnotesize \raisebox{-0.25\height}{\includegraphics{imgs/icon-geo}} Portugal \raisebox{-0.25\height}{\includegraphics{imgs/icon-phone}} +351 934741617 \raisebox{-0.25\height}{\includegraphics{imgs/icon-mail}} \href{mailto:ricardo.pdm.cruz@gmail.com}{ricardo.pdm.cruz@gmail.com} \raisebox{-0.25\height}{\includegraphics{imgs/icon-home}} \href{http://rpmcruz.github.io}{rpmcruz.github.io}}', end='\n\n', file=f)
+print(r'{\footnotesize \raisebox{-0.25\height}{\includegraphics{imgs/icon-geo}} Portugal \raisebox{-0.25\height}{\includegraphics{imgs/icon-phone}} \href{tel:+351934741617}{+351 934741617} \raisebox{-0.25\height}{\includegraphics{imgs/icon-mail}} \href{mailto:ricardo.pdm.cruz@gmail.com}{ricardo.pdm.cruz@gmail.com} \raisebox{-0.25\height}{\includegraphics{imgs/icon-home}} \href{http://rpmcruz.github.io}{rpmcruz.github.io}}', end='\n\n', file=f)
 
 print(r'\bigskip', file=f)
 print(cv['summary'], end='\n\n', file=f)
