@@ -148,6 +148,9 @@ projects:
       link: https://www.supertux.org/
 publications:
     - year: 2023
+      title: "Interpretability-Guided Human Feedback During Neural Network Training [ACCEPTED]"
+      subtitle: "P. S. Silva, R. Cruz, ASM Shihavuddin, T. Gonçalves. Springer Iberian conference on pattern recognition and image analysis (Ibpria)."
+    - year: 2023
       title: "Two-Stage Framework for Faster Semantic Segmentation"
       subtitle: "R. Cruz, D. Silva, T. Gonçalves, D. Carneiro, J. Cardoso. MDPI Sensors."
       link: https://www.mdpi.com/1424-8220/23/6/3092
