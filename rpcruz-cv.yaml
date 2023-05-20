@@ -157,7 +157,7 @@ publications:
       link: https://doi.org/10.1016/j.iswa.2022.200170
     - year: 2022
       title: "Two-stage Semantic Segmentation in Neural Networks"
-      subtitle: "R. Cruz, D. Silva, T. Gonçalves, D. Carneiro. Proceedings of the Fifteenth International Conference on Machine Vision (ICMV 2022)."
+      subtitle: "D. Silva, R. Cruz, T. Gonçalves, D. Carneiro. Proceedings of the Fifteenth International Conference on Machine Vision (ICMV 2022)."
       link: https://tiagofilipesousagoncalves.github.io/publications/pdf/dianartsilva2022icmv.pdf
     - year: 2022
       title: Quasi-Unimodal Distributions for Ordinal Classification
