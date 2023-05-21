@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+
+<svg
+   width="800"
+   height="800"
+   viewBox="0 0 24 24"
+   fill="none"
+   version="1.1"
+   id="svg43"
+   sodipodi:docname="profile-phone.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs47" />
+  <sodipodi:namedview
+     id="namedview45"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="0.60875"
+     inkscape:cx="-144.55852"
+     inkscape:cy="400"
+     inkscape:window-width="1280"
+     inkscape:window-height="683"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg43" />
+  <rect
+     width="24"
+     height="24"
+     fill="#ffffff"
+     id="rect39"
+     x="0"
+     y="0" />
+  <path
+     fill-rule="evenodd"
+     clip-rule="evenodd"
+     d="M 2.14089,4.4021 C 2.34025,2.92963 3.63956,2 4.99004,2 h 2.56844 c 1.29129,0 2.43771,0.82629 2.84602,2.05132 l 1.0495,3.14831 c 0.451,1.3532 -0.3454,2.80397 -1.72918,3.14997 -0.33836,0.0846 -0.45507,0.5059 -0.20845,0.7526 l 3.38143,3.3814 c 0.2467,0.2467 0.668,0.1299 0.7526,-0.2084 0.346,-1.3838 1.7968,-2.1802 3.15,-1.7292 l 3.1483,1.0495 C 21.1737,14.0038 22,15.1502 22,16.4415 V 19.01 c 0,1.3504 -0.9296,2.6498 -2.4021,2.8491 C 18.9114,21.9521 18.211,22 17.5,22 8.93959,22 2,15.0604 2,6.5 2,5.78898 2.04794,5.08863 2.14089,4.4021 Z"
+     fill="#323232"
+     id="path41" />
+</svg>

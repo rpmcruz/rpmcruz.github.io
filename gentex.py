@@ -20,7 +20,7 @@ print(file=f)
 
 print(r'\usepackage{xcolor}', file=f)
 print(r'\usepackage{graphicx}', file=f)
-print(r'\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, pdfauthor={Ricardo Cruz}, pdftitle={Curriculum Vitae}]{hyperref}', file=f)
+print(r'\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, pdfauthor={Ricardo Cruz}, pdftitle={Ricardo Cruz Curriculum Vitae}]{hyperref}', file=f)
 print(r'\usepackage{soul}  % \hl', file=f)
 print(r'\usepackage{enumitem}', file=f)
 print(r'\setlist{nosep,leftmargin=0.4cm}', file=f)

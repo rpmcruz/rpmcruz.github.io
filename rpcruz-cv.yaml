@@ -1,247 +1,216 @@
-summary: >-
-    I enjoy a good challenge. From mathematics to computer science, from research to engineering, from health applications to autonomous driving, I have been applying, proposing and teaching data science and artificial intelligence.
-skills: [Python, C, C++, Java, R, MATLAB, PyTorch, TensorFlow, OpenCV, SQL, Git]
+profile:
+    title: "Title"
+    name: "Ricardo Cruz, PhD"
+    location: "Valongo, Portugal"
+    email: "ricardo.pdm.cruz@gmail.com"
+    phone: "+351 934741617"
+    website: "rpmcruz.github.io"
+    orcid: 0000-0002-5189-6228
+    biography: "Ricardo Cruz received a B.S. degree in computer science and an M.S. degree in applied mathematics, both from the University of Porto, Portugal. Since 2015, he has been a researcher at INESC TEC working in machine learning with particular emphasis on computer vision. He earned his Ph.D. in Computer Science in 2021 with a special emphasis on computer vision and deep learning. Currently, he is a post-doctoral researcher on autonomous driving under the THEIA research project, a partnership between the University of Porto and Bosch Car Multimedia."
+    skills: [Python, C, C++, Java, R, MATLAB, PyTorch, TensorFlow, OpenCV, SQL, Git]
+    picture: lecture.jpg
 education:
-    - year: 2016--2021
-      title: Ph.D. in Computer Science
-      subtitle: "Joint Degree: University of Porto, Minho and Aveiro"
-      #summary: ["Thesis: Re-thinking a Deep Learning Pipeline for Images"]
-    - year: 2013--2015
-      title: MSc in Mathematical Engineering
-      subtitle: University of Porto (FCUP)
-      #summary: ["Final grade: 18 out of 20 points."]
-    - year: 2009--2012
-      title: BSc in Computer Science
-      subtitle: University of Porto (FCUP)
-      #summary: [16 out of 20 points]
+    title: Education
+    icon: education
+    environment: description
+    listing:
+        - label: 2021 Ph.D.
+          text: "Computer Science (joint degree University of Porto, Minho and Aveiro)"
+        - label: 2015 M.Sc.
+          text: "Mathematical Engineering (University of Porto)"
+        - label: 2012 B.Sc.
+          text: "Computer Science (University of Porto)"
 employment:
-    - year: 2021--ongoing
-      title: Autonomous Driving Post-Doc Researcher
-      subtitle: University of Porto (FEUP) [in partnership with Bosch]
-      summary:
-          - Collaboration between the University of Porto and Bosch Car Multimedia to improve autonomous driving perception
-          - Developed frameworks for object detection using camera and LiDAR (2D discretization and raw point-clouds)
-          - Published new methods for efficient semantic segmentation and ordinal regression
-          - Supervised six master's theses, four bachelor's projects, and other team members
-          - Responsible for the HPC infrastructure (using Slurm)
-    - #year: Sept. 2015--Jul. 2021
-      year: 2015--2021
-      duration: 6 years
-      title: Machine Learning and Computer Vision Researcher
-      subtitle: INESC TEC
-      summary:
-          - "Research focus: re-thinking fundamentals about image classification and semantic segmentation (8+ publications)"
-          - "Some highlights: (1) a method for background invariance using adversarial training, (2) new losses that minimize absolute trade-offs between Type 1 and 2 errors instead of relative trade-offs, (3) using backpropagation also for inference to refine existing outputs, (4) deploying learning-to-rank methods for class imbalance"
-          - Contributed to workshops, Summer School on Computer Vision (VISUM), and other events
-          - Twice awarded "outstanding recognition" for organizing workshops and helping with the HPC infrastructure
-#    - year: Mar.--Jul. 2015
-#      title: Flykt Startup
-#      description: I was involved in a non-successful startup whose goal was to search for travel destinations. I was involved in the NLP part.
-    - year: 2014
-      duration: 6 months
-      title: Mathematical Modelling Research
-      subtitle: Mathematics Center of the University of Porto (CMUP)
-      summary:
-          - "Epidemiological models for HIV. A little of everything: from differential equations to stochastic simulations to cellular automata."
+    title: Employment
+    icon: employment
+    environment: description
+    listing:
+        - label: 2021--
+          text: >-
+            **Post-doctoral Researcher** on Autonomous Driving
+            University of Porto (FEUP) [in partnership with Bosch]
+          details:
+              - Collaboration between the University of Porto and Bosch Car Multimedia to improve autonomous driving perception
+              - Developed frameworks for object detection using camera and LiDAR (2D discretization and raw point-clouds)
+              - Published new methods for efficient semantic segmentation and ordinal regression
+              - Supervised six master's theses, four bachelor's projects, and other team members
+              - Responsible for the HPC infrastructure (using Slurm)
+        - label: 2015--2021
+          text: >-
+            **Research Assistant** on Machine Learning and Computer Vision
+            INESC TEC
+          details:
+              - "Research focus: re-thinking fundamentals about image classification and semantic segmentation (8+ publications)"
+              - "Some highlights: (1) a method for background invariance using adversarial training, (2) new losses that minimize absolute trade-offs between Type 1 and 2 errors instead of relative trade-offs, (3) using backpropagation also for inference to refine existing outputs, (4) deploying learning-to-rank methods for class imbalance"
+              - Contributed to workshops, Summer School on Computer Vision (VISUM), and other events
+              - Twice awarded "outstanding recognition" for organizing workshops and helping with the HPC infrastructure
+    #    - label: Mar.--Jul. 2015
+    #      title: Flykt Startup
+    #      description: I was involved in a non-successful startup whose goal was to search for travel destinations. I was involved in the NLP part.
+        - label: 2014
+          text: >-
+            **Research Grant** on Mathematical Modelling Research
+            Mathematics Center of the University of Porto (CMUP)
+          details:
+              - "Epidemiological models for HIV. A little of everything: from differential equations to stochastic simulations to cellular automata."
 teaching:
-    - year: 2021--2022
-      duration: 1 year
-      title: Invited Auxiliary Professor (~3h/week)
-      subtitle: University of Porto (FEUP)
-      summary:
-          - Programming Fundamentals (Python) [L.EIC]
-          - Programming (C/C++) [L.EIC]
-          - Data Structures and Algorithms (C/C++) [L.EEC]
-    - year: 2018--2021
-      duration: 3 years
-      title: Invited Teacher Assistant (~3h/week)
-      subtitle: University of Porto (FEUP)
-      summary:
-          - Programming Fundamentals (Python) [L.EIC]
-          - Programming (C/C++) [L.EIC]
-supervisions:
-    - year: on-going
-      title: "Introducing Domain Knowledge to Autonomous Driving"
-      subtitle: "Rafael Valente Cristino"
-    - 
-      title: "Iterative Inference for Point-Clouds"
-      subtitle: "Alankrita Asthana (University of Munich)"
-    - 
-      title: "Academic Internship in Out of Distribution Detection – Autonomous Driving (Internship at Bosch Car Multimedia)"
-      subtitle: "José António Barbosa da Fonseca Guerra (co-supervisor: Prof Luís Teixeira)"
-    - year: 2022
-      title: "Human Feedback during Neural Networks Training"
-      subtitle: "Pedro João Cruz Serrano e Silva (co-supervisor: Tiago Filipe Sousa Gonçalves)"
-      link: https://sigarra.up.pt/feup/pt/pub_geral.pub_view?pi_pub_base_id=570677
-    -
-      title: "Environment Detection for Railway Applications based on Automotive Technology (Internship at Continental)"
-      subtitle: "João Malheiro Baptista Marcos da Silva"
-      link: https://sigarra.up.pt/feup/pt/pub_geral.pub_view?pi_pub_base_id=570251
-    -
-      title: "Phishing Detection with a Machine Learning Net (Internship at E-goi)"
-      subtitle: "Ana Luís Carvalho Matos Bezerra (co-supervisor: Prof Joaquim Pinto da Costa)"
-      link: https://repositorio-aberto.up.pt/handle/10216/147350
-#bsc-supervisions:
-#    - year: 2022
-#      title: "Semantic Segmentation in Neural Networks using Iterative Visual Attention"
-#      subtitle: "Diana Raquel Teixeira e Silva (co-supervisor: Tiago Filipe Sousa Gonçalves)"
-#    -
-#      title: "Mobile App using Object Detection for Car Driving"
-#      subtitle: "Filipe Pinto Campos, Francisco Gonçalves Cerqueira, Vasco Marinho Rodrigues Gomes Alves"
-#    -
-#      title: "Internship at ANO"
-#      subtitle: Bruno Campos Gomes
-#    -
-#      title: "Internship at ANO"
-#      subtitle: Rafael Fernando Ribeiro Camelo
+    title: "Teaching"
+    icon: teaching
+    environment: description
+    listing:
+        - label: 2021--2022
+          text: "**Invited Auxiliary Professor,** University of Porto (FEUP)"
+          summary:
+              - Programming Fundamentals (Python) [L.EIC]
+              - Programming (C/C++) [L.EIC]
+              - Data Structures and Algorithms (C/C++) [L.EEC]
+        - label: 2018--2021
+          text: "**Invited Teacher Assistant,** University of Porto (FEUP)"
+          summary:
+              - Programming Fundamentals (Python) [L.EIC]
+              - Programming (C/C++) [L.EIC]
+courses:
+    title: "Courses"
+    icon: teaching
+    environment: itemize
+    listing:
+          - text: Programming Fundamentals (Python) [L.EIC]
+          - text: Programming (C/C++) [L.EIC]
+          - text: Data Structures and Algorithms (C/C++) [L.EEC]
+msc-supervisions:
+    title: "M.Sc. Supervisions"
+    icon: supervisions
+    environment: description
+    listing:
+        - label: on-going
+          text: "Rafael Cristino: *Introducing Domain Knowledge to Autonomous Driving*"
+        - label: on-going
+          text: "Alankrita Asthana: *Iterative Inference for Point-Clouds*"
+        - label: on-going
+          text: "José Guerra (with L. Teixeira): *Academic Internship in Out of Distribution Detection – Autonomous Driving* (Internship at Bosch Car Multimedia)"
+        - label: 2022
+          text: "Pedro Silva (with T. Gonçalves): *Human Feedback during Neural Networks Training*"
+          link: https://sigarra.up.pt/feup/pt/pub_geral.pub_view?pi_pub_base_id=570677
+        - label: 2022
+          text: "João Silva: *Environment Detection for Railway Applications based on Automotive Technology* (Internship at Continental)"
+          link: https://sigarra.up.pt/feup/pt/pub_geral.pub_view?pi_pub_base_id=570251
+        - label: 2022
+          text: "Ana Bezerra (with J. Costa): *Phishing Detection with a Machine Learning Net* (Internship at E-goi)"
+          link: https://repositorio-aberto.up.pt/handle/10216/147350
+bsc-supervisions:
+    title: "B.Sc. Projects Supervisions"
+    icon: supervisions
+    environment: description
+    listing:
+        - label: 2022
+          text: "Diana Silva (with T. Gonçalves): *Semantic Segmentation in Neural Networks using Iterative Visual Attention*"
+        - label: 2022
+          text: "Filipe Campos, Francisco Cerqueira, Vasco Alves: *Mobile App using Object Detection for Car Driving*"
+        - label: 2022
+          text: "Bruno Gomes, Rafael Camelo: Internship at ANO"
 videos:
-    - year: 2022
-      title: VCMI Workshops
-      subtitle: One-Stage Object Detection
-      link: https://youtu.be/A9Pgp1YBcTk?t=1685
-    - year: 2017
-      title: Python Meetup
-      subtitle: NumPy and Scikit-Learn
-      link: https://youtu.be/klr1z1EJ1yY
+    title: Videos
+    icon: videos
+    environment: description
+    listing:
+        - label: 2022
+          text: "**VCMI Workshops.** One-Stage Object Detection"
+          link: https://youtu.be/A9Pgp1YBcTk?t=1685
+        - label: 2017
+          text: "**Python Meetup.** NumPy and Scikit-Learn"
+          link: https://youtu.be/klr1z1EJ1yY
 projects:
-    - # 2022
-      title: Uber Pixor implementation
-      subtitle: Implementation of a popular bird's eye view LiDAR object detection model.
-      link: https://github.com/rpmcruz/pixor
-    -  # 2022
-      title: objdetect package
-      subtitle: Light-weight and versatile one-stage object detection framework
-      link: https://github.com/rpmcruz/objdetect
-    - # 2022
-      title: Human Feedback during Neural Network Training
-      subtitle: When a model makes a wrong prediction, a typical solution is to acquire more data related to the error -- this is an expensive process known as active learning. Our proposal combines active learning with interpretability so the user can correct such mistakes while the model trains. This work resulted in a thesis that I supervised.
-    - # 2021
-      title: Neural Networks Robust to Background Changes
-      subtitle: While training an electrical insulator detector, we noticed a large drop in accuracy when going from the controlled studio (training set) to outdoors (testing set). The proposed method uses a background generator to generate adversarial backgrounds and a mask generator to introduce this background to the training image. A paper was published from this work.
-      link: https://ieeexplore.ieee.org/abstract/document/9413004/
-    - # 2021
-      title: Annotation Aid Tool using GrabCut
-      subtitle: "Annotations were necessary for a project whose goal was to learn a sequential segmentation model for the movement of mice. For that purpose, I developed a small tool to aid the annotation effort. The tool processes the video frames sequentially in two steps: (1) the annotator first selects the region where the mouse is, and (2) the annotator selects some positive pixels (left-click) and negative pixels (right-click) until he/she is satisfied with the segmentation produced by the GrabCut algorithm."
-      link: https://github.com/rpmcruz/igrabcut
-    - # 2021
-      title: Classification of Cervical Cancer Risk
-      subtitle: Cervical cancer is the fourth leading cause of cancer-related deaths in women. The goal of the TAMI project was to automate cervical cancer screening via Pap smears. A non-parametric ordinal loss for neuronal networks was proposed to promote ordinal output probabilities (accuracy of 75.6% for seven classes and 81.3% for four classes). A paper was published based on this work.
-      link: https://peerj.com/articles/cs-457/
-    -  # 2010
-      title: Apoo (virtual machine) GTK+ interface
-      subtitle: I helped with the development of the GTK+ interface for Apoo (together with Profs Rogério Reis and Nelma Moreira), a virtual machine that is currently being used to teach Assembly. Apoo is written in Python and GTK+.
-      link: https://www.dcc.fc.up.pt/~nam/apoo/node6.html
-    -  # 2009
-      title: EatFeed
-      subtitle: RSS/Atom reader written in C++ and GTK+
-      link: https://github.com/rpmcruz/eatfeed
-    -  # 2006/2007
-      title: Google Summer of Code
-      subtitle: "I was awarded twice a Google grant to work on open-source projects. LibreOffice dynamic layouts (2007) and YaST port from GTK+ to Qt (2006)."
-#    -  # 2005
-#      title: J2ME and Android games
-#      subtitle: Games written in Java Mobile Edition; more recently, I ported a couple of them to Android.
-#      link: https://github.com/rpmcruz/android-games
-    -  # 2005
-      title: SuperTux, co-author
-      subtitle: While in high-school, I was part of the initial team developing this game. It is written in C++, SDL, and OpenGL.
-      link: https://www.supertux.org/
-publications:
-    - year: 2023
-      title: "Interpretability-Guided Human Feedback During Neural Network Training [ACCEPTED]"
-      subtitle: "P. S. Silva, R. Cruz, ASM Shihavuddin, T. Gonçalves. Springer Iberian conference on pattern recognition and image analysis (Ibpria)."
-    - year: 2023
-      title: "Two-Stage Framework for Faster Semantic Segmentation"
-      subtitle: "R. Cruz, D. Silva, T. Gonçalves, D. Carneiro, J. Cardoso. MDPI Sensors."
-      link: https://www.mdpi.com/1424-8220/23/6/3092
-    - year: 2023
-      title: "Rethinking Low-Cost Microscopy Workflow: Image Enhancement using Deep Based Extended Depth of Field Methods"
-      subtitle: "T. Albuquerque, L. Rosado, R. Cruz, M. Vasconcelos, T. Oliveira, J. Cardoso. Elsevier Intelligent Systems with Applications."
-      link: https://doi.org/10.1016/j.iswa.2022.200170
-    - year: 2022
-      title: "Two-stage Semantic Segmentation in Neural Networks"
-      subtitle: "D. Silva, R. Cruz, T. Gonçalves, D. Carneiro. Proceedings of the Fifteenth International Conference on Machine Vision (ICMV 2022)."
-      link: https://tiagofilipesousagoncalves.github.io/publications/pdf/dianartsilva2022icmv.pdf
-    - year: 2022
-      title: Quasi-Unimodal Distributions for Ordinal Classification
-      subtitle: "T. Albuquerque, R. Cruz, J. Cardoso. MDPI Mathematics."
-      link: https://www.mdpi.com/2227-7390/10/6/980
-    - year: 2021
-      title: Ordinal Losses for Classification of Cervical Cancer Risk
-      subtitle: "T. Albuquerque, R. Cruz, J. Cardoso. PeerJ Computer Science."
-      link: https://peerj.com/articles/cs-457/
-    - year: 2021
-      title: Background Invariance by Adversarial Learning
-      subtitle: "R. Cruz, R. Prates, E. Filho, J. Costa, J. Cardoso. IEEE 25th International Conference on Pattern Recognition (ICPR)."
-      link: https://ieeexplore.ieee.org/document/9413004
-      highlight: true
-    - year: 2019
-      title: Automatic Augmentation by Hill Climbing
-      subtitle: "R. Cruz, J. Costa, J. Cardoso. Springer 28th International Conference on Artificial Neural Networks (ICANN)."
-      link: "https://link.springer.com/chapter/10.1007/978-3-030-30484-3_10"
-    - year: 2019
-      title: Averse Deep Semantic Segmentation
-      subtitle: "R. Cruz, J. Costa, J. Cardoso. IEEE 41st Engineering in Medicine and Biology Conference (EMBC)."
-      link: "https://ieeexplore.ieee.org/abstract/document/8857385"
-      highlight: true
-    - year: 2019
-      title: Insulator visual non-conformity detection in overhead power distribution lines using deep learning
-      subtitle: "R. Prates, R. Cruz, A. Marotta, R. Ramos, E. Filho, J. Cardoso. Springer Journal Computers & Electrical Engineering."
-      link: "https://www.sciencedirect.com/science/article/pii/S004579061930967X?dgcid=coauthor"
-    - year: 2018
-      title: A Class Imbalance Ordinal Method for Alzheimer's Disease Classification
-      subtitle: "R. Cruz, M. Silveira, J. Cardoso. IEEE International Workshop on Pattern Recognition in Neuroimaging (PRNI)"
-      link: "https://ieeexplore.ieee.org/abstract/document/8423960/"
-    - year: 2018
-      title: 'Binary ranking for ordinal class imbalance'
-      subtitle: "R. Cruz, K. Fernandes, J. Costa, M. Pérez Ortiz, J. Cardoso. Springer Journal Pattern Analysis and Applications."
-      link: "https://link.springer.com/epdf/10.1007/s10044-018-0705-4?author_access_token=p2L5jwabAzmA-hENM_mugfe4RwlQNchNByi7wbcMAY42mOH72RPQeb098_tyy79R09eJLVa1A5i0Fl8_sgW1ks0WseTTuEtHZyi1eB8zBX3Z7vgZBxHJZ3x26EzyODMrDn4oUkmT-tVcZK4oD3u4vQ%3D%3D"
-    - year: 2018
-      title: Deep image segmentation by quality inference
-      subtitle: "K. Fernandes, R. Cruz, J. Cardoso. IEEE International Joint Conference on Neural Networks (IJCNN)"
-      link: "https://ieeexplore.ieee.org/abstract/document/8489696/"
-      highlight: true
-    - year: 2017
-      title: "Constraining type II error: building intentionally biased classifiers"
-      subtitle: "R. Cruz, K. Fernandes, J. Costa, J. Cardoso. Springer International Work-conference on Artificial Neural Networks (IWANN)"
-      link: "https://link.springer.com/chapter/10.1007/978-3-319-59147-6_47"
-    - year: 2017
-      title: "Fine-to-coarse ranking in ordinal and imbalanced domains: an application to liver transplantation"
-      subtitle: "M. Pérez-Ortiz, K. Fernandes, R. Cruz, J. Cardoso. Springer International Work-conference on Artificial Neural Networks (IWANN)."
-      link: "https://link.springer.com/chapter/10.1007/978-3-319-59147-6_45"
-    - year: 2017
-      title: Combining ranking with traditional methods for ordinal class imbalance
-      subtitle: "R. Cruz, K. Fernandes, J. Costa, M. Pérez-Ortiz, J. Cardoso. Springer International Work-conference on Artificial Neural Networks (IWANN)"
-      link: "https://link.springer.com/chapter/10.1007/978-3-319-59147-6_46"
-    - year: 2017
-      title: Ordinal class imbalance with ranking
-      subtitle: "R. Cruz, K. Fernandes, J. Costa, M. Pérez-Ortiz, J. Cardoso. Springer Iberian conference on pattern recognition and image analysis (Ibpria)."
-      link: "https://link.springer.com/chapter/10.1007/978-3-319-58838-4_1"
-    - year: 2016
-      title: Tackling class imbalance with ranking
-      subtitle: "R. Cruz, K. Fernandes, J. Costa, J. Cardoso. IEEE International Joint Conference on Neural Networks (IJCNN)."
-      link: "http://ieeexplore.ieee.org/abstract/document/7727469/"
-      highlight: true
+    title: Projects
+    icon: projects
+    environment: itemize
+    listing:
+        - text: "**Uber Pixor implementation.** Implementation of a popular bird's eye view LiDAR object detection model."
+          link: https://github.com/rpmcruz/pixor
+        - text: "**objdetect package.** Light-weight and versatile one-stage object detection framework."
+          link: https://github.com/rpmcruz/objdetect
+        - text: "**Human Feedback during Neural Network Training.** When a model makes a wrong prediction, a typical solution is to acquire more data related to the error -- this is an expensive process known as active learning. Our proposal combines active learning with interpretability so the user can correct such mistakes while the model trains. This work resulted in a thesis that I supervised."
+        - text: "**Neural Networks Robust to Background Changes.** While training an electrical insulator detector, we noticed a large drop in accuracy when going from the controlled studio (training set) to outdoors (testing set). The proposed method uses a background generator to generate adversarial backgrounds and a mask generator to introduce this background to the training image. A paper was published from this work."
+          link: https://ieeexplore.ieee.org/abstract/document/9413004/
+        - text: "**Annotation Aid Tool using GrabCut.** Annotations were necessary for a project whose goal was to learn a sequential segmentation model for the movement of mice. For that purpose, I developed a small tool to aid the annotation effort. The tool processes the video frames sequentially in two steps: (1) the annotator first selects the region where the mouse is, and (2) the annotator selects some positive pixels (left-click) and negative pixels (right-click) until he/she is satisfied with the segmentation produced by the GrabCut algorithm."
+          link: https://github.com/rpmcruz/igrabcut
+        - text: "**Classification of Cervical Cancer Risk.** Cervical cancer is the fourth leading cause of cancer-related deaths in women. The goal of the TAMI project was to automate cervical cancer screening via Pap smears. A non-parametric ordinal loss for neuronal networks was proposed to promote ordinal output probabilities (accuracy of 75.6% for seven classes and 81.3% for four classes). A paper was published based on this work."
+          link: https://peerj.com/articles/cs-457/
+        - text: "**Apoo (virtual machine) GTK+ interface.** I helped with the development of the GTK+ interface for Apoo (together with Profs Rogério Reis and Nelma Moreira), a virtual machine that is currently being used to teach Assembly. Apoo is written in Python and GTK+."
+          link: https://www.dcc.fc.up.pt/~nam/apoo/node6.html
+        - text: "**EatFeed.** RSS/Atom reader written in C++ and GTK+."
+          link: https://github.com/rpmcruz/eatfeed
+        - text: "**Google Summer of Code.** I was awarded twice a Google grant to work on open-source projects. LibreOffice dynamic layouts (2007) and YaST port from GTK+ to Qt (2006)."
+        - text: "**J2ME and Android games.** Games written in Java Mobile Edition; more recently, I ported a couple of them to Android."
+          link: https://github.com/rpmcruz/android-games
+        - text: "**SuperTux, co-author.** While in high-school, I was part of the initial team developing this game. It is written in C++, SDL, and OpenGL."
+          link: https://www.supertux.org/
+conference-publications:
+    title: "Conference Publications"
+    icon: publications
+    environment: enumerate
+    listing:
+        - text: "P. S. Silva, **R. Cruz**, ASM Shihavuddin, T. Gonçalves (2023) [ACCEPTED]. Interpretability-Guided Human Feedback During Neural Network Training. *Springer Iberian conference on pattern recognition and image analysis (Ibpria)*"
+        - text: "D. Silva, **R. Cruz**, T. Gonçalves, D. Carneiro (2022). Two-stage Semantic Segmentation in Neural Networks. *Proceedings of the Fifteenth International Conference on Machine Vision (ICMV)*"
+          link: https://tiagofilipesousagoncalves.github.io/publications/pdf/dianartsilva2022icmv.pdf
+        - text: "R. Cruz, R. Prates, E. Filho, J. Costa, J. Cardoso (2021). Background Invariance by Adversarial Learning. *IEEE 25th International Conference on Pattern Recognition (ICPR)*"
+          link: https://ieeexplore.ieee.org/document/9413004
+          highlight: true
+        - text: "**R. Cruz**, J. Costa, J. Cardoso (2019). Automatic Augmentation by Hill Climbing. *Springer 28th International Conference on Artificial Neural Networks (ICANN)*"
+          link: "https://link.springer.com/chapter/10.1007/978-3-030-30484-3_10"
+        - text: "R. Cruz, J. Costa, J. Cardoso (2019). Averse Deep Semantic Segmentation. *IEEE 41st Engineering in Medicine and Biology Conference (EMBC)*"
+          link: "https://ieeexplore.ieee.org/abstract/document/8857385"
+          highlight: true
+        - text: "**R. Cruz**, M. Silveira, J. Cardoso (2018). A Class Imbalance Ordinal Method for Alzheimer's Disease Classification. *IEEE International Workshop on Pattern Recognition in Neuroimaging (PRNI)*"
+          link: "https://ieeexplore.ieee.org/abstract/document/8423960/"
+        - text: "K. Fernandes, **R. Cruz**, J. Cardoso (2018). Deep image segmentation by quality inference. *IEEE International Joint Conference on Neural Networks (IJCNN)*"
+          link: "https://ieeexplore.ieee.org/abstract/document/8489696/"
+          highlight: true
+        - text: "**R. Cruz**, K. Fernandes, J. Costa, J. Cardoso (2017). Constraining type II error: building intentionally biased classifiers. *Springer International Work-conference on Artificial Neural Networks (IWANN)*"
+          link: "https://link.springer.com/chapter/10.1007/978-3-319-59147-6_47"
+        - text: "M. Pérez-Ortiz, K. Fernandes, **R. Cruz**, J. Cardoso (2017). Fine-to-coarse ranking in ordinal and imbalanced domains: an application to liver transplantation. *Springer International Work-conference on Artificial Neural Networks (IWANN)*"
+          link: "https://link.springer.com/chapter/10.1007/978-3-319-59147-6_45"
+        - text: "**R. Cruz**, K. Fernandes, J. Costa, M. Pérez-Ortiz, J. Cardoso (2017). Combining ranking with traditional methods for ordinal class imbalance. *Springer International Work-conference on Artificial Neural Networks (IWANN)*"
+          link: "https://link.springer.com/chapter/10.1007/978-3-319-59147-6_46"
+        - text: "**R. Cruz**, K. Fernandes, J. Costa, M. Pérez-Ortiz, J. Cardoso (2017). Ordinal class imbalance with ranking. *Springer Iberian conference on pattern recognition and image analysis (Ibpria)*"
+          link: "https://link.springer.com/chapter/10.1007/978-3-319-58838-4_1"
+        - text: "R. Cruz, K. Fernandes, J. Costa, J. Cardoso (2016). Tackling class imbalance with ranking. *IEEE International Joint Conference on Neural Networks (IJCNN)*"
+          link: "http://ieeexplore.ieee.org/abstract/document/7727469/"
+          highlight: true
+journal-publications:
+    title: "Journal Publications"
+    icon: publications
+    environment: enumerate
+    listing:
+        - text: "**R. Cruz**, D. Silva, T. Gonçalves, D. Carneiro, J. Cardoso (2023). Two-Stage Framework for Faster Semantic Segmentation. *MDPI Sensors*"
+          link: https://www.mdpi.com/1424-8220/23/6/3092
+        - text: "T. Albuquerque, L. Rosado, **R. Cruz**, M. Vasconcelos, T. Oliveira, J. Cardoso (2023). Rethinking Low-Cost Microscopy Workflow: Image Enhancement using Deep Based Extended Depth of Field Methods. *Elsevier Intelligent Systems with Applications*"
+          link: https://doi.org/10.1016/j.iswa.2022.200170
+        - text: "T. Albuquerque, **R. Cruz**, J. Cardoso (2022). Quasi-Unimodal Distributions for Ordinal Classification. *MDPI Mathematics*"
+          link: https://www.mdpi.com/2227-7390/10/6/980
+        - text: "T. Albuquerque, **R. Cruz**, J. Cardoso (2021). Ordinal Losses for Classification of Cervical Cancer Risk. *PeerJ Computer Science*"
+          link: https://peerj.com/articles/cs-457/
+        - text: "R. Prates, **R. Cruz**, A. Marotta, R. Ramos, E. Filho, J. Cardoso (2019). Insulator visual non-conformity detection in overhead power distribution lines using deep learning. *Springer Journal Computers & Electrical Engineering*"
+          link: "https://www.sciencedirect.com/science/article/pii/S004579061930967X?dgcid=coauthor"
+        - text: "**R. Cruz**, K. Fernandes, J. Costa, M. Pérez Ortiz, J. Cardoso (2018). Binary ranking for ordinal class imbalance. *Springer Journal Pattern Analysis and Applications*"
+          link: "https://link.springer.com/epdf/10.1007/s10044-018-0705-4?author_access_token=p2L5jwabAzmA-hENM_mugfe4RwlQNchNByi7wbcMAY42mOH72RPQeb098_tyy79R09eJLVa1A5i0Fl8_sgW1ks0WseTTuEtHZyi1eB8zBX3Z7vgZBxHJZ3x26EzyODMrDn4oUkmT-tVcZK4oD3u4vQ%3D%3D"
 awards:
-    - year: 2022
-      title: "Bosch for Mobility"
-      subtitle: My students won Best New Participating Team in an autonomous driving competition
-      link: https://noticias.up.pt/estudantes-da-u-porto-brilham-em-concurso-de-conducao-autonoma-da-bosch/
-    - year: 2021
-      title: "INESC TEC Outstanding Recognition Award"
-      subtitle: Monthly award for INESC TEC collaborators, for maintenance of the HPC infrastructure
-      link: https://bip.inesctec.pt/en/especiaisdecorrida/ricardo-cruz-ctm-2/
-    - year: 2021
-      title: "Pedagogic award (voted by students)"
-      subtitle: University of Porto (FEUP)
-    - year: 2021
-      title: "Best paper and presentation"
-      subtitle: RECPAD conference
-      link: https://noticias.up.pt/investigadores-da-u-porto-dominam-premios-do-recpad-2021/
-    - year: 2018
-      title: "INESC TEC Outstanding Recognition Award"
-      subtitle: Monthly award for INESC TEC collaborators, for organizing workshops
-      link: http://bip-archive.inesctec.pt/en/196/fora-de-serie.html
-    - year: 2017
-      title: "Kaggle Bronze Medal (competition) and Silver (engagement)"
-      subtitle: ""
+    title: Awards
+    icon: awards
+    environment: description
+    listing:
+        - label: 2022
+          text: "**Bosch for Mobility:** My students won Best New Participating Team in an autonomous driving competition"
+          link: https://noticias.up.pt/estudantes-da-u-porto-brilham-em-concurso-de-conducao-autonoma-da-bosch/
+        - label: 2021
+          text: "**INESC TEC Outstanding Recognition Award:** Monthly award for INESC TEC collaborators, for maintenance of the HPC infrastructure"
+          link: https://bip.inesctec.pt/en/especiaisdecorrida/ricardo-cruz-ctm-2/
+        - label: 2021
+          text: "**Pedagogic award (voted by students):** University of Porto (FEUP)"
+        - label: 2021
+          text: "**Best paper and presentation:** RECPAD conference"
+          link: https://noticias.up.pt/investigadores-da-u-porto-dominam-premios-do-recpad-2021/
+        - label: 2018
+          text: "**INESC TEC Outstanding Recognition Award: Monthly award for INESC TEC collaborators, for organizing workshops"
+          link: http://bip-archive.inesctec.pt/en/196/fora-de-serie.html
+        - label: 2017
+          text: "**Kaggle Bronze Medal (competition) and Silver (engagement)**"
