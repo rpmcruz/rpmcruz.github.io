@@ -77,37 +77,27 @@ courses:
           - text: Programming Fundamentals (Python) [L.EIC]
           - text: Programming (C/C++) [L.EIC]
           - text: Data Structures and Algorithms (C/C++) [L.EEC]
-msc-supervisions:
-    title: "M.Sc. Supervisions"
-    icon: supervisions
-    environment: description
-    listing:
-        - label: on-going
-          text: "Rafael Cristino: *Introducing Domain Knowledge to Autonomous Driving*"
-        - label: on-going
-          text: "Alankrita Asthana: *Iterative Inference for Point-Clouds*"
-        - label: on-going
-          text: "José Guerra (with L. Teixeira): *Academic Internship in Out of Distribution Detection – Autonomous Driving* (Internship at Bosch Car Multimedia)"
-        - label: 2022
-          text: "Pedro Silva (with T. Gonçalves): *Human Feedback during Neural Networks Training*"
-          link: https://sigarra.up.pt/feup/pt/pub_geral.pub_view?pi_pub_base_id=570677
-        - label: 2022
-          text: "João Silva: *Environment Detection for Railway Applications based on Automotive Technology* (Internship at Continental)"
-          link: https://sigarra.up.pt/feup/pt/pub_geral.pub_view?pi_pub_base_id=570251
-        - label: 2022
-          text: "Ana Bezerra (with J. Costa): *Phishing Detection with a Machine Learning Net* (Internship at E-goi)"
-          link: https://repositorio-aberto.up.pt/handle/10216/147350
-bsc-supervisions:
-    title: "B.Sc. Projects Supervisions"
-    icon: supervisions
+awards:
+    title: Awards
+    icon: awards
     environment: description
     listing:
         - label: 2022
-          text: "Diana Silva (with T. Gonçalves): *Semantic Segmentation in Neural Networks using Iterative Visual Attention*"
-        - label: 2022
-          text: "Filipe Campos, Francisco Cerqueira, Vasco Alves: *Mobile App using Object Detection for Car Driving*"
-        - label: 2022
-          text: "Bruno Gomes, Rafael Camelo: Internship at ANO"
+          text: "**Bosch for Mobility:** My students won Best New Participating Team in an autonomous driving competition"
+          link: https://noticias.up.pt/estudantes-da-u-porto-brilham-em-concurso-de-conducao-autonoma-da-bosch/
+        - label: 2021
+          text: "**INESC TEC Outstanding Recognition Award:** Monthly award for INESC TEC collaborators, for maintenance of the HPC infrastructure"
+          link: https://bip.inesctec.pt/en/especiaisdecorrida/ricardo-cruz-ctm-2/
+        - label: 2021
+          text: "**Pedagogic award (voted by students):** University of Porto (FEUP)"
+        - label: 2021
+          text: "**Best paper and presentation:** RECPAD conference"
+          link: https://noticias.up.pt/investigadores-da-u-porto-dominam-premios-do-recpad-2021/
+        - label: 2018
+          text: "**INESC TEC Outstanding Recognition Award: Monthly award for INESC TEC collaborators, for organizing workshops"
+          link: http://bip-archive.inesctec.pt/en/196/fora-de-serie.html
+        - label: 2017
+          text: "**Kaggle Bronze Medal (competition) and Silver (engagement)**"
 videos:
     title: Videos
     icon: videos
@@ -144,13 +134,44 @@ projects:
           link: https://github.com/rpmcruz/android-games
         - text: "**SuperTux, co-author.** While in high-school, I was part of the initial team developing this game. It is written in C++, SDL, and OpenGL."
           link: https://www.supertux.org/
+scientific-projects:
+    title: "Participation in Scientific Projects"
+    icon: scientific-projects
+    environment: itemize
+    listing:
+        - text: "**THEIA** -- Automated Perception Driving (POCI-01-0247-FEDER-047264)"
+        - text: "**CLARE** -- Computer-aided cervical cancer screening (POCI-01-0145-FEDER-028857)"
+          link: https://www.inesctec.pt/pt/projetos/clare
+        - text: "**NanoSTIMA** Macro-to-Nano Human Sensing: Towards Integrated Multimodal Health Monitoring and Analytics (NORTE-01-0145-FEDER-000016)"
+scientific-organizations:
+    title: "Participation in Scientific Events"
+    icon: scientific-events
+    environment: itemize
+    listing:
+        - text: "**iMIMIC/MIL3ID/LABELS 2020 workshop proceedings** (MICCAI 2020): co-editor"
+          link: https://imimic-workshop.com/previous_editions/2020/index.html
+        - text: "**iMIMIC 2020 workshop** (MICCAI 2020): committee sponsor chair"
+          link: https://imimic-workshop.com/previous_editions/2020/index.html
+        - text: "**3rd International Conference on Dynamics, Games and Science (2014):** president of the organizing committee"
+          link: https://www.fc.up.pt/dgsiii/
+scientific-impact:
+    title: "Impact and Citations"
+    icon: scientific-impact
+    environment: itemize
+    listing:
+        - text: "Google Scholar (may/2023): 171 citations, 7 h-index"
+          link: https://scholar.google.com/citations?user=pSFY_gQAAAAJ
+        - text: "Web of Science (may/2023): 73 citations, 4 h-index"
+          link: https://www.webofscience.com/wos/author/record/IQV-2746-2023
+        - text: "Scopus (may/2023): 111 citations, 5 h-index"
+          link: https://www.scopus.com/authid/detail.uri?authorId=57192670388
 conference-publications:
     title: "Conference Publications"
     icon: publications
     environment: enumerate
     listing:
-        - text: "P. S. Silva, **R. Cruz**, ASM Shihavuddin, T. Gonçalves (2023) [ACCEPTED]. Interpretability-Guided Human Feedback During Neural Network Training. *Springer Iberian conference on pattern recognition and image analysis (Ibpria)*"
-        - text: "D. Silva, **R. Cruz**, T. Gonçalves, D. Carneiro (2022). Two-stage Semantic Segmentation in Neural Networks. *Proceedings of the Fifteenth International Conference on Machine Vision (ICMV)*"
+        - text: "P. S. Silva, **R. Cruz**, ASM Shihavuddin, T. Gonçalves (2023) **[ACCEPTED]**. Interpretability-Guided Human Feedback During Neural Network Training. *Springer Iberian conference on pattern recognition and image analysis (Ibpria)*"
+        - text: "D. Silva, **R. Cruz**, T. Gonçalves, D. Carneiro (2022) **[ACCEPTED]**. Two-stage Semantic Segmentation in Neural Networks. *Proceedings of the Fifteenth International Conference on Machine Vision (ICMV)*"
           link: https://tiagofilipesousagoncalves.github.io/publications/pdf/dianartsilva2022icmv.pdf
         - text: "R. Cruz, R. Prates, E. Filho, J. Costa, J. Cardoso (2021). Background Invariance by Adversarial Learning. *IEEE 25th International Conference on Pattern Recognition (ICPR)*"
           link: https://ieeexplore.ieee.org/document/9413004
@@ -193,24 +214,51 @@ journal-publications:
           link: "https://www.sciencedirect.com/science/article/pii/S004579061930967X?dgcid=coauthor"
         - text: "**R. Cruz**, K. Fernandes, J. Costa, M. Pérez Ortiz, J. Cardoso (2018). Binary ranking for ordinal class imbalance. *Springer Journal Pattern Analysis and Applications*"
           link: "https://link.springer.com/epdf/10.1007/s10044-018-0705-4?author_access_token=p2L5jwabAzmA-hENM_mugfe4RwlQNchNByi7wbcMAY42mOH72RPQeb098_tyy79R09eJLVa1A5i0Fl8_sgW1ks0WseTTuEtHZyi1eB8zBX3Z7vgZBxHJZ3x26EzyODMrDn4oUkmT-tVcZK4oD3u4vQ%3D%3D"
-awards:
-    title: Awards
-    icon: awards
+jury-participation:
+    title: "Jury Participation"
+    environment: enumerate
+    icon: jury-participation
+    listing:
+        - label: 2022
+          text: "Mafalda Oliveira: Neuroblastoma Cancer Radiogenomics (FEUP, External Examiner)"
+        - label: 2022
+          text: "João Pedro Fonseca: AI-Based Models to Predict The Traumatic Brain Injury Outcome (FEUP, External Examiner)"
+        - label: 2022
+          text: "Ana Maria Sousa: Learning to write medical reports from EEG data (FEUP, Chairman)"
+        - label: 2022
+          text: "Bruno Nascimento: Detection and classification of small impacts on vehicles based on deep learning algorithms (U. Minho, External Examiner)"
+        - label: 2021
+          text: "Artur Ferreira: 3D Lung Computed Tomography Synthesis using Generative Adversarial Networks (FCUP, External Examiner)"
+        - label: 2021
+          text: "Vítor Figueiredo: Feasibility of using autoencoders for learning car interior background models (U. Minho, External Examiner)"
+msc-supervisions:
+    title: "M.Sc. Supervisions"
+    icon: supervisions
+    environment: description
+    listing:
+        - label: on-going
+          text: "Rafael Cristino: *Introducing Domain Knowledge to Autonomous Driving*"
+        - label: on-going
+          text: "Alankrita Asthana: *Iterative Inference for Point-Clouds*"
+        - label: on-going
+          text: "José Guerra (with L. Teixeira): *Academic Internship in Out of Distribution Detection – Autonomous Driving* (Internship at Bosch Car Multimedia)"
+        - label: 2022
+          text: "Pedro Silva (with T. Gonçalves): *Human Feedback during Neural Networks Training*"
+          link: https://sigarra.up.pt/feup/pt/pub_geral.pub_view?pi_pub_base_id=570677
+        - label: 2022
+          text: "João Silva: *Environment Detection for Railway Applications based on Automotive Technology* (Internship at Continental)"
+          link: https://sigarra.up.pt/feup/pt/pub_geral.pub_view?pi_pub_base_id=570251
+        - label: 2022
+          text: "Ana Bezerra (with J. Costa): *Phishing Detection with a Machine Learning Net* (Internship at E-goi)"
+          link: https://repositorio-aberto.up.pt/handle/10216/147350
+bsc-supervisions:
+    title: "B.Sc. Projects Supervisions"
+    icon: supervisions
     environment: description
     listing:
         - label: 2022
-          text: "**Bosch for Mobility:** My students won Best New Participating Team in an autonomous driving competition"
-          link: https://noticias.up.pt/estudantes-da-u-porto-brilham-em-concurso-de-conducao-autonoma-da-bosch/
-        - label: 2021
-          text: "**INESC TEC Outstanding Recognition Award:** Monthly award for INESC TEC collaborators, for maintenance of the HPC infrastructure"
-          link: https://bip.inesctec.pt/en/especiaisdecorrida/ricardo-cruz-ctm-2/
-        - label: 2021
-          text: "**Pedagogic award (voted by students):** University of Porto (FEUP)"
-        - label: 2021
-          text: "**Best paper and presentation:** RECPAD conference"
-          link: https://noticias.up.pt/investigadores-da-u-porto-dominam-premios-do-recpad-2021/
-        - label: 2018
-          text: "**INESC TEC Outstanding Recognition Award: Monthly award for INESC TEC collaborators, for organizing workshops"
-          link: http://bip-archive.inesctec.pt/en/196/fora-de-serie.html
-        - label: 2017
-          text: "**Kaggle Bronze Medal (competition) and Silver (engagement)**"
+          text: "Diana Silva (with T. Gonçalves): *Semantic Segmentation in Neural Networks using Iterative Visual Attention*"
+        - label: 2022
+          text: "Filipe Campos, Francisco Cerqueira, Vasco Alves: *Mobile App using Object Detection for Car Driving*"
+        - label: 2022
+          text: "Bruno Gomes, Rafael Camelo: Internship at ANO"

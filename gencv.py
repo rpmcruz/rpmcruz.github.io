@@ -2,10 +2,8 @@ import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument('yaml')
 parser.add_argument('template', choices=['latex', 'html'])
+parser.add_argument('--profile', choices=['academic', 'industry'])
 args = parser.parse_args()
-
-def escape(s):
-    return s.replace('&', r'\&').replace('~', r'$\sim$')
 
 import yaml, re, os
 
@@ -91,6 +89,9 @@ class LatexTemplate:
         text = text.replace('&', r'\&').replace('~', r'$\sim$')
         print(text, file=f)
 
+    def insert_link(self, f, link):
+        print(f"\\href{{{item['link']}}}{{\\includegraphics[width=0.8em]{{imgs/link.pdf}}}}", file=f)
+
     def filename(self, name):
         return f'{name}.tex'
 
@@ -99,7 +100,7 @@ class LatexTemplate:
             print(f'Error: pdflatex failed to compile {filename}')
             os._exit(1)
         os.system(f'pdflatex -halt-on-error {filename} > /dev/null 2>&1')
-        for ext in ['aux', 'log', 'out']:#, 'tex']:
+        for ext in ['aux', 'log', 'out', 'tex']:
             os.remove(filename[:-3] + ext)
 
 class HtmlTemplate:
@@ -213,6 +214,9 @@ class HtmlTemplate:
         text = text.replace('&', '&amp;').replace('--', '&ndash;')
         print(text, file=f)
 
+    def insert_link(self, f, link):
+        print(f'<a href="{item["link"]}"><img width="20px" src="imgs/link.svg"></a>', file=f)
+
     def filename(self, name):
         return 'index.html'
 
@@ -224,9 +228,17 @@ template = globals()[f'{args.template.title()}Template']()
 filename = template.filename(args.yaml[:-5])
 f = open(filename, 'w')
 
+if args.profile == 'academic':
+    sections = ['profile', 'education', 'employment', 'teaching', 'courses', 'awards',  'scientific-projects', 'scientific-impact', 'journal-publications', 'conference-publications', 'jury-participation', 'msc-supervisions', 'bsc-supervisions']
+elif args.profile == 'industry':
+    sections = cv.keys()
+else:
+    sections = cv.keys()
+
 template.begin_document(f)
 template.insert_toc(f, [section['title'] for section in cv.values()])
-for i, (name, section) in enumerate(cv.items()):
+for i, name in enumerate(sections):
+    section = cv[name]
     if i > 0:
         template.insert_space(f)
     if name == 'profile':
@@ -251,6 +263,8 @@ for i, (name, section) in enumerate(cv.items()):
         for item in section['listing']:
             template.begin_item(f, env, item.get('label'))
             template.insert_text(f, item['text'])
+            if 'link' in item:
+                template.insert_link(f, item['link'])
             template.end_item(f, env)
         template.end_environment(f, env)
         template.end_section(f, section['title'])
