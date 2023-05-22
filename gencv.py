@@ -2,7 +2,7 @@ import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument('yaml')
 parser.add_argument('template', choices=['latex', 'html'])
-parser.add_argument('--profile', choices=['academic', 'industry'])
+parser.add_argument('--academic', action='store_true')
 args = parser.parse_args()
 
 import yaml, re, os
@@ -16,8 +16,9 @@ class LatexTemplate:
         print(r'\usepackage{xcolor}', file=f)
         print(r'\usepackage{graphicx}', file=f)
         print(r'\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, pdfauthor={Ricardo Cruz}, pdftitle={Ricardo Cruz CV}]{hyperref}', file=f)
-        print(r'\usepackage{soul}  % \hl', file=f)
+        print(r'\usepackage{soulutf8}  % \hl', file=f)
         print(r'\usepackage{enumitem}', file=f)
+        print(r'\newlength{\widestlabel}  % used by description', file=f)
         print(r'\setlist{nosep,leftmargin=0.4cm}', file=f)
         print(file=f)
         print(r'% footer', file=f)
@@ -40,7 +41,7 @@ class LatexTemplate:
         print(f'\pdfbookmark{{Title}}{{Title}}{{\Large {name}}}', end='\n\n', file=f)
 
     def insert_information(self, f, icon, text, link):
-        print(f'{{\\footnotesize \\raisebox{{-0.25\height}}{{\includegraphics[width=16px]{{imgs/profile-{icon}}}', end='', file=f)
+        print(f'{{\\footnotesize \\raisebox{{-0.25\height}}{{\includegraphics[width=16px]{{imgs/profile-{icon}}}}}~', end='', file=f)
         if link is None:
             print(text, end='', file=f)
         else:
@@ -70,8 +71,12 @@ class LatexTemplate:
     def end_section(self, f, name):
         pass
 
-    def begin_environment(self, f, type):
-        print(f'\\begin{{{type}}}', file=f)
+    def begin_environment(self, f, type, largest_label):
+        if type == 'description':
+            print(f'\\settowidth{{\\widestlabel}}{{\\textbf{{{largest_label}}}}}', file=f)
+        print(f'\\begin{{{type}}}', end='', file=f)
+        if type == 'description':
+            print(f'[style=sameline, labelwidth=\dimexpr\widestlabel+\labelsep, leftmargin=!]', end='', file=f)
 
     def end_environment(self, f, type):
         print(f'\\end{{{type}}}', file=f)
@@ -83,11 +88,24 @@ class LatexTemplate:
     def end_item(self, f, type):
         pass
 
-    def insert_text(self, f, text):
+    def insert_prologue(self, f, text):
+        text = self.apply_markdown(text)
+        print(text, file=f)
+
+    def insert_text(self, f, text, highlight):
+        text = self.apply_markdown(text)
+        if highlight:
+            print(f'\\hl{{{text}}}', file=f)
+        else:
+            print(text, file=f)
+
+    def apply_markdown(self, text):
         text = re.sub(r'\*\*(.*?)\*\*', r'\\textbf{\1}', text)  # bold
         text = re.sub(r'\*(.*?)\*', r'\\textit{\1}', text)  # italic
+        text = re.sub(r'\=\=(.*?)\=\=', r'\\hl{\1}', text)  # highlight
+        text = re.sub(r'\[(.*?)\]\((.*?)\)', r'\\href{\2}{\1}', text)  # link
         text = text.replace('&', r'\&').replace('~', r'$\sim$')
-        print(text, file=f)
+        return text
 
     def insert_link(self, f, link):
         print(f"\\href{{{item['link']}}}{{\\includegraphics[width=0.8em]{{imgs/link.pdf}}}}", file=f)
@@ -180,7 +198,7 @@ class HtmlTemplate:
     def end_section(self, f, name):
         pass
 
-    def begin_environment(self, f, type):
+    def begin_environment(self, f, type, largest_label):
         if type == 'description':
             print('<div class="columns">', file=f)
         elif type == 'itemize':
@@ -208,11 +226,24 @@ class HtmlTemplate:
         else:
             print('</li>', file=f)
 
-    def insert_text(self, f, text):
+    def insert_prologue(self, f, text):
+        text = self.apply_markdown(text)
+        print(text, file=f)
+
+    def insert_text(self, f, text, highlight):
+        text = self.apply_markdown(text)
+        if highlight:
+            print(f'<span class="hl">{text}</span>', file=f)
+        else:
+            print(text, file=f)
+
+    def apply_markdown(self, text):
         text = re.sub(r'\*\*(.*?)\*\*', r'<b>\1</b>', text)  # bold
         text = re.sub(r'\*(.*?)\*', r'<i>\1</i>', text)  # italic
         text = text.replace('&', '&amp;').replace('--', '&ndash;')
-        print(text, file=f)
+        text = re.sub(r'\=\=(.*?)\=\=', r'<span class="hl">\1</span>', text)  # highlight
+        text = re.sub(r'\[(.*?)\]\((.*?)\)', r'<a href="\2">\1</a>', text)  # link
+        return text
 
     def insert_link(self, f, link):
         print(f'<a href="{item["link"]}"><img width="20px" src="imgs/link.svg"></a>', file=f)
@@ -228,10 +259,8 @@ template = globals()[f'{args.template.title()}Template']()
 filename = template.filename(args.yaml[:-5])
 f = open(filename, 'w')
 
-if args.profile == 'academic':
+if args.academic:
     sections = ['profile', 'education', 'employment', 'teaching', 'courses', 'awards',  'scientific-projects', 'scientific-impact', 'journal-publications', 'conference-publications', 'jury-participation', 'msc-supervisions', 'bsc-supervisions']
-elif args.profile == 'industry':
-    sections = cv.keys()
 else:
     sections = cv.keys()
 
@@ -253,16 +282,20 @@ for i, name in enumerate(sections):
             template.insert_information(f, key, value, link)
         template.insert_space(f)
         template.insert_biography(f, section['biography'])
+        template.insert_space(f)
         template.insert_skills(f, section['skills'])
         template.insert_space(f)
         template.insert_picture(f, section['picture'])
     else:
         template.begin_section(f, section['icon'], section['title'])
+        if 'prologue' in section:
+            template.insert_prologue(f, section['prologue'])
         env = section['environment']
-        template.begin_environment(f, env)
+        largest_label = max((str(item.get('label', '')) for item in section['listing']), key=len)
+        template.begin_environment(f, env, largest_label)
         for item in section['listing']:
             template.begin_item(f, env, item.get('label'))
-            template.insert_text(f, item['text'])
+            template.insert_text(f, item['text'], item.get('highlight', False))
             if 'link' in item:
                 template.insert_link(f, item['link'])
             template.end_item(f, env)

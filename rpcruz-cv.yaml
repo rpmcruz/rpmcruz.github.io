@@ -25,7 +25,7 @@ employment:
     icon: employment
     environment: description
     listing:
-        - label: 2021--
+        - label: 2021--...
           text: >-
             **Post-doctoral Researcher** on Autonomous Driving
             University of Porto (FEUP) [in partnership with Bosch]
@@ -61,22 +61,22 @@ teaching:
         - label: 2021--2022
           text: "**Invited Auxiliary Professor,** University of Porto (FEUP)"
           summary:
-              - Programming Fundamentals (Python) [L.EIC]
-              - Programming (C/C++) [L.EIC]
-              - Data Structures and Algorithms (C/C++) [L.EEC]
+              - "L.EIC003: Programming Fundamentals (Python) [L.EIC]"
+              - "L.EIC009: Programming (C/C++) [L.EIC]"
+              - "L.EEC009: Data Structures and Algorithms (C/C++) [L.EEC]"
         - label: 2018--2021
           text: "**Invited Teacher Assistant,** University of Porto (FEUP)"
           summary:
-              - Programming Fundamentals (Python) [L.EIC]
-              - Programming (C/C++) [L.EIC]
+              - "L.EIC003: Programming Fundamentals (Python) [L.EIC]"
+              - "L.EIC009: Programming (C/C++) [L.EIC]"
 courses:
     title: "Courses"
     icon: teaching
     environment: itemize
     listing:
-          - text: Programming Fundamentals (Python) [L.EIC]
-          - text: Programming (C/C++) [L.EIC]
-          - text: Data Structures and Algorithms (C/C++) [L.EEC]
+          - text: "L.EIC003: Programming Fundamentals (Python) [L.EIC]"
+          - text: "L.EIC009: Programming (C/C++) [L.EIC]"
+          - text: "L.EEC009: Data Structures and Algorithms (C/C++) [L.EEC]"
 awards:
     title: Awards
     icon: awards
@@ -113,6 +113,7 @@ projects:
     title: Projects
     icon: projects
     environment: itemize
+    prologue: "See my github for more projects: [github.com/rpmcruz](https://github.com/rpmcruz?tab=repositories)."
     listing:
         - text: "**Uber Pixor implementation.** Implementation of a popular bird's eye view LiDAR object detection model."
           link: https://github.com/rpmcruz/pixor
@@ -169,16 +170,18 @@ conference-publications:
     title: "Conference Publications"
     icon: publications
     environment: enumerate
+    prologue: "My favorite publications are in ==highlight==."
     listing:
         - text: "P. S. Silva, **R. Cruz**, ASM Shihavuddin, T. Gonçalves (2023) **[ACCEPTED]**. Interpretability-Guided Human Feedback During Neural Network Training. *Springer Iberian conference on pattern recognition and image analysis (Ibpria)*"
+          highlight: true
         - text: "D. Silva, **R. Cruz**, T. Gonçalves, D. Carneiro (2022) **[ACCEPTED]**. Two-stage Semantic Segmentation in Neural Networks. *Proceedings of the Fifteenth International Conference on Machine Vision (ICMV)*"
           link: https://tiagofilipesousagoncalves.github.io/publications/pdf/dianartsilva2022icmv.pdf
-        - text: "R. Cruz, R. Prates, E. Filho, J. Costa, J. Cardoso (2021). Background Invariance by Adversarial Learning. *IEEE 25th International Conference on Pattern Recognition (ICPR)*"
+        - text: "**R. Cruz**, R. Prates, E. Filho, J. Costa, J. Cardoso (2021). Background Invariance by Adversarial Learning. *IEEE 25th International Conference on Pattern Recognition (ICPR)*"
           link: https://ieeexplore.ieee.org/document/9413004
           highlight: true
         - text: "**R. Cruz**, J. Costa, J. Cardoso (2019). Automatic Augmentation by Hill Climbing. *Springer 28th International Conference on Artificial Neural Networks (ICANN)*"
           link: "https://link.springer.com/chapter/10.1007/978-3-030-30484-3_10"
-        - text: "R. Cruz, J. Costa, J. Cardoso (2019). Averse Deep Semantic Segmentation. *IEEE 41st Engineering in Medicine and Biology Conference (EMBC)*"
+        - text: "**R. Cruz**, J. Costa, J. Cardoso (2019). Averse Deep Semantic Segmentation. *IEEE 41st Engineering in Medicine and Biology Conference (EMBC)*"
           link: "https://ieeexplore.ieee.org/abstract/document/8857385"
           highlight: true
         - text: "**R. Cruz**, M. Silveira, J. Cardoso (2018). A Class Imbalance Ordinal Method for Alzheimer's Disease Classification. *IEEE International Workshop on Pattern Recognition in Neuroimaging (PRNI)*"
@@ -194,7 +197,7 @@ conference-publications:
           link: "https://link.springer.com/chapter/10.1007/978-3-319-59147-6_46"
         - text: "**R. Cruz**, K. Fernandes, J. Costa, M. Pérez-Ortiz, J. Cardoso (2017). Ordinal class imbalance with ranking. *Springer Iberian conference on pattern recognition and image analysis (Ibpria)*"
           link: "https://link.springer.com/chapter/10.1007/978-3-319-58838-4_1"
-        - text: "R. Cruz, K. Fernandes, J. Costa, J. Cardoso (2016). Tackling class imbalance with ranking. *IEEE International Joint Conference on Neural Networks (IJCNN)*"
+        - text: "**R. Cruz**, K. Fernandes, J. Costa, J. Cardoso (2016). Tackling class imbalance with ranking. *IEEE International Joint Conference on Neural Networks (IJCNN)*"
           link: "http://ieeexplore.ieee.org/abstract/document/7727469/"
           highlight: true
 journal-publications:
@@ -216,40 +219,40 @@ journal-publications:
           link: "https://link.springer.com/epdf/10.1007/s10044-018-0705-4?author_access_token=p2L5jwabAzmA-hENM_mugfe4RwlQNchNByi7wbcMAY42mOH72RPQeb098_tyy79R09eJLVa1A5i0Fl8_sgW1ks0WseTTuEtHZyi1eB8zBX3Z7vgZBxHJZ3x26EzyODMrDn4oUkmT-tVcZK4oD3u4vQ%3D%3D"
 jury-participation:
     title: "Jury Participation"
-    environment: enumerate
+    environment: description
     icon: jury-participation
     listing:
         - label: 2022
-          text: "Mafalda Oliveira: Neuroblastoma Cancer Radiogenomics (FEUP, External Examiner)"
+          text: "Mafalda Oliveira: *Neuroblastoma Cancer Radiogenomics* (FEUP, External Examiner)"
         - label: 2022
-          text: "João Pedro Fonseca: AI-Based Models to Predict The Traumatic Brain Injury Outcome (FEUP, External Examiner)"
+          text: "João Pedro Fonseca: *AI-Based Models to Predict The Traumatic Brain Injury Outcome* (FEUP, External Examiner)"
         - label: 2022
-          text: "Ana Maria Sousa: Learning to write medical reports from EEG data (FEUP, Chairman)"
+          text: "Ana Maria Sousa: *Learning to write medical reports from EEG data* (FEUP, Chairman)"
         - label: 2022
-          text: "Bruno Nascimento: Detection and classification of small impacts on vehicles based on deep learning algorithms (U. Minho, External Examiner)"
+          text: "Bruno Nascimento: *Detection and classification of small impacts on vehicles based on deep learning algorithms* (U. Minho, External Examiner)"
         - label: 2021
-          text: "Artur Ferreira: 3D Lung Computed Tomography Synthesis using Generative Adversarial Networks (FCUP, External Examiner)"
+          text: "Artur Ferreira: *3D Lung Computed Tomography Synthesis using Generative Adversarial Networks* (FCUP, External Examiner)"
         - label: 2021
-          text: "Vítor Figueiredo: Feasibility of using autoencoders for learning car interior background models (U. Minho, External Examiner)"
+          text: "Vítor Figueiredo: *Feasibility of using autoencoders for learning car interior background models* (U. Minho, External Examiner)"
 msc-supervisions:
     title: "M.Sc. Supervisions"
     icon: supervisions
     environment: description
     listing:
         - label: on-going
-          text: "Rafael Cristino: *Introducing Domain Knowledge to Autonomous Driving*"
+          text: "Rafael Cristino: *Introducing Domain Knowledge to Autonomous Driving* (FEUP)"
         - label: on-going
-          text: "Alankrita Asthana: *Iterative Inference for Point-Clouds*"
+          text: "Alankrita Asthana: *Iterative Inference for Point-Clouds* (TUM, Munich)"
         - label: on-going
-          text: "José Guerra (with L. Teixeira): *Academic Internship in Out of Distribution Detection – Autonomous Driving* (Internship at Bosch Car Multimedia)"
+          text: "José Guerra (with L. Teixeira): *Academic Internship in Out of Distribution Detection – Autonomous Driving* (Internship at Bosch Car Multimedia) (FEUP)"
         - label: 2022
-          text: "Pedro Silva (with T. Gonçalves): *Human Feedback during Neural Networks Training*"
+          text: "Pedro Silva (with T. Gonçalves): *Human Feedback during Neural Networks Training* (FEUP)"
           link: https://sigarra.up.pt/feup/pt/pub_geral.pub_view?pi_pub_base_id=570677
         - label: 2022
-          text: "João Silva: *Environment Detection for Railway Applications based on Automotive Technology* (Internship at Continental)"
+          text: "João Silva: *Environment Detection for Railway Applications based on Automotive Technology* (Internship at Continental) (FEUP)"
           link: https://sigarra.up.pt/feup/pt/pub_geral.pub_view?pi_pub_base_id=570251
         - label: 2022
-          text: "Ana Bezerra (with J. Costa): *Phishing Detection with a Machine Learning Net* (Internship at E-goi)"
+          text: "Ana Bezerra (with J. Costa): *Phishing Detection with a Machine Learning Net* (Internship at E-goi) (FCUP)"
           link: https://repositorio-aberto.up.pt/handle/10216/147350
 bsc-supervisions:
     title: "B.Sc. Projects Supervisions"
