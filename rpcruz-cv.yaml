@@ -72,11 +72,12 @@ teaching:
 courses:
     title: "Courses"
     icon: teaching
+    prologue: "The teaching consisted of the pratical lessons (2h-4h per week) and helping with the materials."
     environment: itemize
     listing:
-          - text: "L.EIC003: Programming Fundamentals (Python) [L.EIC]"
-          - text: "L.EIC009: Programming (C/C++) [L.EIC]"
-          - text: "L.EEC009: Data Structures and Algorithms (C/C++) [L.EEC]"
+          - text: "L.EIC003: Programming Fundamentals (Python) [L.EIC] (2018/2019, 2019/2020, 2020/2021, 2021/2022)"
+          - text: "L.EIC009: Programming (C/C++) [L.EIC] (2019/2020, 2020/2021)"
+          - text: "L.EEC009: Data Structures and Algorithms (C/C++) [L.EEC] (2021/2022)"
 awards:
     title: Awards
     icon: awards
@@ -141,6 +142,7 @@ scientific-projects:
     environment: itemize
     listing:
         - text: "**THEIA** -- Automated Perception Driving (POCI-01-0247-FEDER-047264)"
+          link: https://sigarra.up.pt/feup/pt/projectos_geral.ficha_projecto?p_id=78377
         - text: "**CLARE** -- Computer-aided cervical cancer screening (POCI-01-0145-FEDER-028857)"
           link: https://www.inesctec.pt/pt/projetos/clare
         - text: "**NanoSTIMA** Macro-to-Nano Human Sensing: Towards Integrated Multimodal Health Monitoring and Analytics (NORTE-01-0145-FEDER-000016)"

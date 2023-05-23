@@ -272,6 +272,8 @@ for i, name in enumerate(sections):
         template.insert_space(f)
     if name == 'profile':
         template.insert_title(f, section['name'])
+        if args.template == 'html':  # link to PDF version
+            template.insert_information(f, 'pdf', 'PDF version', 'rpcruz-cv.pdf')
         for key in ['location', 'email', 'phone', 'website', 'orcid']:
             value = section[key]
             if key == 'phone': link = 'tel:' + value.replace(' ', '')
