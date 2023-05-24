@@ -69,12 +69,13 @@ scientific-impact:
           link: https://www.webofscience.com/wos/author/record/IQV-2746-2023
         - text: "Scopus (may/2023): 111 citations, 5 h-index"
           link: https://www.scopus.com/authid/detail.uri?authorId=57192670388
+
 conference-publications:
     title: "Publicações em Conferência"
     type: "subsubsection"
     icon: publications
     environment: enumerate
-    prologue: "As publicações que escolhi como as cinco mais representativas em ==highlight==."
+    prologue: "As publicações que escolhi como as cinco mais representativas estão ==em realce==."
     listing:
         - text: "P. S. Silva, **R. Cruz**, ASM Shihavuddin, T. Gonçalves (2023) **[ACCEPTED]**. Interpretability-Guided Human Feedback During Neural Network Training. *Springer Iberian conference on pattern recognition and image analysis (Ibpria)*"
           highlight: true
@@ -171,8 +172,6 @@ bsc-supervisions:
           text: "Diana Silva (with T. Gonçalves): *Semantic Segmentation in Neural Networks using Iterative Visual Attention*"
         - label: 2022
           text: "Filipe Campos, Francisco Cerqueira, Vasco Alves: *Mobile App using Object Detection for Car Driving*"
-        - label: 2022
-          text: "Bruno Gomes, Rafael Camelo: Internship at ANO"
 
 
 chpAd:
@@ -184,8 +183,8 @@ chpAd:
           text: "**A3ES** ..."
           highlight: true
         - label: 2020
-          text: "**iMIMIC/MIL3ID/LABELS 2020 workshop proceedings** (MICCAI 2020): co-editor"
-          link: https://imimic-workshop.com/previous_editions/2020/index.html
+          text: "**iMIMIC/MIL3ID/LABELS 2020 workshop proceedings** (MICCAI 2020): ajudei a organizar o workshop iMIMIC 2020 (parte do MICCAI 2020) e fui depois co-editor da publicação dos proceedings conjunto destes três workshops do MICCAI 2020."
+          link: https://link.springer.com/book/10.1007/978-3-030-61166-8
 
 chpB:
     title: "B) Capacidade pedagógica"
@@ -246,12 +245,33 @@ chpBb:
           text: "Vítor Figueiredo: *Feasibility of using autoencoders for learning car interior background models* (U. Minho, External Examiner)"
 
 chpBc:
-    title: "c) Outras atividades de índole pedagógica"
+    title: "c) Outras atividades de índole pedagógica -- Qualidade e quantidade de material pedagógico e de publicações de índole pedagógica produzidos pelo candidato, outras atividades com impacto no processo de ensino-aprendizagem realizadas pelo candidato, incluindo estágios de formação de jovens licenciados ou mestres"
     type: subsection
     environment: description
     listing:
+        - label: 2018--2022
+          text: "Além de ajudar na elaboração de exercícios, na UC de Fundamentos da Programação desenvolvi o website que os alunos usavam para praticar os exercícios e para fazer os testes. O website foi desenvolvido em Python (Flask) com MongoDB e mais tarde substituído por PostgreSQL. Houve a preocupação de gamificar o website: existia um leaderboard com várias métricas de desempenho do código e, depois de resolverem os exercícios, podiam comparar as suas soluções com as dos outros e votar nas mesmas. O website não está disponível publicamente, mas produzi um vídeo aqui:"
+          link: https://www.youtube.com/watch?v=NR-jLv9v9Mw
         - label: 2021
           text: "Recebi o **prémio pedagógico** com base nos inquéritos pedagógicos (FEUP)"
+        - label: Estágios
+          text: "Em 2022, supervisionei, os estudantes Bruno Gomes e Rafael Camelo (3º ano licenciatura) num estágio na empresa ANO. Além disso, orientei quatro teses de mestrado (referidas em cima) em ambiente empresarial."
+
+chpC:
+    title: "C) Outras atividades relevantes para a missão da Universidade"
+
+chpCa:
+    title: "a) Participação em atividades de gestão em instituições de ensino superior/empresarial ou de investigação na área de engenharia informática ou em outras entidades de caráter científico, tecnológico ou cultural que desenvolvam atividades relevantes no âmbito da missão das anteriores"
+    type: subsection
+    prologue: "Sem nada a declarar."
+
+chpCb:
+    title: "b) Participação em ações e publicações de divulgação científica, cultural ou tecnológica"
+    type: subsection
+    environment: description
+    listing:
+        - label: 2019
+          text: "**DSPT Day:** contribui com uma lightning talk. O DSPT Day era um evento de dois dias sobre machine learning para uma comunidade alargada."
         - label: 2018
           text: '**Universidade Junior:** Organizei com o meu orientador (Prof. Jaime Cardoso) uma atividade para a Universidade Junior entitulada "Escondidos nos Dados". A Universidade Junior é uma oportunidade que a Universidade do Porto dá às crianças para conhecer e fazer atividades na universidade. Esta atividade decorreu durante um mês, com turmas com crianças diferentes todos os dias, do 8º e 9º anos letivos. O link descreve um prémio que recebi do INESC TEC por organizar estas atividades, entre outras.'
           link: http://bip-archive.inesctec.pt/196/fora-de-serie.html
@@ -260,38 +280,28 @@ chpBc:
         - label: 2017
           text: "Já organizei alguns workshops, em especial no INESC TEC. Um deles foi o **Learning from Data** que fez parte do Open Day do CTM. (O CTM é a unidades do INESC TEC na qual eu fiz parte.)"
           link: https://opendayctm.inesctec.pt/2017/index.php/learning-from-data/
+        - label: 2017
+          text: "Fiz um workshop público gratuito, em colaboração com o João Machado, no **Python Meetup** entitulado *NumPy and Scikit-Learn*. O Python Meetup era um encontro mensal sobre Python no Porto, que entretanto foi descontinuado."
+          link: https://youtu.be/klr1z1EJ1yY
 
 
 
-awards:
-    title: Awards
-    icon: awards
+chpCc:
+    title: "c) Participação no desenvolvimento de projetos de extensão incluindo divulgação científica e de prestação de serviços à comunidade científica/educacional, ao tecido económico-produtivo e/ou à sociedade em geral"
+    type: subsection
     environment: description
     listing:
         - label: 2022
-          text: "**Bosch for Mobility:** My students won Best New Participating Team in an autonomous driving competition"
+          text: "**Bosch for Mobility:** My students won Best New Participating Team in an autonomous driving competition promoted by Bosch Romania."
           link: https://noticias.up.pt/estudantes-da-u-porto-brilham-em-concurso-de-conducao-autonoma-da-bosch/
-        - label: 2021
-          text: "**INESC TEC Outstanding Recognition Award:** Monthly award for INESC TEC collaborators, for maintenance of the HPC infrastructure"
-          link: https://bip.inesctec.pt/en/especiaisdecorrida/ricardo-cruz-ctm-2/
-        - label: 2021
-          text: "**Pedagogic award (voted by students):** University of Porto (FEUP)"
-        - label: 2021
-          text: "**Best paper and presentation:** RECPAD conference"
-          link: https://noticias.up.pt/investigadores-da-u-porto-dominam-premios-do-recpad-2021/
-        - label: 2018
-          text: "**INESC TEC Outstanding Recognition Award: Monthly award for INESC TEC collaborators, for organizing workshops"
-          link: http://bip-archive.inesctec.pt/en/196/fora-de-serie.html
-        - label: 2017
-          text: "**Kaggle Bronze Medal (competition) and Silver (engagement)**"
 
-scientific-organizations:
-    title: "Participation in Scientific Events"
+
+chpCd:
+    title: "d) Organização de eventos de cariz científico ou educacional na área a que se candidatas"
+    type: subsection
     icon: scientific-events
     environment: itemize
     listing:
-        - text: "**iMIMIC/MIL3ID/LABELS 2020 workshop proceedings** (MICCAI 2020): co-editor"
-          link: https://imimic-workshop.com/previous_editions/2020/index.html
         - text: "**iMIMIC 2020 workshop** (MICCAI 2020): committee sponsor chair"
           link: https://imimic-workshop.com/previous_editions/2020/index.html
         - text: "**3rd International Conference on Dynamics, Games and Science (2014):** president of the organizing committee"

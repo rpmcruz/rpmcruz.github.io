@@ -132,6 +132,7 @@ class LatexTemplate:
             print(f'Error: pdflatex failed to compile {filename}')
             os._exit(1)
         os.system(f'pdflatex -halt-on-error {filename} > /dev/null 2>&1')
+        os.system(f'pdflatex -halt-on-error {filename} > /dev/null 2>&1')
         for ext in ['aux', 'log', 'out', 'toc', 'tex']:
             os.remove(filename[:-3] + ext)
 
