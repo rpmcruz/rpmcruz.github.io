@@ -20,11 +20,20 @@ class LatexTemplate:
         print(r'\usepackage{enumitem}', file=f)
         print(r'\newlength{\widestlabel}  % used by description', file=f)
         print(r'\setlist{nosep,leftmargin=0.4cm}', file=f)
+        print(r'\usepackage{titlesec}  % change \section look', file=f)
+        print(r'\titleformat{\section}{\normalfont\Large\scshape}{}{0pt}{}[{\vspace{-0.5ex}\titlerule[0.8pt]}]', file=f)
+        print(r'\titlespacing{\section}{0pt}{0pt}{10pt}', file=f)
+        print(r'\renewcommand{\thesection}{}  % no section numbers', file=f)
+        print(r'\renewcommand{\thesubsection}{}', file=f)
+        print(r'\renewcommand{\thesubsubsection}{}', file=f)
+        print(r'\makeatletter\renewcommand\tableofcontents{\@starttoc{toc}}\makeatother', file=f)
+        print(r'\usepackage{tocloft}\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}\renewcommand{\cftsubsecdotsep}{\cftnodots}', file=f)
         print(file=f)
         print(r'% footer', file=f)
         print(r'\usepackage{fancyhdr, lastpage}', file=f)
         print(r'\pagestyle{fancy}', file=f)
         print(r'\renewcommand{\headrulewidth}{0pt}', file=f)
+        print(r'\fancyhead{}', file=f)
         print(r'\fancyfoot[L]{\scriptsize Last update: \today}', file=f)
         print(r'\fancyfoot[C]{}', file=f)
         print(r'\fancyfoot[R]{\scriptsize Page \thepage\ of \pageref{LastPage}}', file=f)
@@ -32,13 +41,14 @@ class LatexTemplate:
         print(r'\begin{document}', end='\n\n', file=f)
 
     def insert_toc(self, f, sections):
-        pass
+        print(r'\setcounter{tocdepth}{2}\tableofcontents', end='\n\n', file=f)
 
     def end_document(self, f):
         print(r'\end{document}', file=f)
 
     def insert_title(self, f, name):
-        print(f'\pdfbookmark{{Title}}{{Title}}{{\Large {name}}}', end='\n\n', file=f)
+        #print(f'\pdfbookmark{{Title}}{{Title}}{{\Large {name}}}', end='\n\n', file=f)
+        print(f'{{\Large {name}}}', end='\n\n', file=f)
 
     def insert_information(self, f, icon, text, link):
         print(f'{{\\footnotesize \\raisebox{{-0.25\height}}{{\includegraphics[width=16px]{{imgs/profile-{icon}}}}}~', end='', file=f)
@@ -65,8 +75,12 @@ class LatexTemplate:
     def insert_space(self, f):
         print('\n\\bigskip', file=f)
 
-    def begin_section(self, f, icon, name):
-        print(f'\\pdfbookmark{{{name}}}{{{name}}}\\includegraphics[width=2em]{{imgs/section-{icon}.pdf}} \\textsc{{\large {name}}} \\hrulefill', end='\n\n', file=f)
+    def begin_section(self, f, icon, name, type):
+        if icon:
+            print(f'\\{type}{{\\includegraphics[width=1em]{{imgs/section-{icon}.pdf}} {name}}}', end='\n', file=f)
+        else:
+            print(f'\\{type}{{{name}}}', end='\n', file=f)
+        #print(f'\\addcontentsline{{toc}}{{{type}}}{{{name}}}', end='\n\n', file=f)
 
     def end_section(self, f, name):
         pass
@@ -118,7 +132,7 @@ class LatexTemplate:
             print(f'Error: pdflatex failed to compile {filename}')
             os._exit(1)
         os.system(f'pdflatex -halt-on-error {filename} > /dev/null 2>&1')
-        for ext in ['aux', 'log', 'out', 'tex']:
+        for ext in ['aux', 'log', 'out', 'toc', 'tex']:
             os.remove(filename[:-3] + ext)
 
 class HtmlTemplate:
@@ -192,7 +206,7 @@ class HtmlTemplate:
     def insert_space(self, f):
         print('<div class="bigskip"></div>', file=f)
 
-    def begin_section(self, f, icon, name):
+    def begin_section(self, f, icon, name, type):
         print(f'<h2 id={name.lower()}><img width="40px" src="imgs/section-{icon}.svg"> {name}</h2>', file=f)
 
     def end_section(self, f, name):
@@ -265,7 +279,6 @@ else:
     sections = cv.keys()
 
 template.begin_document(f)
-template.insert_toc(f, [section['title'] for section in cv.values()])
 for i, name in enumerate(sections):
     section = cv[name]
     if i > 0:
@@ -288,10 +301,14 @@ for i, name in enumerate(sections):
         template.insert_skills(f, section['skills'])
         template.insert_space(f)
         template.insert_picture(f, section['picture'])
+        template.insert_toc(f, [section['title'] for section in cv.values()])
     else:
-        template.begin_section(f, section['icon'], section['title'])
+        template.begin_section(f, section.get('icon'), section['title'], section.get('type', 'section'))
         if 'prologue' in section:
             template.insert_prologue(f, section['prologue'])
+        if 'environment' not in section and 'listing' not in section:
+            template.end_section(f, section['title'])
+            continue
         env = section['environment']
         largest_label = max((str(item.get('label', '')) for item in section['listing']), key=len)
         template.begin_environment(f, env, largest_label)

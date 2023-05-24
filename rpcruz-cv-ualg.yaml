@@ -1,0 +1,298 @@
+profile:
+    title: "Title"
+    name: "Ricardo Cruz, PhD"
+    location: "Valongo, Portugal"
+    email: "ricardo.pdm.cruz@gmail.com"
+    phone: "+351 934741617"
+    website: "rpmcruz.github.io"
+    orcid: 0000-0002-5189-6228
+    biography: "Ricardo Cruz received a B.S. degree in computer science and an M.S. degree in applied mathematics, both from the University of Porto, Portugal. Since 2015, he has been a researcher at INESC TEC working in machine learning with particular emphasis on computer vision. He earned his Ph.D. in Computer Science in 2021 with a special emphasis on computer vision and deep learning. Currently, he is a post-doctoral researcher on autonomous driving under the THEIA research project, a partnership between the University of Porto and Bosch Car Multimedia."
+    skills: [Python, C, C++, Java, R, MATLAB, PyTorch, TensorFlow, OpenCV, SQL, Git]
+    picture: lecture.jpg
+education:
+    title: Education
+    icon: education
+    environment: description
+    listing:
+        - label: 2021 Ph.D.
+          text: "Computer Science (joint degree University of Porto, Minho and Aveiro)"
+        - label: 2015 M.Sc.
+          text: "Mathematical Engineering (University of Porto)"
+        - label: 2012 B.Sc.
+          text: "Computer Science (University of Porto)"
+employment:
+    title: Employment
+    icon: employment
+    environment: description
+    listing:
+        - label: 2021--...
+          text: >-
+            **Post-doctoral Researcher** on Autonomous Driving
+            University of Porto (FEUP) [in partnership with Bosch]
+          details:
+              - Collaboration between the University of Porto and Bosch Car Multimedia to improve autonomous driving perception
+              - Developed frameworks for object detection using camera and LiDAR (2D discretization and raw point-clouds)
+              - Published new methods for efficient semantic segmentation and ordinal regression
+              - Supervised six master's theses, four bachelor's projects, and other team members
+              - Responsible for the HPC infrastructure (using Slurm)
+        - label: 2015--2021
+          text: >-
+            **Research Assistant** on Machine Learning and Computer Vision
+            INESC TEC
+          details:
+              - "Research focus: re-thinking fundamentals about image classification and semantic segmentation (8+ publications)"
+              - "Some highlights: (1) a method for background invariance using adversarial training, (2) new losses that minimize absolute trade-offs between Type 1 and 2 errors instead of relative trade-offs, (3) using backpropagation also for inference to refine existing outputs, (4) deploying learning-to-rank methods for class imbalance"
+              - Contributed to workshops, Summer School on Computer Vision (VISUM), and other events
+              - Twice awarded "outstanding recognition" for organizing workshops and helping with the HPC infrastructure
+    #    - label: Mar.--Jul. 2015
+    #      title: Flykt Startup
+    #      description: I was involved in a non-successful startup whose goal was to search for travel destinations. I was involved in the NLP part.
+        - label: 2014
+          text: >-
+            **Research Grant** on Mathematical Modelling Research
+            Mathematics Center of the University of Porto (CMUP)
+          details:
+              - "Epidemiological models for HIV. A little of everything: from differential equations to stochastic simulations to cellular automata."
+
+chpA:
+    title: "A) Desempenho Científico"
+    type: "section"
+scientific-impact:
+    title: "a) Produção Científica"
+    #icon: scientific-impact
+    environment: itemize
+    type: "subsection"
+    listing:
+        - text: "Google Scholar (may/2023): 171 citations, 7 h-index"
+          link: https://scholar.google.com/citations?user=pSFY_gQAAAAJ
+        - text: "Web of Science (may/2023): 73 citations, 4 h-index"
+          link: https://www.webofscience.com/wos/author/record/IQV-2746-2023
+        - text: "Scopus (may/2023): 111 citations, 5 h-index"
+          link: https://www.scopus.com/authid/detail.uri?authorId=57192670388
+conference-publications:
+    title: "Publicações em Conferência"
+    type: "subsubsection"
+    icon: publications
+    environment: enumerate
+    prologue: "As publicações que escolhi como as cinco mais representativas em ==highlight==."
+    listing:
+        - text: "P. S. Silva, **R. Cruz**, ASM Shihavuddin, T. Gonçalves (2023) **[ACCEPTED]**. Interpretability-Guided Human Feedback During Neural Network Training. *Springer Iberian conference on pattern recognition and image analysis (Ibpria)*"
+          highlight: true
+        - text: "D. Silva, **R. Cruz**, T. Gonçalves, D. Carneiro (2022) **[ACCEPTED]**. Two-stage Semantic Segmentation in Neural Networks. *Proceedings of the Fifteenth International Conference on Machine Vision (ICMV)*"
+          link: https://tiagofilipesousagoncalves.github.io/publications/pdf/dianartsilva2022icmv.pdf
+        - text: "**R. Cruz**, R. Prates, E. Filho, J. Costa, J. Cardoso (2021). Background Invariance by Adversarial Learning. *IEEE 25th International Conference on Pattern Recognition (ICPR)*"
+          link: https://ieeexplore.ieee.org/document/9413004
+          highlight: true
+        - text: "**R. Cruz**, J. Costa, J. Cardoso (2019). Automatic Augmentation by Hill Climbing. *Springer 28th International Conference on Artificial Neural Networks (ICANN)*"
+          link: "https://link.springer.com/chapter/10.1007/978-3-030-30484-3_10"
+        - text: "**R. Cruz**, J. Costa, J. Cardoso (2019). Averse Deep Semantic Segmentation. *IEEE 41st Engineering in Medicine and Biology Conference (EMBC)*"
+          link: "https://ieeexplore.ieee.org/abstract/document/8857385"
+          highlight: true
+        - text: "**R. Cruz**, M. Silveira, J. Cardoso (2018). A Class Imbalance Ordinal Method for Alzheimer's Disease Classification. *IEEE International Workshop on Pattern Recognition in Neuroimaging (PRNI)*"
+          link: "https://ieeexplore.ieee.org/abstract/document/8423960/"
+        - text: "K. Fernandes, **R. Cruz**, J. Cardoso (2018). Deep image segmentation by quality inference. *IEEE International Joint Conference on Neural Networks (IJCNN)*"
+          link: "https://ieeexplore.ieee.org/abstract/document/8489696/"
+          highlight: true
+        - text: "**R. Cruz**, K. Fernandes, J. Costa, J. Cardoso (2017). Constraining type II error: building intentionally biased classifiers. *Springer International Work-conference on Artificial Neural Networks (IWANN)*"
+          link: "https://link.springer.com/chapter/10.1007/978-3-319-59147-6_47"
+        - text: "M. Pérez-Ortiz, K. Fernandes, **R. Cruz**, J. Cardoso (2017). Fine-to-coarse ranking in ordinal and imbalanced domains: an application to liver transplantation. *Springer International Work-conference on Artificial Neural Networks (IWANN)*"
+          link: "https://link.springer.com/chapter/10.1007/978-3-319-59147-6_45"
+        - text: "**R. Cruz**, K. Fernandes, J. Costa, M. Pérez-Ortiz, J. Cardoso (2017). Combining ranking with traditional methods for ordinal class imbalance. *Springer International Work-conference on Artificial Neural Networks (IWANN)*"
+          link: "https://link.springer.com/chapter/10.1007/978-3-319-59147-6_46"
+        - text: "**R. Cruz**, K. Fernandes, J. Costa, M. Pérez-Ortiz, J. Cardoso (2017). Ordinal class imbalance with ranking. *Springer Iberian conference on pattern recognition and image analysis (Ibpria)*"
+          link: "https://link.springer.com/chapter/10.1007/978-3-319-58838-4_1"
+        - text: "**R. Cruz**, K. Fernandes, J. Costa, J. Cardoso (2016). Tackling class imbalance with ranking. *IEEE International Joint Conference on Neural Networks (IJCNN)*"
+          link: "http://ieeexplore.ieee.org/abstract/document/7727469/"
+          highlight: true
+journal-publications:
+    title: "Publicações em Revista"
+    type: "subsubsection"
+    icon: publications
+    environment: enumerate
+    listing:
+        - text: "**R. Cruz**, D. Silva, T. Gonçalves, D. Carneiro, J. Cardoso (2023). Two-Stage Framework for Faster Semantic Segmentation. *MDPI Sensors*"
+          link: https://www.mdpi.com/1424-8220/23/6/3092
+        - text: "T. Albuquerque, L. Rosado, **R. Cruz**, M. Vasconcelos, T. Oliveira, J. Cardoso (2023). Rethinking Low-Cost Microscopy Workflow: Image Enhancement using Deep Based Extended Depth of Field Methods. *Elsevier Intelligent Systems with Applications*"
+          link: https://doi.org/10.1016/j.iswa.2022.200170
+        - text: "T. Albuquerque, **R. Cruz**, J. Cardoso (2022). Quasi-Unimodal Distributions for Ordinal Classification. *MDPI Mathematics*"
+          link: https://www.mdpi.com/2227-7390/10/6/980
+        - text: "T. Albuquerque, **R. Cruz**, J. Cardoso (2021). Ordinal Losses for Classification of Cervical Cancer Risk. *PeerJ Computer Science*"
+          link: https://peerj.com/articles/cs-457/
+        - text: "R. Prates, **R. Cruz**, A. Marotta, R. Ramos, E. Filho, J. Cardoso (2019). Insulator visual non-conformity detection in overhead power distribution lines using deep learning. *Springer Journal Computers & Electrical Engineering*"
+          link: "https://www.sciencedirect.com/science/article/pii/S004579061930967X?dgcid=coauthor"
+        - text: "**R. Cruz**, K. Fernandes, J. Costa, M. Pérez Ortiz, J. Cardoso (2018). Binary ranking for ordinal class imbalance. *Springer Journal Pattern Analysis and Applications*"
+          link: "https://link.springer.com/epdf/10.1007/s10044-018-0705-4?author_access_token=p2L5jwabAzmA-hENM_mugfe4RwlQNchNByi7wbcMAY42mOH72RPQeb098_tyy79R09eJLVa1A5i0Fl8_sgW1ks0WseTTuEtHZyi1eB8zBX3Z7vgZBxHJZ3x26EzyODMrDn4oUkmT-tVcZK4oD3u4vQ%3D%3D"
+
+chpAb:
+    title: "b) Participação em projetos de investigação científica com financiamento externo"
+    type: "subsection"
+    #icon: scientific-projects
+    environment: itemize
+    listing:
+        - text: "**THEIA** -- Automated Perception Driving (POCI-01-0247-FEDER-047264)"
+          link: https://sigarra.up.pt/feup/pt/projectos_geral.ficha_projecto?p_id=78377
+        - text: "**CLARE** -- Computer-aided cervical cancer screening (POCI-01-0145-FEDER-028857)"
+          link: https://www.inesctec.pt/pt/projetos/clare
+        - text: "**NanoSTIMA** Macro-to-Nano Human Sensing: Towards Integrated Multimodal Health Monitoring and Analytics (NORTE-01-0145-FEDER-000016)"
+
+
+
+chpAc:
+    title: "c) Orientação de trabalhos académicos"
+    type: "subsection"
+msc-supervisions:
+    title: "Teses de Mestrado"
+    type: "subsubsection"
+    icon: supervisions
+    environment: description
+    listing:
+        - label: on-going
+          text: "Rafael Cristino: *Introducing Domain Knowledge to Autonomous Driving* (FEUP)"
+        - label: on-going
+          text: "Alankrita Asthana: *Iterative Inference for Point-Clouds* (TUM, Munich)"
+        - label: on-going
+          text: "José Guerra (with L. Teixeira): *Academic Internship in Out of Distribution Detection – Autonomous Driving* (Internship at Bosch Car Multimedia) (FEUP)"
+        - label: 2022
+          text: "Pedro Silva (with T. Gonçalves): *Human Feedback during Neural Networks Training* (FEUP)"
+          link: https://sigarra.up.pt/feup/pt/pub_geral.pub_view?pi_pub_base_id=570677
+        - label: 2022
+          text: "João Silva: *Environment Detection for Railway Applications based on Automotive Technology* (Internship at Continental) (FEUP)"
+          link: https://sigarra.up.pt/feup/pt/pub_geral.pub_view?pi_pub_base_id=570251
+        - label: 2022
+          text: "Ana Bezerra (with J. Costa): *Phishing Detection with a Machine Learning Net* (Internship at E-goi) (FCUP)"
+          link: https://repositorio-aberto.up.pt/handle/10216/147350
+bsc-supervisions:
+    title: "Projetos de Fim de Licenciatura"
+    type: "subsubsection"
+    icon: supervisions
+    environment: description
+    listing:
+        - label: 2022
+          text: "Diana Silva (with T. Gonçalves): *Semantic Segmentation in Neural Networks using Iterative Visual Attention*"
+        - label: 2022
+          text: "Filipe Campos, Francisco Cerqueira, Vasco Alves: *Mobile App using Object Detection for Car Driving*"
+        - label: 2022
+          text: "Bruno Gomes, Rafael Camelo: Internship at ANO"
+
+
+chpAd:
+    title: "d) Participação como editor de revistas internacionais, avaliador de publicações em revistas internacionais, de candidaturas a bolsas de investigação ou formação avançada e de projetos científicos"
+    type: subsection
+    environment: description
+    listing:
+        - label: 2021
+          text: "**A3ES** ..."
+          highlight: true
+        - label: 2020
+          text: "**iMIMIC/MIL3ID/LABELS 2020 workshop proceedings** (MICCAI 2020): co-editor"
+          link: https://imimic-workshop.com/previous_editions/2020/index.html
+
+chpB:
+    title: "B) Capacidade pedagógica"
+    type: section
+
+chpBa:
+    title: "a) Atividade letiva"
+    type: subsection
+teaching:
+    title: "Teaching"
+    type: subsubsection
+    icon: teaching
+    environment: description
+    listing:
+        - label: 2021--2022
+          text: "**Invited Auxiliary Professor,** University of Porto (FEUP)"
+          summary:
+              - "L.EIC003: Programming Fundamentals (Python) [L.EIC]"
+              - "L.EIC009: Programming (C/C++) [L.EIC]"
+              - "L.EEC009: Data Structures and Algorithms (C/C++) [L.EEC]"
+        - label: 2018--2021
+          text: "**Invited Teacher Assistant,** University of Porto (FEUP)"
+          summary:
+              - "L.EIC003: Programming Fundamentals (Python) [L.EIC]"
+              - "L.EIC009: Programming (C/C++) [L.EIC]"
+courses:
+    title: "Courses"
+    type: subsubsection
+    icon: teaching
+    prologue: "Leccionei aulas práticas (2h ou 4h por semana, dependendo do semestre), todas do 1º ano de informática e eletrotécnica, e ajudei com os materiais. Isto durante o doutoramento (como assistente convidado) e depois com bolsa pós-doc (como professor auxiliar convidado). Nota: os links são para a última edição das UCs em que eu participei, sendo que as outras fichas são em tudo semelhantes (houve uma mudança na nomenclatura das UCs quando a FEUP separou os mestrados integrados em licenciatura/mestrado)."
+    environment: itemize
+    listing:
+          - text: "Fundamentos da Programação (Python) [L.EIC] (EIC0005 2018/2019, EIC0005 2019/2020, EIC0005 2020/2021, L.EIC003 2021/2022)"
+            link: https://sigarra.up.pt/feup/pt/ucurr_geral.ficha_uc_view?pv_ocorrencia_id=484382
+          - text: "Programação (C/C++) [MIEIC, agora L.EIC] (EIC0012 2019/2020, EIC0012 2020/2021)"
+            link: https://sigarra.up.pt/feup/pt/ucurr_geral.ficha_uc_view?pv_ocorrencia_id=459468
+          - text: "Estruturas de Dados e Algoritmos (C/C++) [L.EEC] (L.EEC009 2021/2022)"
+            link: https://sigarra.up.pt/feup/pt/ucurr_geral.ficha_uc_view?pv_ocorrencia_id=485369
+
+
+chpBb:
+    title: "b) Participação em júris de provas académicas"
+    type: subsection
+    environment: description
+    icon: jury-participation
+    listing:
+        - label: 2022
+          text: "Mafalda Oliveira: *Neuroblastoma Cancer Radiogenomics* (FEUP, External Examiner)"
+        - label: 2022
+          text: "João Pedro Fonseca: *AI-Based Models to Predict The Traumatic Brain Injury Outcome* (FEUP, External Examiner)"
+        - label: 2022
+          text: "Ana Maria Sousa: *Learning to write medical reports from EEG data* (FEUP, Chairman)"
+        - label: 2022
+          text: "Bruno Nascimento: *Detection and classification of small impacts on vehicles based on deep learning algorithms* (U. Minho, External Examiner)"
+        - label: 2021
+          text: "Artur Ferreira: *3D Lung Computed Tomography Synthesis using Generative Adversarial Networks* (FCUP, External Examiner)"
+        - label: 2021
+          text: "Vítor Figueiredo: *Feasibility of using autoencoders for learning car interior background models* (U. Minho, External Examiner)"
+
+chpBc:
+    title: "c) Outras atividades de índole pedagógica"
+    type: subsection
+    environment: description
+    listing:
+        - label: 2021
+          text: "Recebi o **prémio pedagógico** com base nos inquéritos pedagógicos (FEUP)"
+        - label: 2018
+          text: '**Universidade Junior:** Organizei com o meu orientador (Prof. Jaime Cardoso) uma atividade para a Universidade Junior entitulada "Escondidos nos Dados". A Universidade Junior é uma oportunidade que a Universidade do Porto dá às crianças para conhecer e fazer atividades na universidade. Esta atividade decorreu durante um mês, com turmas com crianças diferentes todos os dias, do 8º e 9º anos letivos. O link descreve um prémio que recebi do INESC TEC por organizar estas atividades, entre outras.'
+          link: http://bip-archive.inesctec.pt/196/fora-de-serie.html
+        - label: 2018
+          text: "**VISUM:** ajudei a preparar um framework computacional em que os estudantes enviavam processos e gerava leaderboards ao estilo do Kaggle (usando Google Cloud) para as competições que ocorrem durante a escola de verão de visão computacional VISUM (INESC TEC), framework este que continua a ser usado hoje."
+        - label: 2017
+          text: "Já organizei alguns workshops, em especial no INESC TEC. Um deles foi o **Learning from Data** que fez parte do Open Day do CTM. (O CTM é a unidades do INESC TEC na qual eu fiz parte.)"
+          link: https://opendayctm.inesctec.pt/2017/index.php/learning-from-data/
+
+
+
+awards:
+    title: Awards
+    icon: awards
+    environment: description
+    listing:
+        - label: 2022
+          text: "**Bosch for Mobility:** My students won Best New Participating Team in an autonomous driving competition"
+          link: https://noticias.up.pt/estudantes-da-u-porto-brilham-em-concurso-de-conducao-autonoma-da-bosch/
+        - label: 2021
+          text: "**INESC TEC Outstanding Recognition Award:** Monthly award for INESC TEC collaborators, for maintenance of the HPC infrastructure"
+          link: https://bip.inesctec.pt/en/especiaisdecorrida/ricardo-cruz-ctm-2/
+        - label: 2021
+          text: "**Pedagogic award (voted by students):** University of Porto (FEUP)"
+        - label: 2021
+          text: "**Best paper and presentation:** RECPAD conference"
+          link: https://noticias.up.pt/investigadores-da-u-porto-dominam-premios-do-recpad-2021/
+        - label: 2018
+          text: "**INESC TEC Outstanding Recognition Award: Monthly award for INESC TEC collaborators, for organizing workshops"
+          link: http://bip-archive.inesctec.pt/en/196/fora-de-serie.html
+        - label: 2017
+          text: "**Kaggle Bronze Medal (competition) and Silver (engagement)**"
+
+scientific-organizations:
+    title: "Participation in Scientific Events"
+    icon: scientific-events
+    environment: itemize
+    listing:
+        - text: "**iMIMIC/MIL3ID/LABELS 2020 workshop proceedings** (MICCAI 2020): co-editor"
+          link: https://imimic-workshop.com/previous_editions/2020/index.html
+        - text: "**iMIMIC 2020 workshop** (MICCAI 2020): committee sponsor chair"
+          link: https://imimic-workshop.com/previous_editions/2020/index.html
+        - text: "**3rd International Conference on Dynamics, Games and Science (2014):** president of the organizing committee"
+          link: https://www.fc.up.pt/dgsiii/
