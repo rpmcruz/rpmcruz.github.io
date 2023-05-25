@@ -32,6 +32,7 @@ class LatexTemplate:
         print(r'% footer', file=f)
         print(r'\usepackage{fancyhdr, lastpage}', file=f)
         print(r'\pagestyle{fancy}', file=f)
+        print(r'\makeatletter\let\ps@plain\ps@fancy\makeatother', file=f)
         print(r'\renewcommand{\headrulewidth}{0pt}', file=f)
         print(r'\fancyhead{}', file=f)
         print(r'\fancyfoot[L]{\scriptsize Last update: \today}', file=f)

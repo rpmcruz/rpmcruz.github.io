@@ -6,29 +6,29 @@ profile:
     phone: "+351 934741617"
     website: "rpmcruz.github.io"
     orcid: 0000-0002-5189-6228
-    biography: "Ricardo Cruz received a B.S. degree in computer science and an M.S. degree in applied mathematics, both from the University of Porto, Portugal. Since 2015, he has been a researcher at INESC TEC working in machine learning with particular emphasis on computer vision. He earned his Ph.D. in Computer Science in 2021 with a special emphasis on computer vision and deep learning. Currently, he is a post-doctoral researcher on autonomous driving under the THEIA research project, a partnership between the University of Porto and Bosch Car Multimedia."
+    biography: "O Ricardo Cruz recebeu a sua licenciatura em Ciência de Computadores e mestrado em Engenharia Matemática, ambos da Universidade do Porto. Desde 2015 que integrou o INESC TEC como investigador em machine learning, com particular ênfase em visão por computador. Ele obteve o seu doutoramento em Ciência de Computadores em 2021, focado em visão computacional e redes neuronais. Atualmente é investigador pós-doutorado em condução autónoma no projeto THEIA, uma parceria entre a Universidade do Porto e a Bosch Car Multimedia."
     skills: [Python, C, C++, Java, R, MATLAB, PyTorch, TensorFlow, OpenCV, SQL, Git]
     picture: lecture.jpg
 education:
-    title: Education
+    title: Educação
     icon: education
     environment: description
     listing:
         - label: 2021 Ph.D.
-          text: "Computer Science (joint degree University of Porto, Minho and Aveiro)"
+          text: "Ciência de Computadores (grau conjunto: Universidade do Porto, Minho e Aveiro)"
         - label: 2015 M.Sc.
-          text: "Mathematical Engineering (University of Porto)"
+          text: "Engenharia Matemática (Universidade do Porto)"
         - label: 2012 B.Sc.
-          text: "Computer Science (University of Porto)"
+          text: "Ciência de Computadores (Universidade do Porto)"
 employment:
-    title: Employment
+    title: Emprego
     icon: employment
     environment: description
     listing:
         - label: 2021--...
           text: >-
-            **Post-doctoral Researcher** on Autonomous Driving
-            University of Porto (FEUP) [in partnership with Bosch]
+            **Investigador pós-doutoral** em Condução Autónoma
+            Universidade do Porto (FEUP) [em parceria com a Bosch]
           details:
               - Collaboration between the University of Porto and Bosch Car Multimedia to improve autonomous driving perception
               - Developed frameworks for object detection using camera and LiDAR (2D discretization and raw point-clouds)
@@ -37,7 +37,7 @@ employment:
               - Responsible for the HPC infrastructure (using Slurm)
         - label: 2015--2021
           text: >-
-            **Research Assistant** on Machine Learning and Computer Vision
+            **Investigador Assistente** em Machine Learning e Visão por Computador
             INESC TEC
           details:
               - "Research focus: re-thinking fundamentals about image classification and semantic segmentation (8+ publications)"
@@ -49,8 +49,8 @@ employment:
     #      description: I was involved in a non-successful startup whose goal was to search for travel destinations. I was involved in the NLP part.
         - label: 2014
           text: >-
-            **Research Grant** on Mathematical Modelling Research
-            Mathematics Center of the University of Porto (CMUP)
+            **Bolsa de Investigação** em Modelação Matemática
+            Centro de Matemática da Universidade do Porto (CMUP)
           details:
               - "Epidemiological models for HIV. A little of everything: from differential equations to stochastic simulations to cellular automata."
 
@@ -63,17 +63,17 @@ scientific-impact:
     environment: itemize
     type: "subsection"
     listing:
-        - text: "Google Scholar (may/2023): 171 citations, 7 h-index"
+        - text: "Google Scholar (maio/2023): 171 citações, 7 h-index"
           link: https://scholar.google.com/citations?user=pSFY_gQAAAAJ
-        - text: "Web of Science (may/2023): 73 citations, 4 h-index"
+        - text: "Web of Science (maio/2023): 73 citações, 4 h-index"
           link: https://www.webofscience.com/wos/author/record/IQV-2746-2023
-        - text: "Scopus (may/2023): 111 citations, 5 h-index"
+        - text: "Scopus (maio/2023): 111 citações, 5 h-index"
           link: https://www.scopus.com/authid/detail.uri?authorId=57192670388
 
 conference-publications:
     title: "Publicações em Conferência"
     type: "subsubsection"
-    icon: publications
+    #icon: publications
     environment: enumerate
     prologue: "As publicações que escolhi como as cinco mais representativas estão ==em realce==."
     listing:
@@ -108,7 +108,7 @@ conference-publications:
 journal-publications:
     title: "Publicações em Revista"
     type: "subsubsection"
-    icon: publications
+    #icon: publications
     environment: enumerate
     listing:
         - text: "**R. Cruz**, D. Silva, T. Gonçalves, D. Carneiro, J. Cardoso (2023). Two-Stage Framework for Faster Semantic Segmentation. *MDPI Sensors*"
@@ -144,7 +144,7 @@ chpAc:
 msc-supervisions:
     title: "Teses de Mestrado"
     type: "subsubsection"
-    icon: supervisions
+    #icon: supervisions
     environment: description
     listing:
         - label: on-going
@@ -165,7 +165,7 @@ msc-supervisions:
 bsc-supervisions:
     title: "Projetos de Fim de Licenciatura"
     type: "subsubsection"
-    icon: supervisions
+    #icon: supervisions
     environment: description
     listing:
         - label: 2022
@@ -180,8 +180,7 @@ chpAd:
     environment: description
     listing:
         - label: 2021
-          text: "**A3ES** ..."
-          highlight: true
+          text: "**A3ES:** integrei como membro estudante (enquanto estudante de doutoramento) três comités de avaliação: um curso de mestrado e dois doutoramentos."
         - label: 2020
           text: "**iMIMIC/MIL3ID/LABELS 2020 workshop proceedings** (MICCAI 2020): ajudei a organizar o workshop iMIMIC 2020 (parte do MICCAI 2020) e fui depois co-editor da publicação dos proceedings conjunto destes três workshops do MICCAI 2020."
           link: https://link.springer.com/book/10.1007/978-3-030-61166-8
@@ -194,9 +193,9 @@ chpBa:
     title: "a) Atividade letiva"
     type: subsection
 teaching:
-    title: "Teaching"
+    title: "Ensino"
     type: subsubsection
-    icon: teaching
+    #icon: teaching
     environment: description
     listing:
         - label: 2021--2022
@@ -211,9 +210,9 @@ teaching:
               - "L.EIC003: Programming Fundamentals (Python) [L.EIC]"
               - "L.EIC009: Programming (C/C++) [L.EIC]"
 courses:
-    title: "Courses"
+    title: "Unidades Curriculares"
     type: subsubsection
-    icon: teaching
+    #icon: teaching
     prologue: "Leccionei aulas práticas (2h ou 4h por semana, dependendo do semestre), todas do 1º ano de informática e eletrotécnica, e ajudei com os materiais. Isto durante o doutoramento (como assistente convidado) e depois com bolsa pós-doc (como professor auxiliar convidado). Nota: os links são para a última edição das UCs em que eu participei, sendo que as outras fichas são em tudo semelhantes (houve uma mudança na nomenclatura das UCs quando a FEUP separou os mestrados integrados em licenciatura/mestrado)."
     environment: itemize
     listing:
@@ -229,7 +228,7 @@ chpBb:
     title: "b) Participação em júris de provas académicas"
     type: subsection
     environment: description
-    icon: jury-participation
+    #icon: jury-participation
     listing:
         - label: 2022
           text: "Mafalda Oliveira: *Neuroblastoma Cancer Radiogenomics* (FEUP, External Examiner)"
@@ -278,7 +277,7 @@ chpCb:
         - label: 2018
           text: "**VISUM:** ajudei a preparar um framework computacional em que os estudantes enviavam processos e gerava leaderboards ao estilo do Kaggle (usando Google Cloud) para as competições que ocorrem durante a escola de verão de visão computacional VISUM (INESC TEC), framework este que continua a ser usado hoje."
         - label: 2017
-          text: "Já organizei alguns workshops, em especial no INESC TEC. Um deles foi o **Learning from Data** que fez parte do Open Day do CTM. (O CTM é a unidades do INESC TEC na qual eu fiz parte.)"
+          text: "Já organizei alguns workshops, em especial no INESC TEC. Um deles foi o **Learning from Data** que fez parte do Open Day do CTM. (O CTM é a unidades do INESC TEC da qual eu fiz parte.)"
           link: https://opendayctm.inesctec.pt/2017/index.php/learning-from-data/
         - label: 2017
           text: "Fiz um workshop público gratuito, em colaboração com o João Machado, no **Python Meetup** entitulado *NumPy and Scikit-Learn*. O Python Meetup era um encontro mensal sobre Python no Porto, que entretanto foi descontinuado."
@@ -299,7 +298,7 @@ chpCc:
 chpCd:
     title: "d) Organização de eventos de cariz científico ou educacional na área a que se candidatas"
     type: subsection
-    icon: scientific-events
+    #icon: scientific-events
     environment: itemize
     listing:
         - text: "**iMIMIC 2020 workshop** (MICCAI 2020): committee sponsor chair"
