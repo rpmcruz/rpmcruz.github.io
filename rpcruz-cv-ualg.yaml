@@ -132,12 +132,12 @@ chpAb:
     #icon: scientific-projects
     environment: itemize
     listing:
-        - text: "**THEIA** -- Automated Perception Driving (POCI-01-0247-FEDER-047264)"
+        - text: "Investigador pós-doutoral no **THEIA** (2021-2023) -- Automated Perception Driving (POCI-01-0247-FEDER-047264)"
           link: https://sigarra.up.pt/feup/pt/projectos_geral.ficha_projecto?p_id=78377
-        - text: "**CLARE** -- Computer-aided cervical cancer screening (POCI-01-0145-FEDER-028857)"
+        - text: "Membro da equipa do **CLARE** (2018-2021) -- Computer-aided cervical cancer screening (POCI-01-0145-FEDER-028857)"
           link: https://www.inesctec.pt/pt/projetos/clare
-        - text: "**NanoSTIMA** Macro-to-Nano Human Sensing: Towards Integrated Multimodal Health Monitoring and Analytics (NORTE-01-0145-FEDER-000016)"
-
+        - text: "Bolsa de mestre (2015-2016) **NanoSTIMA** Macro-to-Nano Human Sensing: Towards Integrated Multimodal Health Monitoring and Analytics (NORTE-01-0145-FEDER-000016)"
+        - text: "Bolsa de licenciado em modelação estatística (2014) (PEst-C/MAT/UI0144/2013)"
 
 
 chpAc:
