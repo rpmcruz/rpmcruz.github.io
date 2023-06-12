@@ -1,77 +1,110 @@
 import argparse
 parser = argparse.ArgumentParser()
-parser.add_argument('markdown')
+parser.add_argument('input')
 parser.add_argument('template', choices=['tex', 'html'])
 args = parser.parse_args()
 
 import re
 
-# convert the markdown to a more friendly representation
-ast = {}
-f = open(args.markdown)
+def InputMd(filename):
+    # convert the markdown to a more friendly representation
+    ast = {}
+    f = open(filename)
 
-# header
-assert f.readline() == '---\n'
-ast['header'] = {}
-while (line := f.readline()) != '---\n':
-    key, value = line.split(': ')
-    ast['header'][key] = value.rstrip()
+    # header
+    assert f.readline() == '---\n'
+    ast['header'] = {}
+    while (line := f.readline()) != '---\n':
+        key, value = line.split(': ')
+        ast['header'][key] = value.rstrip()
 
-# body
-ast['body'] = {'type': 'document', 'parent': None, 'children': []}
-node = ast['body']
-for line in f:
-    line = line.rstrip()
-    if line == '': continue
-    # environment
-    environments = {r'\*': 'itemize', '-': 'itemize', r'\+': 'description',
-        r'1\.': 'enumerate'}
-    found_environment = False
-    for sym, env in environments.items():
-        matches = re.match(r'^\s*' + sym + r'\s', line)
+    # body
+    ast['body'] = {'type': 'document', 'parent': None, 'children': []}
+    node = ast['body']
+    for line in f:
+        line = line.rstrip()
+        if line == '': continue
+        # environment
+        environments = {r'\*': 'itemize', '-': 'itemize', r'\+': 'description',
+            r'1\.': 'enumerate'}
+        found_environment = False
+        for sym, env in environments.items():
+            matches = re.match(r'^\s*' + sym + r'\s', line)
+            if matches:
+                indent = len(matches.group(0))
+                text = line[indent:]
+                if 'indent' not in node or indent > node['indent']:
+                    child = {'type': env, 'parent': node, 'children': [], 'indent': indent}
+                    node['children'].append(child)
+                    node = child
+                while indent < node['indent']:
+                    node = node['parent']
+                if env == 'description':
+                    label, text = text.split(': ', 1)
+                item = {'type': 'item', 'text': text, 'parent': node}
+                if env == 'description':
+                    item['label'] = label
+                node['children'].append(item)
+                found_environment = True
+        if found_environment: continue
+        # if indented, then it continues from the previous text
+        if line[0].isspace():
+            node['children'][-1]['text'] += '\n' + line.lstrip()
+            continue
+        # close any environment if exists
+        while 'indent' in node:
+            node = node['parent']
+        # heading
+        matches = re.match(r'^(#+)\s', line)
         if matches:
-            indent = len(matches.group(0))
-            text = line[indent:]
-            if 'indent' not in node or indent > node['indent']:
-                child = {'type': env, 'parent': node, 'children': [], 'indent': indent}
-                node['children'].append(child)
-                node = child
-            while indent < node['indent']:
-                node = node['parent']
-            if env == 'description':
-                label, text = text.split(': ', 1)
-            item = {'type': 'item', 'text': text, 'parent': node}
-            if env == 'description':
-                item['label'] = label
-            node['children'].append(item)
-            found_environment = True
-    if found_environment: continue
-    # if indented, then it continues from the previous text
-    if line[0].isspace():
-        node['children'][-1]['text'] += '\n' + line.lstrip()
-        continue
-    # close any environment if exists
-    while 'indent' in node:
-        node = node['parent']
-    # heading
-    matches = re.match(r'^(#+)\s', line)
-    if matches:
+            node['children'].append({
+                'type': 'heading',
+                'depth': len(matches.group(1)),
+                'text': line[len(matches.group(0)):],
+            })
+            continue
+        # paragraph
         node['children'].append({
-            'type': 'heading',
-            'depth': len(matches.group(1)),
-            'text': line[len(matches.group(0)):],
+            'type': 'paragraph',
+            'text': line,
         })
-        continue
-    # paragraph
-    node['children'].append({
-        'type': 'paragraph',
-        'text': line,
-    })
-f.close()
+    f.close()
+    return ast
+
+def InputXml(filename):
+    # ciencia vitae import https://www.cienciavitae.pt/
+    from xml.dom import minidom
+    doc = minidom.parse(filename)
+    ast = {}
+
+    header_map = {
+        'title': 'person-info:full-name',
+        'location': 'mailing-address:city',
+        'email': 'email:email-address',
+        'phone': 'phone-number:local-number',
+        'website': 'web-address:url',
+        'orcid': 'author-identifier:identifier',
+    }
+    ast['header'] = {key: doc.getElementsByTagName(value)[0].firstChild.data for key, value in header_map.items()}
+    body = ast['body'] = {'type': 'document', 'parent': None, 'children': []}
+
+    # employment
+    jobs = []
+    body['children'].append({'type': 'heading', 'depth': 1, 'text': 'Employment'})
+    body['children'].append({'type': 'description', 'parent': body, 'children': jobs, 'indent': ''})
+    for job in doc.getElementsByTagName('employment:employment'):
+        where = job.getElementsByTagName('common:institution-name')[0].firstChild.data
+        desc = job.getElementsByTagName('employment:position-title')[0].firstChild.data
+        start = job.getElementsByTagName('employment:start-date')[0].getAttribute('year')
+        end = job.getElementsByTagName('employment:end-date')[0].getAttribute('year')
+        label = f'{start}--{end}'
+        text = f'{desc}\n{where}'
+        jobs.append({'type': 'item', 'label': label, 'text': text, 'parent': body})
+    return ast
 
 # render ast to latex or html
 
-class HTML:
+class OutputHtml:
     def begin_document(self, f, header):
         print(r'<html>', file=f)
         print(r'<head>', file=f)
@@ -172,7 +205,7 @@ class HTML:
         text = re.sub(r'\=\=(.*?)\=\=', r'<span class="hl">\1</span>', text)  # highlight
         return text
 
-class TEX:
+class OutputTex:
     def begin_document(self, f, header):
         print(r'\documentclass[12pt]{article}', end='\n\n', file=f)
         print(r'\usepackage[a4paper, margin={2.5cm}]{geometry}', file=f)
@@ -277,8 +310,11 @@ class TEX:
         text = re.sub(r'"(.*?)"', r"``\1''", text)
         return text
 
-template = globals()[args.template.upper()]()
-f = open(args.markdown[:-2] + args.template, 'w')
+parser = globals()[f"Input{args.input.split('.')[-1].title()}"]
+ast = parser(args.input)
+
+template = globals()[f"Output{args.template.title()}"]()
+f = open(args.input.split('.')[0] + '.' + args.template, 'w')
 
 def process_ast(node):
     if 'children' in node:
