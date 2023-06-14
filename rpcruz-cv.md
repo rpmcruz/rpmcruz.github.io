@@ -110,7 +110,7 @@ See my github for more projects: [github.com/rpmcruz](https://github.com/rpmcruz
 My favorite publications are in ==highlight==.
 
 1. ==P. S. Silva, **R. Cruz**, ASM Shihavuddin, T. Gonçalves (2023) **[ACCEPTED]**. Interpretability-Guided Human Feedback During Neural Network Training. *Springer Iberian conference on pattern recognition and image analysis (Ibpria)*==
-1. D. Silva, **R. Cruz**, T. Gonçalves, D. Carneiro (2022) **[ACCEPTED]**. Two-stage Semantic Segmentation in Neural Networks. *Proceedings of the Fifteenth International Conference on Machine Vision (ICMV)* [](https://tiagofilipesousagoncalves.github.io/publications/pdf/dianartsilva2022icmv.pdf)
+1. D. Silva, **R. Cruz**, T. Gonçalves, D. Carneiro (2023). Two-stage Semantic Segmentation in Neural Networks. *Proceedings of the Fifteenth International Conference on Machine Vision (ICMV)* [](https://tiagofilipesousagoncalves.github.io/publications/pdf/dianartsilva2022icmv.pdf)
 1. ==**R. Cruz**, R. Prates, E. Filho, J. Costa, J. Cardoso (2021). Background Invariance by Adversarial Learning. *IEEE 25th International Conference on Pattern Recognition (ICPR)*== [](https://ieeexplore.ieee.org/document/9413004)
 1. **R. Cruz**, J. Costa, J. Cardoso (2019). Automatic Augmentation by Hill Climbing. *Springer 28th International Conference on Artificial Neural Networks (ICANN)* [](https://link.springer.com/chapter/10.1007/978-3-030-30484-3_10)
 1. ==**R. Cruz**, J. Costa, J. Cardoso (2019). Averse Deep Semantic Segmentation. *IEEE 41st Engineering in Medicine and Biology Conference (EMBC)*== [](https://ieeexplore.ieee.org/abstract/document/8857385)
