@@ -4,6 +4,7 @@ parser.add_argument('input')
 parser.add_argument('template', choices=['tex', 'html'])
 args = parser.parse_args()
 
+from unidecode import unidecode
 import re
 
 def InputMd(filename):
@@ -73,33 +74,68 @@ def InputMd(filename):
 
 def InputXml(filename):
     # ciencia vitae import https://www.cienciavitae.pt/
-    from xml.dom import minidom
-    doc = minidom.parse(filename)
-    ast = {}
+    import xml.etree.ElementTree as ET
+    root = ET.parse(filename).getroot()
+    # get rid of namespaces
+    for elem in root.iter():
+        # I hate the long namespaces; simplify them
+        # replaces "{http://www.cienciavitae.pt/ns/namespace}tag"
+        # by "namespace-tag"
+        elem.tag = re.sub(r'\{.*?ns/([^}]+)\}(\w+)', r'\1-\2', elem.tag)
 
     header_map = {
-        'title': 'person-info:full-name',
-        'location': 'mailing-address:city',
-        'email': 'email:email-address',
-        'phone': 'phone-number:local-number',
-        'website': 'web-address:url',
-        'orcid': 'author-identifier:identifier',
+        'title': 'person-info-full-name',
+        'location': 'mailing-address-city',
+        'email': 'email-email-address',
+        'phone': 'phone-number-local-number',
+        'website': 'web-address-url',
+        'orcid': 'author-identifier-identifier',
     }
-    ast['header'] = {key: doc.getElementsByTagName(value)[0].firstChild.data for key, value in header_map.items()}
+    ast = {}
+    ast['header'] = {key: root.find('.//' + value).text for key, value in header_map.items() if root.find('.//' + value) != None}
     body = ast['body'] = {'type': 'document', 'parent': None, 'children': []}
 
-    # employment
-    jobs = []
-    body['children'].append({'type': 'heading', 'depth': 1, 'text': 'Employment'})
-    body['children'].append({'type': 'description', 'parent': body, 'children': jobs, 'indent': ''})
-    for job in doc.getElementsByTagName('employment:employment'):
-        where = job.getElementsByTagName('common:institution-name')[0].firstChild.data
-        desc = job.getElementsByTagName('employment:position-title')[0].firstChild.data
-        start = job.getElementsByTagName('employment:start-date')[0].getAttribute('year')
-        end = job.getElementsByTagName('employment:end-date')[0].getAttribute('year')
-        label = f'{start}--{end}'
-        text = f'{desc}\n{where}'
-        jobs.append({'type': 'item', 'label': label, 'text': text, 'parent': body})
+    # resume
+    body['children'].append({'type': 'paragraph', 'text': root.find('.//resume-resume').text})
+
+    def get_dates(x, start, end):
+        start = x.find('.//' + start)
+        end = x.find('.//' + end)
+        start = start.get('year')
+        end = end.get('year') if end != None else '...'
+        return start + '--' + end
+    def highlight_goncalves(citation):
+        return '; '.join(['**' + author + '**' if 'Goncalves' in unidecode(author) else author for author in citation.split('; ')])
+    def get_doi_link(x):
+        doi = x.find('.//output-identifier-type[@code="doi"]/../output-identifier').text
+        return ' [](https://doi.org/' + doi + ')'
+
+    sections = [
+        ('Education', 'degree-degree', ('description', lambda x: get_dates(x, 'degree-start-date', 'degree-end-date'), lambda x: x.find('.//degree-degree-type').text + ' ' + x.find('degree-degree-name').text + '\n' + x.find('.//common-institution-name').text)),
+        ('Employment', 'employment-employment', ('description', lambda x: get_dates(x, 'employment-start-date', 'employment-end-date'), lambda x: x.find('.//common-institution-name').text + '\n' + x.find('.//employment-position-title').text)),
+        ('Consulting', 'service-consulting-advisory', ('description', lambda x: get_dates(x, 'service-start-date', 'service-end-date'), lambda x: x.find('.//service-activity-description').text)),
+        ('Participation in Scientific Projects', 'funding-funding', ('description', lambda x: get_dates(x, 'funding-start-date-participation', 'funding-end-date-participation'), lambda x: x.find('.//funding-project-title').text)),
+        ('Conference Publications', 'output-conference-paper', ('enumerate', lambda x: highlight_goncalves(x.find('.//output-citation').text) + ' ( ' + x.find('.//output-conference-date').get('year') + '). ' + x.find('.//output-paper-title').text + '. *' + x.find('.//output-proceedings-title').text + '*' + get_doi_link(x))),
+        ('Journal Publications', 'output-journal-article', ('enumerate', lambda x: highlight_goncalves(x.find('.//output-citation').text) + ' (' + x.find('.//output-publication-date').get('year') + '). ' + x.find('.//output-article-title').text + '. *' + x.find('.//output-journal').text + '*' + get_doi_link(x))),
+        ('Participation in Scientific Events', 'service-event-participation', ('description', lambda x: x.find('.//service-start-date').get('year') + '/' + x.find('.//service-start-date').get('month'), lambda x: x.find('.//service-event-description').text)),
+        ('Jury Participation', 'service-graduate-examination', ('description', lambda x: x.find('.//service-date').get('year') + '/' + x.find('.//service-date').get('month'), lambda x: x.find('.//service-student-name').text + ': *' + x.find('.//service-theme').text + '* (' + x.find('.//common-institution-name').text + ', ' + x.find('.//service-examination-role').text + ')')),
+        ('Paper Reviews', 'service-adhoc-journal-article-review', ('itemize', lambda x: x.find('.//service-journal').text + ' (' + x.find('.//service-works-reviewed').text + (' reviews)' if x.find('.//service-works-reviewed').text != '1' else ' review)'))),
+        ('Grant Assessments', 'service-grant-application-assessment', ('description', lambda x: x.find('.//service-start-date').get('year'), lambda x: x.find('.//common-institution-name').text + '\n' + x.find('.//service-description-of-grant-scholarship').text)),
+        ('Awards', 'distinction-distinction', ('description', lambda x: x.find('.//distinction-effective-date').text, lambda x: x.find('.//distinction-distinction-name').text)),
+    ]
+
+    for (title, parent_tag, env) in sections:
+        section = []
+        body['children'].append({'type': 'heading', 'depth': 1, 'text': title})
+        body['children'].append({'type': env[0], 'parent': body, 'children': section, 'indent': ''})
+        for entry in root.findall('.//' + parent_tag):
+            if env[0] == 'description':
+                label = env[1](entry)
+                text = env[2](entry)
+                section.append({'type': 'item', 'label': label, 'text': text, 'parent': body})
+            else:
+                text = env[1](entry)
+                section.append({'type': 'item', 'text': text, 'parent': body})
     return ast
 
 # render ast to latex or html
@@ -213,7 +249,7 @@ class OutputTex:
         print(file=f)
         print(r'\usepackage{xcolor}', file=f)
         print(r'\usepackage{graphicx}', file=f)
-        print(r'\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, pdfauthor={Ricardo Cruz}, pdftitle={' + header['title'] + '}]{hyperref}', file=f)
+        print(r'\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, pdfauthor={' + unidecode(header['title']) + '}, pdftitle={' + unidecode(header['title']) + '}]{hyperref}', file=f)
         print(r'\usepackage{soulutf8}  % \hl', file=f)
         print(r'\usepackage{enumitem}', file=f)
         print(r'\newlength{\widestlabel}  % used by description', file=f)
