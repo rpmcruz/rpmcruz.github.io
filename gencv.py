@@ -115,6 +115,7 @@ def InputXml(filename):
         ('Employment', 'employment-employment', ('description', lambda x: get_dates(x, 'employment-start-date', 'employment-end-date'), lambda x: x.find('.//common-institution-name').text + '\n' + x.find('.//employment-position-title').text)),
         ('Consulting', 'service-consulting-advisory', ('description', lambda x: get_dates(x, 'service-start-date', 'service-end-date'), lambda x: x.find('.//service-activity-description').text)),
         ('Participation in Scientific Projects', 'funding-funding', ('description', lambda x: get_dates(x, 'funding-start-date-participation', 'funding-end-date-participation'), lambda x: x.find('.//funding-project-title').text)),
+        ('Patents', 'output-patent', ('enumerate', lambda x: highlight_goncalves(x.find('.//output-citation').text) + ' ( ' + x.find('.//output-date-issued').get('year') + '). ' + x.find('.//output-patent-title').text + '. *' + x.find('.//output-proceedings-title').text + '*')),
         ('Conference Publications', 'output-conference-paper', ('enumerate', lambda x: highlight_goncalves(x.find('.//output-citation').text) + ' ( ' + x.find('.//output-conference-date').get('year') + '). ' + x.find('.//output-paper-title').text + '. *' + x.find('.//output-proceedings-title').text + '*' + get_doi_link(x))),
         ('Journal Publications', 'output-journal-article', ('enumerate', lambda x: highlight_goncalves(x.find('.//output-citation').text) + ' (' + x.find('.//output-publication-date').get('year') + '). ' + x.find('.//output-article-title').text + '. *' + x.find('.//output-journal').text + '*' + get_doi_link(x))),
         ('Participation in Scientific Events', 'service-event-participation', ('description', lambda x: x.find('.//service-start-date').get('year') + '/' + x.find('.//service-start-date').get('month'), lambda x: x.find('.//service-event-description').text)),
@@ -249,6 +250,7 @@ class OutputTex:
         print(file=f)
         print(r'\usepackage{xcolor}', file=f)
         print(r'\usepackage{graphicx}', file=f)
+        print(r'\usepackage{amsmath}', file=f)
         print(r'\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, pdfauthor={' + unidecode(header['title']) + '}, pdftitle={' + unidecode(header['title']) + '}]{hyperref}', file=f)
         print(r'\usepackage{soulutf8}  % \hl', file=f)
         print(r'\usepackage{enumitem}', file=f)
