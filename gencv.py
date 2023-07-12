@@ -234,8 +234,8 @@ class OutputHtml:
 
     def process_text(self, text):
         text = re.sub(r'!\[(.*?)\]\((.*?)\)', r'<img style="width:\1" src="\2">', text)  # images
-        text = re.sub(r'\[\]\((.*?)\)', r'<a src="\1"><img width="20px" src="imgs/link.svg"></a>', text)  # empty links
-        text = re.sub(r'\[(.*?)\]\((.*?)\)', r'<a src="\2">\1</a>', text)  # non-empty links
+        text = re.sub(r'\[\]\((.*?)\)', r'<a href="\1"><img width="20px" src="imgs/link.svg"></a>', text)  # empty links
+        text = re.sub(r'\[(.*?)\]\((.*?)\)', r'<a href="\2">\1</a>', text)  # non-empty links
         text = re.sub(r'\*\*(.*?)\*\*', r'<b>\1</b>', text)  # bold
         text = re.sub(r'\*(.*?)\*', r'<i>\1</i>', text)  # italic
         text = text.replace('&', '&amp;').replace('--', '&ndash;')
@@ -367,7 +367,7 @@ def process_ast(node):
 template.begin_document(f, ast['header'])
 template.insert_title(f, ast['header']['title'])
 if args.template == 'html':  # link to PDF version
-    template.insert_information(f, 'pdf', 'PDF version', args.markdown[:-2] + 'pdf')
+    template.insert_information(f, 'pdf', 'PDF version', args.input[:-2] + 'pdf')
 for key, value in ast['header'].items():
     link = None
     if key in 'title': continue
