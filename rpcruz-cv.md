@@ -141,8 +141,7 @@ The SJR rank is from [SJR Scimago](https://www.scimagojr.com/), quantiles from 2
 # ![1.5em](imgs/section-scientific-impact.svg) Collaborations as Editor or Evaluator
 
 + 2021: **A3ES:** student member (as a PhD student) of three evaluation committees: a master's course and two doctorates.
-+ 2020: **iMIMIC/MIL3ID/LABELS 2020 workshop proceedings (MICCAI 2020):**
-helped organize the iMIMIC 2020 workshop (part of MICCAI 2020) and was later co-editor of the publication of the joint proceedings of three MICCAI 2020 workshops.
++ 2020: **iMIMIC/MIL3ID/LABELS 2020 workshop proceedings (MICCAI 2020):** helped organize the iMIMIC 2020 workshop (part of MICCAI 2020) and was later co-editor of the publication of the joint proceedings of three MICCAI 2020 workshops.
 
 # ![1.5em](imgs/section-jury-participation.svg) Jury Participation
 
