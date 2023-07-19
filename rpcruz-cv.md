@@ -145,6 +145,7 @@ The SJR rank is from [SJR Scimago](https://www.scimagojr.com/), quantiles from 2
 
 # ![1.5em](imgs/section-jury-participation.svg) Jury Participation
 
++ 2023: Ricardo Ribeiro: *AI-based models to predict the Traumatic Brain Injury outcome* (FCUP, External Examiner)
 + 2022: Mafalda Oliveira: *Neuroblastoma Cancer Radiogenomics* (FEUP, External Examiner)
 + 2022: João Pedro Fonseca: *AI-Based Models to Predict The Traumatic Brain Injury Outcome* (FEUP, External Examiner)
 + 2022: Ana Maria Sousa: *Learning to write medical reports from EEG data* (FEUP, Chairman)
@@ -154,15 +155,16 @@ The SJR rank is from [SJR Scimago](https://www.scimagojr.com/), quantiles from 2
 
 # ![1.5em](imgs/section-supervisions.svg) M.Sc. Supervisions
 
-+ on-going: Rafael Cristino: *Introducing Domain Knowledge to Autonomous Driving* (FEUP)
 + on-going: Alankrita Asthana: *Iterative Inference for Point-Clouds* (TUM, Munich)
-+ on-going: José Guerra (with L. Teixeira): *Academic Internship in Out of Distribution Detection – Autonomous Driving* (Internship at Bosch Car Multimedia) (FEUP)
++ 2023: Rafael Cristino (with J. Cardoso): *Introducing Domain Knowledge to Autonomous Driving* (FEUP)
++ 2023: José Guerra (with L. Teixeira): *Academic Internship in Out of Distribution Detection – Autonomous Driving* (Internship at Bosch Car Multimedia) (FEUP)
 + 2022: Pedro Silva (with T. Gonçalves): *Human Feedback during Neural Networks Training* (FEUP) [](https://sigarra.up.pt/feup/pt/pub_geral.pub_view?pi_pub_base_id=570677)
 + 2022: João Silva: *Environment Detection for Railway Applications based on Automotive Technology* (Internship at Continental) (FEUP) [](https://sigarra.up.pt/feup/pt/pub_geral.pub_view?pi_pub_base_id=570251)
 + 2022: Ana Bezerra (with J. Costa): *Phishing Detection with a Machine Learning Net* (Internship at E-goi) (FCUP) [](https://repositorio-aberto.up.pt/handle/10216/147350)
 
 # ![1.5em](imgs/section-supervisions.svg) B.Sc. Projects Supervisions
 
++ 2023: Diana Silva: *Condition Invariance for Autonomous Driving by Adversarial Learning*
 + 2022: Diana Silva (with T. Gonçalves): *Semantic Segmentation in Neural Networks using Iterative Visual Attention*
 + 2022: Filipe Campos, Francisco Cerqueira, Vasco Alves: *Mobile App using Object Detection for Car Driving*
 + 2022: Bruno Gomes, Rafael Camelo: Internship at ANO
