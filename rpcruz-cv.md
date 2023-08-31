@@ -85,6 +85,7 @@ See my github for more projects: [github.com/rpmcruz](https://github.com/rpmcruz
 
 # ![1.5em](imgs/section-scientific-events.svg) Participation in Scientific Events
 
+* **5th International Conference on Sustainable Technologies for Industry 5.0** (STI 2023): Technical Program Committee member [](https://sti.green.edu.bd/committees)
 * **iMIMIC/MIL3ID/LABELS 2020 workshop proceedings** (MICCAI 2020): co-editor [](https://link.springer.com/book/10.1007/978-3-030-61166-8)
 * **iMIMIC 2020 workshop** (MICCAI 2020): committee sponsor chair [](https://imimic-workshop.com/previous_editions/2020/index.html)
 * **3rd International Conference on Dynamics, Games and Science (2014):** president of the organizing committee [](https://www.fc.up.pt/dgsiii/)
