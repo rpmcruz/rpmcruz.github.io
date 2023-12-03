@@ -25,10 +25,9 @@ a.filter.active:hover {background-color: gray;}
 <div class="container">
 <h1>Ricardo Cruz, PhD</h1>
 <p><a href="mailto:rpcruz@fe.up.pt">rpcruz@fe.up.pt</a></p>
-<p class="description">Ricardo Cruz has worked on a wide range of machine learning topic, with particular emphasis on deep learning and computer vision. Since 2021, he is on autonomous driving under the THEIA research project, a partnership between the University of Porto and Bosch Car Multimedia.
-
-received a B.S. degree in computer science and an M.S. degree in applied mathematics, both from the University of Porto, Portugal. Since 2015, he has been a researcher at INESC TEC working in machine learning with particular emphasis on computer vision. He earned his Ph.D. in Computer Science in 2021 with a special emphasis on computer vision and deep learning. Currently, he is a post-doctoral researcher on autonomous driving under the THEIA research project, a partnership between the University of Porto and Bosch Car Multimedia.</p>
 ''')
+
+print(f'<p class="description">{publications["description"]}</p>')
 
 topics = set()
 filters = set()
@@ -52,7 +51,7 @@ for doi, topic in publications['papers'].items():
     })
 
 h_index = sum(i+1 <= paper['citations'] for i, paper in enumerate(sorted(listing, key=lambda x: x['citations'], reverse=True)))
-print(f'<p>My cross-ref H-index: {h_index}</p>')
+print(f'<p>My cross-ref h-index: {h_index}</p>')
 
 print('<p><b>Topics:</b>')
 for topic in topics:

@@ -11,24 +11,24 @@ topics:
   background-invariance: Convolutional neural networks (CNNs) are shown to be incredibly vulnerable to changes in the background. A proposal is made to avoid changes in background from affecting the performance of the model.
 papers:
   10.1007/978-3-031-49018-7_40: applications
-  10.1007/978-3-031-49018-7_38: human-in-the-loop
   10.1007/978-3-031-49018-7_39: others
-  10.1016/j.iswa.2022.200170: applications
+  10.1007/978-3-031-49018-7_38: human-in-the-loop
   10.1007/978-3-031-36616-1_22: human-in-the-loop
   10.1007/978-3-031-43078-7_43: ordinal-losses
-  10.1117/12.2679881: spatial-resource-efficiency
   10.3390/s23063092: spatial-resource-efficiency
-  10.1007/978-3-030-30484-3_10: others
+  10.1117/12.2679881: spatial-resource-efficiency
+  10.1016/j.iswa.2022.200170: applications
+  10.3390/math10060980: ordinal-losses
   10.7717/peerj-cs.457: ordinal-losses
   10.1109/ICPR48806.2021.9413004: background-invariance
-  10.3390/math10060980: ordinal-losses
-  10.1109/PRNI.2018.8423960: ranking-for-class-imbalance
-  10.1109/IJCNN.2018.8489696: iterative-inference
-  10.1007/s10044-018-0705-4: ranking-for-class-imbalance
   10.1109/EMBC.2019.8857385: absolute-costs
   10.1016/j.compeleceng.2019.08.001: applications
-  10.1007/978-3-319-59147-6_45: ranking-for-class-imbalance
+  10.1007/978-3-030-30484-3_10: others
+  10.1109/IJCNN.2018.8489696: iterative-inference
+  10.1109/PRNI.2018.8423960: ranking-for-class-imbalance
+  10.1007/s10044-018-0705-4: ranking-for-class-imbalance
   10.1007/978-3-319-59147-6_47: absolute-costs
+  10.1007/978-3-319-59147-6_45: ranking-for-class-imbalance
   10.1007/978-3-319-59147-6_46: ranking-for-class-imbalance
   10.1007/978-3-319-58838-4_1: ranking-for-class-imbalance
   10.1109/IJCNN.2016.7727469: ranking-for-class-imbalance
@@ -41,7 +41,9 @@ core-ranks:
   ICANN: C
   ICPR: B
   ICMV: C
+  Progress in Pattern Recognition, Image Analysis, Computer Vision, and Applications: C
 sjr-ranks:
+  Lecture Notes in Computer Science: Q3
   Pattern Analysis and Applications: Q2
   Computers &amp; Electrical Engineering: Q1
   PeerJ Computer Science: Q2
