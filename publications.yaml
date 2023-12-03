@@ -1,0 +1,50 @@
+description: Ricardo Cruz has worked on a wide range of machine learning topics, with particular emphasis on deep learning and computer vision. Since 2021, he is a researcher on autonomous driving under the THEIA research project, a partnership between the University of Porto and Bosch Car Multimedia. Prior to that, he was a researcher at INESC TEC since 2015, working towards his PhD in Computer Science. He has a BSc in computer science and a MSc in applied mathematics.
+topics:
+  applications: Miscellaneous applications.
+  human-in-the-loop: Ask for feedback while the model is being trained and introduce this knowledge in the loss or as new data.
+  ordinal-losses: Improving performance for ordinal regression; these are variables that are categorical, yet have an order (e.g. cold < warm < hot).
+  spatial-resource-efficiency: "Current convolutional neural networks apply the same computational effort across the entire input space. Intuitively, this is not how us humans operate: we pay closer attention to the main regions of the input space and, after a cursory look, dismiss regions where there is nothing visibly of interest. Several proposals are made at introducing such spatial focus to convolutional tasks."
+  others: Other research.
+  iterative-inference: Deep learning models produce tasks such as segmentation in one step. We propose an iterative approach whereby the neural networks learns a score function and gradient ascent is used to improve the segmentation.
+  ranking-for-class-imbalance: Class imbalance is when there is a disproportion in the number of observations in each class. The minority class contributes too little to the decision boundary because the learning process learns from each observation in isolation. We propose working on a new pairwise space, which is naturally balanced, by using models from the learning-to-rank literature.
+  absolute-costs: A common practice of introducing classification costs if by a cost matrix where a relative trade-off between the classes is defined by the user. However, it might be more natural for humans to define the trade-off in terms of an absolute constraint on one type of errors while trying to minimize the other. We propose methods for absolute costs.
+  background-invariance: Convolutional neural networks (CNNs) are shown to be incredibly vulnerable to changes in the background. A proposal is made to avoid changes in background from affecting the performance of the model.
+papers:
+  10.1007/978-3-031-49018-7_40: applications
+  10.1007/978-3-031-49018-7_38: human-in-the-loop
+  10.1007/978-3-031-49018-7_39: others
+  10.1016/j.iswa.2022.200170: applications
+  10.1007/978-3-031-36616-1_22: human-in-the-loop
+  10.1007/978-3-031-43078-7_43: ordinal-losses
+  10.1117/12.2679881: spatial-resource-efficiency
+  10.3390/s23063092: spatial-resource-efficiency
+  10.1007/978-3-030-30484-3_10: others
+  10.7717/peerj-cs.457: ordinal-losses
+  10.1109/ICPR48806.2021.9413004: background-invariance
+  10.3390/math10060980: ordinal-losses
+  10.1109/PRNI.2018.8423960: ranking-for-class-imbalance
+  10.1109/IJCNN.2018.8489696: iterative-inference
+  10.1007/s10044-018-0705-4: ranking-for-class-imbalance
+  10.1109/EMBC.2019.8857385: absolute-costs
+  10.1016/j.compeleceng.2019.08.001: applications
+  10.1007/978-3-319-59147-6_45: ranking-for-class-imbalance
+  10.1007/978-3-319-59147-6_47: absolute-costs
+  10.1007/978-3-319-59147-6_46: ranking-for-class-imbalance
+  10.1007/978-3-319-58838-4_1: ranking-for-class-imbalance
+  10.1109/IJCNN.2016.7727469: ranking-for-class-imbalance
+core-ranks:
+  IJCNN: B
+  Pattern Recognition and Image Analysis: C
+  Advances in Computational Intelligence: National
+  PRNI: none
+  EMBC: C
+  ICANN: C
+  ICPR: B
+  ICMV: C
+sjr-ranks:
+  Pattern Analysis and Applications: Q2
+  Computers &amp; Electrical Engineering: Q1
+  PeerJ Computer Science: Q2
+  Mathematics: Q2
+  Sensors: Q2
+  Intelligent Systems with Applications: Q1
