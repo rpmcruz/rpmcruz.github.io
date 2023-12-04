@@ -37,8 +37,8 @@ function toggleTopic(value) {
     cur_topic = value;
   }
   let description = document.getElementById('topic_description');
-  description.innerHTML = value ? '<i>Topic description:</i> ' + topics_description[value] : '';
-  description.style.display = value ? 'block' : 'none';
+  description.innerHTML = cur_topic ? '<i>Topic description:</i> ' + topics_description[cur_topic] : '';
+  description.style.display = cur_topic ? 'block' : 'none';
   // hide filters that do not correspond to this topic
   if(cur_filter) {
     document.getElementById(cur_filter[1]).classList.remove("active");
