@@ -150,6 +150,7 @@ The SJR rank is from [SJR Scimago](https://www.scimagojr.com/), quantiles from 2
 
 # ![1.5em](imgs/section-jury-participation.svg) Jury Participation
 
++ 2023: Nuno Barbosa Leão Beça e Silva: *Prediction System for Municipal Waste Containers* (UM, External Examiner)
 + 2023: Luís Miguel Mendonça Almeida: *Yes, No, Maybe: Uncertainty Estimation in Autonomous Driving* (FCUP, External Examiner)
 + 2023: João Jesus Figueiredo: *Application of AI Techniques in Video* (FCUP, External Examiner)
 + 2023: Ricardo Ribeiro: *AI-based models to predict the Traumatic Brain Injury outcome* (FCUP, External Examiner)
