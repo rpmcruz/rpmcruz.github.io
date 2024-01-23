@@ -102,7 +102,7 @@ function fillTable() {
       continue;
     var row = table.insertRow(j);
     row.insertCell(0).innerHTML = _listing[i]['year'];
-    row.insertCell(1).innerHTML = '<a href="' + _listing[i]['url'] + '">' + _listing[i]['title'] + '</a><br>' + _listing[i]['where'];
+    row.insertCell(1).innerHTML = (i+1) + '. <a href="' + _listing[i]['url'] + '">' + _listing[i]['title'] + '</a><br>' + _listing[i]['where'];
     row.insertCell(2).innerHTML = _listing[i]['type'];
     row.insertCell(3).innerHTML = _listing[i]['citations'];
     row.insertCell(4).innerHTML = _listing[i]['topic'];
