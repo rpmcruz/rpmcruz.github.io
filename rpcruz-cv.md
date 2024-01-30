@@ -175,8 +175,8 @@ The SJR rank is from [SJR Scimago](https://www.scimagojr.com/), quantiles from 2
 
 # ![1.5em](imgs/section-supervisions.svg) B.Sc. Projects Supervisions
 
-+ on-going: Eliandro Melo: *Resource Efficiency using Deep Q-Learning in Autonomous Driving* (FCUP)
-+ on-going: Ivo Duarte Simões: *Resource Efficiency using PPO in Autonomous Driving* (FCUP)
++ 2024: Eliandro Melo: *Resource Efficiency using Deep Q-Learning in Autonomous Driving* (FCUP)
++ 2024: Ivo Duarte Simões: *Resource Efficiency using PPO in Autonomous Driving* (FCUP)
 + 2023: Diana Silva: *Condition Invariance for Autonomous Driving by Adversarial Learning* (FEUP)
 + 2022: Diana Silva (with T. Gonçalves): *Semantic Segmentation in Neural Networks using Iterative Visual Attention* (FEUP)
 + 2022: Filipe Campos, Francisco Cerqueira, Vasco Alves: *Mobile App using Object Detection for Car Driving* (FEUP)
