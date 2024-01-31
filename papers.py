@@ -19,6 +19,7 @@ a.filter {color: black; text-decoration: none; border: 2px solid gray; border-ra
 a.filter:hover {background-color: lightgray;}
 a.filter.active {background-color: lightgray;}
 a.filter.active:hover {background-color: gray;}
+#topic_description {background-color: lightgray;}
 </style>
 </head>
 <body>
@@ -41,6 +42,7 @@ for doi, topic in publications['papers'].items():
     listing.append({
         'year': info['published']['date-parts'][0][0],
         'title': info['title'][0],
+        'authors': ', '.join('<b>R. Cruz</b>' if author.get('ORCID', '') == 'http://orcid.org/0000-0002-5189-6228' or author['given'][0] + author['family'] == 'RCruz' else f'{author["given"][0]}. {author["family"]}' for author in info['author']),
         'url': info['URL'],
         'type': info['type'],
         'topic': topic,
@@ -63,7 +65,7 @@ print('<p class="description" id="topic_description" style="display: none"></p>'
 print('''</div>
 <table id="table" border="1">
 <thead>
-<tr><th><a href="#" onclick="sort('year', 'desc', 'int')">Year</a></th><th>Title</th><th>Type</th><th><a href="#" onclick="sort('citations', 'desc', 'int')">Citations</a></th><th>Topic</th><th><a href="#" onclick="sort('sjr-rank', 'asc', 'str')">SJR Rank</a></th><th><a href="#" onclick="sort('core-rank', 'asc', 'str')">CORE Rank</a></th></tr>
+<tr><th><a href="#" onclick="sort('year', 'desc', 'int')">Year</a></th><th>Paper</th><th>Info</th><th><a href="#" onclick="sort('citations', 'desc', 'int')">Citations</a></th><th><a href="#" onclick="sort('sjr-rank', 'asc', 'str')">SJR Rank</a></th><th><a href="#" onclick="sort('core-rank', 'asc', 'str')">CORE Rank</a></th></tr>
 </thead>
 <tbody></tbody>
 </table>

@@ -75,7 +75,6 @@ function sort(field, order, type) {
 
 function fillTable() {
   this.table.innerHTML = '';
-  let j = 0;
 
   let _listing = listing;
   if(sort_field)
@@ -95,6 +94,7 @@ function fillTable() {
       return 0;
     });
 
+  let j = 0;
   for(let i = 0; i < _listing.length; i++) {
     if(cur_topic && _listing[i]['topic'] != cur_topic)
       continue
@@ -102,12 +102,11 @@ function fillTable() {
       continue;
     var row = table.insertRow(j);
     row.insertCell(0).innerHTML = _listing[i]['year'];
-    row.insertCell(1).innerHTML = (i+1) + '. <a href="' + _listing[i]['url'] + '">' + _listing[i]['title'] + '</a><br>' + _listing[i]['where'];
-    row.insertCell(2).innerHTML = _listing[i]['type'];
+    row.insertCell(1).innerHTML = '<b>' + (j+1) + '.</b> <a href="' + _listing[i]['url'] + '">' + _listing[i]['title'] + '</a><br>' + _listing[i]['authors'] + '<br><i>' + _listing[i]['where'] + '</i><br>';
+    row.insertCell(2).innerHTML = '<b>Type:</b> ' + _listing[i]['type'] + '<br><b>Topic:</b> ' + _listing[i]['topic'];
     row.insertCell(3).innerHTML = _listing[i]['citations'];
-    row.insertCell(4).innerHTML = _listing[i]['topic'];
-    row.insertCell(5).innerHTML = _listing[i]['sjr-rank'];
-    row.insertCell(6).innerHTML = _listing[i]['core-rank'];
+    row.insertCell(4).innerHTML = _listing[i]['sjr-rank'];
+    row.insertCell(5).innerHTML = _listing[i]['core-rank'];
     j++;
   }
 }
