@@ -19,7 +19,8 @@ class Table {
         triangle.style.display = 'none';
         triangle.textContent = columns_sort_order[i] == 'asc' ? '▲' : '▼';
         th.appendChild(triangle);
-        th.style.cursor = "pointer";
+        th.style.textDecoration = 'underline';
+        th.style.cursor = 'pointer';
         th.onclick = function() {
           const triangles = this.thead.querySelectorAll('.triangle');
           for(let j = 0; j < triangles.length; j++)
