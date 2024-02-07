@@ -45,7 +45,17 @@ table = [
     ('10.1007/978-3-319-58838-4_1', 'ranking-for-class-imbalance'),
     ('10.1109/IJCNN.2016.7727469', 'ranking-for-class-imbalance'),
 ]
-table = [papers.get_paper_info(*p) for p in tqdm(table)]
+my_categories = [  # for purposes of SJR Quantile Rank
+    'Applied Mathematics', 'Artificial Intelligence', 'Bioengineering',
+    'Biomedical Engineering', 'Computational Mathematics',
+    'Computer Science Applications', 'Computer Science (miscellaneous)',
+    'Computer Vision and Pattern Recognition', 'Control and Optimization',
+    'Electrical and Electronic Engineering', 'Engineering (miscellaneous)',
+    'Mathematics (miscellaneous)', 'Signal Processing',
+    'Statistics and Probability', 'Statistics, Probability and Uncertainty',
+]
+
+table = [papers.get_paper_info(*p, my_categories) for p in tqdm(table)]
 
 if args.type == 'latex':
     # split papers into types and reduce columns

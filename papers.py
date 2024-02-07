@@ -30,7 +30,9 @@ def get_core_rank(acronym):
     return rank[0].strip() if len(rank) else ''
 
 @functools.cache
-def get_sjr_rank(journal_name):
+def get_sjr_rank(journal_name, my_categories):
+    # notice that since we are using functools.cache, then my_categories needs
+    # to be an hashable type (such as a frozenset)
     name2id = {'Lecture Notes in Computer Science': 25674,
         'Pattern Analysis and Applications': 24822,
         'Computers & Electrical Engineering': 18159,
@@ -53,22 +55,24 @@ def get_sjr_rank(journal_name):
             time.sleep(1)
     tree = etree.HTML(response.content)
     tbody = tree.xpath('//div[@class="dashboard"]//table/tbody')[0]
+    categories = tbody.xpath('./tr/td[1]/text()')
     years = tbody.xpath('./tr/td[2]/text()')
     quartiles = tbody.xpath('./tr/td[3]/text()')
     max_year = max(int(y) for y in years)
-    return min(quartile for year, quartile in zip(years, quartiles) if int(year) == max_year)
+    return min(quartile for category, year, quartile in zip(categories, years, quartiles) if int(year) == max_year and category in my_categories)
 
-def get_paper_info(doi, topic):
+def get_paper_info(doi, topic, my_categories):
     info = Works().doi(doi)
     authors = ', '.join('**R. Cruz**' if author.get('ORCID', '') == 'http://orcid.org/0000-0002-5189-6228' or author['given'][0] + author['family'] == 'RCruz' else f'{author["given"][0]}. {author["family"]}' for author in info['author'])
     where = info['publisher'] + ' ' + ' - '.join(info['container-title'])
     where = where.replace('&amp;', '&')
+    my_categories = frozenset(my_categories)
     return {
         'Year': info['published']['date-parts'][0][0],
         'Paper': '[' + info['title'][0] + '](' + info['URL'] + ')\n' + authors + '\n*' + where + '*',
         'Topic': topic,
         'Type': info['type'],
         'Citations': info['is-referenced-by-count'],
-        'SJR Rank': get_sjr_rank(where) if info['type'] != 'proceedings-article' else '',
+        'SJR Rank': get_sjr_rank(where, my_categories) if info['type'] != 'proceedings-article' else '',
         'CORE Rank': get_core_rank(conference_acronym(where)) if info['type'] != 'journal-article' else '',
     }
