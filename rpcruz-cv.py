@@ -57,7 +57,10 @@ my_categories = [  # for purposes of SJR Quantile Rank
 
 table = [papers.get_paper_info(*p, my_categories) for p in tqdm(table)]
 
+h_index = sum(i+1 <= paper['Citations'] for i, paper in enumerate(sorted(table, key=lambda x: x['Citations'], reverse=True)))
+
 if args.type == 'latex':
+    out.section('section-scientific-impact', 'Scientific Impact')
     # split papers into types and reduce columns
     for type in sorted(set([p['Type'] for p in table])):
         out.section('section-publications', f'{type.replace("-", " ").title()} Publications')
@@ -70,8 +73,7 @@ if args.type == 'latex':
         out.table(subtable, [], [], [], (None, '25em', None, None))
 else:  # html
     out.section('section-publications', 'Publications')
-    h_index = sum(i+1 <= paper['Citations'] for i, paper in enumerate(sorted(table, key=lambda x: x['Citations'], reverse=True)))
-    out.paragraph(f'My cross-ref h-index: {h_index}')
+    out.paragraph(f'Crossref h-index: {h_index}')
     out.table(table, ['Topic', 'Type'], ["int", "str", "str", "str", "int", "str", "str"], ["desc", None, None, None, "desc", "asc", "asc"])
 
 ################################## AWARDS ##################################
