@@ -39,7 +39,7 @@ class Latex:
     def description(self, items):
         print(r'\begin{description}')
         for label, text in items:
-            print(f'\\item[{label}] {self.markdown(text)}')
+            print(f'\\item[{self.markdown(label)}] {self.markdown(text)}')
         print(r'\end{description}')
 
     def table(self, rows, filters, columns_type, columns_sort, columns_size):
@@ -107,7 +107,7 @@ class Html:
     def description(self, items):
         print('<div class="description">')
         for label, text in items:
-            print(f'<div class="item"><div class="left">{label}</div><div class="right">{self.markdown(text)}</div></div>')
+            print(f'<div class="item"><div class="left">{self.markdown(label)}</div><div class="right">{self.markdown(text)}</div></div>')
         print('</div>')
 
     def table(self, rows, filters, columns_type, columns_sort, columns_size=None):
