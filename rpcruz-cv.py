@@ -5,6 +5,7 @@ args = parser.parse_args()
 
 from tqdm import tqdm
 from datetime import datetime
+import sys
 import papers, out
 
 out = getattr(out, args.type.title())()
@@ -134,7 +135,7 @@ if args.type == 'latex':
     # split supervisions into types and reduce columns
     for degree in ['MSc', 'BSc']:
         out.section('section-supervisions', f'{degree} Supervisions')
-        type = 'Thesis' if 'MSc' else 'Project'
+        type = 'Thesis' if degree == 'MSc' else 'Project'
         rename_keys = {'Year': 'Year', 'Student': 'Student', 'Thesis/Project': type}
         subtable = [{rename_keys[k]: row[k] for k in rename_keys} for row in table if row['Degree'] == degree]
         out.table(subtable, [], [], [], (None, '10em', '25em'))
