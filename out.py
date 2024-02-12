@@ -1,58 +1,6 @@
 import json, re
 import sys
 
-class Latex:
-    def begin(self, name):
-        print(r'\documentclass[12pt]{article}')
-        print(r'\usepackage[a4paper, margin=3cm]{geometry}')
-        print(r'\usepackage{longtable}')
-        print(r'\usepackage{graphicx}')
-        print(r'\usepackage[hidelinks]{hyperref}')
-        print(f'\\title{{{name}}}')
-        print(r'\begin{document}')
-        print(r'\maketitle')
-
-    def end(self):
-        print(r'\end{document}')
-
-    def markdown(self, text, newline=r'\\'):
-        text = re.sub(r'\[(.*?)\]\((.*?)\)', r'\1 \\href{\2}{\\includegraphics[width=0.8em]{imgs/link.pdf}}', text)  # links
-        text = re.sub(r'\*\*(.*?)\*\*', r'\\textbf{\1}', text)  # bold
-        text = re.sub(r'\*(.*?)\*', r'\\textit{\1}', text)  # italic
-        text = re.sub(r'\=\=(.*?)\=\=', r'\\hl{\1}', text)  # highlight
-        text = text.replace('&', r'\&').replace('~', r'$\sim$')  # escape symbols
-        text = text.replace('\n', newline + '\n')  # force breaklines
-        text = re.sub(r'"(.*?)"', r"``\1''", text)
-        return text
-
-    def contacts(self, contacts):
-        for icon, text, link in contacts:
-            print(f'\\includegraphics[width=0.5cm]{{imgs/{icon}.pdf}} \\href{{{link}}}{{{text}}} ')
-        print('\n')
-
-    def section(self, icon, text):
-        print(f'\\section{{\\includegraphics[width=1cm]{{imgs/{icon}.pdf}} {text}}}')
-
-    def paragraph(self, text):
-        print(self.markdown(text), end='\n\n')
-
-    def description(self, items):
-        print(r'\begin{description}')
-        for label, text in items:
-            print(f'\\item[{self.markdown(label)}] {self.markdown(text)}')
-        print(r'\end{description}')
-
-    def table(self, rows, filters, columns_type, columns_sort, columns_size):
-        sizes = '|'.join(f'p{{{size}}}' if size else 'l' for size in columns_size)
-        print(r'{\small\begin{longtable}{|' + sizes + '|}')
-        print(r'\hline')
-        print('&'.join(rows[0]) + r'\\')
-        print(r'\hline\endhead')
-        for row in rows:
-            print('&'.join(self.markdown(str(v), r'\newline') for v in row.values()) + r'\\')
-            print(r'\hline')
-        print(r'\end{longtable}}')
-
 class Html:
     tables = 0
     def begin(self, name):
@@ -71,6 +19,7 @@ class Html:
         # description
         print('@media screen and (min-width:1000px) {div.description {display:flex; flex-direction: column;} div.item {display:flex;} div.left {width:4em; font-weight:bold;} div.right {flex: 1;}')
         print('@media screen and (max-width:999px) {div.item {display:inline;} div.left {display:inline;font-weight:bold;} div.right{display:inline;}}')
+        print('.hl {background-color:yellow;}')
         print('</style>')
         print('<script src="mytable.js"></script>')
         print('</head>')
@@ -101,7 +50,7 @@ class Html:
     def section(self, icon, text):
         print(f'<h2><img width="45px" src="imgs/{icon}.svg"> {text}</h2>')
 
-    def paragraph(self, text):
+    def text(self, text):
         print('<p>' + self.markdown(text) + '</p>')
 
     def description(self, items):
@@ -122,3 +71,78 @@ class Html:
         print(f'new Filters(table, "filters{self.tables}", ' + json.dumps(filters) + ');')
         print('</script>')
         self.tables += 1
+
+class Latex:
+    def begin(self, name):
+        print(r'\documentclass[12pt]{article}')
+        print(r'\usepackage[a4paper, margin=3cm]{geometry}')
+        print(r'\setlength\parindent{0pt}  % no indent')
+        print(r'\usepackage{xcolor,soul}')
+        print(r'\usepackage{graphicx}')
+        print(r'\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue]{hyperref}')
+        print(r'\usepackage{longtable}')
+        print(r'\usepackage{fancyhdr}')
+        print(r'\usepackage{lastpage}  % defines \pageref{LastPage}')
+        print(r'\pagestyle{fancy}')
+        print(r'\renewcommand{\headrulewidth}{0pt}  % remove head line')
+        print(r'\makeatletter\let\ps@plain\ps@fancy\makeatother  % first page equal to rest')
+        print(r'\fancyhead{}')
+        print(r'\fancyfoot[L]{\scriptsize Last update: \today}')
+        print(r'\fancyfoot[C]{}')
+        print(r'\fancyfoot[R]{\scriptsize Page \thepage\ of \pageref{LastPage}}')
+        print(r'\usepackage{titlesec}  % change \section look')
+        print(r'\titleformat{\section}{\normalfont\Large\scshape}{}{0pt}{}[{\vspace{-0.5ex}\titlerule[0.8pt]}]')
+        print(r'\renewcommand{\thesection}{}  % no section numbers')
+        print(r'\usepackage{tocloft}\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}\renewcommand{\cftsubsecdotsep}{\cftnodots}\setlength{\cftbeforesecskip}{-.5ex}')
+        print(r'\usepackage{enumitem}')
+        print(r'\newlength{\widestlabel}  % used by description')
+        print(r'\begin{document}')
+        print(f'{{\Large {name}}}', end='\n\n')
+
+    def end(self):
+        print(r'\end{document}')
+
+    def markdown(self, text, newline=r'\\'):
+        text = re.sub(r'\[(.*?)\]\((.*?)\)', r'\1 \\href{\2}{\\includegraphics[width=0.8em]{imgs/link.pdf}}', text)  # links
+        text = re.sub(r'\*\*(.*?)\*\*', r'\\textbf{\1}', text)  # bold
+        text = re.sub(r'\*(.*?)\*', r'\\textit{\1}', text)  # italic
+        text = re.sub(r'\=\=(.*?)\=\=', r'\\hl{\1}', text)  # highlight
+        text = text.replace('&', r'\&').replace('~', r'$\sim$')  # escape symbols
+        text = text.replace('\n', newline + '\n')  # force breaklines
+        text = re.sub(r'"(.*?)"', r"``\1''", text)
+        return text
+
+    def contacts(self, contacts):
+        print(r'\noindent{\small')
+        for icon, text, link in contacts:
+            print(f'\\raisebox{{-0.25\height}}{{\\includegraphics[width=0.5cm]{{imgs/{icon}.pdf}}}} \\href{{{link}}}{{{text}}} ')
+        print('}\n')
+        print(r'\setcounter{tocdepth}{2}\tableofcontents')
+        print()
+
+    def section(self, icon, text):
+        print(f'\\section[{text}]{{\\includegraphics[width=1cm]{{imgs/{icon}.pdf}} {text}}}\\nopagebreak')
+
+    def text(self, text):
+        print()
+        print(r'\bigskip')
+        print(self.markdown(text), end='\n\n')
+
+    def description(self, items):
+        largest_label = max((label for label, _ in items), key=len)
+        print(f'\\settowidth{{\\widestlabel}}{{\\textbf{{{largest_label}}}}}')
+        print(r'\begin{description}[style=sameline, labelwidth=\dimexpr\widestlabel+\labelsep, leftmargin=!]')
+        for label, text in items:
+            print(f'\\item[{self.markdown(label)}] {self.markdown(text)}')
+        print(r'\end{description}')
+
+    def table(self, rows, filters, columns_type, columns_sort, columns_size):
+        sizes = '|'.join(f'p{{{size}}}' if size else 'l' for size in columns_size)
+        print(r'{\small\begin{longtable}{|' + sizes + '|}')
+        print(r'\hline')
+        print('&'.join((f'\\bf {h}' for h in rows[0])) + r'\\')
+        print(r'\hline\endhead')
+        for row in rows:
+            print('&'.join(self.markdown(str(v), r'\newline') for v in row.values()) + r'\\')
+            print(r'\hline')
+        print(r'\end{longtable}}')

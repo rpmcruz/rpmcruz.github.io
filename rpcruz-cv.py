@@ -9,15 +9,41 @@ import papers, out
 
 out = getattr(out, args.type.title())()
 
+education = [
+    ('2021 PhD', 'Computer Science (joint degree University of Porto, Minho and Aveiro)'),
+    ('2015 M.Sc.', 'Mathematical Engineering (Faculty of Sciences, University of Porto)'),
+    ('2012 B.Sc.', 'Computer Science (Faculty of Sciences, University of Porto)'),
+]
+employment = [
+    ('2021/09--present', '**Post-doctoral Researcher** on Autonomous Driving\nUniversity of Porto (FEUP) [in partnership with Bosch]\n- Collaboration between the University of Porto and Bosch Car Multimedia to improve autonomous driving perception\n- Developed frameworks for object detection using camera and LiDAR (2D discretization and raw point-clouds)\n- Published new methods for efficient semantic segmentation and ordinal regression\n- Supervised six master’s theses, four bachelor’s projects, and other team members\n- Responsible for the HPC infrastructure (using Slurm)'),
+    ('2023/09--2024/02', '**Invited Auxiliary Professor**, University of Porto (FEUP)\nCourses:\n- OAT4001 & FACVC: Machine Learning'),
+    ('2021/09--2022/08', '**Invited Auxiliary Professor**, University of Porto (FEUP)\nCourses:\n- L.EIC003: Programming Fundamentals (Python)\n- L.EEC009: Data Structures and Algorithms (C/C++)'),
+    ('2018/09--2021/08', '**Invited Teacher Assistant**, University of Porto (FEUP)\nCourses:\n- L.EIC003: Programming Fundamentals (Python)\n- L.EIC009: Programming (C/C++)'),
+    ('2015/09--2021/08', '**Research Assistant** on Machine Learning and Computer Vision\nINESC TEC\n- Research focus: re-thinking fundamentals about image classification and semantic segmentation (8+ publications)\n- Some highlights: (1) a method for background invariance using adversarial training, (2) new losses that minimize absolute trade-offs between Type 1 and 2 errors instead of relative trade-offs, (3) using backpropagation also for inference to refine existing outputs, (4) deploying learning-to-rank methods for class imbalance\n- Contributed to workshops, Summer School on Computer Vision (VISUM), and other events\n- Twice awarded "outstanding recognition" for organizing workshops and helping with the HPC infrastructure'),
+    ('2014/09--2014/12', '**Research Grant** on Mathematical Modelling Research\nMathematics Center of the University of Porto (CMUP)\n- Epidemiological models for HIV. A little of everything: from differential equations to stochastic simulations to cellular automata.'),
+]
+
 #################################### START ####################################
 
 out.begin('Ricardo Cruz, PhD')
-out.contacts([
+contacts = [
     ('profile-email', 'rpcruz@fe.up.pt', 'mailto:rpcruz@fe.up.pt'),
     ('profile-orcid', '0000-0002-5189-6228', 'https://orcid.org/0000-0002-5189-6228'),
     ('profile-github', 'github.com/rpmcruz', 'https://github.com/rpmcruz?tab=repositories'),
-])
-out.paragraph('Ricardo Cruz has worked on a wide range of machine learning topics, with particular emphasis on theoretical aspects of deep learning and computer vision -- with 20+ publications and 100+ citations in such topics as: • adapting ranking models for class imbalance; • making convolutional neural networks invariant to background; • making them faster by adjusting the computational effort to each image; • losses for ordinal regression. He is a Post-doc Researcher on autonomous driving at the Faculty of Engineering, University of Porto, and he has been a researcher at INESC TEC since 2015, where his research earned him the computer science PhD in 2021. He has a BSc in computer science and a MSc in applied mathematics. He is frequently invited to teach at the Faculty of Engineering, University of Porto, where he earned a pedagogic award.')
+]
+if args.type == 'latex':
+    contacts.insert(1, ('profile-website', 'rpmcruz.github.io', 'https://rpmcruz.github.io/'))
+else:  # html
+    contacts.append(('profile-pdf', 'PDF', 'https://rpmcruz.github.io/rpcruz-cv.pdf'))
+
+out.contacts(contacts)
+out.text('Ricardo Cruz has worked on a wide range of machine learning topics, with particular emphasis on theoretical aspects of deep learning and computer vision -- with 20+ publications and 100+ citations in such topics as: • adapting ranking models for class imbalance; • making convolutional neural networks invariant to background; • making them faster by adjusting the computational effort to each image; • losses for ordinal regression. He is a Post-doc Researcher on autonomous driving at the Faculty of Engineering, University of Porto, and he has been a researcher at INESC TEC since 2015, where his research earned him the computer science PhD in 2021. He has a BSc in computer science and a MSc in applied mathematics. He is frequently invited to teach at the Faculty of Engineering, University of Porto, where he earned a pedagogic award.')
+
+if args.type == 'latex':
+    out.section('section-education', 'Education')
+    out.description(education)
+    out.section('section-employment', 'Employment')
+    out.description(employment)
 
 #################################### PAPERS ####################################
 
@@ -57,13 +83,21 @@ my_categories = [  # for purposes of SJR Quantile Rank
 
 table = [papers.get_paper_info(*p, my_categories) for p in tqdm(table)]
 
+table = [
+    {'Year': 2024, 'Paper': '==**[SUBMITTED]**== Weather and Meteorological Optical Range Classification for Autonomous Driving\nC. Pereira, J. Fernandes, **R. Cruz**, J. Pinto, J. Cardoso\n*IEEE Transactions on Intelligent Vehicles*', 'Topic': 'applications', 'Type': 'journal-article', 'Citations': 0, 'SJR Rank': 'Q1', 'CORE Rank': ''},
+    {'Year': 2024, 'Paper': '==**[SUBMITTED]**== A Case Study on Phishing Detection with a Machine Learning Net\nA. Bezerra, I. Pereira, M. Ângelo, D. Coelho, D. Oliveira, J. Costa, **R. Cruz**\n*Springer International Journal of Data Science and Analytics*', 'Topic': 'applications', 'Type': 'journal-article', 'Citations': 0, 'SJR Rank': 'Q2', 'CORE Rank': ''},
+    {'Year': 2024, 'Paper': '==**[SUBMITTED]**== Spatial Resource-Efficiency using Partial Convolutions for Segmentation and Object Detection\n**R. Cruz**\n*Elsevier Pattern Recognition*', 'Topic': 'spatial-resource-efficiency', 'Type': 'journal-article', 'Citations': 0, 'SJR Rank': 'Q1', 'CORE Rank': ''},
+    {'Year': 2024, 'Paper': '==**[SUBMITTED]**== Learning Ordinality in Semantic Segmentation\nR. Cristino, **R. Cruz**, J.Cardoso\n*Elsevier Pattern Recognition*', 'Topic': 'ordinal-losses', 'Type': 'journal-article', 'Citations': 0, 'SJR Rank': 'Q1', 'CORE Rank': ''},
+    {'Year': 2024, 'Paper': '==**[SUBMITTED]**== CNN Explanation Methods for Ordinal Regression Tasks\nJ. Barbero-Gómez, **R. Cruz**, J. Cardoso, P. Gutiérrez, C. Hervás-Martínez\n*Elsevier Pattern Recognition*', 'Topic': 'ordinal-losses', 'Type': 'journal-article', 'Citations': 0, 'SJR Rank': 'Q1', 'CORE Rank': ''},
+    {'Year': 2024, 'Paper': '==**[SUBMITTED]**== Unimodal Distributions for Ordinal Regression\nJ. Cardoso, **R. Cruz**, T. Albuquerque\n*IEEE Transactions on Artificial Intelligence*', 'Topic': 'ordinal-losses', 'Type': 'journal-article', 'Citations': 0, 'SJR Rank': 'Q1', 'CORE Rank': ''},
+] + table
+
 h_index = sum(i+1 <= paper['Citations'] for i, paper in enumerate(sorted(table, key=lambda x: x['Citations'], reverse=True)))
 
 if args.type == 'latex':
-    out.section('section-scientific-impact', 'Scientific Impact')
     # split papers into types and reduce columns
-    for type in sorted(set([p['Type'] for p in table])):
-        out.section('section-publications', f'{type.replace("-", " ").title()} Publications')
+    for title, type in [('Journal', 'journal-article'), ('Book Chapter', 'book-chapter'), ('Proceedings', 'proceedings-article')]:
+        out.section('section-publications', f'{title} Publications')
         keys = ['Year', 'Paper', 'Citations']
         if type in ('journal-article', 'book-chapter'):
             keys.append('SJR Rank')
@@ -73,7 +107,7 @@ if args.type == 'latex':
         out.table(subtable, [], [], [], (None, '25em', None, None))
 else:  # html
     out.section('section-publications', 'Publications')
-    out.paragraph(f'Crossref h-index: {h_index}')
+    out.text(f'Crossref h-index: {h_index}')
     out.table(table, ['Topic', 'Type'], ["int", "str", "str", "str", "int", "str", "str"], ["desc", None, None, None, "desc", "asc", "asc"])
 
 ################################ SUPERVISIONS ################################
@@ -108,26 +142,13 @@ else:  # html
     out.section('section-supervisions', 'Supervisions')
     out.table(table, ['Degree'], ["str", "str", None, None, None, "str"], ["desc", "desc", None, None, None, "asc"])
 
-################################# EDUCATION #################################
+########################### EDUCATION & EMPLOYMENT ###########################
 
-out.section('section-education', 'Education')
-out.description([
-    ('2021 PhD', 'Computer Science (joint degree University of Porto, Minho and Aveiro)'),
-    ('2015 M.Sc.', 'Mathematical Engineering (Faculty of Sciences, University of Porto)'),
-    ('2012 B.Sc.', 'Computer Science (Faculty of Sciences, University of Porto)'),
-])
-
-################################# EMPLOYMENT #################################
-
-out.section('section-employment', 'Employment')
-out.description([
-    ('2021/09--present', '**Post-doctoral Researcher** on Autonomous Driving\nUniversity of Porto (FEUP) [in partnership with Bosch]\n- Collaboration between the University of Porto and Bosch Car Multimedia to improve autonomous driving perception\n- Developed frameworks for object detection using camera and LiDAR (2D discretization and raw point-clouds)\n- Published new methods for efficient semantic segmentation and ordinal regression\n- Supervised six master’s theses, four bachelor’s projects, and other team members\n- Responsible for the HPC infrastructure (using Slurm)'),
-    ('2023/09--2024/02', '**Invited Auxiliary Professor**, University of Porto (FEUP)\nCourses:\n- OAT4001 & FACVC: Machine Learning'),
-    ('2021/09--2022/08', '**Invited Auxiliary Professor**, University of Porto (FEUP)\nCourses:\n- L.EIC003: Programming Fundamentals (Python)\n- L.EEC009: Data Structures and Algorithms (C/C++)'),
-    ('2018/09--2021/08', '**Invited Teacher Assistant**, University of Porto (FEUP)\nCourses:\n- L.EIC003: Programming Fundamentals (Python)\n- L.EIC009: Programming (C/C++)'),
-    ('2015/09--2021/08', '**Research Assistant** on Machine Learning and Computer Vision\nINESC TEC\n- Research focus: re-thinking fundamentals about image classification and semantic segmentation (8+ publications)\n- Some highlights: (1) a method for background invariance using adversarial training, (2) new losses that minimize absolute trade-offs between Type 1 and 2 errors instead of relative trade-offs, (3) using backpropagation also for inference to refine existing outputs, (4) deploying learning-to-rank methods for class imbalance\n- Contributed to workshops, Summer School on Computer Vision (VISUM), and other events\n- Twice awarded "outstanding recognition" for organizing workshops and helping with the HPC infrastructure'),
-    ('2014/09--2014/12', '**Research Grant** on Mathematical Modelling Research\nMathematics Center of the University of Porto (CMUP)\n- Epidemiological models for HIV. A little of everything: from differential equations to stochastic simulations to cellular automata.'),
-])
+if args.type == 'html':
+    out.section('section-education', 'Education')
+    out.description(education)
+    out.section('section-employment', 'Employment')
+    out.description(employment)
 
 ################################## AWARDS ##################################
 
@@ -143,5 +164,6 @@ out.description([
 
 ##################################### END #####################################
 
-out.paragraph(f'Last update: {datetime.now().strftime("%Y-%m-%d")}')
+if args.type == 'html':
+    out.text(f'Last update: {datetime.now().strftime("%Y-%m-%d")}')
 out.end()

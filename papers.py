@@ -51,7 +51,7 @@ def get_sjr_rank(journal_name, my_categories):
             response.raise_for_status()
             break
         except:
-            print(f'Could not retrive page for {id}. Wait 1 second...', file=sys.stderr)
+            print(f'Could not retrieve SJR page for journal {id}. Wait 1 second...', file=sys.stderr)
             time.sleep(1)
     tree = etree.HTML(response.content)
     tbody = tree.xpath('//div[@class="dashboard"]//table/tbody')[0]
