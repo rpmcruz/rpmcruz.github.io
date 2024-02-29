@@ -105,7 +105,7 @@ out.itemize([
     'Google Scholar h-index: **7** (2024-02)',
     'Best oral paper: [2021 RECPAD conference](https://noticias.up.pt/investigadores-da-u-porto-dominam-premios-do-recpad-2021/)',
 ])
-out.text(f'The following citation counts come from Crossref (last update: {datetime.now().strftime("%Y-%m-%d")}).')
+out.text(f'The following citation counts come from Crossref. The SJR rank quantiles are of subject categories related to machine learning. The CORE rank is of the last year that is available for that conference. (last update: {datetime.now().strftime("%Y-%m-%d")})')
 
 if args.type == 'latex':
     # split papers into types and reduce columns
