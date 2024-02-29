@@ -94,6 +94,18 @@ table = [
 ] + table
 
 h_index = sum(i+1 <= paper['Citations'] for i, paper in enumerate(sorted(table, key=lambda x: x['Citations'], reverse=True)))
+total_citations = sum(x['Citations'] for x in table)
+
+if args.type == 'latex':
+    out.section('section-scientific-impact', 'Impact and Citations')
+else:
+    out.section('section-publications', 'Publications')
+out.itemize([
+    f'Crossref h-index: **{h_index}** with **{total_citations}** total citations ({datetime.now().strftime("%Y-%m-%d")})',
+    'Google Scholar h-index: **7** (2024-02)',
+    'Best oral paper: [2021 RECPAD conference](https://noticias.up.pt/investigadores-da-u-porto-dominam-premios-do-recpad-2021/)',
+])
+out.text(f'The following citation counts come from Crossref (last update: {datetime.now().strftime("%Y-%m-%d")}).')
 
 if args.type == 'latex':
     # split papers into types and reduce columns
@@ -107,8 +119,6 @@ if args.type == 'latex':
         subtable = [{k: p[k] for k in keys} for p in table if p['Type'] == type]
         out.table(subtable, [], [], [], (None, '25em', None, None))
 else:  # html
-    out.section('section-publications', 'Publications')
-    out.text(f'Crossref h-index: {h_index}')
     out.table(table, ['Topic', 'Type'], ["int", "str", "str", "str", "int", "str", "str"], ["desc", None, None, None, "desc", "asc", "asc"])
 
 ################################ SUPERVISIONS ################################

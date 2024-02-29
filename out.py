@@ -59,6 +59,12 @@ class Html:
             print(f'<div class="item"><div class="left">{self.markdown(label)}</div><div class="right">{self.markdown(text)}</div></div>')
         print('</div>')
 
+    def itemize(self, items):
+        print('<ul>')
+        for text in items:
+            print(f'<li>{self.markdown(text)}</li>')
+        print('</ul>')
+
     def table(self, rows, filters, columns_type, columns_sort, columns_size=None):
         print(f'<div id="filters{self.tables}"></div>')
         print('</div>')  # temporarily disable container
@@ -135,6 +141,12 @@ class Latex:
         for label, text in items:
             print(f'\\item[{self.markdown(label)}] {self.markdown(text)}')
         print(r'\end{description}')
+
+    def itemize(self, items):
+        print(r'\begin{itemize}')
+        for text in items:
+            print(f'\\item {self.markdown(text)}')
+        print(r'\end{itemize}')
 
     def table(self, rows, filters, columns_type, columns_sort, columns_size):
         sizes = '|'.join(f'p{{{size}}}' if size else 'l' for size in columns_size)
