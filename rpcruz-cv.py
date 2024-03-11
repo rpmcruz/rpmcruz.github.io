@@ -124,34 +124,50 @@ else:  # html
 ################################ SUPERVISIONS ################################
 
 table = [
-    {'Year': 'on-going', 'Degree': 'MSc', 'Student': 'Diana Teixeira Silva', 'Co-supervisor(s)': '', 'Thesis/Project': 'Quantifying How Deep Implicit Representations Promote Label Efficiency', 'University': 'FEUP'},
-    {'Year': 'on-going', 'Degree': 'MSc', 'Student': 'Francisco Gonçalves Cerqueira', 'Co-supervisor(s)': '', 'Thesis/Project': 'Comparative Study on Self-Supervision Methods for Autonomous Driving', 'University': 'FEUP'},
-    {'Year': 2024, 'Degree': 'MSc', 'Student': 'Airton Tiago', 'Co-supervisor(s)': 'Jaime Cardoso', 'Thesis/Project': 'Data Augmentation for Ordinal Data', 'University': 'FEUP'},
-    {'Year': 2023, 'Degree': 'MSc', 'Student': 'Alankrita Asthana', 'Co-supervisor(s)': '', 'Thesis/Project': 'Iterative Inference for Point-Clouds', 'University': 'TUM'},
-    {'Year': 2023, 'Degree': 'MSc', 'Student': 'Rafael Cristino', 'Co-supervisor(s)': 'Jaime Cardoso', 'Thesis/Project': '[Introducing Domain Knowledge to Scene Parsing in Autonomous Driving](https://repositorio-aberto.up.pt/handle/10216/152109)', 'University': 'FEUP'},
-    {'Year': 2023, 'Degree': 'MSc', 'Student': 'José Guerra', 'Co-supervisor(s)': 'Luís Teixeira', 'Thesis/Project': '[Uncertainty-Driven Out-of-Distribution Detection in 3D LiDAR Object Detection for Autonomous Driving](https://repositorio-aberto.up.pt/handle/10216/152016) (Internship at Bosch Car Multimedia)', 'University': 'FEUP'},
-    {'Year': 2022, 'Degree': 'MSc', 'Student': 'Pedro Silva', 'Co-supervisor(s)': 'Tiago Gonçalves', 'Thesis/Project': '[Human Feedback during Neural Networks Training](https://repositorio-aberto.up.pt/handle/10216/142444)', 'University': 'FEUP'},
-    {'Year': 2022, 'Degree': 'MSc', 'Student': 'João Silva', 'Co-supervisor(s)': '', 'Thesis/Project': '[Environment Detection for Railway Applications based on Automotive Technology](https://repositorio-aberto.up.pt/handle/10216/142326) (Internship at Continental)', 'University': 'FEUP'},
-    {'Year': 2022, 'Degree': 'MSc', 'Student': 'Ana Bezerra', 'Co-supervisor(s)': 'Joaquim Costa', 'Thesis/Project': '[Phishing Detection with a Machine Learning Net](https://repositorio-aberto.up.pt/handle/10216/147350) (Internship at E-goi)', 'University': 'FCUP'},
-    {'Year': 2024, 'Degree': 'BSc', 'Student': 'Eliandro Melo', 'Co-supervisor(s)': '', 'Thesis/Project': 'Resource Efficiency using Deep Q-Learning in Autonomous Driving', 'University': 'FCUP'},
-    {'Year': 2024, 'Degree': 'BSc', 'Student': 'Ivo Duarte Simões', 'Co-supervisor(s)': '', 'Thesis/Project': 'Resource Efficiency using PPO in Autonomous Driving', 'University': 'FCUP'},
-    {'Year': 2023, 'Degree': 'BSc', 'Student': 'Diana Teixeira Silva', 'Co-supervisor(s)': '', 'Thesis/Project': 'Condition Invariance for Autonomous Driving by Adversarial Learning', 'University': 'FEUP'},
-    {'Year': 2022, 'Degree': 'BSc', 'Student': 'Diana Teixeira Silva', 'Co-supervisor(s)': 'Tiago Gonçalves', 'Thesis/Project': 'Semantic Segmentation in Neural Networks using Iterative Visual Attention', 'University': 'FEUP'},
-    {'Year': 2022, 'Degree': 'BSc', 'Student': 'Filipe Campos, Francisco Cerqueira, Vasco Alves', 'Co-supervisor(s)': '', 'Thesis/Project': '[Mobile App using Object Detection for Car Driving](https://play.google.com/store/apps/details?id=pt.up.fe.mobilecardriving)', 'University': 'FEUP'},
-    {'Year': 2022, 'Degree': 'BSc', 'Student': 'Bruno Gomes, Rafael Camelo', 'Co-supervisor(s)': '', 'Thesis/Project': 'Internship at ANO', 'University': 'FEUP'},
+    {'Year': 'on-going', 'Degree': 'MSc', 'Student': 'Diana Teixeira Silva', 'Co-supervisor(s)': '', 'Dissertation/Project': 'Quantifying How Deep Implicit Representations Promote Label Efficiency', 'University': 'FEUP'},
+    {'Year': 'on-going', 'Degree': 'MSc', 'Student': 'Francisco Gonçalves Cerqueira', 'Co-supervisor(s)': '', 'Dissertation/Project': 'Comparative Study on Self-Supervision Methods for Autonomous Driving', 'University': 'FEUP'},
+    {'Year': 2024, 'Degree': 'MSc', 'Student': 'Airton Tiago', 'Co-supervisor(s)': 'Jaime Cardoso', 'Dissertation/Project': 'Data Augmentation for Ordinal Data', 'University': 'FEUP'},
+    {'Year': 2023, 'Degree': 'MSc', 'Student': 'Alankrita Asthana', 'Co-supervisor(s)': '', 'Dissertation/Project': 'Iterative Inference for Point-Clouds', 'University': 'TUM'},
+    {'Year': 2023, 'Degree': 'MSc', 'Student': 'Rafael Cristino', 'Co-supervisor(s)': 'Jaime Cardoso', 'Dissertation/Project': '[Introducing Domain Knowledge to Scene Parsing in Autonomous Driving](https://repositorio-aberto.up.pt/handle/10216/152109)', 'University': 'FEUP'},
+    {'Year': 2023, 'Degree': 'MSc', 'Student': 'José Guerra', 'Co-supervisor(s)': 'Luís Teixeira', 'Dissertation/Project': '[Uncertainty-Driven Out-of-Distribution Detection in 3D LiDAR Object Detection for Autonomous Driving](https://repositorio-aberto.up.pt/handle/10216/152016) (Internship at Bosch Car Multimedia)', 'University': 'FEUP'},
+    {'Year': 2022, 'Degree': 'MSc', 'Student': 'Pedro Silva', 'Co-supervisor(s)': 'Tiago Gonçalves', 'Dissertation/Project': '[Human Feedback during Neural Networks Training](https://repositorio-aberto.up.pt/handle/10216/142444)', 'University': 'FEUP'},
+    {'Year': 2022, 'Degree': 'MSc', 'Student': 'João Silva', 'Co-supervisor(s)': '', 'Dissertation/Project': '[Environment Detection for Railway Applications based on Automotive Technology](https://repositorio-aberto.up.pt/handle/10216/142326) (Internship at Continental)', 'University': 'FEUP'},
+    {'Year': 2022, 'Degree': 'MSc', 'Student': 'Ana Bezerra', 'Co-supervisor(s)': 'Joaquim Costa', 'Dissertation/Project': '[Phishing Detection with a Machine Learning Net](https://repositorio-aberto.up.pt/handle/10216/147350) (Internship at E-goi)', 'University': 'FCUP'},
+    {'Year': 2024, 'Degree': 'BSc', 'Student': 'Eliandro Melo', 'Co-supervisor(s)': '', 'Dissertation/Project': 'Resource Efficiency using Deep Q-Learning in Autonomous Driving', 'University': 'FCUP'},
+    {'Year': 2024, 'Degree': 'BSc', 'Student': 'Ivo Duarte Simões', 'Co-supervisor(s)': '', 'Dissertation/Project': 'Resource Efficiency using PPO in Autonomous Driving', 'University': 'FCUP'},
+    {'Year': 2023, 'Degree': 'BSc', 'Student': 'Diana Teixeira Silva', 'Co-supervisor(s)': '', 'Dissertation/Project': 'Condition Invariance for Autonomous Driving by Adversarial Learning', 'University': 'FEUP'},
+    {'Year': 2022, 'Degree': 'BSc', 'Student': 'Diana Teixeira Silva', 'Co-supervisor(s)': 'Tiago Gonçalves', 'Dissertation/Project': 'Semantic Segmentation in Neural Networks using Iterative Visual Attention', 'University': 'FEUP'},
+    {'Year': 2022, 'Degree': 'BSc', 'Student': 'Filipe Campos, Francisco Cerqueira, Vasco Alves', 'Co-supervisor(s)': '', 'Dissertation/Project': '[Mobile App using Object Detection for Car Driving](https://play.google.com/store/apps/details?id=pt.up.fe.mobilecardriving)', 'University': 'FEUP'},
+    {'Year': 2022, 'Degree': 'BSc', 'Student': 'Bruno Gomes, Rafael Camelo', 'Co-supervisor(s)': '', 'Dissertation/Project': 'Internship at ANO', 'University': 'FEUP'},
 ]
 
 if args.type == 'latex':
     # split supervisions into types and reduce columns
     for degree in ['MSc', 'BSc']:
         out.section('section-supervisions', f'{degree} Supervisions')
-        type = 'Thesis' if degree == 'MSc' else 'Project'
-        rename_keys = {'Year': 'Year', 'Student': 'Student', 'Thesis/Project': type}
+        type = 'Dissertation' if degree == 'MSc' else 'Project'
+        rename_keys = {'Year': 'Year', 'Student': 'Student', 'Dissertation/Project': type}
         subtable = [{rename_keys[k]: row[k] for k in rename_keys} for row in table if row['Degree'] == degree]
         out.table(subtable, [], [], [], (None, '10em', '25em'))
 else:  # html
     out.section('section-supervisions', 'Supervisions')
     out.table(table, ['Degree'], ["str", "str", None, None, None, "str"], ["desc", "desc", None, None, None, "asc"])
+
+############################# JURY PARTICIPATION #############################
+
+table = [
+    {'Date': '2023/12', 'Role': 'External Examiner', 'Student': 'Nuno Barbosa Leão Beça e Silva', 'Dissertation': 'Prediction System for Municipal Waste Containers', 'University': 'U. Minho'},
+    {'Date': '2022/10', 'Role': 'External Examiner', 'Student': 'Mafalda Oliveira', 'Dissertation': 'Neuroblastoma Cancer Radiogenomics', 'University': 'FEUP'},
+    {'Date': '2022/10', 'Role': 'External Examiner', 'Student': 'João Pedro Fonseca', 'Dissertation': 'AI-Based Models to Predict The Traumatic Brain Injury Outcome', 'University': 'FEUP'},
+    {'Date': '2022/07', 'Role': 'Chairman', 'Student': 'Ana Maria Sousa', 'Dissertation': 'Learning to write medical reports from EEG data', 'University': 'FEUP'},
+    {'Date': '2022/07', 'Role': 'External Examiner', 'Student': 'Bruno Nascimento', 'Dissertation': 'Detection and classification of small impacts on vehicles based on deep learning algorithms', 'University': 'U. Minho'},
+    {'Date': '2021/12', 'Role': 'External Examiner', 'Student': 'Artur Ferreira', 'Dissertation': '3D Lung Computed Tomography Synthesis using Generative Adversarial Networks', 'University': 'FCUP'},
+    {'Date': '2021/09', 'Role': 'External Examiner', 'Student': 'Vı́tor Figueiredo', 'Dissertation': 'Feasibility of using autoencoders for learning car interior background models', 'University': 'U. Minho'},
+]
+
+if args.type == 'latex':
+    out.section('section-jury-participation', f'Jury Participation')
+    out.table(table, None, ["str", "str", None, None, "str"], ["desc", "desc", None, None, "desc"])
 
 ########################### EDUCATION & EMPLOYMENT ###########################
 

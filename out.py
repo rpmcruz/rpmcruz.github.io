@@ -73,8 +73,9 @@ class Html:
         print('<script>')
         rows = [{key: self.markdown(str(value)) for key, value in row.items()} for row in rows]
         print(f'table = new Table("table{self.tables}", ' + json.dumps(list(rows[0].keys())) + ', ' + json.dumps(columns_type) + ', ' + json.dumps(columns_sort) + ', ' + json.dumps(rows) + ');')
-        filters = {f: list(sorted(set(r[f] for r in rows))) for f in filters}
-        print(f'new Filters(table, "filters{self.tables}", ' + json.dumps(filters) + ');')
+        if filters != None:
+            filters = {f: list(sorted(set(r[f] for r in rows))) for f in filters}
+            print(f'new Filters(table, "filters{self.tables}", ' + json.dumps(filters) + ');')
         print('</script>')
         self.tables += 1
 
