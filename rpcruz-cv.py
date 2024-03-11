@@ -155,19 +155,22 @@ else:  # html
 
 ############################# JURY PARTICIPATION #############################
 
-table = [
-    {'Date': '2023/12', 'Role': 'External Examiner', 'Student': 'Nuno Barbosa Leão Beça e Silva', 'Dissertation': 'Prediction System for Municipal Waste Containers', 'University': 'U. Minho'},
-    {'Date': '2022/10', 'Role': 'External Examiner', 'Student': 'Mafalda Oliveira', 'Dissertation': 'Neuroblastoma Cancer Radiogenomics', 'University': 'FEUP'},
-    {'Date': '2022/10', 'Role': 'External Examiner', 'Student': 'João Pedro Fonseca', 'Dissertation': 'AI-Based Models to Predict The Traumatic Brain Injury Outcome', 'University': 'FEUP'},
-    {'Date': '2022/07', 'Role': 'Chairman', 'Student': 'Ana Maria Sousa', 'Dissertation': 'Learning to write medical reports from EEG data', 'University': 'FEUP'},
-    {'Date': '2022/07', 'Role': 'External Examiner', 'Student': 'Bruno Nascimento', 'Dissertation': 'Detection and classification of small impacts on vehicles based on deep learning algorithms', 'University': 'U. Minho'},
-    {'Date': '2021/12', 'Role': 'External Examiner', 'Student': 'Artur Ferreira', 'Dissertation': '3D Lung Computed Tomography Synthesis using Generative Adversarial Networks', 'University': 'FCUP'},
-    {'Date': '2021/09', 'Role': 'External Examiner', 'Student': 'Vı́tor Figueiredo', 'Dissertation': 'Feasibility of using autoencoders for learning car interior background models', 'University': 'U. Minho'},
-]
+items = (
+    ('2023/12', 'External Examiner @ U.Minho: MSc Dissertation "Prediction System for Municipal Waste Containers"'),
+    ('2023/07', 'Examiner @ INESC TEC: Evaluation of 6 summer interships (SCI 2023) on computer vision and machine learning'),
+    ('2022/10', 'External Examiner @ FEUP: MSc Dissertation "Neuroblastoma Cancer Radiogenomics"'),
+    ('2022/10', 'External Examiner @ FEUP: MSc Dissertation "AI-Based Models to Predict The Traumatic Brain Injury Outcome"'),
+    ('2022/07', 'Examiner @ INESC TEC: Evaluation of 2 summer interships (SCI 2022) on computer vision and machine learning'),
+    ('2022/07', 'Chairman @ FEUP: MSc Dissertation "Learning to write medical reports from EEG data"'),
+    ('2022/07', 'External Examiner @ U.Minho: MSc Dissertation "Detection and classification of small impacts on vehicles based on deep learning algorithms"'),
+    ('2021/12', 'External Examiner @ FCUP: MSc Dissertation "3D Lung Computed Tomography Synthesis using Generative Adversarial Networks"'),
+    ('2021/09', 'External Examiner @ U.Minho: MSc Dissertation "Feasibility of using autoencoders for learning car interior background models"'),
+    ('2021/07', 'Examiner @ INESC TEC: Evaluation of 4 summer interships (SCI 2021) on computer vision and machine learning'),
+)
 
 if args.type == 'latex':
     out.section('section-jury-participation', f'Jury Participation')
-    out.table(table, None, ["str", "str", None, None, "str"], ["desc", "desc", None, None, "desc"])
+    out.description(items)
 
 ########################### EDUCATION & EMPLOYMENT ###########################
 
