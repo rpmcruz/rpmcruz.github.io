@@ -72,7 +72,7 @@ table = [
     ('10.1007/978-3-319-58838-4_1', 'ranking-for-class-imbalance'),
     ('10.1109/IJCNN.2016.7727469', 'ranking-for-class-imbalance'),
 ]
-my_categories = [  # for purposes of SJR Quantile Rank
+my_categories = frozenset((  # for purposes of SJR Quantile Rank
     'Applied Mathematics', 'Artificial Intelligence', 'Bioengineering',
     'Biomedical Engineering', 'Computational Mathematics',
     'Computer Science Applications', 'Computer Science (miscellaneous)',
@@ -80,21 +80,33 @@ my_categories = [  # for purposes of SJR Quantile Rank
     'Electrical and Electronic Engineering', 'Engineering (miscellaneous)',
     'Mathematics (miscellaneous)', 'Signal Processing',
     'Statistics and Probability', 'Statistics, Probability and Uncertainty',
-]
+))
 
 table = [papers.get_paper_info(*p, my_categories) for p in tqdm(table)]
 
-table = [
-    #{'Year': 2024, 'Paper': '==**[SUBMITTED]**== Weather and Meteorological Optical Range Classification for Autonomous Driving\nC. Pereira, J. Fernandes, **R. Cruz**, J. Pinto, J. Cardoso\n*IEEE Transactions on Intelligent Vehicles*', 'Topic': 'applications', 'Type': 'journal-article', 'Citations': 0, 'SJR Rank': 'Q1', 'CORE Rank': ''},
-    {'Year': 2024, 'Paper': '==**[SUBMITTED]**== A Case Study on Phishing Detection with a Machine Learning Net\nA. Bezerra, I. Pereira, M. Ângelo, D. Coelho, D. Oliveira, J. Costa, **R. Cruz**\n*Springer International Journal of Data Science and Analytics*', 'Topic': 'applications', 'Type': 'journal-article', 'Citations': 0, 'SJR Rank': 'Q2', 'CORE Rank': ''},
-    #{'Year': 2024, 'Paper': '==**[SUBMITTED]**== Spatial Resource-Efficiency using Partial Convolutions for Segmentation and Object Detection\n**R. Cruz**\n*Elsevier Pattern Recognition*', 'Topic': 'spatial-resource-efficiency', 'Type': 'journal-article', 'Citations': 0, 'SJR Rank': 'Q1', 'CORE Rank': ''},
-    {'Year': 2024, 'Paper': '==**[SUBMITTED]**== Learning Ordinality in Semantic Segmentation\nR. Cristino, **R. Cruz**, J.Cardoso\n*Elsevier Pattern Recognition*', 'Topic': 'ordinal-losses', 'Type': 'journal-article', 'Citations': 0, 'SJR Rank': 'Q1', 'CORE Rank': ''},
-    #{'Year': 2024, 'Paper': '==**[SUBMITTED]**== CNN Explanation Methods for Ordinal Regression Tasks\nJ. Barbero-Gómez, **R. Cruz**, J. Cardoso, P. Gutiérrez, C. Hervás-Martínez\n*Elsevier Pattern Recognition*', 'Topic': 'ordinal-losses', 'Type': 'journal-article', 'Citations': 0, 'SJR Rank': 'Q1', 'CORE Rank': ''},
-    {'Year': 2024, 'Paper': '==**[SUBMITTED]**== Unimodal Distributions for Ordinal Regression\nJ. Cardoso, **R. Cruz**, T. Albuquerque\n*IEEE Transactions on Artificial Intelligence*', 'Topic': 'ordinal-losses', 'Type': 'journal-article', 'Citations': 0, 'SJR Rank': 'Q1', 'CORE Rank': ''},
-] + table
+manual_papers = [
+    {'Year': 2024, 'Paper': '==**[SUBMITTED]**== Weather and Meteorological Optical Range Classification for Autonomous Driving\nC. Pereira, **R. Cruz**, J. Fernandes, J. Pinto, J. Cardoso\n*IEEE Transactions on Intelligent Vehicles*', 'Topic': 'applications', 'Type': 'journal-article'},
+    {'Year': 2024, 'Paper': '==**[SUBMITTED]**== A Case Study on Phishing Detection with a Machine Learning Net\nA. Bezerra, I. Pereira, M. Ângelo, D. Coelho, D. Oliveira, J. Costa, **R. Cruz**\n*Springer International Journal of Data Science and Analytics*', 'Topic': 'applications', 'Type': 'journal-article'},
+    {'Year': 2024, 'Paper': '==**[SUBMITTED]**== Learning Ordinality in Semantic Segmentation\nR. Cristino, **R. Cruz**, J.Cardoso\n*Elsevier Pattern Recognition*', 'Topic': 'ordinal-losses', 'Type': 'journal-article'},
+    {'Year': 2024, 'Paper': '==**[SUBMITTED]**== Unimodal Distributions for Ordinal Regression\nJ. Cardoso, **R. Cruz**, T. Albuquerque\n*IEEE Transactions on Artificial Intelligence*', 'Topic': 'ordinal-losses', 'Type': 'journal-article'},
+    # rejected :-(
+    #{'Year': 2024, 'Paper': '==**[SUBMITTED]**== Spatial Resource-Efficiency using Partial Convolutions for Segmentation and Object Detection\n**R. Cruz**\n*Elsevier Pattern Recognition*', 'Topic': 'spatial-resource-efficiency', 'Type': 'journal-article'},
+    #{'Year': 2024, 'Paper': '==**[SUBMITTED]**== CNN Explanation Methods for Ordinal Regression Tasks\nJ. Barbero-Gómez, **R. Cruz**, J. Cardoso, P. Gutiérrez, C. Hervás-Martínez\n*Elsevier Pattern Recognition*', 'Topic': 'ordinal-losses', 'Type': 'journal-article'},
+]
+for paper in manual_papers:
+    venue = ' '.join(paper['Paper'].split('\n')[-1][:-1].split()[1:])
+    paper['Citations'] = ''
+    paper['IF'] = paper['SJR Rank'] = paper['CORE Rank'] = ''
+    if paper['Type'] == 'journal-article':
+        paper['IF'] = papers.get_impact_factor(venue)
+    if paper['Type'] in ('journal-article', 'book-chapter'):
+        paper['SJR Rank'] = papers.get_sjr_rank(venue, my_categories)
+    else:
+        paper['CORE Rank'] = papers.get_core_rank(venue)
 
 h_index = sum(i+1 <= paper['Citations'] for i, paper in enumerate(sorted(table, key=lambda x: x['Citations'], reverse=True)))
 total_citations = sum(x['Citations'] for x in table)
+table = manual_papers + table
 
 if args.type == 'latex':
     out.section('section-scientific-impact', 'Impact and Citations')
@@ -105,21 +117,24 @@ out.itemize([
     'Google Scholar h-index: **7** (2024-02)',
     'Best oral paper: [2021 RECPAD conference](https://noticias.up.pt/investigadores-da-u-porto-dominam-premios-do-recpad-2021/)',
 ])
-out.text(f'The following citation counts come from Crossref. The SJR rank quantiles are of subject categories related to machine learning. The CORE rank is of the last year that is available for that conference. (last update: {datetime.now().strftime("%Y-%m-%d")})')
+out.text(f"Sources (last update: {datetime.now().strftime('%Y-%m-%d')}): • Citation counts are from Crossref. • Impact Factor (IF) comes from each journal's webpage. • SJR rank quantiles are from Scimago and relate to the subject category closest to machine learning (not necessarily the best quantile). • CORE rank is from ICORE for whatever last year is available for that conference.")
 
 if args.type == 'latex':
     # split papers into types and reduce columns
     for title, type in [('Journal', 'journal-article'), ('Book Chapter', 'book-chapter'), ('Proceedings', 'proceedings-article')]:
         out.section('section-publications', f'{title} Publications')
         keys = ['Year', 'Paper', 'Citations']
+        if type == 'journal-article':
+            keys.append('IF')
         if type in ('journal-article', 'book-chapter'):
             keys.append('SJR Rank')
         else:
             keys.append('CORE Rank')
+        size = '20em' if type == 'journal-article' else '22.5em'
         subtable = [{k: p[k] for k in keys} for p in table if p['Type'] == type]
-        out.table(subtable, [], [], [], (None, '25em', None, None))
+        out.table(subtable, [], [{}, {'size': size}] + [{}]*(len(keys)-2))
 else:  # html
-    out.table(table, ['Topic', 'Type'], ["int", "str", "str", "str", "int", "str", "str"], ["desc", None, None, None, "desc", "asc", "asc"])
+    out.table(table, ['Topic', 'Type'], [{'type': 'numeric', 'sort': 'desc'}, {}, {}, {}, {'type': 'numeric', 'sort': 'desc'}, {'type': 'numeric', 'sort': 'desc'}, {'type': 'alpha', 'sort': 'asc'}, {'type': 'alpha', 'sort': 'asc'}])
 
 ################################ SUPERVISIONS ################################
 
@@ -148,13 +163,13 @@ if args.type == 'latex':
     # split supervisions into types and reduce columns
     for degree in ['MSc', 'BSc']:
         out.section('section-supervisions', f'{degree} Supervisions')
-        type = 'Dissertation' if degree == 'MSc' else 'Project'
-        rename_keys = {'Year': 'Year', 'Student': 'Student', 'Dissertation/Project': type}
+        name = 'Dissertation' if degree == 'MSc' else 'Project'
+        rename_keys = {'Year': 'Year', 'Student': 'Student', 'Dissertation/Project': name}
         subtable = [{rename_keys[k]: row[k] for k in rename_keys} for row in table if row['Degree'] == degree]
-        out.table(subtable, [], [], [], (None, '10em', '25em'))
+        out.table(subtable, [], [{}, {'size': '10em'}, {'size': '25em'}])
 else:  # html
     out.section('section-supervisions', 'Supervisions')
-    out.table(table, ['Degree'], ["str", "str", None, None, None, "str"], ["desc", "desc", None, None, None, "asc"])
+    out.table(table, ['Degree'], [{'type': 'alpha', 'sort': 'desc'}, {'type': 'alpha', 'sort': 'desc'}, {}, {}, {}, {'type': 'alpha', 'sort': 'asc'}])
 
 ############################# JURY PARTICIPATION #############################
 

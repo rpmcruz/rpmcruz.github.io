@@ -65,14 +65,14 @@ class Html:
             print(f'<li>{self.markdown(text)}</li>')
         print('</ul>')
 
-    def table(self, rows, filters, columns_type, columns_sort, columns_size=None):
+    def table(self, rows, filters, columns_props):
         print(f'<div id="filters{self.tables}"></div>')
         print('</div>')  # temporarily disable container
         print(f'<div id="table{self.tables}"></div>')
         print('<div class="container">')  # re-enable container
         print('<script>')
         rows = [{key: self.markdown(str(value)) for key, value in row.items()} for row in rows]
-        print(f'table = new Table("table{self.tables}", ' + json.dumps(list(rows[0].keys())) + ', ' + json.dumps(columns_type) + ', ' + json.dumps(columns_sort) + ', ' + json.dumps(rows) + ');')
+        print(f'table = new Table("table{self.tables}", ' + json.dumps(list(rows[0].keys())) + ', ' + json.dumps([p.get('type') for p in columns_props]) + ', ' + json.dumps([p.get('sort') for p in columns_props]) + ', ' + json.dumps(rows) + ');')
         if filters != None:
             filters = {f: list(sorted(set(r[f] for r in rows))) for f in filters}
             print(f'new Filters(table, "filters{self.tables}", ' + json.dumps(filters) + ');')
@@ -149,8 +149,8 @@ class Latex:
             print(f'\\item {self.markdown(text)}')
         print(r'\end{itemize}')
 
-    def table(self, rows, filters, columns_type, columns_sort, columns_size):
-        sizes = '|'.join(f'p{{{size}}}' if size else 'l' for size in columns_size)
+    def table(self, rows, filters, columns_props):
+        sizes = '|'.join(f'p{{{p["size"]}}}' if 'size' in p else 'l' for p in columns_props)
         print(r'{\small\begin{longtable}{|' + sizes + '|}')
         print(r'\hline')
         print('&'.join((f'\\bf {h}' for h in rows[0])) + r'\\')

@@ -53,10 +53,12 @@ class Table {
     let rows = this.data;
     if(this.sort_field)
       rows = this.data.slice().sort(function(row1, row2) {
-        let a = this.sort_type == 'int' ? parseInt(row1[this.sort_field]) : row1[this.sort_field];
-        let b = this.sort_type == 'int' ? parseInt(row2[this.sort_field]) : row2[this.sort_field];
-        if(a === '' || b === '')
-            return a === '' ? 1 : -1;
+        if(row1[this.sort_field] == '') return 1;
+        if(row2[this.sort_field] == '') return -1;
+        if(row1[this.sort_field] == 'n/a') return 1;
+        if(row2[this.sort_field] == 'n/a') return -1;
+        let a = this.sort_type == 'numeric' ? parseFloat(row1[this.sort_field]) : row1[this.sort_field];
+        let b = this.sort_type == 'numeric' ? parseFloat(row2[this.sort_field]) : row2[this.sort_field];
         if(a < b)
           return this.sort_order == 'asc' ? -1 : 1;
         if(a > b)
