@@ -85,7 +85,7 @@ my_categories = frozenset((  # for purposes of SJR Quantile Rank
 table = [papers.get_paper_info(*p, my_categories) for p in tqdm(table)]
 
 manual_papers = [
-    {'Year': 2024, 'Paper': '==**[SUBMITTED]**== Weather and Meteorological Optical Range Classification for Autonomous Driving\nC. Pereira, **R. Cruz**, J. Fernandes, J. Pinto, J. Cardoso\n*IEEE Transactions on Intelligent Vehicles*', 'Topic': 'applications', 'Type': 'journal-article'},
+    {'Year': 2024, 'Paper': '==**[ACCEPTED]**== Weather and Meteorological Optical Range Classification for Autonomous Driving\nC. Pereira, **R. Cruz**, J. Fernandes, J. Pinto, J. Cardoso\n*IEEE Transactions on Intelligent Vehicles*', 'Topic': 'applications', 'Type': 'journal-article'},
     {'Year': 2024, 'Paper': '==**[SUBMITTED]**== A Case Study on Phishing Detection with a Machine Learning Net\nA. Bezerra, I. Pereira, M. Ângelo, D. Coelho, D. Oliveira, J. Costa, **R. Cruz**\n*Springer International Journal of Data Science and Analytics*', 'Topic': 'applications', 'Type': 'journal-article'},
     {'Year': 2024, 'Paper': '==**[SUBMITTED]**== Learning Ordinality in Semantic Segmentation\nR. Cristino, **R. Cruz**, J.Cardoso\n*Elsevier Pattern Recognition*', 'Topic': 'ordinal-losses', 'Type': 'journal-article'},
     {'Year': 2024, 'Paper': '==**[SUBMITTED]**== Unimodal Distributions for Ordinal Regression\nJ. Cardoso, **R. Cruz**, T. Albuquerque\n*IEEE Transactions on Artificial Intelligence*', 'Topic': 'ordinal-losses', 'Type': 'journal-article'},
