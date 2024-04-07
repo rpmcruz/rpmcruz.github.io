@@ -10,16 +10,12 @@ import requests
 from lxml import etree
 from crossref.restful import Works
 
-def conference_acronym(conference):
-    known_conferences = {'IJCNN': None, 'Pattern Recognition and Image Analysis': 'IBPRIA',
-        'Advances in Computational Intelligence': 'IWANN', 'PRNI': None, 'EMBC': None,
-        'ICANN': None, 'ICPR': None, 'ICMV': None,
-        'Progress in Pattern Recognition, Image Analysis, Computer Vision, and Applications': 'CIARP',
-    }
-    for name, acronym in known_conferences.items():
-        if name in conference:
-            return acronym if acronym else name
-    raise Exception(f'Conference "{conference}" unknown.')
+def conference_from_book(conference):
+    if conference == 'Advances in Computational Intelligence':
+        return 'International Work-Conference on Artificial Neural Networks', 'IWANN'
+    if conference == 'Pattern Recognition and Image Analysis':
+        return 'Iberian Conference on Pattern Recognition and Image Analysis', 'IbPRIA'
+    raise Exception(f'Book "{conference}" unknown.')
 
 @functools.cache
 def get_core_rank(acronym):
@@ -45,7 +41,7 @@ def get_impact_factor(journal_name):
     name2id = {
         'Lecture Notes in Computer Science': None,
         'Pattern Analysis and Applications': ('springer', 10044),
-        'Computers & Electrical Engineering': ('elsevier', 'computers-and-electrical-engineering'),
+        'Computers &amp; Electrical Engineering': ('elsevier', 'computers-and-electrical-engineering'),
         'PeerJ Computer Science': ('peerj', 'computer-science'),
         'Mathematics': ('mdpi', 'mathematics'), 'Sensors': ('mdpi', 'sensors'),
         'Intelligent Systems with Applications': None,
@@ -93,7 +89,7 @@ def get_sjr_rank(journal_name, my_categories):
     name2id = {
         'Lecture Notes in Computer Science': 25674,
         'Pattern Analysis and Applications': 24822,
-        'Computers & Electrical Engineering': 18159,
+        'Computers &amp; Electrical Engineering': 18159,
         'PeerJ Computer Science': 21100830173,
         'Mathematics': 21100830702, 'Sensors': 130124,
         'Intelligent Systems with Applications': 21101051831,
@@ -120,17 +116,33 @@ def get_sjr_rank(journal_name, my_categories):
     return min(quartile for category, year, quartile in zip(categories, years, quartiles) if int(year) == max_year and category in my_categories)
 
 def get_paper_info(doi, topic, my_categories):
-    info = Works().doi(doi)
-    authors = ', '.join('**R. Cruz**' if author.get('ORCID', '') == 'http://orcid.org/0000-0002-5189-6228' or author['given'][0] + author['family'] == 'RCruz' else f'{author["given"][0]}. {author["family"]}' for author in info['author'])
-    where = info['publisher'] + ' ' + ' - '.join(info['container-title'])
+    paper = Works().doi(doi)
+    authors = ', '.join('**R. Cruz**' if author.get('ORCID', '') == 'http://orcid.org/0000-0002-5189-6228' or author['given'][0] + author['family'] == 'RCruz' else f'{author["given"][0]}. {author["family"]}' for author in paper['author'])
+    if paper['type'] == 'journal-article':
+        where = f"{' - '.join(paper['container-title'])}, {paper['publisher']}"
+    elif paper['type'] == 'proceedings-article':
+        if 'event' in paper:
+            conference_acronym = paper['event']['name']
+            where = f"{paper['event']['name']}, {paper['publisher']}"
+    else:
+        # my book chapters are all in conferences. fetch the conference name, not
+        # the book name
+        if 'assertion' in paper:  # some book chapters have conference info here
+            conference = {i['name']: i['value'] for i in paper['assertion']}
+            where = f"{conference['conference_name']} {conference['conference_year']} ({conference['conference_acronym']}), {paper['publisher']}"
+            conference_acronym = conference['conference_acronym']
+        else:
+            name, conference_acronym = conference_from_book(paper['container-title'][0])
+            year = paper['published']['date-parts'][0][0]
+            where = f"{name} {year} ({conference_acronym}), {paper['publisher']}"
     where = where.replace('&amp;', '&')
     return {
-        'Year': info['published']['date-parts'][0][0],
-        'Paper': '[' + info['title'][0] + '](' + info['URL'] + ')\n' + authors + '\n*' + where + '*',
+        'Year': paper['published']['date-parts'][0][0],
+        'Paper': '[' + paper['title'][0] + '](' + paper['URL'] + ')\n' + authors + '\n*' + where + '*',
         'Topic': topic,
-        'Type': info['type'],
-        'Citations': info['is-referenced-by-count'],
-        'IF': get_impact_factor(where) if info['type'] == 'journal-article' else '',
-        'SJR Rank': get_sjr_rank(where, my_categories) if info['type'] != 'proceedings-article' else '',
-        'CORE Rank': get_core_rank(conference_acronym(where)) if info['type'] != 'journal-article' else '',
+        'Type': 'journal' if paper['type'] == 'journal-article' else 'conference',
+        'Citations': paper['is-referenced-by-count'],
+        'IF': get_impact_factor(' '.join(paper['container-title'])) if paper['type'] == 'journal-article' else '',
+        'SJR Rank': get_sjr_rank(' '.join(paper['container-title']), my_categories) if paper['type'] != 'proceedings-article' else '',
+        'CORE Rank': get_core_rank(conference_acronym) if paper['type'] != 'journal-article' else '',
     }

@@ -83,23 +83,25 @@ my_categories = frozenset((  # for purposes of SJR Quantile Rank
 ))
 
 table = [papers.get_paper_info(*p, my_categories) for p in tqdm(table)]
+count = {}
+for p in table:
+    count[p['Type']] = count.get(p['Type'], 0)+1
 
 manual_papers = [
-    {'Year': 2024, 'Paper': '==**[ACCEPTED]**== Weather and Meteorological Optical Range Classification for Autonomous Driving\nC. Pereira, **R. Cruz**, J. Fernandes, J. Pinto, J. Cardoso\n*IEEE Transactions on Intelligent Vehicles*', 'Topic': 'applications', 'Type': 'journal-article'},
-    {'Year': 2024, 'Paper': '==**[SUBMITTED]**== A Case Study on Phishing Detection with a Machine Learning Net\nA. Bezerra, I. Pereira, M. Ângelo, D. Coelho, D. Oliveira, J. Costa, **R. Cruz**\n*Springer International Journal of Data Science and Analytics*', 'Topic': 'applications', 'Type': 'journal-article'},
-    {'Year': 2024, 'Paper': '==**[SUBMITTED]**== Learning Ordinality in Semantic Segmentation\nR. Cristino, **R. Cruz**, J.Cardoso\n*Elsevier Pattern Recognition*', 'Topic': 'ordinal-losses', 'Type': 'journal-article'},
-    {'Year': 2024, 'Paper': '==**[SUBMITTED]**== Unimodal Distributions for Ordinal Regression\nJ. Cardoso, **R. Cruz**, T. Albuquerque\n*IEEE Transactions on Artificial Intelligence*', 'Topic': 'ordinal-losses', 'Type': 'journal-article'},
+    {'Year': 2024, 'Paper': '==**[SUBMITTED]**== A Case Study on Phishing Detection with a Machine Learning Net\nA. Bezerra, I. Pereira, M. Ângelo, D. Coelho, D. Oliveira, J. Costa, **R. Cruz**\n*International Journal of Data Science and Analytics, Springer*', 'Topic': 'applications', 'Type': 'journal'},
+    {'Year': 2024, 'Paper': '==**[SUBMITTED]**== Learning Ordinality in Semantic Segmentation\nR. Cristino, **R. Cruz**, J.Cardoso\n*Pattern Recognition, Elsevier*', 'Topic': 'ordinal-losses', 'Type': 'journal'},
+    {'Year': 2024, 'Paper': '==**[SUBMITTED]**== Unimodal Distributions for Ordinal Regression\nJ. Cardoso, **R. Cruz**, T. Albuquerque\n*IEEE Transactions on Artificial Intelligence, IEEE*', 'Topic': 'ordinal-losses', 'Type': 'journal'},
     # rejected :-(
-    #{'Year': 2024, 'Paper': '==**[SUBMITTED]**== Spatial Resource-Efficiency using Partial Convolutions for Segmentation and Object Detection\n**R. Cruz**\n*Elsevier Pattern Recognition*', 'Topic': 'spatial-resource-efficiency', 'Type': 'journal-article'},
-    #{'Year': 2024, 'Paper': '==**[SUBMITTED]**== CNN Explanation Methods for Ordinal Regression Tasks\nJ. Barbero-Gómez, **R. Cruz**, J. Cardoso, P. Gutiérrez, C. Hervás-Martínez\n*Elsevier Pattern Recognition*', 'Topic': 'ordinal-losses', 'Type': 'journal-article'},
+    #{'Year': 2024, 'Paper': '==**[SUBMITTED]**== Spatial Resource-Efficiency using Partial Convolutions for Segmentation and Object Detection\n**R. Cruz**\n*Pattern Recognition, Elsevier*', 'Topic': 'spatial-resource-efficiency', 'Type': 'journal'},
+    #{'Year': 2024, 'Paper': '==**[SUBMITTED]**== CNN Explanation Methods for Ordinal Regression Tasks\nJ. Barbero-Gómez, **R. Cruz**, J. Cardoso, P. Gutiérrez, C. Hervás-Martínez\n*Pattern Recognition, Elsevier*', 'Topic': 'ordinal-losses', 'Type': 'journal'},
+    {'Year': 2024, 'Paper': '==**[ACCEPTED]**== Weather and Meteorological Optical Range Classification for Autonomous Driving\nC. Pereira, **R. Cruz**, J. Fernandes, J. Pinto, J. Cardoso\n*IEEE Transactions on Intelligent Vehicles, IEEE*', 'Topic': 'applications', 'Type': 'journal'},
 ]
 for paper in manual_papers:
-    venue = ' '.join(paper['Paper'].split('\n')[-1][:-1].split()[1:])
+    venue = ' '.join(paper['Paper'].split('\n')[-1][:-1].split()[:-1])[:-1]
     paper['Citations'] = ''
     paper['IF'] = paper['SJR Rank'] = paper['CORE Rank'] = ''
-    if paper['Type'] == 'journal-article':
+    if paper['Type'] == 'journal':
         paper['IF'] = papers.get_impact_factor(venue)
-    if paper['Type'] in ('journal-article', 'book-chapter'):
         paper['SJR Rank'] = papers.get_sjr_rank(venue, my_categories)
     else:
         paper['CORE Rank'] = papers.get_core_rank(venue)
@@ -121,18 +123,18 @@ out.text(f"Sources (last update: {datetime.now().strftime('%Y-%m-%d')}): • Cit
 
 if args.type == 'latex':
     # split papers into types and reduce columns
-    for title, type in [('Journal', 'journal-article'), ('Book Chapter', 'book-chapter'), ('Proceedings', 'proceedings-article')]:
-        out.section('section-publications', f'{title} Publications')
-        keys = ['Year', 'Paper', 'Citations']
-        if type == 'journal-article':
+    for type in ['journal', 'conference']:
+        out.section('section-publications', f'{type.title()} Publications')
+        keys = ['Year', 'Paper']
+        if type == 'journal':
             keys.append('IF')
-        if type in ('journal-article', 'book-chapter'):
             keys.append('SJR Rank')
         else:
             keys.append('CORE Rank')
-        size = '20em' if type == 'journal-article' else '22.5em'
+        size = '26em' if type == 'journal' else '26em'
         subtable = [{k: p[k] for k in keys} for p in table if p['Type'] == type]
         out.table(subtable, [], [{}, {'size': size}] + [{}]*(len(keys)-2))
+        out.text(f'Total {count[type]} {type} publications.' + (' (National conferences are omitted.)' if type == 'conference' else ''))
 else:  # html
     out.table(table, ['Topic', 'Type'], [{'type': 'numeric', 'sort': 'desc'}, {}, {}, {}, {'type': 'numeric', 'sort': 'desc'}, {'type': 'numeric', 'sort': 'desc'}, {'type': 'alpha', 'sort': 'asc'}, {'type': 'alpha', 'sort': 'asc'}])
 
@@ -166,7 +168,7 @@ if args.type == 'latex':
         name = 'Dissertation' if degree == 'MSc' else 'Project'
         rename_keys = {'Year': 'Year', 'Student': 'Student', 'Dissertation/Project': name}
         subtable = [{rename_keys[k]: row[k] for k in rename_keys} for row in table if row['Degree'] == degree]
-        out.table(subtable, [], [{}, {'size': '10em'}, {'size': '25em'}])
+        out.table(subtable, [], [{}, {'size': '9em'}, {'size': '23em'}])
 else:  # html
     out.section('section-supervisions', 'Supervisions')
     out.table(table, ['Degree'], [{'type': 'alpha', 'sort': 'desc'}, {'type': 'alpha', 'sort': 'desc'}, {}, {}, {}, {'type': 'alpha', 'sort': 'asc'}])
