@@ -17,6 +17,13 @@ def conference_from_book(conference):
         return 'Iberian Conference on Pattern Recognition and Image Analysis', 'IbPRIA'
     raise Exception(f'Book "{conference}" unknown.')
 
+def get_scholar_hindex():
+    headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36'}
+    response = requests.get('https://scholar.google.pt/citations?user=pSFY_gQAAAAJ', headers=headers)
+    response.raise_for_status()
+    tree = etree.HTML(response.content)
+    return int(tree.xpath('//table/tbody/tr[2]/td[2]/text()')[0])
+
 @functools.cache
 def get_core_rank(acronym):
     response = requests.get(f'http://portal.core.edu.au/conf-ranks/?search={acronym}&by=acronym&source=all')

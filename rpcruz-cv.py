@@ -4,7 +4,7 @@ parser.add_argument('type', choices=['html', 'latex'])
 args = parser.parse_args()
 
 from tqdm import tqdm
-from datetime import datetime
+import datetime
 import sys
 import papers, out
 
@@ -48,7 +48,8 @@ if args.type == 'latex':
 
 #################################### PAPERS ####################################
 
-table = [
+table = [  # listed in publishing order
+    ('10.1109/TIV.2024.3387113', 'applications'),
     ('10.1007/978-3-031-49018-7_40', 'applications'),
     ('10.1007/978-3-031-49018-7_39', 'others'),
     ('10.1007/978-3-031-49018-7_38', 'human-in-the-loop'),
@@ -94,7 +95,6 @@ manual_papers = [
     # rejected :-(
     #{'Year': 2024, 'Paper': '==**[SUBMITTED]**== Spatial Resource-Efficiency using Partial Convolutions for Segmentation and Object Detection\n**R. Cruz**\n*Pattern Recognition, Elsevier*', 'Topic': 'spatial-resource-efficiency', 'Type': 'journal'},
     #{'Year': 2024, 'Paper': '==**[SUBMITTED]**== CNN Explanation Methods for Ordinal Regression Tasks\nJ. Barbero-Gómez, **R. Cruz**, J. Cardoso, P. Gutiérrez, C. Hervás-Martínez\n*Pattern Recognition, Elsevier*', 'Topic': 'ordinal-losses', 'Type': 'journal'},
-    {'Year': 2024, 'Paper': '==**[ACCEPTED]**== Weather and Meteorological Optical Range Classification for Autonomous Driving\nC. Pereira, **R. Cruz**, J. Fernandes, J. Pinto, J. Cardoso\n*IEEE Transactions on Intelligent Vehicles, IEEE*', 'Topic': 'applications', 'Type': 'journal'},
 ]
 for paper in manual_papers:
     venue = ' '.join(paper['Paper'].split('\n')[-1][:-1].split()[:-1])[:-1]
@@ -109,17 +109,18 @@ for paper in manual_papers:
 h_index = sum(i+1 <= paper['Citations'] for i, paper in enumerate(sorted(table, key=lambda x: x['Citations'], reverse=True)))
 total_citations = sum(x['Citations'] for x in table)
 table = manual_papers + table
+google_scholar_hindex = papers.get_scholar_hindex()
 
 if args.type == 'latex':
     out.section('section-scientific-impact', 'Impact and Citations')
 else:
     out.section('section-publications', 'Publications')
 out.itemize([
-    f'Crossref h-index: **{h_index}** with **{total_citations}** total citations ({datetime.now().strftime("%Y-%m-%d")})',
-    'Google Scholar h-index: **7** (2024-02)',
+    f'Google Scholar h-index: **{google_scholar_hindex}** ({datetime.datetime.now().strftime("%Y-%m-%d")})',
+    f'Crossref h-index: **{h_index}** with **{total_citations}** total citations ({datetime.datetime.now().strftime("%Y-%m-%d")})',
     'Best oral paper: [2021 RECPAD conference](https://noticias.up.pt/investigadores-da-u-porto-dominam-premios-do-recpad-2021/)',
 ])
-out.text(f"Sources (last update: {datetime.now().strftime('%Y-%m-%d')}): • Citation counts are from Crossref. • Impact Factor (IF) comes from each journal's webpage. • SJR rank quantiles are from Scimago and relate to the subject category closest to machine learning (not necessarily the best quantile). • CORE rank is from ICORE for whatever last year is available for that conference.")
+out.text(f"Sources (last update: {datetime.datetime.now().strftime('%Y-%m-%d')}): • Citation counts are from Crossref. • Impact Factor (IF) comes from each journal's webpage. • SJR rank quantiles are from Scimago and relate to the subject category closest to machine learning (not necessarily the best quantile). • CORE rank is from ICORE for whatever last year is available for that conference.")
 
 if args.type == 'latex':
     # split papers into types and reduce columns
@@ -215,5 +216,5 @@ out.description([
 ##################################### END #####################################
 
 if args.type == 'html':
-    out.text(f'Last update: {datetime.now().strftime("%Y-%m-%d")}')
+    out.text(f'Last update: {datetime.datetime.now().strftime("%Y-%m-%d")}')
 out.end()
