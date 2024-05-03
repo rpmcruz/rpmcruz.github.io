@@ -30,7 +30,10 @@ def get_core_rank(acronym):
     response.raise_for_status()
     tree = etree.HTML(response.content)
     rank = tree.xpath('//table//tr[2]/td[4]/text()')
-    return rank[0].strip() if len(rank) else ''
+    rank = rank[0].strip() if len(rank) else ''
+    if len(rank) == 0:
+        print(f'Warning: could not find CORE rank for "{acronym}"', file=sys.stderr)
+    return rank
 
 def get_id(journal_name, name2id):
     for name, id in name2id.items():
@@ -130,6 +133,7 @@ def get_paper_info(doi, topic, my_categories):
     elif paper['type'] == 'proceedings-article':
         if 'event' in paper:
             conference_acronym = paper['event']['name']
+            conference_acronym = conference_acronym[conference_acronym.rfind('(')+1:conference_acronym.rfind(')')].split()[0]
             where = f"{paper['event']['name']}, {paper['publisher']}"
     else:
         # my book chapters are all in conferences. fetch the conference name, not
