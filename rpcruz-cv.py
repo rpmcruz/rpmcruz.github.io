@@ -73,7 +73,7 @@ table = [  # listed in publishing order
     ('10.1007/978-3-319-58838-4_1', 'ranking-for-class-imbalance'),
     ('10.1109/IJCNN.2016.7727469', 'ranking-for-class-imbalance'),
 ]
-my_categories = frozenset((  # for purposes of SJR Quantile Rank
+my_categories = frozenset((  # for purposes of SJR Quartile Rank
     'Applied Mathematics', 'Artificial Intelligence', 'Bioengineering',
     'Biomedical Engineering', 'Computational Mathematics',
     'Computer Science Applications', 'Computer Science (miscellaneous)',
@@ -119,7 +119,7 @@ out.itemize([
     f'Crossref h-index: **{h_index}** with **{total_citations}** total citations ({datetime.datetime.now().strftime("%Y-%m-%d")})',
     'Best oral paper: [2021 RECPAD conference](https://noticias.up.pt/investigadores-da-u-porto-dominam-premios-do-recpad-2021/)',
 ])
-out.text(f"Sources (last update: {datetime.datetime.now().strftime('%Y-%m-%d')}): • Citation counts are from Crossref. • Impact Factor (IF) comes from each journal's webpage. • SJR rank quantiles are from Scimago and relate to the subject category closest to machine learning (not necessarily the best quantile). • CORE rank is from ICORE for whatever last year is available for that conference.")
+out.text(f"Sources (last update: {datetime.datetime.now().strftime('%Y-%m-%d')}): • Citation counts are from Crossref. • Impact Factor (IF) comes from each journal's webpage. • SJR rank quartiles are from Scimago and relate to the subject category closest to machine learning (not necessarily the best quartile). • CORE rank is from ICORE for whatever last year is available for that conference.")
 
 columns = ['Year', 'Paper', 'Topic', 'Type', 'Citations', 'IF', 'SJR Rank', 'CORE Rank']
 if args.type == 'latex':
