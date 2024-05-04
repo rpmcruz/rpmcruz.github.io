@@ -86,28 +86,27 @@ my_categories = frozenset((  # for purposes of SJR Quantile Rank
 table = [papers.get_paper_info(*p, my_categories) for p in tqdm(table)]
 count = {}
 for p in table:
-    count[p['Type']] = count.get(p['Type'], 0)+1
+    count[p[3]] = count.get(p[3], 0)+1
 
 manual_papers = [
-    {'Year': 2024, 'Paper': '==**[SUBMITTED]**== A Case Study on Phishing Detection with a Machine Learning Net\nA. Bezerra, I. Pereira, M. Ângelo, D. Coelho, D. Oliveira, J. Costa, **R. Cruz**\n*International Journal of Data Science and Analytics, Springer*', 'Topic': 'applications', 'Type': 'journal'},
-    {'Year': 2024, 'Paper': '==**[SUBMITTED]**== Learning Ordinality in Semantic Segmentation\nR. Cristino, **R. Cruz**, J.Cardoso\n*Pattern Recognition, Elsevier*', 'Topic': 'ordinal-losses', 'Type': 'journal'},
-    {'Year': 2024, 'Paper': '==**[SUBMITTED]**== Unimodal Distributions for Ordinal Regression\nJ. Cardoso, **R. Cruz**, T. Albuquerque\n*IEEE Transactions on Artificial Intelligence, IEEE*', 'Topic': 'ordinal-losses', 'Type': 'journal'},
+    [2024, '==**[SUBMITTED]**== A Case Study on Phishing Detection with a Machine Learning Net\nA. Bezerra, I. Pereira, M. Ângelo, D. Coelho, D. Oliveira, J. Costa, **R. Cruz**\n*International Journal of Data Science and Analytics, Springer*', 'applications', 'journal'],
+    [2024, '==**[SUBMITTED]**== Learning Ordinality in Semantic Segmentation\nR. Cristino, **R. Cruz**, J.Cardoso\n*Pattern Recognition, Elsevier*', 'ordinal-losses', 'journal'],
+    [2024, '==**[SUBMITTED]**== Unimodal Distributions for Ordinal Regression\nJ. Cardoso, **R. Cruz**, T. Albuquerque\n*IEEE Transactions on Artificial Intelligence, IEEE*', 'ordinal-losses', 'journal'],
     # rejected :-(
-    #{'Year': 2024, 'Paper': '==**[SUBMITTED]**== Spatial Resource-Efficiency using Partial Convolutions for Segmentation and Object Detection\n**R. Cruz**\n*Pattern Recognition, Elsevier*', 'Topic': 'spatial-resource-efficiency', 'Type': 'journal'},
-    #{'Year': 2024, 'Paper': '==**[SUBMITTED]**== CNN Explanation Methods for Ordinal Regression Tasks\nJ. Barbero-Gómez, **R. Cruz**, J. Cardoso, P. Gutiérrez, C. Hervás-Martínez\n*Pattern Recognition, Elsevier*', 'Topic': 'ordinal-losses', 'Type': 'journal'},
+    #[2024, '==**[SUBMITTED]**== Spatial Resource-Efficiency using Partial Convolutions for Segmentation and Object Detection\n**R. Cruz**\n*Pattern Recognition, Elsevier*', 'spatial-resource-efficiency', 'journal'],
+    #[2024, '==**[SUBMITTED]**== CNN Explanation Methods for Ordinal Regression Tasks\nJ. Barbero-Gómez, **R. Cruz**, J. Cardoso, P. Gutiérrez, C. Hervás-Martínez\n*Pattern Recognition, Elsevier*', 'ordinal-losses', 'journal'],
 ]
 for paper in manual_papers:
-    venue = ' '.join(paper['Paper'].split('\n')[-1][:-1].split()[:-1])[:-1]
-    paper['Citations'] = ''
-    paper['IF'] = paper['SJR Rank'] = paper['CORE Rank'] = ''
-    if paper['Type'] == 'journal':
-        paper['IF'] = papers.get_impact_factor(venue)
-        paper['SJR Rank'] = papers.get_sjr_rank(venue, my_categories)
+    venue = ' '.join(paper[1].split('\n')[-1][:-1].split()[:-1])[:-1]
+    paper += ['']*4
+    if paper[3] == 'journal':
+        paper[5] = papers.get_impact_factor(venue)
+        paper[6] = papers.get_sjr_rank(venue, my_categories)
     else:
-        paper['CORE Rank'] = papers.get_core_rank(venue)
+        paper[7] = papers.get_core_rank(venue)
 
-h_index = sum(i+1 <= paper['Citations'] for i, paper in enumerate(sorted(table, key=lambda x: x['Citations'], reverse=True)))
-total_citations = sum(x['Citations'] for x in table)
+h_index = sum(i+1 <= paper[4] for i, paper in enumerate(sorted(table, key=lambda x: x[4], reverse=True)))
+total_citations = sum(x[4] for x in table)
 table = manual_papers + table
 google_scholar_hindex = papers.get_scholar_hindex()
 
@@ -122,57 +121,55 @@ out.itemize([
 ])
 out.text(f"Sources (last update: {datetime.datetime.now().strftime('%Y-%m-%d')}): • Citation counts are from Crossref. • Impact Factor (IF) comes from each journal's webpage. • SJR rank quantiles are from Scimago and relate to the subject category closest to machine learning (not necessarily the best quantile). • CORE rank is from ICORE for whatever last year is available for that conference.")
 
+columns = ['Year', 'Paper', 'Topic', 'Type', 'Citations', 'IF', 'SJR Rank', 'CORE Rank']
 if args.type == 'latex':
     # split papers into types and reduce columns
     for type in ['journal', 'conference']:
         out.section('section-publications', f'{type.title()} Publications')
-        keys = ['Year', 'Paper']
-        if type == 'journal':
-            keys.append('IF')
-            keys.append('SJR Rank')
-        else:
-            keys.append('CORE Rank')
-        size = '26em' if type == 'journal' else '26em'
-        subtable = [{k: p[k] for k in keys} for p in table if p['Type'] == type]
-        out.table(subtable, [], [{}, {'size': size}] + [{}]*(len(keys)-2))
+        ix = (0, 1, 4, 5) if type == 'journal' else (0, 1, 6)
+        _columns = [columns[i] for i in ix]
+        _table = [[row[i] for i in ix] for row in table if row[3] == type]
+        size = '26em' if type == 'journal' else '28em'
+        out.table(_table, _columns, None, [None, size] + [None]*(len(_columns)-2))
         out.text(f'Total {count[type]} {type} publications.' + (' (National conferences are omitted.)' if type == 'conference' else ''))
 else:  # html
-    out.table(table, ['Topic', 'Type'], [{'type': 'numeric', 'sort': 'desc'}, {}, {}, {}, {'type': 'numeric', 'sort': 'desc'}, {'type': 'numeric', 'sort': 'desc'}, {'type': 'alpha', 'sort': 'asc'}, {'type': 'alpha', 'sort': 'asc'}])
+    out.table(table, columns, ['sort', 'text', 'filter', 'filter', 'sort', 'sort', 'sort', 'sort'], None)
 
 ################################ SUPERVISIONS ################################
 
 table = [
-    {'Year': 'on-going', 'Degree': 'MSc', 'Student': 'Diana Teixeira Silva', 'Co-supervisor(s)': '', 'Dissertation/Project': 'Quantifying How Deep Implicit Representations Promote Label Efficiency', 'University': 'FEUP'},
-    {'Year': 'on-going', 'Degree': 'MSc', 'Student': 'Francisco Gonçalves Cerqueira', 'Co-supervisor(s)': '', 'Dissertation/Project': 'Comparative Study on Self-Supervision Methods for Autonomous Driving', 'University': 'FEUP'},
-    {'Year': 2024, 'Degree': 'MSc', 'Student': 'Airton Tiago', 'Co-supervisor(s)': 'Jaime Cardoso', 'Dissertation/Project': '[Data Augmentation for Ordinal Data](https://repositorio-aberto.up.pt/handle/10216/157714)', 'University': 'FEUP'},
-    {'Year': 2023, 'Degree': 'MSc', 'Student': 'Alankrita Asthana', 'Co-supervisor(s)': '', 'Dissertation/Project': 'Iterative Inference for Point-Clouds', 'University': 'TUM'},
-    {'Year': 2023, 'Degree': 'MSc', 'Student': 'Rafael Cristino', 'Co-supervisor(s)': 'Jaime Cardoso', 'Dissertation/Project': '[Introducing Domain Knowledge to Scene Parsing in Autonomous Driving](https://repositorio-aberto.up.pt/handle/10216/152109)', 'University': 'FEUP'},
-    {'Year': 2023, 'Degree': 'MSc', 'Student': 'José Guerra', 'Co-supervisor(s)': 'Luís Teixeira', 'Dissertation/Project': '[Uncertainty-Driven Out-of-Distribution Detection in 3D LiDAR Object Detection for Autonomous Driving](https://repositorio-aberto.up.pt/handle/10216/152016) (Internship at Bosch Car Multimedia)', 'University': 'FEUP'},
-    {'Year': 2022, 'Degree': 'MSc', 'Student': 'Pedro Silva', 'Co-supervisor(s)': 'Tiago Gonçalves', 'Dissertation/Project': '[Human Feedback during Neural Networks Training](https://repositorio-aberto.up.pt/handle/10216/142444)', 'University': 'FEUP'},
-    {'Year': 2022, 'Degree': 'MSc', 'Student': 'João Silva', 'Co-supervisor(s)': '', 'Dissertation/Project': '[Environment Detection for Railway Applications based on Automotive Technology](https://repositorio-aberto.up.pt/handle/10216/142326) (Internship at Continental)', 'University': 'FEUP'},
-    {'Year': 2022, 'Degree': 'MSc', 'Student': 'Ana Bezerra', 'Co-supervisor(s)': 'Joaquim Costa', 'Dissertation/Project': '[Phishing Detection with a Machine Learning Net](https://repositorio-aberto.up.pt/handle/10216/147350) (Internship at E-goi)', 'University': 'FCUP'},
-    {'Year': 'on-going', 'Degree': 'BSc', 'Student': 'João Monteiro', 'Co-supervisor(s)': 'Celso Pereira', 'Dissertation/Project': 'Cross-vehicle collaboration using RGB cameras', 'University': 'FCUP'},
-    {'Year': 'on-going', 'Degree': 'BSc', 'Student': 'Diogo Mendes', 'Co-supervisor(s)': 'Nuno Lavado', 'Dissertation/Project': 'Automatic Recognition of Pig Activity in an Intensive Production System', 'University': 'FCUP'},
-    {'Year': 'on-going', 'Degree': 'BSc', 'Student': 'Beatriz Sá', 'Co-supervisor(s)': 'Jaime S. Cardoso', 'Dissertation/Project': 'Research on Deep Augmentation for Ordinal Regression', 'University': 'FCUP'},
-    {'Year': 2024, 'Degree': 'BSc', 'Student': 'Eliandro Melo', 'Co-supervisor(s)': '', 'Dissertation/Project': 'Resource Efficiency using Deep Q-Learning in Autonomous Driving', 'University': 'FCUP'},
-    {'Year': 2024, 'Degree': 'BSc', 'Student': 'Ivo Duarte Simões', 'Co-supervisor(s)': '', 'Dissertation/Project': 'Resource Efficiency using PPO in Autonomous Driving', 'University': 'FCUP'},
-    {'Year': 2023, 'Degree': 'BSc', 'Student': 'Diana Teixeira Silva', 'Co-supervisor(s)': '', 'Dissertation/Project': 'Condition Invariance for Autonomous Driving by Adversarial Learning', 'University': 'FEUP'},
-    {'Year': 2022, 'Degree': 'BSc', 'Student': 'Diana Teixeira Silva', 'Co-supervisor(s)': 'Tiago Gonçalves', 'Dissertation/Project': 'Semantic Segmentation in Neural Networks using Iterative Visual Attention', 'University': 'FEUP'},
-    {'Year': 2022, 'Degree': 'BSc', 'Student': 'Filipe Campos, Francisco Cerqueira, Vasco Alves', 'Co-supervisor(s)': '', 'Dissertation/Project': '[Mobile App using Object Detection for Car Driving](https://play.google.com/store/apps/details?id=pt.up.fe.mobilecardriving)', 'University': 'FEUP'},
-    {'Year': 2022, 'Degree': 'BSc', 'Student': 'Bruno Gomes, Rafael Camelo', 'Co-supervisor(s)': '', 'Dissertation/Project': 'Internship at ANO', 'University': 'FEUP'},
+    ('on-going', 'MSc', 'Diana Teixeira Silva', '', 'Quantifying How Deep Implicit Representations Promote Label Efficiency', 'FEUP'),
+    ('on-going', 'MSc', 'Francisco Gonçalves Cerqueira', '', 'Comparative Study on Self-Supervision Methods for Autonomous Driving', 'FEUP'),
+    (2024, 'MSc', 'Airton Tiago', 'Jaime Cardoso', '[Data Augmentation for Ordinal Data](https://repositorio-aberto.up.pt/handle/10216/157714)', 'FEUP'),
+    (2023, 'MSc', 'Alankrita Asthana', '', 'Iterative Inference for Point-Clouds', 'TUM'),
+    (2023, 'MSc', 'Rafael Cristino', 'Jaime Cardoso', '[Introducing Domain Knowledge to Scene Parsing in Autonomous Driving](https://repositorio-aberto.up.pt/handle/10216/152109)', 'FEUP'),
+    (2023, 'MSc', 'José Guerra', 'Luís Teixeira', '[Uncertainty-Driven Out-of-Distribution Detection in 3D LiDAR Object Detection for Autonomous Driving](https://repositorio-aberto.up.pt/handle/10216/152016) (Internship at Bosch Car Multimedia)', 'FEUP'),
+    (2022, 'MSc', 'Pedro Silva', 'Tiago Gonçalves', '[Human Feedback during Neural Networks Training](https://repositorio-aberto.up.pt/handle/10216/142444)', 'FEUP'),
+    (2022, 'MSc', 'João Silva', '', '[Environment Detection for Railway Applications based on Automotive Technology](https://repositorio-aberto.up.pt/handle/10216/142326) (Internship at Continental)', 'FEUP'),
+    (2022, 'MSc', 'Ana Bezerra', 'Joaquim Costa', '[Phishing Detection with a Machine Learning Net](https://repositorio-aberto.up.pt/handle/10216/147350) (Internship at E-goi)', 'FCUP'),
+    ('on-going', 'BSc', 'João Monteiro', 'Celso Pereira', 'Cross-vehicle collaboration using RGB cameras', 'FCUP'),
+    ('on-going', 'BSc', 'Diogo Mendes', 'Nuno Lavado', 'Automatic Recognition of Pig Activity in an Intensive Production System', 'FCUP'),
+    ('on-going', 'BSc', 'Beatriz Sá', 'Jaime S. Cardoso', 'Research on Deep Augmentation for Ordinal Regression', 'FCUP'),
+    (2024, 'BSc', 'Eliandro Melo', '', 'Resource Efficiency using Deep Q-Learning in Autonomous Driving', 'FCUP'),
+    (2024, 'BSc', 'Ivo Duarte Simões', '', 'Resource Efficiency using PPO in Autonomous Driving', 'FCUP'),
+    (2023, 'BSc', 'Diana Teixeira Silva', '', 'Condition Invariance for Autonomous Driving by Adversarial Learning', 'FEUP'),
+    (2022, 'BSc', 'Diana Teixeira Silva', 'Tiago Gonçalves', 'Semantic Segmentation in Neural Networks using Iterative Visual Attention', 'FEUP'),
+    (2022, 'BSc', 'Filipe Campos, Francisco Cerqueira, Vasco Alves', '', '[Mobile App using Object Detection for Car Driving](https://play.google.com/store/apps/details?id=pt.up.fe.mobilecardriving)', 'FEUP'),
+    (2022, 'BSc', 'Bruno Gomes, Rafael Camelo', '', 'Internship at ANO', 'FEUP'),
 ]
 
 if args.type == 'latex':
     # split supervisions into types and reduce columns
+    ix = (0, 2, 4, 5)
     for degree in ['MSc', 'BSc']:
         out.section('section-supervisions', f'{degree} Supervisions')
-        name = 'Dissertation' if degree == 'MSc' else 'Project'
-        rename_keys = {'Year': 'Year', 'Student': 'Student', 'Dissertation/Project': name}
-        subtable = [{rename_keys[k]: row[k] for k in rename_keys} for row in table if row['Degree'] == degree]
-        out.table(subtable, [], [{}, {'size': '9em'}, {'size': '23em'}])
+        columns = ['Year', 'Student', 'Dissertation' if degree == 'MSc' else 'Project', 'University']
+        _table = [[row[i] for i in ix] for row in table if row[1] == degree]
+        out.table(_table, columns, None, [None, '7em', '18.5em', None])
 else:  # html
+    columns = ['Year', 'Degree', 'Student', 'Co-supervisor(s)', 'Dissertation/Project', 'University']
     out.section('section-supervisions', 'Supervisions')
-    out.table(table, ['Degree'], [{'type': 'alpha', 'sort': 'desc'}, {'type': 'alpha', 'sort': 'desc'}, {}, {}, {}, {'type': 'alpha', 'sort': 'asc'}])
+    out.table(table, columns, ['sort', 'filter', 'text', 'sort'], None)
 
 ############################# JURY PARTICIPATION #############################
 

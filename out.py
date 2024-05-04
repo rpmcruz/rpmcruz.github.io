@@ -16,6 +16,7 @@ class Html:
         print('h2 {margin-top:50px; border-bottom:solid;}')
         print('.container {max-width:800px; margin:0 auto;}')
         print('table {width:100%; text-align:left;}')
+        print('thead th {background-color: #ccc;}')
         # description
         print('@media screen and (min-width:1000px) {div.description {display:flex; flex-direction: column;} div.item {display:flex;} div.left {width:4em; font-weight:bold;} div.right {flex: 1;}')
         print('@media screen and (max-width:999px) {div.item {display:inline;} div.left {display:inline;font-weight:bold;} div.right{display:inline;}}')
@@ -65,17 +66,13 @@ class Html:
             print(f'<li>{self.markdown(text)}</li>')
         print('</ul>')
 
-    def table(self, rows, filters, columns_props):
-        print(f'<div id="filters{self.tables}"></div>')
+    def table(self, rows, columns, types, sizes):
         print('</div>')  # temporarily disable container
         print(f'<div id="table{self.tables}"></div>')
         print('<div class="container">')  # re-enable container
         print('<script>')
-        rows = [{key: self.markdown(str(value)) for key, value in row.items()} for row in rows]
-        print(f'table = new Table("table{self.tables}", ' + json.dumps(list(rows[0].keys())) + ', ' + json.dumps([p.get('type') for p in columns_props]) + ', ' + json.dumps([p.get('sort') for p in columns_props]) + ', ' + json.dumps(rows) + ');')
-        if filters != None:
-            filters = {f: list(sorted(set(r[f] for r in rows))) for f in filters}
-            print(f'new Filters(table, "filters{self.tables}", ' + json.dumps(filters) + ');')
+        rows = [[self.markdown(str(value)) for value in row] for row in rows]
+        print(f'table = new Table("table{self.tables}", ' + json.dumps(rows) + ', ' + json.dumps(columns) + ', ' + json.dumps(types) + ');')
         print('</script>')
         self.tables += 1
 
@@ -149,13 +146,13 @@ class Latex:
             print(f'\\item {self.markdown(text)}')
         print(r'\end{itemize}')
 
-    def table(self, rows, filters, columns_props):
-        sizes = '|'.join(f'p{{{p["size"]}}}' if 'size' in p else 'l' for p in columns_props)
+    def table(self, rows, columns, types, sizes):
+        sizes = '|'.join(f'p{{{size}}}' if size else 'l' for size in sizes)
         print(r'{\small\begin{longtable}{|' + sizes + '|}')
         print(r'\hline')
-        print('&'.join((f'\\bf {h}' for h in rows[0])) + r'\\')
+        print('&'.join((f'\\bf {h}' for h in columns)) + r'\\')
         print(r'\hline\endhead')
         for row in rows:
-            print('&'.join(self.markdown(str(v), r'\newline') for v in row.values()) + r'\\')
+            print('&'.join(self.markdown(str(v), r'\newline') for v in row) + r'\\')
             print(r'\hline')
         print(r'\end{longtable}}')

@@ -30,8 +30,8 @@ def get_core_rank(acronym):
     response.raise_for_status()
     tree = etree.HTML(response.content)
     rank = tree.xpath('//table//tr[2]/td[4]/text()')
-    rank = rank[0].strip() if len(rank) else ''
-    if len(rank) == 0:
+    rank = rank[0].strip() if len(rank) else 'n/a'
+    if rank == 'n/a':
         print(f'Warning: could not find CORE rank for "{acronym}"', file=sys.stderr)
     return rank
 
@@ -147,13 +147,13 @@ def get_paper_info(doi, topic, my_categories):
             year = paper['published']['date-parts'][0][0]
             where = f"{name} {year} ({conference_acronym}), {paper['publisher']}"
     where = where.replace('&amp;', '&')
-    return {
-        'Year': paper['published']['date-parts'][0][0],
-        'Paper': '[' + paper['title'][0] + '](' + paper['URL'] + ')\n' + authors + '\n*' + where + '*',
-        'Topic': topic,
-        'Type': 'journal' if paper['type'] == 'journal-article' else 'conference',
-        'Citations': paper['is-referenced-by-count'],
-        'IF': get_impact_factor(' '.join(paper['container-title'])) if paper['type'] == 'journal-article' else '',
-        'SJR Rank': get_sjr_rank(' '.join(paper['container-title']), my_categories) if paper['type'] != 'proceedings-article' else '',
-        'CORE Rank': get_core_rank(conference_acronym) if paper['type'] != 'journal-article' else '',
-    }
+    return (
+        paper['published']['date-parts'][0][0],
+        '[' + paper['title'][0] + '](' + paper['URL'] + ')\n' + authors + '\n*' + where + '*',
+        topic,
+        'journal' if paper['type'] == 'journal-article' else 'conference',
+        paper['is-referenced-by-count'],
+        get_impact_factor(' '.join(paper['container-title'])) if paper['type'] == 'journal-article' else '',
+        get_sjr_rank(' '.join(paper['container-title']), my_categories) if paper['type'] != 'proceedings-article' else '',
+        get_core_rank(conference_acronym) if paper['type'] != 'journal-article' else '',
+    )
