@@ -138,8 +138,8 @@ else:  # html
 ################################ SUPERVISIONS ################################
 
 table = [
-    ('on-going', 'MSc', 'Diana Teixeira Silva', '', 'Quantifying How Deep Implicit Representations Promote Label Efficiency', 'FEUP'),
-    ('on-going', 'MSc', 'Francisco Gonçalves Cerqueira', '', 'Comparative Study on Self-Supervision Methods for Autonomous Driving', 'FEUP'),
+    ('on-going', 'MSc', 'Diana Teixeira Silva', '', 'Quantifying How Deep 3D Representations Promote Label Efficiency', 'FEUP'),
+    ('on-going', 'MSc', 'Francisco Gonçalves Cerqueira', '', 'Comparative Study on Semi-Supervision and Self-Supervision Methods for Autonomous Driving', 'FEUP'),
     (2024, 'MSc', 'Airton Tiago', 'Jaime Cardoso', '[Data Augmentation for Ordinal Data](https://repositorio-aberto.up.pt/handle/10216/157714)', 'FEUP'),
     (2023, 'MSc', 'Alankrita Asthana', '', 'Iterative Inference for Point-Clouds', 'TUM'),
     (2023, 'MSc', 'Rafael Cristino', 'Jaime Cardoso', '[Introducing Domain Knowledge to Scene Parsing in Autonomous Driving](https://repositorio-aberto.up.pt/handle/10216/152109)', 'FEUP'),
