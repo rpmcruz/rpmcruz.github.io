@@ -169,7 +169,7 @@ if args.type == 'latex':
 else:  # html
     columns = ['Year', 'Degree', 'Student', 'Co-supervisor(s)', 'Dissertation/Project', 'University']
     out.section('section-supervisions', 'Supervisions')
-    out.table(table, columns, ['sort', 'filter', 'text', 'sort'], None)
+    out.table(table, columns, ['sort', 'filter', 'text', 'text', 'text', 'sort'], None)
 
 ############################# JURY PARTICIPATION #############################
 
