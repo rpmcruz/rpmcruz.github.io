@@ -80,7 +80,7 @@ class Html:
 
 class Latex:
     def begin(self, name):
-        print(r'\documentclass[12pt]{article}')
+        print(r'\documentclass{article}')
         print(r'\usepackage[a4paper, margin=3cm]{geometry}')
         print(r'\setlength\parindent{0pt}  % no indent')
         print(r'\usepackage{xcolor,soul}')

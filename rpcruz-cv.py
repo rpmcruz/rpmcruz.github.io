@@ -62,9 +62,9 @@ if args.feup:
             ix = (0, 1, 4, 5) if type == 'journal' else (0, 1, 4, 7)
             _columns = [columns[i] for i in ix]
             _table = [[row[i] for i in ix] for row in my_papers if row[3] == type]
-            sizes = [None, '26em', None, None] if type == 'journal' else [None, '24em', None, '3.5em']
+            sizes = [None, '32em', None, None] if type == 'journal' else [None, '30em', None, '3.5em']
             out.table(_table, _columns, None, sizes)
-            out.text(f'Total {count[type]} {type} publications.' + (' (National conferences are omitted.)' if type == 'conference' else ''))
+            out.text(f'Total {count[type]} {type} publications.' + (' (Non-indexed conferences are omitted.)' if type == 'conference' else ''))
     out.text(f'**{type.title()} Awards**')
     out.description(cv['awards'])
 
@@ -73,7 +73,7 @@ if args.feup:
         out.text(f'**{degree} Supervisions**')
         columns = ['Year', 'Student', 'Dissertation' if degree == 'MSc' else 'Project', 'University']
         _table = [[row[i] for i in ix] for row in cv['supervisions'] if row[1] == degree]
-        out.table(_table, columns, None, [None, '7em', '18.5em', None])
+        out.table(_table, columns, None, [None, '9em', '23em', None])
 
     out.text(f'**Jury Partitions**')
     out.description(cv['jury_participation'])
@@ -150,9 +150,9 @@ else:  # normal CV
             ix = (0, 1, 4, 5) if type == 'journal' else (0, 1, 4, 7)
             _columns = [columns[i] for i in ix]
             _table = [[row[i] for i in ix] for row in my_papers if row[3] == type]
-            sizes = [None, '26em', None, None] if type == 'journal' else [None, '24em', None, '3.5em']
+            sizes = [None, '32em', None, None] if type == 'journal' else [None, '30em', None, '3.5em']
             out.table(_table, _columns, None, sizes)
-            out.text(f'Total {count[type]} {type} publications.' + (' (National conferences are omitted.)' if type == 'conference' else ''))
+            out.text(f'Total {count[type]} {type} publications.' + (' (Non-indexed conferences are omitted.)' if type == 'conference' else ''))
     else:  # html
         out.table(my_papers, columns, ['sort', 'text', 'filter', 'filter', 'sort', 'sort', 'sort', 'sort'], None)
 
@@ -163,7 +163,7 @@ else:  # normal CV
             out.section(f'{degree} Supervisions', 'section-supervisions')
             columns = ['Year', 'Student', 'Dissertation' if degree == 'MSc' else 'Project', 'University']
             _table = [[row[i] for i in ix] for row in cv['supervisions'] if row[1] == degree]
-            out.table(_table, columns, None, [None, '7em', '18.5em', None])
+            out.table(_table, columns, None, [None, '9em', '23em', None])
     else:  # html
         columns = ['Year', 'Degree', 'Student', 'Co-supervisor(s)', 'Dissertation/Project', 'University']
         out.section('Supervisions', 'section-supervisions')
