@@ -1,8 +1,3 @@
-import argparse
-parser = argparse.ArgumentParser()
-parser.add_argument('type', choices=['html', 'latex'])
-args = parser.parse_args()
-
 import functools
 import sys
 import time

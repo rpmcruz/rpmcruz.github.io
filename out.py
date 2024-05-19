@@ -35,6 +35,7 @@ class Html:
 
     def markdown(self, text):
         text = re.sub(r'\[(.*?)\]\((.*?)\)', r'<a href="\2">\1</a>', text)  # links
+        text = re.sub(r'!\[\]\((.*?)\)', r'<img href="\1">', text)  # image
         text = re.sub(r'\*\*(.*?)\*\*', r'<b>\1</b>', text)  # bold
         text = re.sub(r'\*(.*?)\*', r'<i>\1</i>', text)  # italic
         text = text.replace('&', '&amp;').replace('--', '&ndash;')
@@ -48,8 +49,9 @@ class Html:
             print(f'<img width="28px" src="imgs/{icon}.svg">&nbsp;<a href="{link}">{text}</a> ')
         print('</p>')
 
-    def section(self, icon, text):
-        print(f'<h2><img width="45px" src="imgs/{icon}.svg"> {text}</h2>')
+    def section(self, text, icon=None):
+        icon = '' if icon is None else f'<img width="45px" src="imgs/{icon}.svg"> '
+        print(f'<h2>{icon}{text}</h2>')
 
     def text(self, text):
         print('<p>' + self.markdown(text) + '</p>')
@@ -97,17 +99,19 @@ class Latex:
         print(r'\usepackage{titlesec}  % change \section look')
         print(r'\titleformat{\section}{\normalfont\Large\scshape}{}{0pt}{}[{\vspace{-0.5ex}\titlerule[0.8pt]}]')
         print(r'\renewcommand{\thesection}{}  % no section numbers')
+        print(r'\renewcommand{\thesubsection}{}  % no section numbers')
         print(r'\usepackage{tocloft}\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}\renewcommand{\cftsubsecdotsep}{\cftnodots}\setlength{\cftbeforesecskip}{-.5ex}')
         print(r'\usepackage{enumitem}')
         print(r'\newlength{\widestlabel}  % used by description')
         print(r'\begin{document}')
-        print(f'{{\Large {name}}}', end='\n\n')
+        print(f'{{\\Large {name}}}', end='\n\n')
 
     def end(self):
         print(r'\end{document}')
 
     def markdown(self, text, newline=r'\\'):
         text = re.sub(r'\[(.*?)\]\((.*?)\)', r'\1 \\href{\2}{\\includegraphics[width=0.8em]{imgs/link.pdf}}', text)  # links
+        text = re.sub(r'!\[\]\((.*?)\)', r'\\includegraphics{\1}', text)  # image
         text = re.sub(r'\*\*(.*?)\*\*', r'\\textbf{\1}', text)  # bold
         text = re.sub(r'\*(.*?)\*', r'\\textit{\1}', text)  # italic
         text = re.sub(r'\=\=(.*?)\=\=', r'\\hl{\1}', text)  # highlight
@@ -119,13 +123,17 @@ class Latex:
     def contacts(self, contacts):
         print(r'\noindent{\small')
         for icon, text, link in contacts:
-            print(f'\\raisebox{{-0.25\height}}{{\\includegraphics[width=0.5cm]{{imgs/{icon}.pdf}}}} \\href{{{link}}}{{{text}}} ')
+            print(f'\\raisebox{{-0.25\\height}}{{\\includegraphics[width=0.5cm]{{imgs/{icon}.pdf}}}} \\href{{{link}}}{{{text}}} ')
         print('}\n')
         print(r'\setcounter{tocdepth}{2}\tableofcontents')
         print()
 
-    def section(self, icon, text):
-        print(f'\\section[{text}]{{\\includegraphics[width=1cm]{{imgs/{icon}.pdf}} {text}}}\\nopagebreak')
+    def section(self, text, icon=None):
+        icon = '' if icon is None else f'\\includegraphics[width=1cm]{{imgs/{icon}.pdf}}'
+        print(f'\\section[{text}]{{{icon}{text}}}\\nopagebreak')
+
+    def subsection(self, text):
+        print(f'\\subsection[{text}]{{{text}}}\\nopagebreak')
 
     def text(self, text):
         print()
@@ -137,7 +145,7 @@ class Latex:
         print(f'\\settowidth{{\\widestlabel}}{{\\textbf{{{largest_label}}}}}')
         print(r'\begin{description}[style=sameline, labelwidth=\dimexpr\widestlabel+\labelsep, leftmargin=!]')
         for label, text in items:
-            print(f'\\item[{self.markdown(label)}] {self.markdown(text)}')
+            print(f'\\item[{self.markdown(label)}] {self.markdown(text, r'\newline')}')
         print(r'\end{description}')
 
     def itemize(self, items):
