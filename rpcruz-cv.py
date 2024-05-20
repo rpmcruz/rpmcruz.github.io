@@ -64,7 +64,7 @@ if args.feup:
             _table = [[row[i] for i in ix] for row in my_papers if row[3] == type]
             sizes = [None, '32em', None, None] if type == 'journal' else [None, '30em', None, '3.5em']
             out.table(_table, _columns, None, sizes)
-            out.text(f'Total {count[type]} {type} publications.' + (' (Non-indexed conferences are omitted.)' if type == 'conference' else ''))
+            out.text(f'Total {count[type]} {type} publications.')
     out.text(f'**{type.title()} Awards**')
     out.description(cv['awards'])
 
@@ -152,7 +152,7 @@ else:  # normal CV
             _table = [[row[i] for i in ix] for row in my_papers if row[3] == type]
             sizes = [None, '32em', None, None] if type == 'journal' else [None, '30em', None, '3.5em']
             out.table(_table, _columns, None, sizes)
-            out.text(f'Total {count[type]} {type} publications.' + (' (Non-indexed conferences are omitted.)' if type == 'conference' else ''))
+            out.text(f'Total {count[type]} {type} publications.')
     else:  # html
         out.table(my_papers, columns, ['sort', 'text', 'filter', 'filter', 'sort', 'sort', 'sort', 'sort'], None)
 
