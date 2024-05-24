@@ -80,11 +80,11 @@ if args.feup:
 
     out.subsection('CMC2. Coordination and implementation of research projects')
     out.text('**Participation in Scientific Projects**')
-    out.itemize(cv['participation_scientific_projects'])
+    out.itemize(cv['scientific_projects'])
 
     out.subsection('CMC3. Involvement in the scientific and professional communities')
     out.text('**Participation in Scientific Events**')
-    out.itemize(cv['participation_scientific_projects'])
+    out.itemize(cv['scientific_events'])
     out.text('**Collaborations as Editor or Evaluator**')
     out.description(cv['editor_or_evaluator'])
 
