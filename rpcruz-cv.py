@@ -24,7 +24,7 @@ for p in my_papers:
 
 # add more information regarding venues
 for paper in cv['manual_papers']:
-    venue = ' '.join(paper[1].split('\n')[-1][:-1].split()[:-1])[:-1]
+    venue = ' '.join(paper[1].split('\n')[-1][:-1].split()[:-1])[1:-1]
     paper += ['']*4
     if paper[3] == 'journal':
         paper[5] = papers.get_impact_factor(venue)

@@ -44,16 +44,18 @@ def get_impact_factor(journal_name):
     # publish it are: bioxbio.com, scijournal.org, wikipedia.org.
     # just to be safe, we are getting these values directly from each journal.
     name2id = {
-        'Lecture Notes in Computer Science': None,
         'Pattern Analysis and Applications': ('springer', 10044),
         'Computers &amp; Electrical Engineering': ('elsevier', 'computers-and-electrical-engineering'),
         'PeerJ Computer Science': ('peerj', 'computer-science'),
         'Mathematics': ('mdpi', 'mathematics'), 'Sensors': ('mdpi', 'sensors'),
-        'Intelligent Systems with Applications': None,
         'International Journal of Data Science and Analytics': ('springer', 41060),
         'Pattern Recognition': ('elsevier', 'pattern-recognition'),
-        'Transactions on Artificial Intelligence': None,
         'Transactions on Intelligent Vehicles': ('ieee', 7274857),
+        'Neurocomputing': ('elsevier', 'neurocomputing'),
+        # without impact factor
+        'Lecture Notes in Computer Science': None,
+        'Intelligent Systems with Applications': None,
+        'Transactions on Artificial Intelligence': None,
     }
     methods = {
         'springer': (False, 'https://link.springer.com/journal/', '//dd[@data-test="impact-factor-value"]/b/text()', lambda s: s.split()[0]),
@@ -64,6 +66,7 @@ def get_impact_factor(journal_name):
     }
     id = get_id(journal_name, name2id)
     if id == None:
+        print(f'Warning: journal defined as having no impact factor: "{journal_name}"', file=sys.stderr)
         return 'n/a'
     use_selenium, url, xpath, postprocess = methods[id[0]]
     url = url + str(id[1])
@@ -121,7 +124,11 @@ def get_sjr_rank(journal_name, my_categories):
     return min(quartile for category, year, quartile in zip(categories, years, quartiles) if int(year) == max_year and category in my_categories)
 
 def get_paper_info(doi, topic, my_categories):
-    paper = Works().doi(doi)
+    while True:
+        try:
+            paper = Works().doi(doi)
+        except requests.exceptions.ReadTimeout as ex:
+            print(ex, file=sys.stderr)
     authors = ', '.join('**R. Cruz**' if author.get('ORCID', '') == 'http://orcid.org/0000-0002-5189-6228' or author['given'][0] + author['family'] == 'RCruz' else f'{author["given"][0]}. {author["family"]}' for author in paper['author'])
     if paper['type'] == 'journal-article':
         where = f"{' - '.join(paper['container-title'])}, {paper['publisher']}"
