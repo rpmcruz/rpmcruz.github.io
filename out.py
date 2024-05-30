@@ -12,7 +12,7 @@ class Html:
         print(f'<title>{name}</title>')
         print('<style>')
         print('body {text-align:justify;}')
-        print('h1 {background-image:url("imgs/lecture.jpg"); background-size:cover; height:180px; color:white; text-align:center; text-shadow:-2px -2px 2px black, 2px -2px 2px black, -2px 2px 2px black, 2px 2px 2px black;}')
+        print('h1 {background-image:url("imgs/lecture.jpg"); background-size:cover; background-position:25%; height:180px; color:white; text-align:center; text-shadow:-2px -2px 2px black, 2px -2px 2px black, -2px 2px 2px black, 2px 2px 2px black;}')
         print('h2 {margin-top:50px; border-bottom:solid;}')
         print('.container {max-width:800px; margin:0 auto;}')
         print('table {width:100%; text-align:left;}')

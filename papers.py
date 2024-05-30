@@ -3,7 +3,6 @@ import sys
 import time
 import requests
 from lxml import etree
-from crossref.restful import Works
 
 def conference_from_book(conference):
     if conference == 'Advances in Computational Intelligence':
@@ -105,6 +104,7 @@ def get_sjr_rank(journal_name, my_categories):
         'Pattern Recognition': 24823,
         'Transactions on Artificial Intelligence': 21101093601,
         'Transactions on Intelligent Vehicles': 21100976127,
+        'Neurocomputing': 24807,
     }
     id = get_id(journal_name, name2id)
     while True:
@@ -124,11 +124,7 @@ def get_sjr_rank(journal_name, my_categories):
     return min(quartile for category, year, quartile in zip(categories, years, quartiles) if int(year) == max_year and category in my_categories)
 
 def get_paper_info(doi, topic, my_categories):
-    while True:
-        try:
-            paper = Works().doi(doi)
-        except requests.exceptions.ReadTimeout as ex:
-            print(ex, file=sys.stderr)
+    paper = requests.get(f'https://api.crossref.org/works/{doi}').json()['message']
     authors = ', '.join('**R. Cruz**' if author.get('ORCID', '') == 'http://orcid.org/0000-0002-5189-6228' or author['given'][0] + author['family'] == 'RCruz' else f'{author["given"][0]}. {author["family"]}' for author in paper['author'])
     if paper['type'] == 'journal-article':
         where = f"{' - '.join(paper['container-title'])}, {paper['publisher']}"
