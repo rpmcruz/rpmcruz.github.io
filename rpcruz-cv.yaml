@@ -58,9 +58,9 @@ categories: [  # for purposes of SJR Quartile Rank
 ]
 manual_papers: [
   [2024, "==**[2ND ROUND]**== Unimodal Distributions for Ordinal Regression\nJ. Cardoso, **R. Cruz**, T. Albuquerque\n*IEEE Transactions on Artificial Intelligence, IEEE*", 'ordinal-losses', 'journal'],
-  [2024, "==**[SUBMITTED]**== Learning Ordinality in Semantic Segmentation\nR. Cristino, **R. Cruz**, J.Cardoso\n*Pattern Recognition, Elsevier*", 'ordinal-losses', 'journal'],
   [2024, "==**[SUBMITTED]**== CNN Explanation Methods for Ordinal Regression Tasks\nJ. Barbero-Gómez, **R. Cruz**, J. Cardoso, P. Gutiérrez, C. Hervás-Martínez\n*Neurocomputing, Elsevier*", 'ordinal-losses', 'journal'],
   # rejected :-(
+  #[2024, "==**[SUBMITTED]**== Learning Ordinality in Semantic Segmentation\nR. Cristino, **R. Cruz**, J.Cardoso\n*Pattern Recognition, Elsevier*", 'ordinal-losses', 'journal'],
   #[2024, "==**[SUBMITTED]**== Spatial Resource-Efficiency using Partial Convolutions for Segmentation and Object Detection\n**R. Cruz**\n*Pattern Recognition, Elsevier*", 'spatial-resource-efficiency', 'journal'],
 ]
 
