@@ -1,5 +1,5 @@
 name: 'Ricardo Cruz, PhD'
-biography: 'Ricardo Cruz has worked on a wide range of machine learning topics, with particular emphasis on theoretical aspects of deep learning and computer vision -- with 20+ publications and 100+ citations in such topics as: • adapting ranking models for class imbalance; • making convolutional neural networks invariant to background; • making them faster by adjusting the computational effort to each image; • losses for ordinal regression. He is a Post-doc Researcher on autonomous driving at the Faculty of Engineering, University of Porto, and he has been a researcher at INESC TEC since 2015, where his research earned him the computer science PhD in 2021. He has a BSc in computer science and a MSc in applied mathematics. He is frequently invited to teach at the Faculty of Engineering, University of Porto, where he earned a pedagogic award.'
+biography: 'Ricardo Cruz has worked on a wide range of machine learning topics, with particular emphasis on theoretical aspects of deep learning and computer vision -- with 20+ publications and 100+ citations in such topics as: • adapting ranking models for class imbalance; • making convolutional neural networks invariant to background; • making them faster by adjusting the computational effort to each image; • losses for ordinal regression. He is a Post-doc Researcher on autonomous driving at the Faculty of Engineering, University of Porto, and he has been a researcher at INESC TEC since 2015, where his research earned him the computer science PhD in 2021. He has a BSc in computer science and a MSc in applied mathematics. He has frequently been an invited professor at the Faculty of Engineering, University of Porto, where he earned a pedagogic award.'
 
 education: [
   ['2021 PhD', 'Computer Science (joint degree University of Porto, Minho and Aveiro)'],
@@ -7,12 +7,12 @@ education: [
   ['2012 B.Sc.', 'Computer Science (Faculty of Sciences, University of Porto)'],
 ]
 employment: [
-  ['2021/09--present', "**Post-doctoral Researcher** on Autonomous Driving\nUniversity of Porto (FEUP) [in partnership with Bosch]\n- Collaboration between the University of Porto and Bosch Car Multimedia to improve autonomous driving perception\n- Developed frameworks for object detection using camera and LiDAR (2D discretization and raw point-clouds)\n- Published new methods for efficient semantic segmentation and ordinal regression\n- Supervised six master's theses, four bachelor's projects, and other team members\n- Responsible for the HPC infrastructure (using Slurm)"],
-  ['2023/09--2024/02', "**Invited Auxiliary Professor**, University of Porto (FEUP)\nCourses:\n- OAT4001 [](https://sigarra.up.pt/feup/en/UCURR_GERAL.FICHA_UC_VIEW?pv_ocorrencia_id=524574) & FACVC [](https://sigarra.up.pt/feup/pt/ucurr_geral.ficha_uc_view?pv_ocorrencia_id=521307): Machine Learning"],
-  ['2021/09--2022/08', "**Invited Auxiliary Professor**, University of Porto (FEUP)\nCourses:\n- L.EIC003 [](https://sigarra.up.pt/feup/pt/ucurr_geral.ficha_uc_view?pv_ocorrencia_id=484382): Programming Fundamentals (Python)\n- L.EEC009 [](https://sigarra.up.pt/feup/pt/ucurr_geral.ficha_uc_view?pv_ocorrencia_id=485369): Data Structures and Algorithms (C/C++)"],
-  ['2018/09--2021/08', "**Invited Teacher Assistant**, University of Porto (FEUP)\nCourses:\n- L.EIC003: Programming Fundamentals (Python)\n- L.EIC009 [](https://sigarra.up.pt/feup/pt/ucurr_geral.ficha_uc_view?pv_ocorrencia_id=459468): Programming (C/C++)"],
-  ['2015/09--2021/08', "**Research Assistant** on Machine Learning and Computer Vision (INESC TEC)\n- Research focus: re-thinking fundamentals about image classification and semantic segmentation (8+ publications)\n- Some highlights: (1) a method for background invariance using adversarial training, (2) new losses that minimize absolute trade-offs between Type 1 and 2 errors instead of relative trade-offs, (3) using backpropagation also for inference to refine existing outputs, (4) deploying learning-to-rank methods for class imbalance\n- Contributed to workshops, Summer School on Computer Vision (VISUM), and other events\n- Twice awarded \"outstanding recognition\" for organizing workshops and helping with the HPC infrastructure"],
-  ['2014/09--2014/12', "**Research Grant** on Mathematical Modelling Research (Mathematics Center of the University of Porto, CMUP)\n- Epidemiological models for HIV. A little of everything: from differential equations to stochastic simulations to cellular automata."],
+  ["2021/09\n--present", "**Post-doctoral Researcher** on Autonomous Driving\nUniversity of Porto (FEUP) [in partnership with Bosch]\n- Collaboration between the University of Porto and Bosch Car Multimedia to improve autonomous driving perception\n- Developed frameworks for object detection using camera and LiDAR (2D discretization and raw point-clouds)\n- Published new methods for efficient semantic segmentation and ordinal regression\n- Supervised six master's theses, four bachelor's projects, and other team members\n- Responsible for the HPC infrastructure (using Slurm)"],
+  ["2023/09\n--2024/02", "**Invited Auxiliary Professor**, University of Porto (FEUP)\nCourses:\n- OAT4001 [](https://sigarra.up.pt/feup/en/UCURR_GERAL.FICHA_UC_VIEW?pv_ocorrencia_id=524574) & FACVC [](https://sigarra.up.pt/feup/pt/ucurr_geral.ficha_uc_view?pv_ocorrencia_id=521307): Machine Learning (theoretical classes)"],
+  ["2021/09\n--2022/08", "**Invited Auxiliary Professor**, University of Porto (FEUP)\nCourses:\n- L.EIC003 [](https://sigarra.up.pt/feup/pt/ucurr_geral.ficha_uc_view?pv_ocorrencia_id=484382): Programming Fundamentals (Python) (practical lessons)\n- L.EEC009 [](https://sigarra.up.pt/feup/pt/ucurr_geral.ficha_uc_view?pv_ocorrencia_id=485369): Data Structures and Algorithms (C/C++) (practical lessons)"],
+  ["2018/09\n--2021/08", "**Invited Teacher Assistant**, University of Porto (FEUP)\nCourses:\n- L.EIC003: Programming Fundamentals (Python) (practical lessons)\n- L.EIC009 [](https://sigarra.up.pt/feup/pt/ucurr_geral.ficha_uc_view?pv_ocorrencia_id=459468): Programming (C/C++) (practical lessons)"],
+  ["2015/09\n--2021/08", "**Research Assistant** on Machine Learning and Computer Vision (INESC TEC)\n- Research focus: re-thinking fundamentals about image classification and semantic segmentation (8+ publications)\n- Some highlights: (1) a method for background invariance using adversarial training, (2) new losses that minimize absolute trade-offs between Type 1 and 2 errors instead of relative trade-offs, (3) using backpropagation also for inference to refine existing outputs, (4) deploying learning-to-rank methods for class imbalance\n- Contributed to workshops, Summer School on Computer Vision (VISUM), and other events\n- Twice awarded \"outstanding recognition\" for organizing workshops and helping with the HPC infrastructure"],
+  ["2014/09\n--2014/12", "**Research Grant** on Mathematical Modelling Research (Mathematics Center of the University of Porto, CMUP)\n- Epidemiological models for HIV. A little of everything: from differential equations to stochastic simulations to cellular automata."],
 ]
 
 contacts: [
@@ -57,9 +57,9 @@ categories: [  # for purposes of SJR Quartile Rank
   'Statistics and Probability', 'Statistics, Probability and Uncertainty',
 ]
 manual_papers: [
-  [2024, "==**[2ND ROUND]**== Unimodal Distributions for Ordinal Regression\nJ. Cardoso, **R. Cruz**, T. Albuquerque\n*IEEE Transactions on Artificial Intelligence, IEEE*", 'ordinal-losses', 'journal'],
-  [2024, "==**[SUBMITTED]**== Learning Ordinality in Semantic Segmentation\nR. Cristino, **R. Cruz**, J.Cardoso\n*Pattern Recognition, Elsevier*", 'ordinal-losses', 'journal'],
-  [2024, "==**[SUBMITTED]**== CNN Explanation Methods for Ordinal Regression Tasks\nJ. Barbero-Gómez, **R. Cruz**, J. Cardoso, P. Gutiérrez, C. Hervás-Martínez\n*Neurocomputing, Elsevier*", 'ordinal-losses', 'journal'],
+  [2024, "**[2ND ROUND]** Unimodal Distributions for Ordinal Regression\nJ. Cardoso, **R. Cruz**, T. Albuquerque\n*IEEE Transactions on Artificial Intelligence, IEEE*", 'ordinal-losses', 'journal'],
+  [2024, "**[SUBMITTED]** Learning Ordinality in Semantic Segmentation\nR. Cristino, **R. Cruz**, J.Cardoso\n*Pattern Recognition, Elsevier*", 'ordinal-losses', 'journal'],
+  [2024, "**[SUBMITTED]** CNN Explanation Methods for Ordinal Regression Tasks\nJ. Barbero-Gómez, **R. Cruz**, J. Cardoso, P. Gutiérrez, C. Hervás-Martínez\n*Neurocomputing, Elsevier*", 'ordinal-losses', 'journal'],
   # rejected :-(
   #[2024, "==**[SUBMITTED]**== Spatial Resource-Efficiency using Partial Convolutions for Segmentation and Object Detection\n**R. Cruz**\n*Pattern Recognition, Elsevier*", 'spatial-resource-efficiency', 'journal'],
 ]
@@ -108,17 +108,19 @@ awards: [
 ]
 
 scientific_projects: [
-  'Post-doc researcher (2021--2023) on THEIA -- Automated Perception Driving (POCI-01-0247-FEDER-047264) [](https://sigarra.up.pt/feup/pt/projectos_geral.ficha_projecto?p_id=78377)',
-  'Research member (2018--2021) of CLARE -- Computer-aided cervical cancer screening (POCI-01-0145-FEDER-028857) [](https://www.inesctec.pt/pt/projetos/clare)',
-  'Masters research grant (2015--2016) on NanoSTIMA -- Macro-to-Nano Human Sensing: Towards Integrated Multimodal Health Monitoring and Analytics (NORTE-01-0145-FEDER-000016)',
-  'Bachelors research grant on statistical epidemiological modelling (2014) (PEst-C/MAT/UI0144/2013)',
+  "(2021--2023) **THEIA -- Automated Perception Driving (POCI-01-0247-FEDER-047264) [](https://sigarra.up.pt/feup/pt/projectos_geral.ficha_projecto?p_id=78377)**\nDuring this Bosch-UP collaboration, I was a post-doc researcher working on the deliverables, HPC infrastructure, and supervising students (4 masters dissertations, 4 conference papers, 1 journal paper).",
+  #"(2018--2021) **CLARE -- Computer-aided cervical cancer screening (POCI-01-0145-FEDER-028857) [](https://www.inesctec.pt/pt/projetos/clare)**\nResearch member while doing my PhD.",
+  "(2021) **CLARE: Sistema de apoio ao rastreio do cancro cervical (POCI-01-0145-FEDER-028857 PTDC/EMD-EMD/28857/2017)**\nResearch member while doing my PhD.",
+  "(2019) **BCCT.plan: Ferramenta 3D para o planeamento do tratamento conservador do cancro da mama (NORTE-01-0247-FEDER-017688)**\nResearch member while doing my PhD.",
+  "(2015--2016) **NanoSTIMA -- Macro-to-Nano Human Sensing: Towards Integrated Multimodal Health Monitoring and Analytics (NORTE-01-0145-FEDER-000016)**\nResearch member while doing my PhD.",
+  "(2014) **PEst-C/MAT/UI0144/2013**\nResearch grant during my masters dissertation.",
 ]
 
 scientific_events: [
-  '**5th IEEE International Conference on Sustainable Technologies for Industry 5.0 (STI2023)**: program committee',
-  '**iMIMIC/MIL3ID/LABELS 2020 workshop proceedings (MICCAI 2020):** co-editor [](https://link.springer.com/book/10.1007/978-3-030-61166-8)',
-  '**iMIMIC 2020 workshop (MICCAI 2020):** committee sponsor chair [](https://imimic-workshop.com/previous_editions/2020/index.html)',
-  '**3rd International Conference on Dynamics, Games and Science (2014):** president of the organizing committee [](https://www.fc.up.pt/dgsiii/)',
+  ['2023', '**5th IEEE International Conference on Sustainable Technologies for Industry 5.0 (STI2023)**: program committee'],
+  ['2020', '**iMIMIC/MIL3ID/LABELS 2020 workshop proceedings (MICCAI 2020):** co-editor [](https://link.springer.com/book/10.1007/978-3-030-61166-8)'],
+  ['2020', '**iMIMIC 2020 workshop (MICCAI 2020):** committee sponsor chair [](https://imimic-workshop.com/previous_editions/2020/index.html)'],
+  ['2014', '**3rd International Conference on Dynamics, Games and Science (2014):** president of the organizing committee [](https://www.fc.up.pt/dgsiii/)'],
 ]
 
 editor_or_evaluator: [
@@ -128,6 +130,7 @@ editor_or_evaluator: [
 
 public_workshops_talks: [
   '2019: **DSPT Day:** lightning talk (a two-day machine learning event for a public audience',
+  '2018: **VISUM:** I helped to prepare a computational framework in which students submitted processes and generated Kaggle-style leaderboards (using Google Cloud) for the competitions that take place during the VISUM computer vision summer school, a framework that continues to be used today.',
   '2017: organized some workshops, especially at INESC TEC, namely **Learning from Data,** which was part of the CTM Open Day. (The CTM is the INESC TEC unit that I was part of.) [](https://opendayctm.inesctec.pt/2017/index.php/learning-from-data/)',
   '2017: Free public workshop, in collaboration with João Machado, in the **Python Meetup** entitled *NumPy and Scikit-Learn.* The Python Meetup was a monthly meeting about Python in Porto, which has since been discontinued. [](https://youtu.be/klr1z1EJ1yY)',
 ]

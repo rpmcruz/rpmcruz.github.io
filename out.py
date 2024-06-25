@@ -68,7 +68,7 @@ class Html:
             print(f'<li>{self.markdown(text)}</li>')
         print('</ul>')
 
-    def table(self, rows, columns, types, sizes):
+    def table(self, rows, columns, types, sizes, colors):
         print('</div>')  # temporarily disable container
         print(f'<div id="table{self.tables}"></div>')
         print('<div class="container">')  # re-enable container
@@ -89,6 +89,7 @@ class Latex:
         print(r'\usepackage{longtable}')
         print(r'\usepackage{fancyhdr}')
         print(r'\usepackage{lastpage}  % defines \pageref{LastPage}')
+        print(r'\usepackage[table]{xcolor}  % \rowcolor')
         print(r'\pagestyle{fancy}')
         print(r'\renewcommand{\headrulewidth}{0pt}  % remove head line')
         print(r'\makeatletter\let\ps@plain\ps@fancy\makeatother  % first page equal to rest')
@@ -97,11 +98,14 @@ class Latex:
         print(r'\fancyfoot[C]{}')
         print(r'\fancyfoot[R]{\scriptsize Page \thepage\ of \pageref{LastPage}}')
         print(r'\usepackage{titlesec}  % change \section look')
-        print(r'\titleformat{\section}{\normalfont\Large\scshape}{}{0pt}{}[{\vspace{-0.5ex}\titlerule[0.8pt]}]')
+        print(r'\titleformat{\section}{\normalfont\Large\scshape}{}{0pt}{}[{\titlerule[0.8pt]}]')
+        print(r'\titleformat{\subsection}{\normalfont\large\scshape}{}{0pt}{}[\vspace{-1ex}\hbox to 15.2cm{\leaders\hbox to 5pt{\hss . \hss}\hfil}]')
+        print(r'\titleformat{\subsubsection}{\normalfont\scshape}{}{0pt}{}')
         print(r'\renewcommand{\thesection}{}  % no section numbers')
         print(r'\renewcommand{\thesubsection}{}  % no section numbers')
         print(r'\usepackage{tocloft}\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}\renewcommand{\cftsubsecdotsep}{\cftnodots}\setlength{\cftbeforesecskip}{-.5ex}')
         print(r'\usepackage{enumitem}')
+        print(r'\setlist{itemsep=0pt, parsep=0pt}')
         print(r'\newlength{\widestlabel}  % used by description')
         print(r'\begin{document}')
         print(f'{{\\Large {name}}}', end='\n\n')
@@ -110,12 +114,13 @@ class Latex:
         print(r'\end{document}')
 
     def markdown(self, text, newline=r'\\'):
+        text = re.sub(r'!\[\]\((.*?)\)', r'\\includegraphics[width=300px]{\1}', text)  # image
         text = re.sub(r'\[(.*?)\]\((.*?)\)', r'\1 \\href{\2}{\\includegraphics[width=0.8em]{imgs/link.pdf}}', text)  # links
-        text = re.sub(r'!\[\]\((.*?)\)', r'\\includegraphics{\1}', text)  # image
         text = re.sub(r'\*\*(.*?)\*\*', r'\\textbf{\1}', text)  # bold
         text = re.sub(r'\*(.*?)\*', r'\\textit{\1}', text)  # italic
-        text = re.sub(r'\=\=(.*?)\=\=', r'\\hl{\1}', text)  # highlight
+        text = re.sub(r'\=\=([^=]*?)\=\=', r'\\hl{\1}', text)  # highlight
         text = text.replace('&', r'\&').replace('~', r'$\sim$')  # escape symbols
+        text = text.replace('#', r'\#')
         text = text.replace('\n', newline + '\n')  # force breaklines
         text = re.sub(r'"(.*?)"', r"``\1''", text)
         return text
@@ -134,6 +139,9 @@ class Latex:
 
     def subsection(self, text):
         print(f'\\subsection[{text}]{{{text}}}\\nopagebreak')
+
+    def subsubsection(self, text):
+        print(f'\\subsubsection[{text}]{{{text}}}\\nopagebreak')
 
     def text(self, text):
         print()
@@ -154,13 +162,15 @@ class Latex:
             print(f'\\item {self.markdown(text)}')
         print(r'\end{itemize}')
 
-    def table(self, rows, columns, types, sizes):
+    def table(self, rows, columns, types, sizes, colors=None):
         sizes = '|'.join(f'p{{{size}}}' if size else 'l' for size in sizes)
         print(r'{\small\begin{longtable}{|' + sizes + '|}')
         print(r'\hline')
-        print('&'.join((f'\\bf {h}' for h in columns)) + r'\\')
+        print('&'.join((f'\\bf {self.markdown(h)}' for h in columns)) + r'\\')
         print(r'\hline\endhead')
-        for row in rows:
+        for i, row in enumerate(rows):
+            if colors and colors[i]:
+                print(r'\rowcolor{' + colors[i] + '}')
             print('&'.join(self.markdown(str(v), r'\newline') for v in row) + r'\\')
             print(r'\hline')
         print(r'\end{longtable}}')

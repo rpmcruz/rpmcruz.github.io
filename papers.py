@@ -25,6 +25,8 @@ def get_core_rank(acronym):
     tree = etree.HTML(response.content)
     rank = tree.xpath('//table//tr[2]/td[4]/text()')
     rank = rank[0].strip() if len(rank) else 'n/a'
+    if rank.startswith('National'):
+        rank = 'National'
     if rank == 'n/a':
         print(f'Warning: could not find CORE rank for "{acronym}"', file=sys.stderr)
     return rank
@@ -145,9 +147,10 @@ def get_paper_info(doi, topic, my_categories):
             year = paper['published']['date-parts'][0][0]
             where = f"{name} {year} ({conference_acronym}), {paper['publisher']}"
     where = where.replace('&amp;', '&')
+    year = paper['published']['date-parts'][0][0]
     return (
-        paper['published']['date-parts'][0][0],
-        '[' + paper['title'][0] + '](' + paper['URL'] + ')\n' + authors + '\n*' + where + '*',
+        year,
+        '[' + paper['title'][0] + ' (' + str(year) + ')' + '](' + paper['URL'] + ')\n' + authors + '\n*' + where + '*',
         topic,
         'journal' if paper['type'] == 'journal-article' else 'conference',
         paper['is-referenced-by-count'],
