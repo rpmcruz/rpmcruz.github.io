@@ -1,93 +1,85 @@
-name: 'Ricardo Cruz, PhD'
+firstname: 'Ricardo'
+lastname: 'Cruz'
+title: 'PhD in Machine Learning and Computer Vision'
+email: 'ricardo.pdm.cruz@gmail.com'
+homepage: 'https://rpmcruz.github.io/'
+github: 'rpmcruz'
+orcid: '0000-0002-5189-6228'
 biography: 'Ricardo Cruz has worked on a wide range of machine learning topics, with particular emphasis on theoretical aspects of deep learning and computer vision -- with 20+ publications and 100+ citations in such topics as: • adapting ranking models for class imbalance; • making convolutional neural networks invariant to background; • making them faster by adjusting the computational effort to each image; • losses for ordinal regression. He is a Post-doc Researcher on autonomous driving at the Faculty of Engineering, University of Porto, and he has been a researcher at INESC TEC since 2015, where his research earned him the computer science PhD in 2021. He has a BSc in computer science and a MSc in applied mathematics. He has frequently been an invited professor at the Faculty of Engineering, University of Porto, where he earned a pedagogic award.'
 
 education: [
-  {'when': 2021 PhD', 'what': 'Computer Science (joint degree University of Porto, Minho and Aveiro)'},
-  {'when': '2015 M.Sc.', 'what': 'Mathematical Engineering (Faculty of Sciences, University of Porto)'},
-  {'when': '2012 B.Sc.', 'what': 'Computer Science (Faculty of Sciences, University of Porto)'},
+  {year: 2021, degree: 'PhD in Computer Science', institution: 'Joint degree University of Porto, Minho and Aveiro'},
+  {year: 2015, degree: 'M.Sc. in Mathematical Engineering', institution: 'Faculty of Sciences, University of Porto'},
+  {year: 2012, degree: 'B.Sc. in Computer Science', institution: 'Faculty of Sciences, University of Porto'},
 ]
 employment: [
-  {'when': "2021/09\n--present", 'what': "**Post-doctoral Researcher** on Autonomous Driving\nUniversity of Porto (FEUP) [in partnership with Bosch]\n- Collaboration between the University of Porto and Bosch Car Multimedia to improve autonomous driving perception\n- Developed frameworks for object detection using camera and LiDAR (2D discretization and raw point-clouds)\n- Published new methods for efficient semantic segmentation and ordinal regression\n- Supervised six master's theses, four bachelor's projects, and other team members\n- Responsible for the HPC infrastructure (using Slurm)"},
-  {'when': "2023/09\n--2024/02", 'what': "**Invited Auxiliary Professor**, University of Porto (FEUP)\nCourses:\n- OAT4001 [](https://sigarra.up.pt/feup/en/UCURR_GERAL.FICHA_UC_VIEW?pv_ocorrencia_id=524574) & FACVC [](https://sigarra.up.pt/feup/pt/ucurr_geral.ficha_uc_view?pv_ocorrencia_id=521307): Machine Learning (theoretical classes)"},
-  {'when': "2021/09\n--2022/08", 'what': "**Invited Auxiliary Professor**, University of Porto (FEUP)\nCourses:\n- L.EIC003 [](https://sigarra.up.pt/feup/pt/ucurr_geral.ficha_uc_view?pv_ocorrencia_id=484382): Programming Fundamentals (Python) (practical lessons)\n- L.EEC009 [](https://sigarra.up.pt/feup/pt/ucurr_geral.ficha_uc_view?pv_ocorrencia_id=485369): Data Structures and Algorithms (C/C++) (practical lessons)"},
-  {'when': "2018/09\n--2021/08", 'what': "**Invited Teacher Assistant**, University of Porto (FEUP)\nCourses:\n- L.EIC003: Programming Fundamentals (Python) (practical lessons)\n- L.EIC009 [](https://sigarra.up.pt/feup/pt/ucurr_geral.ficha_uc_view?pv_ocorrencia_id=459468): Programming (C/C++) (practical lessons)"},
-  {'when': "2015/09\n--2021/08", 'what': "**Research Assistant** on Machine Learning and Computer Vision (INESC TEC)\n- Research focus: re-thinking fundamentals about image classification and semantic segmentation (8+ publications)\n- Some highlights: (1) a method for background invariance using adversarial training, (2) new losses that minimize absolute trade-offs between Type 1 and 2 errors instead of relative trade-offs, (3) using backpropagation also for inference to refine existing outputs, (4) deploying learning-to-rank methods for class imbalance\n- Contributed to workshops, Summer School on Computer Vision (VISUM), and other events\n- Twice awarded \"outstanding recognition\" for organizing workshops and helping with the HPC infrastructure"},
-  {'when': "2014/09\n--2014/12", 'what': "**Research Grant** on Mathematical Modelling Research (Mathematics Center of the University of Porto, CMUP)\n- Epidemiological models for HIV. A little of everything: from differential equations to stochastic simulations to cellular automata."},
+  {dates: '2021/09--present', title: 'Post-doctoral Researcher on Autonomous Driving', employer: 'University of Porto (FEUP) [in partnership with Bosch]', details: "Collaboration between the University of Porto and Bosch Car Multimedia to improve autonomous driving perception. I developed frameworks for object detection using camera and LiDAR (2D discretization and raw point-clouds), published new methods for efficient semantic segmentation and ordinal regression, supervised six master's theses, four bachelor's projects, and other team members, responsible for the HPC infrastructure (using Slurm)."},
+  {dates: '2023/09--2024/02', title: 'Invited Auxiliary Professor', employer: 'University of Porto (FEUP)', details: 'Courses on Machine Learning (theoretical lessons): - OAT4001 [](https://sigarra.up.pt/feup/en/UCURR_GERAL.FICHA_UC_VIEW?pv_ocorrencia_id=524574), FACVC [](https://sigarra.up.pt/feup/pt/ucurr_geral.ficha_uc_view?pv_ocorrencia_id=521307)'},
+  {dates: '2021/09--2022/08', title: 'Invited Auxiliary Professor', employer: 'University of Porto (FEUP)', details: 'Courses: Programming Fundamentals (practical lessons in Python): - L.EIC003 [](https://sigarra.up.pt/feup/pt/ucurr_geral.ficha_uc_view?pv_ocorrencia_id=484382), Data Structures and Algorithms (practical lessons in C/C++): L.EEC009 [](https://sigarra.up.pt/feup/pt/ucurr_geral.ficha_uc_view?pv_ocorrencia_id=485369)'},
+  {dates: '2018/09--2021/08', title: 'Invited Teacher Assistant', employer: 'University of Porto (FEUP)', details: 'Courses: Programming Fundamentals (practical lessons in Python): L.EIC003, Programming (practical lessons in C/C++): L.EIC009 [](https://sigarra.up.pt/feup/pt/ucurr_geral.ficha_uc_view?pv_ocorrencia_id=459468)'},
+  {dates: '2015/09--2021/08', title: 'Research Assistant on Machine Learning and Computer Vision', employer: 'INESC TEC', details: 'Research focus: re-thinking fundamentals about image classification and semantic segmentation (8+ publications), in particular (1) a method for background invariance using adversarial training, (2) new losses that minimize absolute trade-offs between Type 1 and 2 errors instead of relative trade-offs, (3) using backpropagation also for inference to refine existing outputs, (4) deploying learning-to-rank methods for class imbalance. During the period, I contributed to workshops, the Summer School on Computer Vision (VISUM), and other events, and was twice awarded "outstanding recognition" for organizing workshops and helping with the HPC infrastructure.'},
+  {dates: '2014/09--2014/12', title: 'Research Grant on Mathematical Modelling Research', employer: 'Mathematics Center of the University of Porto (CMUP)', details: 'Epidemiological models for HIV: differential equations, stochastic simulations, cellular automata.'},
 ]
 
-contacts: [
-  ['profile-email', 'rpcruz@fe.up.pt', 'mailto:rpcruz@fe.up.pt'],
-  ['profile-orcid', '0000-0002-5189-6228', 'https://orcid.org/0000-0002-5189-6228'],
-  ['profile-github', 'github.com/rpmcruz', 'https://github.com/rpmcruz?tab=repositories'],
+published_papers: [  # listed in publishing order
+  '10.1007/s41060-024-00579-w',
+  '10.1109/TIV.2024.3387113',
+  '10.1007/978-3-031-49018-7_40',
+  '10.1007/978-3-031-49018-7_39',
+  '10.1007/978-3-031-49018-7_38',
+  '10.1007/978-3-031-36616-1_22',
+  '10.1007/978-3-031-43078-7_43',
+  '10.3390/s23063092',
+  '10.1117/12.2679881',
+  '10.1016/j.iswa.2022.200170',
+  '10.3390/math10060980',
+  '10.7717/peerj-cs.457',
+  '10.1109/ICPR48806.2021.9413004',
+  '10.1109/EMBC.2019.8857385',
+  '10.1016/j.compeleceng.2019.08.001',
+  '10.1007/978-3-030-30484-3_10',
+  '10.1109/IJCNN.2018.8489696',
+  '10.1109/PRNI.2018.8423960',
+  '10.1007/s10044-018-0705-4',
+  '10.1007/978-3-319-59147-6_47',
+  '10.1007/978-3-319-59147-6_45',
+  '10.1007/978-3-319-59147-6_46',
+  '10.1007/978-3-319-58838-4_1',
+  '10.1109/IJCNN.2016.7727469',
 ]
-
-papers: [  # listed in publishing order
-  {'doi': '10.1007/s41060-024-00579-w', 'topic': 'applications'},
-  {'doi': '10.1109/TIV.2024.3387113', 'topic': 'applications'},
-  {'doi': '10.1007/978-3-031-49018-7_40', 'topic': 'applications'},
-  {'doi': '10.1007/978-3-031-49018-7_39', 'topic': 'others'},
-  {'doi': '10.1007/978-3-031-49018-7_38', 'topic': 'human-in-the-loop'},
-  {'doi': '10.1007/978-3-031-36616-1_22', 'topic': 'human-in-the-loop'},
-  {'doi': '10.1007/978-3-031-43078-7_43', 'topic': 'ordinal-losses'},
-  {'doi': '10.3390/s23063092', 'topic': 'spatial-resource-efficiency'},
-  {'doi': '10.1117/12.2679881', 'topic': 'spatial-resource-efficiency'},
-  {'doi': '10.1016/j.iswa.2022.200170', 'topic': 'applications'},
-  {'doi': '10.3390/math10060980', 'topic': 'ordinal-losses'},
-  {'doi': '10.7717/peerj-cs.457', 'topic': 'ordinal-losses'},
-  {'doi': '10.1109/ICPR48806.2021.9413004', 'topic': 'background-invariance'},
-  {'doi': '10.1109/EMBC.2019.8857385', 'topic': 'absolute-costs'},
-  {'doi': '10.1016/j.compeleceng.2019.08.001', 'topic': 'applications'},
-  {'doi': '10.1007/978-3-030-30484-3_10', 'topic': 'others'},
-  {'doi': '10.1109/IJCNN.2018.8489696', 'topic': 'iterative-inference'},
-  {'doi': '10.1109/PRNI.2018.8423960', 'topic': 'ranking-for-class-imbalance'},
-  {'doi': '10.1007/s10044-018-0705-4', 'topic': 'ranking-for-class-imbalance'},
-  {'doi': '10.1007/978-3-319-59147-6_47', 'topic': 'absolute-costs'},
-  {'doi': '10.1007/978-3-319-59147-6_45', 'topic': 'ranking-for-class-imbalance'},
-  {'doi': '10.1007/978-3-319-59147-6_46', 'topic': 'ranking-for-class-imbalance'},
-  {'doi': '10.1007/978-3-319-58838-4_1', 'topic': 'ranking-for-class-imbalance'},
-  {'doi': '10.1109/IJCNN.2016.7727469', 'topic': 'ranking-for-class-imbalance'},
-]
-categories: [  # for purposes of SJR Quartile Rank
-  'Applied Mathematics', 'Artificial Intelligence', 'Bioengineering',
-  'Biomedical Engineering', 'Computational Mathematics',
-  'Computer Science Applications', 'Computer Science (miscellaneous)',
-  'Computer Vision and Pattern Recognition', 'Control and Optimization',
-  'Electrical and Electronic Engineering', 'Engineering (miscellaneous)',
-  'Mathematics (miscellaneous)', 'Signal Processing',
-  'Statistics and Probability', 'Statistics, Probability and Uncertainty',
-]
-manual_papers: [
-  {'year': 2024, 'title': "==**[2ND ROUND]**== Unimodal Distributions for Ordinal Regression\nJ. Cardoso, **R. Cruz**, T. Albuquerque\n*IEEE Transactions on Artificial Intelligence, IEEE*", 'topic': 'ordinal-losses', 'type': 'journal'},
-  {'year': 2024, 'title': "==**[SUBMITTED]**== CNN Explanation Methods for Ordinal Regression Tasks\nJ. Barbero-Gómez, **R. Cruz**, J. Cardoso, P. Gutiérrez, C. Hervás-Martínez\n*Neurocomputing, Elsevier*", 'topic': 'ordinal-losses', 'type': 'journal'},
+submitted_papers: [
+  {'type': 'journal', 'year': 2024, 'entry': '==**[2ND ROUND]**== J. Cardoso, **R. Cruz**, T. Albuquerque, "Unimodal Distributions for Ordinal Regression", *IEEE Transactions on Artificial Intelligence*'},
+  {'type': 'journal', 'year': 2024, 'entry': '==**[SUBMITTED]**== J. Barbero-Gómez, **R. Cruz**, J. Cardoso, P. Gutiérrez, C. Hervás-Martínez, "CNN Explanation Methods for Ordinal Regression Tasks", *Neurocomputing, Elsevier*'},
+  {'type': 'journal', 'year': 2024, 'entry': '==**[SUBMITTED]**== R. Cristino, **R. Cruz**, J.Cardoso, "Learning Ordinality in Semantic Segmentation", *IEEE Access*'},
   # rejected :-(
-  #{'year': 2024, 'title': "==**[SUBMITTED]**== Learning Ordinality in Semantic Segmentation\nR. Cristino, **R. Cruz**, J.Cardoso\n*Pattern Recognition, Elsevier*", 'topic': 'ordinal-losses', 'type': 'journal'},
-  #{'year': 2024, 'title': "==**[SUBMITTED]**== Spatial Resource-Efficiency using Partial Convolutions for Segmentation and Object Detection\n**R. Cruz**\n*Pattern Recognition, Elsevier*", 'topic': 'spatial-resource-efficiency', 'type': 'journal'},
+  #{'type': 'journal', 'year': 2024, 'entry': '==**[SUBMITTED]**== **R. Cruz**, "Spatial Resource-Efficiency using Partial Convolutions for Segmentation and Object Detection", *Pattern Recognition*'},
 ]
 
 supervisions: [
-  {'year': 'on-going', 'degree': 'Summer Internship', 'student': 'Isabel Gomes de Sá
-', 'title': 'Making Sense of Ordinal Images Without Labels', 'university': 'INESC TEC'},
-  {'year': 'on-going', 'degree': 'MSc', 'student': 'Diana Teixeira Silva', 'cosupervisor': '', 'title': 'Quantifying How Deep 3D Representations Promote Label Efficiency', 'university': 'FEUP'},
-  {'year': 'on-going', 'MSc', 'student': 'Francisco Gonçalves Cerqueira', 'cosupervisor': '', 'title': 'Exploring Label Efficiency with Semi-Supervision and Self-Supervision Methods', 'university': 'FEUP'},
-  {'year': 2024, 'degree': 'MSc', 'student': 'Airton Tiago', 'cosupervisor': 'Jaime Cardoso (FEUP)', 'title': '[Data Augmentation for Ordinal Data](https://repositorio-aberto.up.pt/handle/10216/157714)', 'university': 'FEUP'},
-  {'year': 2023, 'degree': 'MSc', 'student': 'Alankrita Asthana', 'cosupervisor': '', 'title': 'Iterative Inference for Point-Clouds', 'university': 'TUM'},
-  {'year': 2023, 'degree': 'MSc', 'student': 'Rafael Cristino', 'cosupervisor': 'Jaime Cardoso (FEUP)', 'title': '[Introducing Domain Knowledge to Scene Parsing in Autonomous Driving](https://repositorio-aberto.up.pt/handle/10216/152109)', 'university': 'FEUP'},
-  {'year': 2023, 'degree': 'MSc', 'student': 'José Guerra', 'cosupervisor': 'Luís Teixeira (FEUP)', 'title': '[Uncertainty-Driven Out-of-Distribution Detection in 3D LiDAR Object Detection for Autonomous Driving](https://repositorio-aberto.up.pt/handle/10216/152016) (Internship at Bosch Car Multimedia)', 'university': 'FEUP'},
-  {'year': 2022, 'degree': 'MSc', 'student': 'Pedro Silva', 'cosupervisor': 'Tiago Gonçalves (INESC TEC)', 'title': '[Human Feedback during Neural Networks Training](https://repositorio-aberto.up.pt/handle/10216/142444)', 'university': 'FEUP'},
-  {'year': 2022, 'degree': 'MSc', 'student': 'João Silva', 'cosupervisor': '', 'title': '[Environment Detection for Railway Applications based on Automotive Technology](https://repositorio-aberto.up.pt/handle/10216/142326) (Internship at Continental)', 'university': 'FEUP'},
-  {'year': 2022, 'degree': 'MSc', 'student': 'Ana Bezerra', 'cosupervisor': 'Joaquim Costa (FCUP)', 'title': '[Phishing Detection with a Machine Learning Net](https://repositorio-aberto.up.pt/handle/10216/147350) (Internship at E-goi)', 'FCUP'},
-  {'year': 'on-going', 'degree': 'BSc', 'student': 'João Monteiro', 'cosupervisor': 'Celso Pereira (INESC TEC)', 'title': '[Cross-vehicle collaboration using RGB cameras](https://github.com/joaopecomonteiro/CroVe)', 'FCUP'},
-  {'year': 'on-going', 'degree': 'BSc', 'student': 'Diogo Mendes', 'cosupervisor': 'Nuno Lavado (ISEC)', 'title': '[Automatic Recognition of Pig Activity in an Intensive Production System](https://github.com/diogomendes/behaviour-detection)', 'university': 'FCUP'},
-  {'year': 'on-going', 'degree': 'BSc', 'student': 'Beatriz Sá', 'cosupervisor': 'Jaime S. Cardoso', 'title': '[Research on Deep Augmentation for Ordinal Regression](https://github.com/beatrizmsa/ordinal_augmentation)', 'university': 'FCUP'},
-  {'year': 2024, 'degree': 'BSc', 'student': 'Eliandro Melo', 'cosupervisor': '', 'title': 'Resource Efficiency using Deep Q-Learning in Autonomous Driving', 'university': 'FCUP'},
-  {'year': 2024, 'degree': 'BSc', 'student': 'Ivo Duarte Simões', 'cosupervisor': '', 'title': 'Resource Efficiency using PPO in Autonomous Driving', 'university': 'FCUP'},
-  {'year': 2023, 'degree': 'BSc', 'student': 'Diana Teixeira Silva', 'cosupervisor': '', 'title': 'Condition Invariance for Autonomous Driving by Adversarial Learning', 'university': 'FEUP'},
-  {'year': 2022, 'degree': 'BSc', 'student': 'Diana Teixeira Silva', 'cosupervisor': 'Tiago Gonçalves', 'title': 'Semantic Segmentation in Neural Networks using Iterative Visual Attention', 'university': 'FEUP'},
-  {'year': 2022, 'degree': 'BSc', 'student': 'Filipe Campos, Francisco Cerqueira, Vasco Alves', 'cosupervisor': '', 'title': '[Mobile App using Object Detection for Car Driving](https://play.google.com/store/apps/details?id=pt.up.fe.mobilecardriving)', 'university': 'FEUP'},
-  {'year': 2022, 'degree': 'BSc', 'student': 'Bruno Gomes, Rafael Camelo', 'cosupervisor': '', 'title': 'Internship at ANO', 'university': 'FEUP'},
+  {date: '2024 July', type: 'Internship', 'student': 'Isabel Gomes de Sá
+', 'title': 'Making Sense of Ordinal Images Without Labels', 'university': 'INESC TEC', link: 'https://github.com/Isabel-Sa3/ordinal-without-labels'},
+  {date: 2024, type: 'MSc Dissertation', 'student': 'Diana Teixeira Silva', 'title': 'Quantifying How Deep 3D Representations Promote Label Efficiency', 'university': 'FEUP'},
+  {date: 2024, type: 'MSc Dissertation', 'student': 'Francisco Gonçalves Cerqueira', 'title': 'Exploring Label Efficiency with Semi-Supervision and Self-Supervision Methods', 'university': 'FEUP'},
+  {date: 2024, type: 'MSc Dissertation', 'student': 'Airton Tiago', 'cosupervisor': 'Jaime Cardoso', 'title': 'Data Augmentation for Ordinal Data', 'university': 'FEUP', link: 'https://repositorio-aberto.up.pt/handle/10216/157714'},
+  {date: 2023, type: 'MSc Dissertation', 'student': 'Alankrita Asthana', 'title': 'Iterative Inference for Point-Clouds', 'university': 'TUM'},
+  {date: 2023, type: 'MSc Dissertation', 'student': 'Rafael Cristino', 'cosupervisor': 'Jaime Cardoso', 'title': 'Introducing Domain Knowledge to Scene Parsing in Autonomous Driving', 'university': 'FEUP', link: 'https://repositorio-aberto.up.pt/handle/10216/152109'},
+  {date: 2023, type: 'MSc Dissertation', 'student': 'José Guerra', 'cosupervisor': 'Luís Teixeira', 'title': 'Uncertainty-Driven Out-of-Distribution Detection in 3D LiDAR Object Detection for Autonomous Driving (Internship at Bosch Car Multimedia)', 'university': 'FEUP', link: 'https://repositorio-aberto.up.pt/handle/10216/152016'},
+  {date: 2022, type: 'MSc Dissertation', 'student': 'Pedro Silva', 'cosupervisor': 'Tiago Gonçalves', 'title': 'Human Feedback during Neural Networks Training', 'university': 'FEUP', link: 'https://repositorio-aberto.up.pt/handle/10216/142444'},
+  {date: 2022, type: 'MSc Dissertation', 'student': 'João Silva', 'title': 'Environment Detection for Railway Applications based on Automotive Technology (Internship at Continental)', 'university': 'FEUP', link: 'https://repositorio-aberto.up.pt/handle/10216/142326'},
+  {date: 2022, type: 'MSc Dissertation', 'student': 'Ana Bezerra', 'cosupervisor': 'Joaquim Costa', 'title': 'Phishing Detection with a Machine Learning Net (Internship at E-goi)', university: 'FCUP', link: 'https://repositorio-aberto.up.pt/handle/10216/147350'},
+  {date: 'on-going', type: 'BSc Project', 'student': 'João Monteiro', 'cosupervisor': 'Celso Pereira', 'title': 'Cross-vehicle collaboration using RGB cameras', university: 'FCUP', link: 'https://github.com/joaopecomonteiro/CroVe'},
+  {date: 'on-going', type: 'BSc Project', 'student': 'Diogo Mendes', 'cosupervisor': 'Nuno Lavado', 'title': 'Automatic Recognition of Pig Activity in an Intensive Production System', 'university': 'FCUP', link: 'https://github.com/diogomendes/behaviour-detection'},
+  {date: 'on-going', type: 'BSc Project', 'student': 'Beatriz Sá', 'cosupervisor': 'Jaime S. Cardoso', 'title': 'Research on Deep Augmentation for Ordinal Regression', 'university': 'FCUP', link: 'https://github.com/beatrizmsa/ordinal_augmentation'},
+  {date: 2024, type: 'BSc Project', 'student': 'Eliandro Melo', 'title': 'Resource Efficiency using Deep Q-Learning in Autonomous Driving', 'university': 'FCUP'},
+  {date: 2024, type: 'BSc Project', 'student': 'Ivo Duarte Simões', 'title': 'Resource Efficiency using PPO in Autonomous Driving', 'university': 'FCUP'},
+  {date: 2023, type: 'BSc Project', 'student': 'Diana Teixeira Silva', 'title': 'Condition Invariance for Autonomous Driving by Adversarial Learning', 'university': 'FEUP'},
+  {date: 2022, type: 'BSc Project', 'student': 'Diana Teixeira Silva', 'cosupervisor': 'Tiago Gonçalves', 'title': 'Semantic Segmentation in Neural Networks using Iterative Visual Attention', 'university': 'FEUP'},
+  {date: 2022, type: 'BSc Project', 'student': 'Filipe Campos, Francisco Cerqueira, Vasco Alves', 'title': 'Mobile App using Object Detection for Car Driving', 'university': 'FEUP', link: 'https://play.google.com/store/apps/details?id=pt.up.fe.mobilecardriving'},
+  {date: 2022, type: 'BSc Project', 'student': 'Bruno Gomes, Rafael Camelo', 'title': 'Internship at ANO', 'university': 'FEUP'},
 ]
 
 jury_participation: [
+  {'when': '2024/07/23', 'what': 'External Examiner @ FCUP: MSc Dissertation "Incremental Matrix Factorization for Real-time Recommender Systems"'},
   {'when': '2023/12', 'what': 'External Examiner @ U.Minho: MSc Dissertation "Prediction System for Municipal Waste Containers"'},
   {'when': '2023/07', 'what': 'Examiner @ INESC TEC: Evaluation of 6 summer interships (SCI 2023) on computer vision and machine learning'},
   {'when': '2022/10', 'what': 'External Examiner @ FEUP: MSc Dissertation "Neuroblastoma Cancer Radiogenomics"'},
