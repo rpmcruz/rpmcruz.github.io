@@ -1,4 +1,5 @@
 import re
+import json
 
 class Latex:
     def begin_document(self, info):
@@ -21,8 +22,8 @@ class Latex:
     def end_document(self):
         print(r'\end{document}')
 
-    def biography(self, biography):
-        print(self.markdown(biography))
+    def biography(self, text):
+        print(self.markdown(text))
 
     def section(self, name):
         print(r'\section{' + name + '}')
@@ -41,6 +42,7 @@ class Latex:
         text = re.sub(r'\[(.*?)\]\((.*?)\)', r'\1 \\href{\2}{\\includegraphics[width=0.8em]{imgs/link.pdf}}', text)  # links
         text = re.sub(r'\*\*(.*?)\*\*', r'\\textbf{\1}', text)  # bold
         text = re.sub(r'\*(.*?)\*', r'\\textit{\1}', text)  # italic
+        text = re.sub(r'__(.*?)__', r'\\underline{\1}', text)  # underline
         text = re.sub(r'\=\=([^=]*?)\=\=', r'\\hl{\1}', text)  # highlight
         text = text.replace('&', r'\&').replace('~', r'$\sim$')  # escape symbols
         text = text.replace('#', r'\#')
@@ -60,30 +62,34 @@ class HTML:
         print('<title>' + info['firstname'] + ' ' + info['lastname'] + '</title>')
         print('<style>')
         print('body {text-align:justify;}')
-        print('h1 {background-image:url("imgs/lecture.jpg"); background-size:cover; background-position:25%; height:180px; color:white; text-align:center; text-shadow:-2px -2px 2px black, 2px -2px 2px black, -2px 2px 2px black, 2px 2px 2px black;}')
+        #print('h1 {background-image:url("imgs/lecture.jpg"); background-size:cover; background-position:25%; height:180px; color:white; text-align:center; text-shadow:-2px -2px 2px black, 2px -2px 2px black, -2px 2px 2px black, 2px 2px 2px black;}')
         print('h2 {margin-top:50px; border-bottom:solid;}')
         print('.container {max-width:800px; margin:0 auto;}')
         print('table {width:100%; text-align:left;}')
         print('thead th {background-color: #ccc;}')
         # description
-        print('@media screen and (min-width:1000px) {div.description {display:flex; flex-direction: column;} div.item {display:flex;} div.left {width:4em; font-weight:bold;} div.right {flex: 1;}')
+        print('@media screen and (min-width:1000px) {div.description {display:flex; flex-direction: column;} div.item {display:flex;} div.left {width:8em; font-weight:bold;} div.right {flex: 1;}')
         print('@media screen and (max-width:999px) {div.item {display:inline;} div.left {display:inline;font-weight:bold;} div.right{display:inline;}}')
         print('.hl {background-color:yellow;}')
         print('</style>')
         print('<script src="mytable.js"></script>')
         print('</head>')
         print('<body>')
-        print('<h1>' + info['firstname'] + ' ' + info['lastname'] + '</h1>')
         print('<div class="container">')
+        print('<h1><img width="120px" src="photo.jpg"> ' + info['firstname'] + ' ' + info['lastname'] + '</h1>')
         print('<p>')
         for contact in ['email', 'github', 'orcid']:
-            print('<img width="28px" src="imgs/' + contact + '.svg">&nbsp;<a href="' + info[contact] + '">' + info[contact] + '</a> ')
+            print('<img width="22px" src="imgs/' + contact + '.svg">&nbsp;<a href="' + info[contact] + '">' + info[contact] + '</a> ')
+        print('<img width="22px" src="imgs/pdf.svg">&nbsp;<a href="rpcruz-cv.pdf">PDF</a>')
         print('</p>')
 
     def end_document(self):
         print('</div>')
         print('</body>')
         print('</html>')
+
+    def biography(self, text):
+        print('<p>' + self.markdown(text) + '</p>')
 
     def section(self, name):
         print(f'<h2>' + name + '</h2>')
@@ -93,8 +99,7 @@ class HTML:
 
     def cvitem(self, left, text):
         print('<div class="description">')
-        for label, text in items:
-            print(f'<div class="item"><div class="left">{self.markdown(left)}</div><div class="right">{self.markdown(text)}</div></div>')
+        print(f'<div class="item"><div class="left">{self.markdown(left)}</div><div class="right">{self.markdown(text)}</div></div>')
         print('</div>')
 
     def cventry(self, dates, title, employer, city, grade, description):
@@ -116,6 +121,7 @@ class HTML:
         text = re.sub(r'!\[\]\((.*?)\)', r'<img href="\1">', text)  # image
         text = re.sub(r'\*\*(.*?)\*\*', r'<b>\1</b>', text)  # bold
         text = re.sub(r'\*(.*?)\*', r'<i>\1</i>', text)  # italic
+        text = re.sub(r'__(.*?)__', r'<u>\1</u>', text)  # underline
         text = text.replace('&', '&amp;').replace('--', '&ndash;')
         text = text.replace('\n', '<br>\n')  # force breaklines
         text = re.sub(r'\=\=(.*?)\=\=', r'<span class="hl">\1</span>', text)  # highlight

@@ -48,11 +48,11 @@ published_papers: [  # listed in publishing order
   '10.1109/IJCNN.2016.7727469',
 ]
 submitted_papers: [
-  {type: 'journal', year: 2024, note: '==**[2ND ROUND]**==', authors: 'J. Cardoso, __**R. Cruz**__, T. Albuquerque', title: "Unimodal Distributions for Ordinal Regression", where: 'IEEE Transactions on Artificial Intelligence'},
-  {type: 'journal', year: 2024, note: '==**[2ND ROUND]**==', authors: 'J. Barbero-Gómez, __**R. Cruz**__, J. Cardoso, P. Gutiérrez, C. Hervás-Martínez', title: 'CNN Explanation Methods for Ordinal Regression Tasks', where: 'Neurocomputing'},
-  {type: 'journal', year: 2024, note: '==**[SUBMITTED]**==', authors: 'R. Cristino, __**R. Cruz**__, J.Cardoso', title: 'Learning Ordinality in Semantic Segmentation', where: 'IEEE Access'},
+  {'type': 'journal', 'year': 2024, 'entry': '==**[2ND ROUND]**== J. Cardoso, **R. Cruz**, T. Albuquerque, "Unimodal Distributions for Ordinal Regression", *IEEE Transactions on Artificial Intelligence*'},
+  {'type': 'journal', 'year': 2024, 'entry': '==**[SUBMITTED]**== J. Barbero-Gómez, **R. Cruz**, J. Cardoso, P. Gutiérrez, C. Hervás-Martínez, "CNN Explanation Methods for Ordinal Regression Tasks", *Neurocomputing, Elsevier*'},
+  {'type': 'journal', 'year': 2024, 'entry': '==**[SUBMITTED]**== R. Cristino, **R. Cruz**, J.Cardoso, "Learning Ordinality in Semantic Segmentation", *IEEE Access*'},
   # rejected :-(
-  #{type: 'journal', year: 2024, 'note': '==**[SUBMITTED]**==', authors: '__**R. Cruz**__', title: "Spatial Resource-Efficiency using Partial Convolutions for Segmentation and Object Detection", where: 'Pattern Recognition'},
+  #{'type': 'journal', 'year': 2024, 'entry': '==**[SUBMITTED]**== **R. Cruz**, "Spatial Resource-Efficiency using Partial Convolutions for Segmentation and Object Detection", *Pattern Recognition*'},
 ]
 
 supervisions: [

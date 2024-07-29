@@ -1,7 +1,10 @@
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument('yaml')
+args = parser.parse_args()
 
-import functools
-import requests
-from lxml import etree
+import yaml
+cv = yaml.safe_load(open(args.yaml))
 
 proceedings = {
     'Advances in Computational Intelligence': ('International Work-Conference on Artificial Neural Networks', 'IWANN'),
@@ -18,16 +21,19 @@ sjr_categories = {  # for purposes of SJR Quartile Rank
   'Statistics and Probability', 'Statistics, Probability and Uncertainty',
 }
 
+import functools
+import requests
+from lxml import etree
+
 @functools.cache
 def get_core_rank(acronym):
     response = requests.get(f'http://portal.core.edu.au/conf-ranks/?search={acronym}&by=acronym&source=all')
     response.raise_for_status()
     tree = etree.HTML(response.content)
     rank = tree.xpath('//table//tr[2]/td[4]/text()')
-    if len(rank) == 0: return 'n/a'
+    if len(rank) == 0 or rank[0].startswith('National'):
+        return None
     rank = rank[0].strip()
-    if rank.startswith('National'): return 'n/a'
-    return rank
 
 @functools.cache
 def get_impact_factor(journal_name):
@@ -38,7 +44,7 @@ def get_impact_factor(journal_name):
     # just to be safe, we are getting these values directly from each journal.
     journal_id = {
         'Pattern Analysis and Applications': ('springer', 10044),
-        'Computers & Electrical Engineering': ('elsevier', 'computers-and-electrical-engineering'),
+        'Computers &amp; Electrical Engineering': ('elsevier', 'computers-and-electrical-engineering'),
         'PeerJ Computer Science': ('peerj', 'computer-science'),
         'Mathematics': ('mdpi', 'mathematics'), 'Sensors': ('mdpi', 'sensors'),
         'International Journal of Data Science and Analytics': ('springer', 41060),
@@ -49,7 +55,7 @@ def get_impact_factor(journal_name):
         # without impact factor
         'Lecture Notes in Computer Science': None,
         'Intelligent Systems with Applications': None,
-        'IEEE Transactions on Artificial Intelligence': None,
+        'Transactions on Artificial Intelligence': None,
     }
     methods = {
         'springer': (False, 'https://link.springer.com/journal/', '//dd[@data-test="impact-factor-value"]/b/text()', lambda s: s.split()[0]),
@@ -88,16 +94,15 @@ def get_sjr_rank(journal_name):
     journals_id = {
         'Lecture Notes in Computer Science': 25674,
         'Pattern Analysis and Applications': 24822,
-        'Computers & Electrical Engineering': 18159,
+        'Computers &amp; Electrical Engineering': 18159,
         'PeerJ Computer Science': 21100830173,
         'Mathematics': 21100830702, 'Sensors': 130124,
         'Intelligent Systems with Applications': 21101051831,
         'International Journal of Data Science and Analytics': 21101017225,
         'Pattern Recognition': 24823,
-        'IEEE Transactions on Artificial Intelligence': 21101093601,
+        'Transactions on Artificial Intelligence': 21101093601,
         'IEEE Transactions on Intelligent Vehicles': 21100976127,
         'Neurocomputing': 24807,
-        'IEEE Access': 21100374601,
     }
     id = journals_id[journal_name]
     response = requests.get(f'https://www.scimagojr.com/journalsearch.php?q={id}&tip=sid', timeout=5)
@@ -114,25 +119,88 @@ def get_paper_info(doi):
     paper = requests.get(f'https://api.crossref.org/works/{doi}').json()['message']
     year = paper['published']['date-parts'][0][0]
     title = paper['title'][0]
-    authors = ', '.join('__**R. Cruz**__' if author.get('ORCID', '') == 'http://orcid.org/0000-0002-5189-6228' or author['given'][0] + author['family'] == 'RCruz' else author['given'][0] + '. ' + author['family'] for author in paper['author'])
+    authors = ', '.join('**R. Cruz**' if author.get('ORCID', '') == 'http://orcid.org/0000-0002-5189-6228' or author['given'][0] + author['family'] == 'RCruz' else author['given'][0] + '. ' + author['family'] for author in paper['author'])
     where = paper['container-title'][0].replace('&amp;', '&')
-    citations = paper['is-referenced-by-count']
-    type = 'journal' if paper['type'] == 'journal-article' else 'conference'
-    acronym = None
-    if paper['type'] == 'book-chapter' and 'assertion' in paper:
+    if paper['type'] == 'journal-article':
+        type = 'journal'
+        IF = get_impact_factor(where)
+        SJR = get_sjr_rank(where)
+        metrics = f'**SJR={SJR}**, **IF={IF}**'
+    elif paper['type'] == 'book-chapter' and 'assertion' in paper:
+        type = 'conference'
         d = {i['name']: i['value'] for i in paper['assertion']}
         where = d['conference_name'] + ' ' + d['conference_year'] + ' (' + d['conference_acronym'] + ')'
-        acronym = d['conference_acronym']
-    elif type == 'conference':
-        acronym = where.split()[-1][1:-1]
-    return {'type': type, 'year': year, 'authors': authors, 'title': title,
-        'where': where, 'citations': citations, 'acronym': acronym}
+        CORE = get_core_rank(d['conference_acronym'])
+        metrics = f'**CORE={CORE}**' if CORE else ''
+    else:
+        type = 'conference'
+        CORE = get_core_rank(where)
+        metrics = f'**CORE={CORE}**' if CORE else ''
+    if metrics:
+        metrics = ', ' + metrics
+    return {'type': type, 'year': year, 'entry': f'{authors}, "{title}", *{where}*{metrics}'}
 
-def get_metrics(paper):
-    metrics = {}
-    if paper['type'] == 'journal':
-        metrics['IF'] = get_impact_factor(paper['where'])
-        metrics['SJR'] = get_sjr_rank(paper['where'])
-    if paper['type'] == 'conference':
-        metrics['CORE'] = get_core_rank(paper['acronym'])
-    return metrics
+import re
+
+def markdown(text, newline=r'\\'):
+    text = re.sub(r'!\[\]\((.*?)\)', r'\\includegraphics[width=300px]{\1}', text)  # image
+    text = re.sub(r'\[(.*?)\]\((.*?)\)', r'\1 \\href{\2}{\\includegraphics[width=0.8em]{imgs/link.pdf}}', text)  # links
+    text = re.sub(r'\*\*(.*?)\*\*', r'\\textbf{\1}', text)  # bold
+    text = re.sub(r'\*(.*?)\*', r'\\textit{\1}', text)  # italic
+    text = re.sub(r'\=\=([^=]*?)\=\=', r'\\hl{\1}', text)  # highlight
+    text = text.replace('&', r'\&').replace('~', r'$\sim$')  # escape symbols
+    text = text.replace('#', r'\#')
+    text = text.replace('\n', newline + '\n')  # force breaklines
+    text = re.sub(r'"(.*?)"', r"``\1''", text)
+    return text
+
+print(r'\documentclass{moderncv}')
+print(r'\moderncvstyle{classic}')
+print(r'\moderncvcolor{blue}')
+print(r'\usepackage[margin=2cm]{geometry}')
+print(r'\usepackage{soul}')
+print(r'\name{' + cv['firstname'] + '}{' + cv['lastname'] + '}')
+print(r'\title{' + cv['title'] + '}')
+print(r'\email{' + cv['email'] + '}')
+print(r'\homepage{' + cv['homepage'] + '}')
+print(r'\social[github]{' + cv['github'] + '}')
+print(r'\social[orcid]{' + cv['orcid'] + '}')
+print(r'\photo{photo}')
+print()
+
+print(r'\begin{document}')
+print(r'\makecvtitle')
+
+print(markdown(cv['biography']))
+
+# add Research Interests (itemize)?
+
+print(r'\section{Education}')
+for entry in cv['education']:
+    print(r'\cvitem{\textbf{' + str(entry['year']) + r'}}{\textbf{' + entry['degree'] + '}}')
+    print(r'\cvitem{Institution}{' + entry['institution'] + '}')
+
+print(r'\section{Work Experience}')
+for entry in cv['employment']:
+    print(r'\cventry{' + entry['dates'] + '}{' + entry['title'] + '}{' + entry['employer'] + '}{}{}{' + markdown(entry['details']) + '}')
+
+print(r'\section{Publications}')
+papers = cv['submitted_papers'] + \
+    [get_paper_info(paper) for paper in cv['published_papers']]
+
+for type, title in [('conference', 'International Conference Proceedings'), ('journal', 'Journal Publications')]:
+    print(r'\subsection{' + title + '}')
+    for paper in papers:
+        if paper['type'] == type:
+            print(r'\cvitem{' + str(paper['year']) + '}{' + markdown(paper['entry']) + '}')
+
+print(r'\section{Supervisions}')
+for type in ['MSc Dissertation', 'BSc Project', 'Internship']:
+    print(r'\subsection{' + type + 's}')
+    for entry in cv['supervisions']:
+        if entry['type'] == type:
+            title = markdown('[' + entry['title'] + '](' + entry['link'] + ')') if 'link' in entry else entry['title']
+            note = ' (with co-supervisor: ' + entry['cosupervisor'] + ')' if 'cosupervisor' in entry else ''
+            print(r'\cvitem{' + str(entry['date']) + '}{' + entry['student'] + ', "' + title + '", *' + entry['university'] + '*' + note + '}')
+
+print(r'\end{document}')
