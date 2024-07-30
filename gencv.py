@@ -49,11 +49,12 @@ else:
         out.subsection(title)
         for paper in papers:
             if paper['type'] == type:
-                title = '[' + paper['title'] + '](' + paper['link'] + ')' if 'link' in paper else paper['title']
                 metrics = ', '.join(f'{metric}={paper[metric]}' for metric in ('IF', 'SJR', 'CORE') if metric in paper and paper[metric] != 'n/a')
-                if metrics:
+                if paper.get('CORE', '').startswith('A') or paper.get('SJR') == 'Q1':
                     metrics = ', **' + metrics + '**'
-                text = paper['authors'] + ', "' + title + '", *' + paper['where'] + '*' + metrics
+                elif metrics:
+                    metrics = ', ' + metrics
+                text = paper['authors'] + ', "' + paper['title'] + '", *' + paper['where'] + '*' + metrics + (' [](' + paper['link'] +')' if 'link' in paper else '')
                 out.cvitem(str(paper['year']), text)
 
 out.section('Supervisions')
