@@ -6,6 +6,7 @@ args = parser.parse_args()
 
 import out, papers
 from papers import get_metrics
+from datetime import datetime
 import yaml
 cv = yaml.safe_load(open(args.yaml))
 
@@ -25,25 +26,34 @@ for entry in cv['employment']:
     out.cventry(entry['dates'], entry['title'], entry['employer'], '', '', entry['details'])
 
 out.section('Publications')
+
+hindices = papers.get_hindices()
+out.table_small('h-index', [[str(v) for v in hindices.values()]], hindices.keys())
+
+out.paragraph("Sources for the following metrics: • Impact Factor (IF) as reported by the journal's webpage. • SJR rank quartiles are from Scimago and relate to the subject category closest to machine learning (not necessarily the best quartile). • CORE rank is from ICORE for whatever last year is available for that conference. " + ('• Citation counts come from Crossref. ' if args.format == 'html' else '') + 'Last update: ' + datetime.now().strftime(r'%Y-%m-%d'))
+
 papers = cv['submitted_papers'] + \
     [papers.get_paper_info(paper) for paper in cv['published_papers']]
 papers = [dict(paper, **get_metrics(paper)) for paper in papers]
-
 if args.format == 'html':
-    rows = [[paper['year'], paper['authors'] + ', "' + paper['title'] + '", *' + paper['where'] + '*',
-        paper['type'], paper.get('citations', ''), paper.get('IF', ''), paper.get('SJR', ''), paper.get('CORE', '')] for paper in papers]
+    rows = []
+    for paper in papers:
+        title = '[' + paper['title'] + '](' + paper['link'] + ')' if 'link' in paper else paper['title']
+        rows.append([paper['year'], paper['authors'] + ', "' + title + '", *' + paper['where'] + '*',
+            paper['type'], paper.get('citations', ''), paper.get('IF', ''), paper.get('SJR', ''), paper.get('CORE', '')])
     columns = ['Year', 'Paper', 'Type', 'Citations', 'IF', 'SJR Rank', 'CORE Rank']
     types = ['sort', 'text', 'filter', 'sort', 'sort', 'sort', 'sort']
-    out.table(rows, columns, types)
+    out.table_large(rows, columns, types)
 else:
     for type, title in [('conference', 'International Conference Proceedings'), ('journal', 'Journal Publications')]:
         out.subsection(title)
         for paper in papers:
             if paper['type'] == type:
+                title = '[' + paper['title'] + '](' + paper['link'] + ')' if 'link' in paper else paper['title']
                 metrics = ', '.join(f'{metric}={paper[metric]}' for metric in ('IF', 'SJR', 'CORE') if metric in paper and paper[metric] != 'n/a')
                 if metrics:
                     metrics = ', **' + metrics + '**'
-                text = paper['authors'] + ', "' + paper['title'] + '", *' + paper['where'] + '*' + metrics
+                text = paper['authors'] + ', "' + title + '", *' + paper['where'] + '*' + metrics
                 out.cvitem(str(paper['year']), text)
 
 out.section('Supervisions')

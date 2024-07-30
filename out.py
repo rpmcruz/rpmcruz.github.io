@@ -37,6 +37,19 @@ class Latex:
     def cventry(self, dates, title, employer, city, grade, description):
         print(r'\cventry{' + dates + '}{' + title + '}{' + employer + '}{}{}{' + self.markdown(description) + '}')
 
+    def paragraph(self, text):
+        self.cvitem('', text)
+
+    def table_small(self, label, rows, columns):
+        print(r'\cvitem{' + label + '}{%')
+        print(r'\begin{tabular}{' + '|c'*len(columns) + '|}')
+        print(r'\hline')
+        print(' & '.join(self.markdown(c) for c in columns) + r'\\\hline')
+        for row in rows:
+            print(' & '.join(row) + r'\\')
+        print(r'\hline')
+        print(r'\end{tabular}}')
+
     def markdown(self, text, newline=r'\\'):
         text = re.sub(r'!\[\]\((.*?)\)', r'\\includegraphics[width=300px]{\1}', text)  # image
         text = re.sub(r'\[(.*?)\]\((.*?)\)', r'\1 \\href{\2}{\\includegraphics[width=0.8em]{imgs/link.pdf}}', text)  # links
@@ -65,7 +78,7 @@ class HTML:
         #print('h1 {background-image:url("imgs/lecture.jpg"); background-size:cover; background-position:25%; height:180px; color:white; text-align:center; text-shadow:-2px -2px 2px black, 2px -2px 2px black, -2px 2px 2px black, 2px 2px 2px black;}')
         print('h2 {margin-top:50px; border-bottom:solid;}')
         print('.container {max-width:800px; margin:0 auto;}')
-        print('table {width:100%; text-align:left;}')
+        print('table.large {width:100%; text-align:left;}')
         print('thead th {background-color: #ccc;}')
         # description
         print('@media screen and (min-width:1000px) {div.description {display:flex; flex-direction: column;} div.item {display:flex;} div.left {width:8em; font-weight:bold;} div.right {flex: 1;}')
@@ -106,7 +119,22 @@ class HTML:
         text = f'**{title}** *{employer}*\n{description}'
         self.cvitem(dates, text)
 
-    def table(self, rows, columns, types):
+    def paragraph(self, text):
+        print('<p>' + text + '</p>')
+
+    def table_small(self, label, rows, columns):
+        print(label + ':')
+        print('<table border="1">')
+        print('<tr>')
+        print(''.join('<th>' + self.markdown(c) + '</th>' for c in columns))
+        print('</tr>')
+        for row in rows:
+            print('<tr>')
+            print(''.join('<td>' + r + '</td>' for r in row))
+            print('</tr>')
+        print('</table>')
+
+    def table_large(self, rows, columns, types):
         print('</div>')  # temporarily disable container
         print(f'<div id="table{self.tables}"></div>')
         print('<div class="container">')  # re-enable container

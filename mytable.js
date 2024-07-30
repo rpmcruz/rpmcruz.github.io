@@ -2,6 +2,7 @@ class Table {
   constructor(id, data, columns, columns_type) {
     let div = document.getElementById(id);
     let table = document.createElement('table');
+    table.className = 'large';
     table.border = '1';
     div.appendChild(table);
     this.thead = table.createTHead();
