@@ -51,17 +51,111 @@ class Latex:
         print(r'\end{tabular}}')
 
     def markdown(self, text, newline=r'\\'):
-        text = re.sub(r'!\[\]\((.*?)\)', r'\\includegraphics[width=300px]{\1}', text)  # image
-        text = re.sub(r'\[(.*?)\]\((.*?)\)', r'\1 \\href{\2}{\\includegraphics[width=0.8em]{imgs/link.pdf}}', text)  # links
+        text = re.sub(r'!\[\]\(([^\s]*?)\)', r'\\includegraphics[width=300px]{\1}', text)  # image
+        text = re.sub(r'\[([^\]]*?)\]\(([^\s]*?)\)', r'\1 \\href{\2}{\\includegraphics[width=0.8em]{imgs/link.pdf}}', text)  # links
         text = re.sub(r'\*\*(.*?)\*\*', r'\\textbf{\1}', text)  # bold
         text = re.sub(r'\*(.*?)\*', r'\\textit{\1}', text)  # italic
         text = re.sub(r'__(.*?)__', r'\\underline{\1}', text)  # underline
-        text = re.sub(r'\=\=([^=]*?)\=\=', r'\\hl{\1}', text)  # highlight
+        text = re.sub(r'\=\=(.*?)\=\=', r'\\hl{\1}', text)  # highlight
         text = text.replace('&', r'\&').replace('~', r'$\sim$')  # escape symbols
         text = text.replace('#', r'\#')
         text = text.replace('\n', newline + '\n')  # force breaklines
         text = re.sub(r'"(.*?)"', r"``\1''", text)
         return text
+
+class FEUP(Latex):
+    def begin_document(self, info):
+        print(r'\documentclass{article}')
+        print(r'\usepackage[a4paper, margin=2cm]{geometry}')
+        print(r'\setlength\parindent{0pt}  % no indent')
+        print(r'\setlength{\parskip}{4pt}  % space between paragraphs')
+        print(r'\usepackage{xcolor,soul}')
+        print(r'\usepackage{graphicx}')
+        print(r'\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue]{hyperref}')
+        print(r'\usepackage{fancyhdr}')
+        print(r'\usepackage{lastpage}  % defines \pageref{LastPage}')
+        print(r'\pagestyle{fancy}')
+        print(r'\renewcommand{\headrulewidth}{0pt}  % remove head line')
+        print(r'\makeatletter\let\ps@plain\ps@fancy\makeatother  % first page equal to rest')
+        print(r'\fancyhead{}')
+        print(r'\fancyfoot[L]{\scriptsize Last update: \today}')
+        print(r'\fancyfoot[C]{}')
+        print(r'\fancyfoot[R]{\scriptsize Page \thepage\ of \pageref{LastPage}}')
+        print(r'\usepackage{titlesec}  % change \section look')
+        print(r'\titleformat{\section}{\normalfont\Large\scshape}{}{0pt}{}[{\titlerule[0.8pt]}]')
+        print(r'\titleformat{\subsection}{\normalfont\large\scshape}{}{0pt}{}[\vspace{-1ex}\hbox to 15.2cm{\leaders\hbox to 5pt{\hss . \hss}\hfil}]')
+        print(r'\titleformat{\subsubsection}{\normalfont\scshape}{}{0pt}{}')
+        print(r'\renewcommand{\thesection}{}  % no section numbers')
+        print(r'\renewcommand{\thesubsection}{}  % no section numbers')
+        print(r'\usepackage{tocloft}\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}\renewcommand{\cftsubsecdotsep}{\cftnodots}\setlength{\cftbeforesecskip}{-.5ex}')
+        print(r'\usepackage{enumitem}')
+        print(r'\setlist{itemsep=0pt, parsep=0pt}')
+        print(r'\newlength{\widestlabel}  % used by description')
+        print(r'\usepackage{tikz}\usetikzlibrary{shapes}')
+        print(r'\newcommand{\starnum}[2]{\tikz[baseline=(star.base)]{\node[star, star points=5, star point ratio=2.25, fill=#2, draw, minimum size=1.5em, inner sep=0pt] (star) {\textbf{#1}};}}')
+        print(r'\begin{document}')
+        print(f'{{\\Large {info["firstname"]} {info["lastname"]}}}', end='\n\n')
+        print(r'\noindent{\small')
+        for key, value in info['contact'].items():
+            print(f'\\raisebox{{-0.25\\height}}{{\\includegraphics[width=0.5cm]{{imgs/{key}.pdf}}}} \\href{{{value}}}{{{value}}} ')
+        print('}\n')
+        print(r'\par\noindent\rule{\textwidth}{0.4pt}')
+        print(r'\setcounter{tocdepth}{2}\tableofcontents')
+        print(r'\par\noindent\rule{\textwidth}{0.4pt}')
+        print()
+
+    def part(self, name):
+        print(r'\section{' + name + '}')
+
+    def section(self, name):
+        print(r'\subsection{' + name + '}')
+
+    def subsection(self, name):
+        print(r'\subsubsection{' + name + '}')
+
+    def cvitem(self, left, text):
+        print(r'\begin{minipage}[t]{0.12\linewidth}')
+        print(self.markdown(left))
+        print(r'\end{minipage}%')
+        print(r'\begin{minipage}[t]{0.88\linewidth}')
+        print(self.markdown(text))
+        print(r'\end{minipage}')
+        print()
+
+    def cventry(self, dates, title, employer, city, grade, description):
+        print(r'\begin{minipage}[t]{0.12\linewidth}')
+        print(self.markdown(dates))
+        print(r'\end{minipage}%')
+        print(r'\begin{minipage}[t]{0.88\linewidth}')
+        print(r'\textbf{' + self.markdown(title) + r'}, \textit{' + employer + r'}\\')
+        print(self.markdown(description))
+        print(r'\end{minipage}')
+        print()
+
+    def paragraph(self, text):
+        print(self.markdown(text))
+        print()
+
+    def itemize(self, items):
+        print(r'\begin{itemize}')
+        for item in items:
+            print(r'\item ' + self.markdown(item))
+        print(r'\end{itemize}')
+
+    def table_small(self, label, rows, columns):
+        print(r'\begin{minipage}[t]{0.12\linewidth}')
+        print(self.markdown(label))
+        print(r'\end{minipage}%')
+        print(r'\begin{minipage}[t]{0.88\linewidth}')
+        print(r'\begin{tabular}{' + '|c'*len(columns) + '|}')
+        print(r'\hline')
+        print(' & '.join(self.markdown(c) for c in columns) + r'\\\hline')
+        for row in rows:
+            print(' & '.join(row) + r'\\')
+        print(r'\hline')
+        print(r'\end{tabular}')
+        print(r'\end{minipage}%')
+        print()
 
 class HTML:
     tables = 0
@@ -145,7 +239,7 @@ class HTML:
         self.tables += 1
 
     def markdown(self, text):
-        text = re.sub(r'\[(.*?)\]\((.*?)\)', r'<a href="\2">\1</a>', text)  # links
+        text = re.sub(r'\[([^\]*?)\]\((.*?)\)', r'<a href="\2">\1</a>', text)  # links
         text = re.sub(r'!\[\]\((.*?)\)', r'<img href="\1">', text)  # image
         text = re.sub(r'\*\*(.*?)\*\*', r'<b>\1</b>', text)  # bold
         text = re.sub(r'\*(.*?)\*', r'<i>\1</i>', text)  # italic

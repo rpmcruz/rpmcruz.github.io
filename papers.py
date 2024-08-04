@@ -6,6 +6,9 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.options import Options
+chrome_options = Options()
+chrome_options.add_argument('--disable-search-engine-choice-screen')
 
 proceedings = {
     'Advances in Computational Intelligence': ('International Work-Conference on Artificial Neural Networks', 'IWANN'),
@@ -31,14 +34,14 @@ def get_hindices():
     tree = etree.HTML(response.content)
     hindices['[Google Scholar](https://scholar.google.pt/citations?user=pSFY_gQAAAAJ)'] = int(tree.xpath('//table/tbody/tr[2]/td[2]/text()')[0])
     # scopus
-    driver = webdriver.Chrome()
+    driver = webdriver.Chrome(options=chrome_options)
     driver.get('https://www.scopus.com/authid/detail.uri?authorId=57192670388')
     element = WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.XPATH, '//section/div/div[3]//span[@data-testid="unclickable-count"]')))
     hindices['[Scopus](https://www.scopus.com/authid/detail.uri?authorId=57192670388)'] = int(element.text)
     driver.close()
     # web of science
-    driver = webdriver.Chrome()
+    driver = webdriver.Chrome(options=chrome_options)
     driver.get('https://www.webofscience.com/wos/author/record/IQV-2746-2023')
     element = WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.XPATH, '(//div[@class="wat-author-metric"])[1]')))
@@ -92,7 +95,7 @@ def get_impact_factor(journal_name):
     use_selenium, url, xpath, postprocess = methods[id[0]]
     url = url + str(id[1])
     if use_selenium:
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome(options=chrome_options)
         driver.get(url)
         element = WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.XPATH, xpath)))
@@ -150,7 +153,8 @@ def get_paper_info(doi):
     elif type == 'conference':
         acronym = where.split()[-1][1:-1]
     return {'type': type, 'year': year, 'authors': authors, 'title': title,
-        'where': where, 'citations': citations, 'acronym': acronym, 'link': paper['URL']}
+        'where': where, 'citations': citations, 'acronym': acronym, 'link': paper['URL'],
+        'doi': doi}
 
 def get_metrics(paper):
     metrics = {}

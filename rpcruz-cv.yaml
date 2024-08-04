@@ -1,10 +1,11 @@
 firstname: 'Ricardo'
 lastname: 'Cruz'
 title: 'PhD in Machine Learning and Computer Vision'
-email: 'ricardo.pdm.cruz@gmail.com'
-homepage: 'https://rpmcruz.github.io/'
-github: 'rpmcruz'
-orcid: '0000-0002-5189-6228'
+contact:
+  email: 'ricardo.pdm.cruz@gmail.com'
+  homepage: 'https://rpmcruz.github.io/'
+  github: 'rpmcruz'
+  orcid: '0000-0002-5189-6228'
 biography: 'Ricardo Cruz has worked on a wide range of machine learning topics, with particular emphasis on theoretical aspects of deep learning and computer vision -- with 20+ publications and 100+ citations in such topics as: • adapting ranking models for class imbalance; • making convolutional neural networks invariant to background; • making them faster by adjusting the computational effort to each image; • losses for ordinal regression. He is a Post-doc Researcher on autonomous driving at the Faculty of Engineering, University of Porto, and he has been a researcher at INESC TEC since 2015, where his research earned him the computer science PhD in 2021. He has a BSc in computer science and a MSc in applied mathematics. He has frequently been an invited professor at the Faculty of Engineering, University of Porto, where he earned a pedagogic award.'
 
 education: [
@@ -48,16 +49,17 @@ published_papers: [  # listed in publishing order
   '10.1109/IJCNN.2016.7727469',
 ]
 submitted_papers: [
-  {type: 'journal', year: 2024, authors: '==**[2ND ROUND]**== J. Cardoso, __**R. Cruz**__, T. Albuquerque', title: "Unimodal Distributions for Ordinal Regression", where: 'IEEE Transactions on Artificial Intelligence'},
-  {type: 'journal', year: 2024, authors: '==**[2ND ROUND]**== J. Barbero-Gómez, __**R. Cruz**__, J. Cardoso, P. Gutiérrez, C. Hervás-Martínez', title: 'CNN Explanation Methods for Ordinal Regression Tasks', where: 'Neurocomputing'},
-  {type: 'journal', year: 2024, authors: '==**[SUBMITTED]**== R. Cristino, __**R. Cruz**__, J.Cardoso', title: 'Learning Ordinality in Semantic Segmentation', where: 'IEEE Access'},
+  {type: 'journal', year: 2024, authors: '**[2ND ROUND]** J. Cardoso, __**R. Cruz**__, T. Albuquerque', title: "Unimodal Distributions for Ordinal Regression", where: 'IEEE Transactions on Artificial Intelligence', link: 'https://arxiv.org/abs/2303.04547'},
+  {type: 'journal', year: 2024, authors: '**[2ND ROUND]** J. Barbero-Gómez, __**R. Cruz**__, J. Cardoso, P. Gutiérrez, C. Hervás-Martínez', title: 'CNN Explanation Methods for Ordinal Regression Tasks', where: 'Neurocomputing'},
+  {type: 'journal', year: 2024, authors: '**[SUBMITTED]** R. Cristino, __**R. Cruz**__, J.Cardoso', title: 'Learning Ordinality in Semantic Segmentation', where: 'IEEE Access', link: 'https://arxiv.org/abs/2407.20959'},
   # rejected :-(
-  #{type: 'journal', year: 2024, 'note': '==**[SUBMITTED]**==', authors: '__**R. Cruz**__', title: "Spatial Resource-Efficiency using Partial Convolutions for Segmentation and Object Detection", where: 'Pattern Recognition'},
+  #{type: 'journal', year: 2024, 'note': '**[SUBMITTED]**', authors: '__**R. Cruz**__', title: "Spatial Resource-Efficiency using Partial Convolutions for Segmentation and Object Detection", where: 'Pattern Recognition'},
 ]
+best_last_5_years: ['10.1109/icpr48806.2021.9413004', '10.1109/tiv.2024.3387113', '10.1109/embc.2019.8857385', '10.1007/978-3-031-36616-1_22', '10.3390/s23063092']
+best_overall: ['10.1109/icpr48806.2021.9413004', '10.1109/ijcnn.2016.7727469', '10.1109/ijcnn.2018.8489696', '10.1109/tiv.2024.3387113', '10.1109/embc.2019.8857385']
 
 supervisions: [
-  {date: '2024 July', type: 'Internship', 'student': 'Isabel Gomes de Sá
-', 'title': 'Making Sense of Ordinal Images Without Labels', 'university': 'INESC TEC', link: 'https://github.com/Isabel-Sa3/ordinal-without-labels'},
+  {date: '2024 July', type: 'Internship', 'student': 'Isabel Gomes de Sá', 'title': 'Making Sense of Ordinal Images Without Labels', 'university': 'INESC TEC', link: 'https://github.com/Isabel-Sa3/ordinal-without-labels'},
   {date: 2024, type: 'MSc Dissertation', 'student': 'Diana Teixeira Silva', 'title': 'Quantifying How Deep 3D Representations Promote Label Efficiency', 'university': 'FEUP'},
   {date: 2024, type: 'MSc Dissertation', 'student': 'Francisco Gonçalves Cerqueira', 'title': 'Exploring Label Efficiency with Semi-Supervision and Self-Supervision Methods', 'university': 'FEUP'},
   {date: 2024, type: 'MSc Dissertation', 'student': 'Airton Tiago', 'cosupervisor': 'Jaime Cardoso', 'title': 'Data Augmentation for Ordinal Data', 'university': 'FEUP', link: 'https://repositorio-aberto.up.pt/handle/10216/157714'},
@@ -102,12 +104,12 @@ awards: [
 ]
 
 scientific_projects: [
-  "(2021--2023) **THEIA -- Automated Perception Driving (POCI-01-0247-FEDER-047264) [](https://sigarra.up.pt/feup/pt/projectos_geral.ficha_projecto?p_id=78377)**\nDuring this Bosch-UP collaboration, I was a post-doc researcher working on the deliverables, HPC infrastructure, and supervising students (4 masters dissertations, 4 conference papers, 1 journal paper).",
-  #"(2018--2021) **CLARE -- Computer-aided cervical cancer screening (POCI-01-0145-FEDER-028857) [](https://www.inesctec.pt/pt/projetos/clare)**\nResearch member while doing my PhD.",
-  "(2021) **CLARE: Sistema de apoio ao rastreio do cancro cervical (POCI-01-0145-FEDER-028857 PTDC/EMD-EMD/28857/2017)**\nResearch member while doing my PhD.",
-  "(2019) **BCCT.plan: Ferramenta 3D para o planeamento do tratamento conservador do cancro da mama (NORTE-01-0247-FEDER-017688)**\nResearch member while doing my PhD.",
-  "(2015--2016) **NanoSTIMA -- Macro-to-Nano Human Sensing: Towards Integrated Multimodal Health Monitoring and Analytics (NORTE-01-0145-FEDER-000016)**\nResearch member while doing my PhD.",
-  "(2014) **PEst-C/MAT/UI0144/2013**\nResearch grant during my masters dissertation.",
+  {when: 2021--2023, what: "**THEIA -- Automated Perception Driving (POCI-01-0247-FEDER-047264) [](https://sigarra.up.pt/feup/pt/projectos_geral.ficha_projecto?p_id=78377)**\nDuring this Bosch-UP collaboration, I was a post-doc researcher working on the deliverables, HPC infrastructure, and supervising students (4 masters dissertations, 4 conference papers, 1 journal paper)."},
+  #"{when: 2018--2021, what: "**CLARE -- Computer-aided cervical cancer screening (POCI-01-0145-FEDER-028857) [](https://www.inesctec.pt/pt/projetos/clare)**\nResearch member while doing my PhD."},
+  {when: '2021', what: "**CLARE: Sistema de apoio ao rastreio do cancro cervical (POCI-01-0145-FEDER-028857 PTDC/EMD-EMD/28857/2017)**\nResearch member while doing my PhD."},
+  {when: '2019', what: "**BCCT.plan: Ferramenta 3D para o planeamento do tratamento conservador do cancro da mama (NORTE-01-0247-FEDER-017688)**\nResearch member while doing my PhD."},
+  {when: 2015--2016, what: "**NanoSTIMA -- Macro-to-Nano Human Sensing: Towards Integrated Multimodal Health Monitoring and Analytics (NORTE-01-0145-FEDER-000016)**\nResearch member while doing my PhD."},
+  {when: '2014', what: "**PEst-C/MAT/UI0144/2013**\nResearch grant during my masters dissertation."},
 ]
 
 scientific_events: [
@@ -123,10 +125,10 @@ editor_or_evaluator: [
 ]
 
 public_workshops_talks: [
-  '2019: **DSPT Day:** lightning talk (a two-day machine learning event for a public audience',
-  '2018: **VISUM:** I helped to prepare a computational framework in which students submitted processes and generated Kaggle-style leaderboards (using Google Cloud) for the competitions that take place during the VISUM computer vision summer school, a framework that continues to be used today.',
-  '2017: organized some workshops, especially at INESC TEC, namely **Learning from Data,** which was part of the CTM Open Day. (The CTM is the INESC TEC unit that I was part of.) [](https://opendayctm.inesctec.pt/2017/index.php/learning-from-data/)',
-  '2017: Free public workshop, in collaboration with João Machado, in the **Python Meetup** entitled *NumPy and Scikit-Learn.* The Python Meetup was a monthly meeting about Python in Porto, which has since been discontinued. [](https://youtu.be/klr1z1EJ1yY)',
+  {when: '2019', what: '**DSPT Day:** lightning talk (a two-day machine learning event for a public audience.'},
+  {when: '2018', what: '**VISUM:** I helped to prepare a computational framework in which students submitted processes and generated Kaggle-style leaderboards (using Google Cloud) for the competitions that take place during the VISUM computer vision summer school, a framework that continues to be used today.'},
+  {when: '2017', what: 'Organized some workshops, especially at INESC TEC, namely **Learning from Data,** which was part of the CTM Open Day. (The CTM is the INESC TEC unit that I was part of.) [](https://opendayctm.inesctec.pt/2017/index.php/learning-from-data/)'},
+  {when: '2017', what: 'Free public workshop, in collaboration with João Machado, in the **Python Meetup** entitled *NumPy and Scikit-Learn.* The Python Meetup was a monthly meeting about Python in Porto, which has since been discontinued. [](https://youtu.be/klr1z1EJ1yY)'},
 ]
 
 public_outreach: [
