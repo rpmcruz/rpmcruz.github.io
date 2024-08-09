@@ -68,18 +68,18 @@ def get_impact_factor(journal_name):
     # publish it are: bioxbio.com, scijournal.org, wikipedia.org.
     # just to be safe, we are getting these values directly from each journal.
     journal_id = {
-        'Pattern Analysis and Applications': ('springer', 10044),
-        'Computers & Electrical Engineering': ('elsevier', 'computers-and-electrical-engineering'),
+        'Springer Pattern Analysis and Applications': ('springer', 10044),
+        'Elsevier Computers & Electrical Engineering': ('elsevier', 'computers-and-electrical-engineering'),
         'PeerJ Computer Science': ('peerj', 'computer-science'),
-        'Mathematics': ('mdpi', 'mathematics'), 'Sensors': ('mdpi', 'sensors'),
-        'International Journal of Data Science and Analytics': ('springer', 41060),
-        'Pattern Recognition': ('elsevier', 'pattern-recognition'),
+        'MDPI Mathematics': ('mdpi', 'mathematics'), 'MDPI Sensors': ('mdpi', 'sensors'),
+        'Springer International Journal of Data Science and Analytics': ('springer', 41060),
+        'Elsevier Pattern Recognition': ('elsevier', 'pattern-recognition'),
         'IEEE Transactions on Intelligent Vehicles': ('ieee', 7274857),
         'IEEE Access': ('ieee', 6287639),
-        'Neurocomputing': ('elsevier', 'neurocomputing'),
+        'Elsevier Neurocomputing': ('elsevier', 'neurocomputing'),
         # without impact factor
-        'Lecture Notes in Computer Science': None,
-        'Intelligent Systems with Applications': None,
+        'Springer Lecture Notes in Computer Science': None,
+        'Elsevier Intelligent Systems with Applications': None,
         'IEEE Transactions on Artificial Intelligence': None,
     }
     methods = {
@@ -113,17 +113,17 @@ def get_impact_factor(journal_name):
 @functools.cache
 def get_sjr_rank(journal_name):
     journals_id = {
-        'Lecture Notes in Computer Science': 25674,
-        'Pattern Analysis and Applications': 24822,
-        'Computers & Electrical Engineering': 18159,
+        'Springer Lecture Notes in Computer Science': 25674,
+        'Springer Pattern Analysis and Applications': 24822,
+        'Elsevier Computers & Electrical Engineering': 18159,
         'PeerJ Computer Science': 21100830173,
-        'Mathematics': 21100830702, 'Sensors': 130124,
-        'Intelligent Systems with Applications': 21101051831,
-        'International Journal of Data Science and Analytics': 21101017225,
-        'Pattern Recognition': 24823,
+        'MDPI Mathematics': 21100830702, 'MDPI Sensors': 130124,
+        'Elsevier Intelligent Systems with Applications': 21101051831,
+        'Springer International Journal of Data Science and Analytics': 21101017225,
+        'Elsevier Pattern Recognition': 24823,
         'IEEE Transactions on Artificial Intelligence': 21101093601,
         'IEEE Transactions on Intelligent Vehicles': 21100976127,
-        'Neurocomputing': 24807,
+        'Elsevier Neurocomputing': 24807,
         'IEEE Access': 21100374601,
     }
     id = journals_id[journal_name]
@@ -145,6 +145,14 @@ def get_paper_info(doi):
     where = paper['container-title'][0].replace('&amp;', '&')
     citations = paper['is-referenced-by-count']
     type = 'journal' if paper['type'] == 'journal-article' else 'conference'
+    if type == 'journal':
+        publisher = paper['publisher'].split()
+        if publisher[-1].startswith('(') and publisher[-1].endswith(')'):
+            publisher = publisher[-1][1:-1]
+        else:
+            publisher = publisher[0]
+        if not where.startswith(publisher):
+            where = publisher + ' ' + where
     acronym = None
     if paper['type'] == 'book-chapter' and 'assertion' in paper:
         d = {i['name']: i['value'] for i in paper['assertion']}
@@ -153,8 +161,8 @@ def get_paper_info(doi):
     elif type == 'conference':
         acronym = where.split()[-1][1:-1]
     return {'type': type, 'year': year, 'authors': authors, 'title': title,
-        'where': where, 'citations': citations, 'acronym': acronym, 'link': paper['URL'],
-        'doi': doi}
+        'where': where, 'citations': citations, 'acronym': acronym,
+        'link': paper['URL'], 'doi': doi}
 
 def get_metrics(paper):
     metrics = {}
