@@ -10,10 +10,10 @@ class Latex:
         print(r'\usepackage{soul}')
         print(r'\name{' + info['firstname'] + '}{' + info['lastname'] + '}')
         print(r'\title{' + info['title'] + '}')
-        print(r'\email{' + info['email'] + '}')
-        print(r'\homepage{' + info['homepage'] + '}')
-        print(r'\social[github]{' + info['github'] + '}')
-        print(r'\social[orcid]{' + info['orcid'] + '}')
+        print(r'\email{' + info['contact']['email'] + '}')
+        print(r'\homepage{' + info['contact']['homepage'] + '}')
+        print(r'\social[github]{' + info['contact']['github'] + '}')
+        print(r'\social[orcid]{' + info['contact']['orcid'] + '}')
         print(r'\photo{photo}')
         print()
         print(r'\begin{document}')
@@ -186,7 +186,7 @@ class HTML:
         print('<h1><img width="120px" src="photo.jpg"> ' + info['firstname'] + ' ' + info['lastname'] + '</h1>')
         print('<p>')
         for contact in ['email', 'github', 'orcid']:
-            print('<img width="22px" src="imgs/' + contact + '.svg">&nbsp;<a href="' + info[contact] + '">' + info[contact] + '</a> ')
+            print('<img width="22px" src="imgs/' + contact + '.svg">&nbsp;<a href="' + info['contact'][contact] + '">' + info['contact'][contact] + '</a> ')
         print('<img width="22px" src="imgs/pdf.svg">&nbsp;<a href="rpcruz-cv.pdf">PDF</a>')
         print('</p>')
 
@@ -239,7 +239,7 @@ class HTML:
         self.tables += 1
 
     def markdown(self, text):
-        text = re.sub(r'\[([^\]*?)\]\((.*?)\)', r'<a href="\2">\1</a>', text)  # links
+        text = re.sub(r'\[([^\]]*?)\]\((.*?)\)', r'<a href="\2">\1</a>', text)  # links
         text = re.sub(r'!\[\]\((.*?)\)', r'<img href="\1">', text)  # image
         text = re.sub(r'\*\*(.*?)\*\*', r'<b>\1</b>', text)  # bold
         text = re.sub(r'\*(.*?)\*', r'<i>\1</i>', text)  # italic
