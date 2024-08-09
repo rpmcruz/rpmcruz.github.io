@@ -14,7 +14,9 @@ out = out.Latex() if args.format == 'latex' else out.HTML()
 out.begin_document(cv)
 out.biography(cv['biography'])
 
-# add Research Interests (itemize)?
+if args.format == 'latex':
+    out.section('Skills')
+    out.cvitem('', '• ' + ' • '.join(cv['skills']))
 
 out.section('Education')
 for entry in cv['education']:
@@ -45,7 +47,7 @@ if args.format == 'html':
     types = ['sort', 'text', 'filter', 'sort', 'sort', 'sort', 'sort']
     out.table_large(rows, columns, types)
 else:
-    for type, title in [('conference', 'International Conference Proceedings'), ('journal', 'Journal Publications')]:
+    for type, title in [('journal', 'Journal Publications'), ('conference', 'International Conference Proceedings')]:
         out.subsection(title)
         for paper in papers:
             if paper['type'] == type:

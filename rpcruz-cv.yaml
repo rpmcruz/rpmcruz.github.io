@@ -8,6 +8,10 @@ contact:
   orcid: '0000-0002-5189-6228'
 biography: 'Ricardo Cruz has worked on a wide range of machine learning topics, with particular emphasis on theoretical aspects of deep learning and computer vision -- with 20+ publications and 100+ citations in such topics as: • adapting ranking models for class imbalance; • making convolutional neural networks invariant to background; • making them faster by adjusting the computational effort to each image; • losses for ordinal regression. He is a Post-doc Researcher on autonomous driving at the Faculty of Engineering, University of Porto, and he has been a researcher at INESC TEC since 2015, where his research earned him the computer science PhD in 2021. He has a BSc in computer science and a MSc in applied mathematics. He has frequently been an invited professor at the Faculty of Engineering, University of Porto, where he earned a pedagogic award.'
 
+skills: [
+    'PyTorch', 'TensorFlow', 'Python', 'R', 'Julia', 'Machine Learning', 'Git',
+]
+
 education: [
   {year: 2021, degree: 'PhD in Computer Science', institution: 'Joint degree University of Porto, Minho and Aveiro'},
   {year: 2015, degree: 'M.Sc. in Mathematical Engineering', institution: 'Faculty of Sciences, University of Porto'},
@@ -69,9 +73,9 @@ supervisions: [
   {date: 2022, type: 'MSc Dissertation', 'student': 'Pedro Silva', 'cosupervisor': 'Tiago Gonçalves', 'title': 'Human Feedback during Neural Networks Training', 'university': 'FEUP', link: 'https://repositorio-aberto.up.pt/handle/10216/142444'},
   {date: 2022, type: 'MSc Dissertation', 'student': 'João Silva', 'title': 'Environment Detection for Railway Applications based on Automotive Technology (Internship at Continental)', 'university': 'FEUP', link: 'https://repositorio-aberto.up.pt/handle/10216/142326'},
   {date: 2022, type: 'MSc Dissertation', 'student': 'Ana Bezerra', 'cosupervisor': 'Joaquim Costa', 'title': 'Phishing Detection with a Machine Learning Net (Internship at E-goi)', university: 'FCUP', link: 'https://repositorio-aberto.up.pt/handle/10216/147350'},
-  {date: 'on-going', type: 'BSc Project', 'student': 'João Monteiro', 'cosupervisor': 'Celso Pereira', 'title': 'Cross-vehicle collaboration using RGB cameras', university: 'FCUP', link: 'https://github.com/joaopecomonteiro/CroVe'},
-  {date: 'on-going', type: 'BSc Project', 'student': 'Diogo Mendes', 'cosupervisor': 'Nuno Lavado', 'title': 'Automatic Recognition of Pig Activity in an Intensive Production System', 'university': 'FCUP', link: 'https://github.com/diogomendes/behaviour-detection'},
-  {date: 'on-going', type: 'BSc Project', 'student': 'Beatriz Sá', 'cosupervisor': 'Jaime S. Cardoso', 'title': 'Research on Deep Augmentation for Ordinal Regression', 'university': 'FCUP', link: 'https://github.com/beatrizmsa/ordinal_augmentation'},
+  {date: 2024, type: 'BSc Project', 'student': 'João Monteiro', 'cosupervisor': 'Celso Pereira', 'title': 'Cross-vehicle collaboration using RGB cameras', university: 'FCUP', link: 'https://github.com/joaopecomonteiro/CroVe'},
+  {date: 2024, type: 'BSc Project', 'student': 'Diogo Mendes', 'cosupervisor': 'Nuno Lavado', 'title': 'Automatic Recognition of Pig Activity in an Intensive Production System', 'university': 'FCUP', link: 'https://github.com/diogomendes/behaviour-detection'},
+  {date: 2024, type: 'BSc Project', 'student': 'Beatriz Sá', 'cosupervisor': 'Jaime S. Cardoso', 'title': 'Research on Deep Augmentation for Ordinal Regression', 'university': 'FCUP', link: 'https://github.com/beatrizmsa/ordinal_augmentation'},
   {date: 2024, type: 'BSc Project', 'student': 'Eliandro Melo', 'title': 'Resource Efficiency using Deep Q-Learning in Autonomous Driving', 'university': 'FCUP'},
   {date: 2024, type: 'BSc Project', 'student': 'Ivo Duarte Simões', 'title': 'Resource Efficiency using PPO in Autonomous Driving', 'university': 'FCUP'},
   {date: 2023, type: 'BSc Project', 'student': 'Diana Teixeira Silva', 'title': 'Condition Invariance for Autonomous Driving by Adversarial Learning', 'university': 'FEUP'},
