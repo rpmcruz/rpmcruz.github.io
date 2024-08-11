@@ -32,7 +32,7 @@ class Latex:
         print(r'\subsection{' + name + '}')
 
     def cvitem(self, left, text):
-        print(r'\cvitem{' + self.markdown(left) + '}{' + self.markdown(text) + '}')
+        print(r'\cvitem{' + self.markdown(left) + '}{' + self.markdown(text, r'\newline') + '}')
 
     def cventry(self, dates, title, employer, city, grade, description):
         print(r'\cventry{' + dates + '}{' + title + '}{' + employer + '}{}{}{' + self.markdown(description) + '}')

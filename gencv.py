@@ -27,6 +27,14 @@ out.section('Work Experience')
 for entry in cv['employment']:
     out.cventry(entry['dates'], entry['title'], entry['employer'], '', '', entry['details'])
 
+#out.section('Research projects')
+#for project in cv['scientific_projects']:
+#    out.cvitem(project['when'], project['what'])
+
+#out.section('Participation in Scientific Events')
+#for project in cv['scientific_events']:
+#    out.cvitem(project['when'], project['what'])
+
 out.section('Publications')
 
 hindices = papers.get_hindices()
