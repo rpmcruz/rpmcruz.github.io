@@ -1,6 +1,7 @@
 
 import functools
 import requests
+import sys
 from lxml import etree
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -23,6 +24,7 @@ sjr_categories = {  # for purposes of SJR Quartile Rank
   'Electrical and Electronic Engineering', 'Engineering (miscellaneous)',
   'Mathematics (miscellaneous)', 'Signal Processing',
   'Statistics and Probability', 'Statistics, Probability and Uncertainty',
+  'Software',
 }
 
 def get_hindices():
@@ -34,12 +36,18 @@ def get_hindices():
     tree = etree.HTML(response.content)
     hindices['[Google Scholar](https://scholar.google.pt/citations?user=pSFY_gQAAAAJ)'] = int(tree.xpath('//table/tbody/tr[2]/td[2]/text()')[0])
     # scopus
+    '''
     driver = webdriver.Chrome(options=chrome_options)
     driver.get('https://www.scopus.com/authid/detail.uri?authorId=57192670388')
     element = WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.XPATH, '//section/div/div[3]//span[@data-testid="unclickable-count"]')))
     hindices['[Scopus](https://www.scopus.com/authid/detail.uri?authorId=57192670388)'] = int(element.text)
     driver.close()
+    '''
+    print('Scopus is forcing human verification - https://www.scopus.com/authid/detail.uri?authorId=57192670388', file=sys.stderr)
+    hindex = 5
+    print(f'Setting h-index to {hindex}', file=sys.stderr)
+    hindices['[Scopus](https://www.scopus.com/authid/detail.uri?authorId=57192670388)'] = hindex
     # web of science
     driver = webdriver.Chrome(options=chrome_options)
     driver.get('https://www.webofscience.com/wos/author/record/IQV-2746-2023')
@@ -75,6 +83,7 @@ def get_impact_factor(journal_name):
         'Springer International Journal of Data Science and Analytics': ('springer', 41060),
         'Elsevier Pattern Recognition': ('elsevier', 'pattern-recognition'),
         'IEEE Transactions on Intelligent Vehicles': ('ieee', 7274857),
+        'IEEE Transactions on Neural Networks and Learning Systems': ('ieee', 5962385),
         'IEEE Access': ('ieee', 6287639),
         'Elsevier Neurocomputing': ('elsevier', 'neurocomputing'),
         # without impact factor
@@ -123,6 +132,7 @@ def get_sjr_rank(journal_name):
         'Elsevier Pattern Recognition': 24823,
         'IEEE Transactions on Artificial Intelligence': 21101093601,
         'IEEE Transactions on Intelligent Vehicles': 21100976127,
+        'IEEE Transactions on Neural Networks and Learning Systems': 21100235616,
         'Elsevier Neurocomputing': 24807,
         'IEEE Access': 21100374601,
     }
