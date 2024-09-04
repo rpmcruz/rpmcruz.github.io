@@ -57,7 +57,7 @@ published_papers: [  # listed in publishing order
 submitted_papers: [
   {type: 'journal', year: 2024, authors: '**[2ND ROUND]** J. Cardoso, __**R. Cruz**__, T. Albuquerque', title: "Unimodal Distributions for Ordinal Regression", where: 'IEEE Transactions on Artificial Intelligence', link: 'https://arxiv.org/abs/2303.04547'},
   {type: 'journal', year: 2024, authors: '**[2ND ROUND]** J. Barbero-Gómez, __**R. Cruz**__, J. Cardoso, P. Gutiérrez, C. Hervás-Martínez', title: 'CNN Explanation Methods for Ordinal Regression Tasks', where: 'Elsevier Neurocomputing'},
-  {type: 'journal', year: 2024, authors: '**[SUBMITTED]** R. Cristino, __**R. Cruz**__, J. Cardoso', title: 'Learning Ordinality in Semantic Segmentation', where: 'IEEE Access', link: 'https://arxiv.org/abs/2407.20959'},
+  #{type: 'journal', year: 2024, authors: '**[SUBMITTED]** R. Cristino, __**R. Cruz**__, J. Cardoso', title: 'Learning Ordinality in Semantic Segmentation', where: 'IEEE Access', link: 'https://arxiv.org/abs/2407.20959'},
   {type: 'journal', year: 2024, authors: '**[SUBMITTED]** D. Teixeira, __**R. Cruz**__', title: "Quantifying How Deep 3D Representations Promote Label Efficiency", where: 'IEEE Transactions on Intelligent Vehicles'},
   {type: 'journal', year: 2024, authors: '**[SUBMITTED]** __**R. Cruz**__, J. Cardoso', title: "Navigating the Landscape of Deep Ordinal Methods: An In-Depth Review", where: 'IEEE Transactions on Neural Networks and Learning Systems'},
   # rejected :-(
