@@ -68,6 +68,11 @@ best_last_5_years: ['10.1109/icpr48806.2021.9413004', '10.1109/tiv.2024.3387113'
 best_overall: ['10.1109/icpr48806.2021.9413004', '10.1109/ijcnn.2016.7727469', '10.1109/ijcnn.2018.8489696', '10.1109/tiv.2024.3387113', '10.1109/embc.2019.8857385']
 
 supervisions: [
+  {date: current, type: 'MSc Dissertation', student: 'João Ricardo Ramos Alves', title: 'Self-supervised Occupancy Networks in Autonomous Driving (Bosch internship)', institution: 'FEUP'},
+  {date: current, type: 'MSc Dissertation', student: 'Luís Paulo da Rocha Miranda', title: 'Unsupervised Active Learning: Which Frames are Most Important in Autonomous Driving?', institution: 'FEUP'},
+  {date: current, type: 'MSc Dissertation', student: 'Bruno Vieira Dias', title: 'Trust or not to trust: When to trust the label prediction', institution: 'FEUP'},
+  {date: current, type: 'MSc Dissertation', student: 'Alexandre Ferreira Nunes', title: 'Semi-supervised Learning on 2D Projections for Autonomous Driving', institution: 'FEUP'},
+  {date: current, type: 'MSc Dissertation', student: 'Sofía Lucía', title: 'Ordinal losses for range estimation in autonomous driving', institution: 'FEUP'},
   {date: '2024 July', type: 'Internship', student: 'Isabel Gomes de Sá', title: 'Making Sense of Ordinal Images Without Labels', institution: 'INESC TEC', link: 'https://github.com/Isabel-Sa3/ordinal-without-labels'},
   {date: 2024, type: 'MSc Dissertation', student: 'Diana Teixeira Silva', title: 'Quantifying How Deep 3D Representations Promote Label Efficiency', institution: 'FEUP', link: 'https://repositorio-aberto.up.pt/handle/10216/161730'},
   {date: 2024, type: 'MSc Dissertation', student: 'Francisco Gonçalves Cerqueira', title: 'Exploring Label Efficiency with Semi-Supervision and Self-Supervision Methods', institution: 'FEUP', link: 'https://repositorio-aberto.up.pt/handle/10216/161042'},
