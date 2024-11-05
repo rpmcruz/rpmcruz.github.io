@@ -185,8 +185,8 @@ class HTML:
         print('<div class="container">')
         print('<h1><img width="120px" src="photo.jpg"> ' + info['firstname'] + ' ' + info['lastname'] + '</h1>')
         print('<p>')
-        for contact in ['email', 'github', 'orcid']:
-            print('<img width="22px" src="imgs/' + contact + '.svg">&nbsp;<a href="' + info['contact'][contact] + '">' + info['contact'][contact] + '</a> ')
+        for prefix, contact in [('mailto:', 'email'), ('https://github.com/', 'github'), ('https://orcid.org/', 'orcid')]:
+            print('<img width="22px" src="imgs/' + contact + '.svg">&nbsp;<a href="' + prefix + info['contact'][contact] + '">' + info['contact'][contact] + '</a>')
         print('<img width="22px" src="imgs/pdf.svg">&nbsp;<a href="rpcruz-cv.pdf">PDF</a>')
         print('</p>')
 
