@@ -21,7 +21,7 @@ if args.format == 'latex':
 out.section('Education')
 for entry in cv['education']:
     out.cvitem('**' + str(entry['year']) + '**', '**' + entry['degree'] + '**')
-    out.cvitem('Institution', entry['institution'])
+    out.cvitem('', entry['institution'])
 
 out.section('Work Experience')
 for entry in cv['employment']:
