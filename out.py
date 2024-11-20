@@ -6,6 +6,7 @@ class Latex:
         print(r'\documentclass{moderncv}')
         print(r'\moderncvstyle{classic}')
         print(r'\moderncvcolor{blue}')
+        print(r'\usepackage{lmodern}')
         print(r'\usepackage[margin=2cm]{geometry}')
         print(r'\usepackage{soul}')
         print(r'\name{' + info['firstname'] + '}{' + info['lastname'] + '}')
