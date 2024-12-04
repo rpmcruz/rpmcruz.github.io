@@ -61,7 +61,7 @@ submitted_papers: [
   {type: 'journal', year: 2024, authors: '**[2ND ROUND]** R. Cristino, __**R. Cruz**__, J. Cardoso', title: 'Learning Ordinality in Semantic Segmentation', where: 'IEEE Access', link: 'https://arxiv.org/abs/2407.20959'},
   {type: 'journal', year: 2024, authors: '**[SUBMITTED]** D. Teixeira, __**R. Cruz**__', title: "Quantifying How Deep 3D Representations Promote Label Efficiency", where: 'Elsevier Neurocomputing'},
   {type: 'journal', year: 2024, authors: '**[SUBMITTED]** __**R. Cruz**__, J. Cardoso', title: "Navigating the Landscape of Deep Ordinal Methods: An In-Depth Review", where: 'IEEE Transactions on Neural Networks and Learning Systems'},
-  {type: 'journal', year: 2024, 'note': '**[SUBMITTED]**', authors: '__**R. Cruz**__', title: "Spatial Early-Exit for Segmentation and Object Detection", where: 'Elsevier Neurocomputing'},
+  {type: 'journal', year: 2024, authors: '**[SUBMITTED]** __**R. Cruz**__', title: "Spatial Early-Exit for Segmentation and Object Detection", where: 'Elsevier Neurocomputing'},
 ]
 best_last_5_years: ['10.1109/icpr48806.2021.9413004', '10.1109/tiv.2024.3387113', '10.1109/embc.2019.8857385', '10.1007/978-3-031-36616-1_22', '10.3390/s23063092']
 best_overall: ['10.1109/icpr48806.2021.9413004', '10.1109/ijcnn.2016.7727469', '10.1109/ijcnn.2018.8489696', '10.1109/tiv.2024.3387113', '10.1109/embc.2019.8857385']
