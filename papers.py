@@ -82,10 +82,11 @@ def get_impact_factor(journal_name):
         'MDPI Mathematics': ('mdpi', 'mathematics'), 'MDPI Sensors': ('mdpi', 'sensors'),
         'Springer International Journal of Data Science and Analytics': ('springer', 41060),
         'Elsevier Pattern Recognition': ('elsevier', 'pattern-recognition'),
+        'Elsevier Neurocomputing': ('elsevier', 'neurocomputing'),
+        'Elsevier Computer Vision and Image Understanding': ('elsevier', 'computer-vision-and-image-understanding'),
         'IEEE Transactions on Intelligent Vehicles': ('ieee', 7274857),
         'IEEE Transactions on Neural Networks and Learning Systems': ('ieee', 5962385),
         'IEEE Access': ('ieee', 6287639),
-        'Elsevier Neurocomputing': ('elsevier', 'neurocomputing'),
         # without impact factor
         'Springer Lecture Notes in Computer Science': None,
         'Elsevier Intelligent Systems with Applications': None,
@@ -124,16 +125,17 @@ def get_sjr_rank(journal_name):
     journals_id = {
         'Springer Lecture Notes in Computer Science': 25674,
         'Springer Pattern Analysis and Applications': 24822,
-        'Elsevier Computers & Electrical Engineering': 18159,
+        'Springer International Journal of Data Science and Analytics': 21101017225,
         'PeerJ Computer Science': 21100830173,
         'MDPI Mathematics': 21100830702, 'MDPI Sensors': 130124,
+        'Elsevier Computers & Electrical Engineering': 18159,
         'Elsevier Intelligent Systems with Applications': 21101051831,
-        'Springer International Journal of Data Science and Analytics': 21101017225,
         'Elsevier Pattern Recognition': 24823,
+        'Elsevier Neurocomputing': 24807,
+        'Elsevier Computer Vision and Image Understanding': 24161,
         'IEEE Transactions on Artificial Intelligence': 21101093601,
         'IEEE Transactions on Intelligent Vehicles': 21100976127,
         'IEEE Transactions on Neural Networks and Learning Systems': 21100235616,
-        'Elsevier Neurocomputing': 24807,
         'IEEE Access': 21100374601,
     }
     id = journals_id[journal_name]
