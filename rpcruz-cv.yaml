@@ -94,6 +94,7 @@ supervisions: [
 ]
 
 jury_participation: [
+  {'when': '2024/12/05', 'what': 'External Examiner @ U.Minho: MSc Dissertation "CarSight: Real-Time Vehicle Identification for Theft Mitigation"'},
   {'when': '2024/07/23', 'what': 'External Examiner @ FCUP: MSc Dissertation "Incremental Matrix Factorization for Real-time Recommender Systems"'},
   {'when': '2023/12', 'what': 'External Examiner @ U.Minho: MSc Dissertation "Prediction System for Municipal Waste Containers"'},
   {'when': '2023/07', 'what': 'Examiner @ INESC TEC: Evaluation of 6 summer interships (SCI 2023) on computer vision and machine learning'},
