@@ -235,7 +235,7 @@ class HTML:
         print('<div class="container">')  # re-enable container
         print('<script>')
         rows = [[self.markdown(str(value)) for value in row] for row in rows]
-        print(f'table = new Table("table{self.tables}", ' + json.dumps(rows) + ', ' + json.dumps(columns) + ', ' + json.dumps(types) + ');')
+        print(f'table = new Table("table{self.tables}", [' + ',\n'.join(json.dumps(row) for row in rows) + '], ' + json.dumps(columns) + ', ' + json.dumps(types) + ');')
         print('</script>')
         self.tables += 1
 
