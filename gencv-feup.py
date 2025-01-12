@@ -101,7 +101,7 @@ for type in ['MSc Dissertation', 'BSc Project', 'Internship']:
         if entry['type'] == type:
             title = '[' + entry['title'] + '](' + entry['link'] + ')' if 'link' in entry else entry['title']
             note = ' (with co-supervisor: ' + entry['cosupervisor'] + ')' if 'cosupervisor' in entry else ''
-            text = entry['student'] + ', "' + title + '", *' + entry['university'] + '*' + note
+            text = entry['student'] + ', "' + title + '", *' + entry['institution'] + '*' + note
             out.cvitem(str(entry['date']), text)
 
 out.section('CEMP2. Production of pedagogical material')
