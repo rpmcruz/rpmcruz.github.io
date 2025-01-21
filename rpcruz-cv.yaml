@@ -1,5 +1,5 @@
 firstname: 'Ricardo'
-lastname: 'Cruz'
+lastname: 'P. M. Cruz'
 title: 'PhD in Machine Learning and Computer Vision'
 #title: 'PhD in Machine Learning and Pattern Recognition'
 contact:
@@ -7,11 +7,10 @@ contact:
   homepage: 'https://rpmcruz.github.io/'
   github: 'rpmcruz'
   orcid: '0000-0002-5189-6228'
-biography: 'Ricardo Cruz has worked on a wide range of machine learning topics, with particular emphasis on theoretical aspects of deep learning and computer vision -- with 20+ publications and 100+ citations in such topics as: • adapting ranking models for class imbalance; • making convolutional neural networks invariant to background; • making them faster by adjusting the computational effort to each image; • losses for ordinal regression. He has been working as a Post-doc Researcher on autonomous driving at the Faculty of Engineering, University of Porto, and a researcher at INESC TEC since 2015, where he completed his computer science PhD in 2021. He has a BSc in computer science and a MSc in applied mathematics. He has frequently been an invited professor at the Faculty of Engineering, University of Porto, where he earned a pedagogic award.'
-#biography: 'Ricardo Cruz has worked on a wide range of machine learning topics -- with 20+ publications and 100+ citations in such topics as: • adapting ranking models for class imbalance; • making convolutional neural networks invariant to background; • making them faster by adjusting the computational effort to each observation; • losses for ordinal regression. He is a Post-doc Researcher on autonomous driving at the Faculty of Engineering, University of Porto, and he has been a researcher at INESC TEC since 2015, where his research earned him the computer science PhD in 2021. He has a BSc in computer science and a MSc in applied mathematics. He has frequently been an invited professor at the Faculty of Engineering, University of Porto, where he earned a pedagogic award.'
+biography: 'Ricardo P. M. CRUZ received a B.S. degree in Computer Science and an M.S. degree in Applied Mathematics, both from the University of Porto, Portugal. Since 2015, he has been a researcher at INESC TEC, working in machine learning with a particular emphasis on computer vision. He earned his Ph.D. in Computer Science in 2021 with a special emphasis on computer vision and deep learning. After this, he was a post-doctoral researcher on autonomous driving under the THEIA research project. Currently, Cruz is an Assistant Professor at the Faculty of Engineering of the University of Porto. He works on a wide range of machine learning topics, with particular emphasis on theoretical aspects of deep learning and computer vision – with 20+ publications and 100+ citations in such topics as: • adapting ranking models for class imbalance; • making convolutional neural networks invariant to background; • making them faster by adjusting the computational effort to each image; • losses for ordinal regression.'
 
 skills: [
-    'PyTorch', 'TensorFlow', 'Python', 'R', 'Julia', 'MATLAB', 'Machine Learning', 'Git',
+    'PyTorch', 'TensorFlow', 'Python', 'R', 'Julia', 'MATLAB', 'Machine Learning', 'C/C++',
 ]
 
 education: [
@@ -20,10 +19,11 @@ education: [
   {year: 2012, degree: 'B.Sc. in Computer Science', institution: 'Faculty of Sciences, University of Porto'},
 ]
 employment: [
+  {dates: '2024/02--(current)', title: 'Assistant Professor', employer: 'University of Porto (FEUP)', details: ''},
   {dates: '2023/07--2024/12', title: 'Post-doctoral Researcher on Autonomous Driving', employer: 'INESC TEC [in partnership with Bosch]', details: ''},
   {dates: '2021/09--2023/06', title: 'Post-doctoral Researcher on Autonomous Driving', employer: 'University of Porto (FEUP) [in partnership with Bosch]', details: "Collaboration between the University of Porto and Bosch Car Multimedia to improve autonomous driving perception. I developed frameworks for object detection using camera and LiDAR (2D discretization and raw point-clouds), published new methods for efficient semantic segmentation and ordinal regression, supervised six master's theses, four bachelor's projects, and other team members, responsible for the HPC infrastructure (using Slurm)."},
-  {dates: '2023/09--2024/02', title: 'Invited Auxiliary Professor', employer: 'University of Porto (FEUP)', details: 'Courses on Machine Learning (theoretical lessons): - OAT4001 [](https://sigarra.up.pt/feup/en/UCURR_GERAL.FICHA_UC_VIEW?pv_ocorrencia_id=524574), FACVC [](https://sigarra.up.pt/feup/pt/ucurr_geral.ficha_uc_view?pv_ocorrencia_id=521307)'},
-  {dates: '2021/09--2022/08', title: 'Invited Auxiliary Professor', employer: 'University of Porto (FEUP)', details: 'Courses: Programming Fundamentals (practical lessons in Python): - L.EIC003 [](https://sigarra.up.pt/feup/pt/ucurr_geral.ficha_uc_view?pv_ocorrencia_id=484382), Data Structures and Algorithms (practical lessons in C/C++): L.EEC009 [](https://sigarra.up.pt/feup/pt/ucurr_geral.ficha_uc_view?pv_ocorrencia_id=485369)'},
+  {dates: '2023/09--2024/02', title: 'Invited Assistant Professor', employer: 'University of Porto (FEUP)', details: 'Courses on Machine Learning (theoretical lessons): - OAT4001 [](https://sigarra.up.pt/feup/en/UCURR_GERAL.FICHA_UC_VIEW?pv_ocorrencia_id=524574), FACVC [](https://sigarra.up.pt/feup/pt/ucurr_geral.ficha_uc_view?pv_ocorrencia_id=521307)'},
+  {dates: '2021/09--2022/08', title: 'Invited Assistant Professor', employer: 'University of Porto (FEUP)', details: 'Courses: Programming Fundamentals (practical lessons in Python): - L.EIC003 [](https://sigarra.up.pt/feup/pt/ucurr_geral.ficha_uc_view?pv_ocorrencia_id=484382), Data Structures and Algorithms (practical lessons in C/C++): L.EEC009 [](https://sigarra.up.pt/feup/pt/ucurr_geral.ficha_uc_view?pv_ocorrencia_id=485369)'},
   {dates: '2018/09--2021/08', title: 'Invited Teacher Assistant', employer: 'University of Porto (FEUP)', details: 'Courses: Programming Fundamentals (practical lessons in Python): L.EIC003, Programming (practical lessons in C/C++): L.EIC009 [](https://sigarra.up.pt/feup/pt/ucurr_geral.ficha_uc_view?pv_ocorrencia_id=459468)'},
   {dates: '2015/09--2021/08', title: 'Research Assistant on Machine Learning and Computer Vision', employer: 'INESC TEC', details: 'Research focus: re-thinking fundamentals about image classification and semantic segmentation (8+ publications), in particular (1) a method for background invariance using adversarial training, (2) new losses that minimize absolute trade-offs between Type 1 and 2 errors instead of relative trade-offs, (3) using backpropagation also for inference to refine existing outputs, (4) deploying learning-to-rank methods for class imbalance. During the period, I contributed to workshops, the Summer School on Computer Vision (VISUM), and other events, and was twice awarded "outstanding recognition" for organizing workshops and helping with the HPC infrastructure.'},
   {dates: '2014/09--2014/12', title: 'Research Grant on Mathematical Modelling Research', employer: 'Mathematics Center of the University of Porto (CMUP)', details: 'Epidemiological models for HIV: differential equations, stochastic simulations, cellular automata.'},
@@ -57,8 +57,8 @@ published_papers: [  # listed in publishing order
   '10.1109/IJCNN.2016.7727469',
 ]
 submitted_papers: [
+  {type: 'journal', year: '', authors: '**[ACCEPTED]** __**R. Cruz**__, R. Cristino, J. Cardoso', title: 'Learning Ordinality in Semantic Segmentation', where: 'IEEE Access', link: 'https://arxiv.org/abs/2407.20959'},
   {type: 'journal', year: '', authors: '**[3RD ROUND]** J. Cardoso, T. Albuquerque, __**R. Cruz**__', title: "Unimodal Distributions for Ordinal Regression", where: 'IEEE Transactions on Artificial Intelligence', link: 'https://arxiv.org/abs/2303.04547'},
-  {type: 'journal', year: '', authors: '**[3RD ROUND]** __**R. Cruz**__, R. Cristino, J. Cardoso', title: 'Learning Ordinality in Semantic Segmentation', where: 'IEEE Access', link: 'https://arxiv.org/abs/2407.20959'},
   {type: 'journal', year: '', authors: '**[SUBMITTED]** D. Teixeira, __**R. Cruz**__', title: "Quantifying How Deep 3D Representations Promote Label Efficiency", where: 'Elsevier Neurocomputing'},
   {type: 'journal', year: '', authors: '**[SUBMITTED]** __**R. Cruz**__, J. Cardoso', title: "Navigating the Landscape of Deep Ordinal Methods: An In-Depth Review", where: 'IEEE Transactions on Neural Networks and Learning Systems'},
   {type: 'journal', year: '', authors: '**[SUBMITTED]** __**R. Cruz**__', title: "Spatial Early-Exit for Segmentation and Object Detection", where: 'Elsevier Computer Vision and Image Understanding'},
