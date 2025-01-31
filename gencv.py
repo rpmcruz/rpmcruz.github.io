@@ -11,9 +11,14 @@ import yaml
 cv = yaml.safe_load(open(args.yaml))
 
 out = out.Latex() if args.format == 'latex' else out.HTML()
+if args.format == 'html':
+    # for the public, show my work email
+    cv['contact']['email'] = 'rpcruz@fe.up.pt'
 out.begin_document(cv)
-out.biography(cv['biography'])
+out.paragraph(cv['biography'])
 
+if args.format == 'html':
+    out.paragraph('==If you are a student that would like to do research for a project, masters dissertation or PhD, drop me [an email](mailto:rpcruz@fe.up.pt).==')
 if args.format == 'latex':
     out.section('Skills')
     out.cvitem('', '• ' + ' • '.join(cv['skills']))

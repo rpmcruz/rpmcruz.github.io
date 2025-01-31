@@ -11,7 +11,7 @@ cv = yaml.safe_load(open(args.yaml))
 
 out = out.FEUP()
 out.begin_document(cv)
-out.biography(cv['biography'])
+out.paragraph(cv['biography'])
 
 # https://sigarra.up.pt/spup/pt/noticias_geral.ver_noticia?p_nr=76889
 # https://sigarra.up.pt/spup/pt/noticias_geral.ver_noticia?p_nr=76909

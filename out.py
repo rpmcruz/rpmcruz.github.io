@@ -23,9 +23,6 @@ class Latex:
     def end_document(self):
         print(r'\end{document}')
 
-    def biography(self, text):
-        print(self.markdown(text))
-
     def section(self, name):
         print(r'\section{' + name + '}')
 
@@ -196,9 +193,6 @@ class HTML:
         print('</body>')
         print('</html>')
 
-    def biography(self, text):
-        print('<p>' + self.markdown(text) + '</p>')
-
     def section(self, name):
         print(f'<h2>' + name + '</h2>')
 
@@ -215,7 +209,7 @@ class HTML:
         self.cvitem(dates, text)
 
     def paragraph(self, text):
-        print('<p>' + text + '</p>')
+        print('<p>' + self.markdown(text) + '</p>')
 
     def table_small(self, label, rows, columns):
         print(label + ':')
