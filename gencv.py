@@ -18,19 +18,19 @@ out.begin_document(cv)
 out.paragraph(cv['biography'])
 
 if args.format == 'html':
-    out.paragraph('==If you are a student that would like to do research for a project, masters dissertation or PhD, drop me [an email](mailto:rpcruz@fe.up.pt).==')
+    print('<div style="border:1px solid;padding:2px">If you are a student that would like to do research for a project, masters dissertation or PhD, drop me <a href="mailto:rpcruz@fe.up.pt">an email</a>.</div>')
 if args.format == 'latex':
     out.section('Skills')
     out.cvitem('', '• ' + ' • '.join(cv['skills']))
 
-out.section('Education')
-for entry in cv['education']:
-    out.cvitem('**' + str(entry['year']) + '**', '**' + entry['degree'] + '**')
-    out.cvitem('', entry['institution'])
+    out.section('Education')
+    for entry in cv['education']:
+        out.cvitem('**' + str(entry['year']) + '**', '**' + entry['degree'] + '**')
+        out.cvitem('', entry['institution'])
 
-out.section('Work Experience')
-for entry in cv['employment']:
-    out.cventry(entry['dates'], entry['title'], entry['employer'], '', '', entry['details'])
+    out.section('Work Experience')
+    for entry in cv['employment']:
+        out.cventry(entry['dates'], entry['title'], entry['employer'], '', '', entry['details'])
 
 #out.section('Research projects')
 #for project in cv['scientific_projects']:

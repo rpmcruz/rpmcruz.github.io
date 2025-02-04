@@ -173,7 +173,7 @@ class HTML:
         print('table.large {width:100%; text-align:left;}')
         print('thead th {background-color: #ccc;}')
         # description
-        print('@media screen and (min-width:1000px) {div.description {display:flex; flex-direction: column;} div.item {display:flex;} div.left {width:8em; font-weight:bold;} div.right {flex: 1;}')
+        print('@media screen and (min-width:1000px) {div.description {display:flex; flex-direction: column;} div.item {display:flex;} div.left {width:8em; font-weight:bold;} div.right {flex:1;}}')
         print('@media screen and (max-width:999px) {div.item {display:inline;} div.left {display:inline;font-weight:bold;} div.right{display:inline;}}')
         print('.hl {background-color:yellow;}')
         print('</style>')
