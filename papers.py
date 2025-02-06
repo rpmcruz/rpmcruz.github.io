@@ -122,6 +122,12 @@ def get_impact_factor(journal_name):
 
 @functools.cache
 def get_sjr_rank(journal_name):
+    # TODO: talvez melhor seguir o criterio do DEI:
+    # Para os quartis de cada revista, sugere-se a utilização do melhor quartil entre os quartis WoS e Scopus 
+    # da respetiva revista (por exemplo, disponibilizada no Authenticus). Quando existem vários quartis em 
+    # cada uma das bases de dados, sugere-se que seja usado o melhor quartil do ano da publicação 
+    # (independentemente da área do melhor quartil). Se não existir ainda quartil para o ano em causa, é 
+    # usado o último disponível.
     journals_id = {
         'Springer Lecture Notes in Computer Science': 25674,
         'Springer Pattern Analysis and Applications': 24822,
