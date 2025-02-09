@@ -51,7 +51,7 @@ def get_hindices():
     # web of science
     driver = webdriver.Chrome(options=chrome_options)
     driver.get('https://www.webofscience.com/wos/author/record/IQV-2746-2023')
-    element = WebDriverWait(driver, 10).until(
+    element = WebDriverWait(driver, 60).until(
         EC.presence_of_element_located((By.XPATH, '(//div[@class="wat-author-metric"])[1]')))
     hindices['[Web of Science](https://www.webofscience.com/wos/author/record/IQV-2746-2023)'] = int(element.text)
     driver.close()
