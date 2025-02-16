@@ -86,6 +86,7 @@ def get_impact_factor(journal_name):
         'Elsevier Computer Vision and Image Understanding': ('elsevier', 'computer-vision-and-image-understanding'),
         'IEEE Transactions on Intelligent Vehicles': ('ieee', 7274857),
         'IEEE Transactions on Neural Networks and Learning Systems': ('ieee', 5962385),
+        'IEEE Transactions on Cybernetics': ('ieee', 6221036),
         'IEEE Access': ('ieee', 6287639),
         # without impact factor
         'Springer Lecture Notes in Computer Science': None,
@@ -104,6 +105,7 @@ def get_impact_factor(journal_name):
         return 'n/a'
     use_selenium, url, xpath, postprocess = methods[id[0]]
     url = url + str(id[1])
+    print('url:', url, file=sys.stderr)
     if use_selenium:
         driver = webdriver.Chrome(options=chrome_options)
         driver.get(url)
@@ -142,6 +144,7 @@ def get_sjr_rank(journal_name):
         'IEEE Transactions on Artificial Intelligence': 21101093601,
         'IEEE Transactions on Intelligent Vehicles': 21100976127,
         'IEEE Transactions on Neural Networks and Learning Systems': 21100235616,
+        'IEEE Transactions on Cybernetics': 21100274221,
         'IEEE Access': 21100374601,
     }
     id = journals_id[journal_name]
