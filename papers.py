@@ -1,7 +1,7 @@
-
 import functools
 import requests
 import sys
+import time
 from lxml import etree
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -109,7 +109,8 @@ def get_impact_factor(journal_name):
     if use_selenium:
         driver = webdriver.Chrome(options=chrome_options)
         driver.get(url)
-        element = WebDriverWait(driver, 10).until(
+        time.sleep(1)
+        element = WebDriverWait(driver, 60).until(
             EC.presence_of_element_located((By.XPATH, xpath)))
         r = element.text
         driver.close()

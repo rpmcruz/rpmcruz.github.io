@@ -68,6 +68,11 @@ best_last_5_years: ['10.1109/icpr48806.2021.9413004', '10.1109/tiv.2024.3387113'
 best_overall: ['10.1109/icpr48806.2021.9413004', '10.1109/ijcnn.2016.7727469', '10.1109/ijcnn.2018.8489696', '10.1109/tiv.2024.3387113', '10.1109/embc.2019.8857385']
 
 supervisions: [
+  {date: current, type: 'MSc Dissertation', student: 'Rúben Monteiro', title: 'Intelligent 3D Interaction', institution: 'FEUP', supervisor: 'Rui Rodrigues'},
+  {date: current, type: 'BSc Project', student: 'Diogo Venade', title: 'How Robust are Ordinal Regression Methods against Adversarial Attacks?', institution: 'FEUP'},
+  {date: current, type: 'BSc Project', student: 'João Barão', title: 'Produce Explainability Maps by Prediction or Gradient Descent', institution: 'FEUP'},
+  {date: current, type: 'BSc Project', student: 'Bruno Ferreira', title: 'Automatic Recognition of Pig Behavior', institution: 'FEUP', cosupervisor: 'Nuno Lavado (ISEC)'},
+  {date: current, type: 'BSc Project', student: 'Isabel Sá', title: 'Automatic Recognition of Pig Behavior', institution: 'FEUP', cosupervisor: 'Nuno Lavado (ISEC)'},
   {date: current, type: 'MSc Dissertation', student: 'João Ricardo Ramos Alves', title: 'Self-supervised Occupancy Networks in Autonomous Driving (Bosch internship)', institution: 'FEUP'},
   {date: current, type: 'MSc Dissertation', student: 'Luís Paulo da Rocha Miranda', title: 'Unsupervised Active Learning: Which Frames are Most Important in Autonomous Driving?', institution: 'FEUP'},
   {date: current, type: 'MSc Dissertation', student: 'Bruno Vieira Dias', title: 'Trust or not to trust: When to trust the label prediction', institution: 'FEUP'},
