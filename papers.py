@@ -16,16 +16,16 @@ proceedings = {
     'Pattern Recognition and Image Analysis': ('Iberian Conference on Pattern Recognition and Image Analysis', 'IbPRIA'),
 }
 
-sjr_categories = {  # for purposes of SJR Quartile Rank
-  'Applied Mathematics', 'Artificial Intelligence', 'Bioengineering',
-  'Biomedical Engineering', 'Computational Mathematics',
-  'Computer Science Applications', 'Computer Science (miscellaneous)',
-  'Computer Vision and Pattern Recognition', 'Control and Optimization',
-  'Electrical and Electronic Engineering', 'Engineering (miscellaneous)',
-  'Mathematics (miscellaneous)', 'Signal Processing',
-  'Statistics and Probability', 'Statistics, Probability and Uncertainty',
-  'Software',
-}
+#sjr_categories = {  # for purposes of SJR Quartile Rank
+#  'Applied Mathematics', 'Artificial Intelligence', 'Bioengineering',
+#  'Biomedical Engineering', 'Computational Mathematics',
+#  'Computer Science Applications', 'Computer Science (miscellaneous)',
+#  'Computer Vision and Pattern Recognition', 'Control and Optimization',
+#  'Electrical and Electronic Engineering', 'Engineering (miscellaneous)',
+#  'Mathematics (miscellaneous)', 'Signal Processing',
+#  'Statistics and Probability', 'Statistics, Probability and Uncertainty',
+#  'Software',
+#}
 
 def get_hindices():
     hindices = {}
@@ -105,7 +105,6 @@ def get_impact_factor(journal_name):
         return 'n/a'
     use_selenium, url, xpath, postprocess = methods[id[0]]
     url = url + str(id[1])
-    print('url:', url, file=sys.stderr)
     if use_selenium:
         driver = webdriver.Chrome(options=chrome_options)
         driver.get(url)
@@ -125,12 +124,7 @@ def get_impact_factor(journal_name):
 
 @functools.cache
 def get_sjr_rank(journal_name):
-    # TODO: talvez melhor seguir o criterio do DEI:
-    # Para os quartis de cada revista, sugere-se a utilização do melhor quartil entre os quartis WoS e Scopus 
-    # da respetiva revista (por exemplo, disponibilizada no Authenticus). Quando existem vários quartis em 
-    # cada uma das bases de dados, sugere-se que seja usado o melhor quartil do ano da publicação 
-    # (independentemente da área do melhor quartil). Se não existir ainda quartil para o ano em causa, é 
-    # usado o último disponível.
+    # as per DEI criterion, we use best quartile, independent of category
     journals_id = {
         'Springer Lecture Notes in Computer Science': 25674,
         'Springer Pattern Analysis and Applications': 24822,
@@ -157,17 +151,25 @@ def get_sjr_rank(journal_name):
     years = tbody.xpath('./tr/td[2]/text()')
     quartiles = tbody.xpath('./tr/td[3]/text()')
     max_year = max(int(y) for y in years)
-    return min(quartile for category, year, quartile in zip(categories, years, quartiles) if int(year) == max_year and category in sjr_categories)
+    return min(quartile for category, year, quartile in zip(categories, years, quartiles) if int(year) == max_year)  # and category in sjr_categories)
 
-def get_paper_info(doi):
-    paper = requests.get(f'https://api.crossref.org/works/{doi}').json()['message']
+def get_paper_info(query):
+    paper = requests.get(f'https://api.crossref.org/works/{query["doi"]}').json()['message']
     year = paper['published']['date-parts'][0][0]
     title = paper['title'][0]
     authors = ', '.join('__**R. Cruz**__' if author.get('ORCID', '') == 'http://orcid.org/0000-0002-5189-6228' or author['given'][0] + author['family'] == 'RCruz' else author['given'][0] + '. ' + author['family'] for author in paper['author'])
     where = paper['container-title'][0].replace('&amp;', '&')
     citations = paper['is-referenced-by-count']
     type = 'journal' if paper['type'] == 'journal-article' else 'conference'
-    if type == 'journal':
+    conference = None
+    if 'journal' in query:
+        type = 'journal'
+        where = query['journal']
+    elif 'conference' in query:
+        type = 'conference'
+        where = query['conference']
+        conference = query['conference'].split()[-1][1:-1]
+    elif type == 'journal':
         publisher = paper['publisher'].split()
         if publisher[-1].startswith('(') and publisher[-1].endswith(')'):
             publisher = publisher[-1][1:-1]
@@ -175,16 +177,19 @@ def get_paper_info(doi):
             publisher = publisher[0]
         if not where.startswith(publisher):
             where = publisher + ' ' + where
-    acronym = None
-    if paper['type'] == 'book-chapter' and 'assertion' in paper:
+    elif paper['type'] == 'book-chapter' and 'assertion' in paper:
         d = {i['name']: i['value'] for i in paper['assertion']}
         where = d['conference_name'] + ' ' + d['conference_year'] + ' (' + d['conference_acronym'] + ')'
-        acronym = d['conference_acronym']
+        conference = d['conference_acronym']
     elif type == 'conference':
-        acronym = where.split()[-1][1:-1]
+        conferences = {'ICMV', 'ICPR', 'EMBC', 'IJCNN', 'PRNI'}
+        for conf in conferences:
+            if conf in where:
+                conference = conf
+        assert conference is not None, 'fix conference for ' + where
     return {'type': type, 'year': year, 'authors': authors, 'title': title,
-        'where': where, 'citations': citations, 'acronym': acronym,
-        'link': paper['URL'], 'doi': doi}
+        'where': where, 'citations': citations, 'conference': conference,
+        'link': paper['URL'], 'doi': query['doi']}
 
 def get_metrics(paper):
     metrics = {}
@@ -192,5 +197,5 @@ def get_metrics(paper):
         metrics['IF'] = get_impact_factor(paper['where'])
         metrics['SJR'] = get_sjr_rank(paper['where'])
     if paper['type'] == 'conference':
-        metrics['CORE'] = get_core_rank(paper['acronym'])
+        metrics['CORE'] = get_core_rank(paper['conference'])
     return metrics

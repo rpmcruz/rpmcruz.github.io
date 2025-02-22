@@ -45,7 +45,7 @@ out.section('Publications')
 hindices = papers.get_hindices()
 out.table_small('h-index', [[str(v) for v in hindices.values()]], hindices.keys())
 
-out.paragraph("Sources for the following metrics: • Impact Factor (IF) as reported by the journal's webpage. • SJR rank quartiles are from Scimago and relate to the subject category closest to machine learning (not necessarily the best quartile). • CORE rank is from ICORE for whatever last year is available for that conference. " + ('• Citation counts come from Crossref. ' if args.format == 'html' else '') + 'Last update: ' + datetime.now().strftime(r'%Y-%m-%d'))
+out.paragraph("Sources for the following metrics: • Impact Factor (IF) as reported by the journal's webpage. • SJR rank quartiles are from Scimago and best quartile is chosen when multiple categories exist. • CORE rank is from ICORE for whatever last year is available for that conference. " + ('• Citation counts come from Crossref. ' if args.format == 'html' else '') + 'Last update: ' + datetime.now().strftime(r'%Y-%m-%d'))
 
 papers = cv['submitted_papers'] + \
     [papers.get_paper_info(paper) for paper in cv['published_papers']]

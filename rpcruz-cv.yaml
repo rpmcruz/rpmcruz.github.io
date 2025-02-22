@@ -30,32 +30,32 @@ employment: [
 ]
 
 published_papers: [  # listed in publishing order
-  '10.1109/ACCESS.2025.3537601',
-  '10.1016/j.neucom.2024.128878',
-  '10.1007/s41060-024-00579-w',
-  '10.1109/TIV.2024.3387113',
-  '10.1007/978-3-031-49018-7_40',
-  '10.1007/978-3-031-49018-7_39',
-  '10.1007/978-3-031-49018-7_38',
-  '10.1007/978-3-031-36616-1_22',
-  '10.1007/978-3-031-43078-7_43',
-  '10.3390/s23063092',
-  '10.1117/12.2679881',
-  '10.1016/j.iswa.2022.200170',
-  '10.3390/math10060980',
-  '10.7717/peerj-cs.457',
-  '10.1109/ICPR48806.2021.9413004',
-  '10.1109/EMBC.2019.8857385',
-  '10.1016/j.compeleceng.2019.08.001',
-  '10.1007/978-3-030-30484-3_10',
-  '10.1109/IJCNN.2018.8489696',
-  '10.1109/PRNI.2018.8423960',
-  '10.1007/s10044-018-0705-4',
-  '10.1007/978-3-319-59147-6_47',
-  '10.1007/978-3-319-59147-6_45',
-  '10.1007/978-3-319-59147-6_46',
-  '10.1007/978-3-319-58838-4_1',
-  '10.1109/IJCNN.2016.7727469',
+  {doi: '10.1109/ACCESS.2025.3537601'},
+  {doi: '10.1016/j.neucom.2024.128878'},
+  {doi: '10.1007/s41060-024-00579-w'},
+  {doi: '10.1109/TIV.2024.3387113'},
+  {doi: '10.1007/978-3-031-49018-7_40'},
+  {doi: '10.1007/978-3-031-49018-7_39'},
+  {doi: '10.1007/978-3-031-49018-7_38'},
+  {doi: '10.1007/978-3-031-36616-1_22'},
+  {doi: '10.1007/978-3-031-43078-7_43'},
+  {doi: '10.3390/s23063092'},
+  {doi: '10.1117/12.2679881'},
+  {doi: '10.1016/j.iswa.2022.200170'},
+  {doi: '10.3390/math10060980'},
+  {doi: '10.7717/peerj-cs.457'},
+  {doi: '10.1109/ICPR48806.2021.9413004'},
+  {doi: '10.1109/EMBC.2019.8857385'},
+  {doi: '10.1016/j.compeleceng.2019.08.001'},
+  {doi: '10.1007/978-3-030-30484-3_10'},
+  {doi: '10.1109/IJCNN.2018.8489696'},
+  {doi: '10.1109/PRNI.2018.8423960'},
+  {doi: '10.1007/s10044-018-0705-4', journal: 'Springer Pattern Analysis and Applications'},
+  {doi: '10.1007/978-3-319-59147-6_47', journal: 'Springer Pattern Analysis and Applications'},
+  {doi: '10.1007/978-3-319-59147-6_45', conference: 'International Work-Conference on Artificial Neural Networks (IWANN)'},
+  {doi: '10.1007/978-3-319-59147-6_46', conference: 'International Work-Conference on Artificial Neural Networks (IWANN)'},
+  {doi: '10.1007/978-3-319-58838-4_1', conference: 'Iberian Conference on Pattern Recognition and Image Analysis (IbPRIA)'},
+  {doi: '10.1109/IJCNN.2016.7727469'},
 ]
 submitted_papers: [
   {type: 'journal', year: '', authors: '**[3RD ROUND]** J. Cardoso, T. Albuquerque, __**R. Cruz**__', title: "Unimodal Distributions for Ordinal Regression", where: 'IEEE Transactions on Artificial Intelligence', link: 'https://arxiv.org/abs/2303.04547'},
@@ -100,13 +100,6 @@ supervisions: [
 ]
 
 jury_participation: [
-Edge intelligence for UAV-Based fault
-detection in photovoltaic plants through
-
-knowledge distillation
-
-Lourenço Sousa de Pinho
-
   {'when': '2025/02/12', 'what': 'Internal Examiner @ FEUP: PhD Thesis "Edge intelligence for UAV-Based fault detection in photovoltaic plants through knowledge distillation"', supervisor: 'Andry Pinto', student: 'Lourenço Sousa de Pinho'},
   {'when': '2024/12/05', 'what': 'External Examiner @ U.Minho: MSc Dissertation "CarSight: Real-Time Vehicle Identification for Theft Mitigation"'},
   {'when': '2024/07/23', 'what': 'External Examiner @ FCUP: MSc Dissertation "Incremental Matrix Factorization for Real-time Recommender Systems"'},
