@@ -59,10 +59,10 @@ published_papers: [  # listed in publishing order
   {doi: '10.1109/IJCNN.2016.7727469'},
 ]
 submitted_papers: [
-  {type: 'journal', year: '', authors: '**[3RD ROUND]** J. Cardoso, T. Albuquerque, __**R. Cruz**__', title: "Unimodal Distributions for Ordinal Regression", where: 'IEEE Transactions on Artificial Intelligence', link: 'https://arxiv.org/abs/2303.04547'},
+  {type: 'journal', year: '', authors: '**[ACCEPTED]** J. Cardoso, __**R. Cruz**__, T. Albuquerque', title: "Unimodal Distributions for Ordinal Regression", where: 'IEEE Transactions on Artificial Intelligence', link: 'https://arxiv.org/abs/2303.04547'},
   {type: 'journal', year: '', authors: '**[SUBMITTED]** D. Teixeira, __**R. Cruz**__', title: "Quantifying How Deep 3D Representations Promote Label Efficiency", where: 'Elsevier Neurocomputing'},
   {type: 'journal', year: '', authors: '**[SUBMITTED]** __**R. Cruz**__', title: "Spatial Early-Exit for Segmentation and Object Detection", where: 'Elsevier Computer Vision and Image Understanding'},
-  {type: 'journal', year: '', authors: '**[SUBMITTED]** __**R. Cruz**__, J. Cardoso', title: "Interpretable Image Classification using Object Detection", where: 'IEEE Transactions on Cybernetics'},
+  {type: 'journal', year: '', authors: '**[SUBMITTED]** __**R. Cruz**__, J. Cardoso', title: "Interpretable Image Classification using Object Detection", where: 'IEEE Transactions on Knowledge and Data Engineering'},
   #{type: 'journal', year: '', authors: '**[SUBMITTED]** __**R. Cruz**__, J. Cardoso', title: "Navigating the Landscape of Deep Ordinal Methods: An In-Depth Review", where: 'IEEE Transactions on Neural Networks and Learning Systems'},
 ]
 best_last_5_years: ['10.1109/icpr48806.2021.9413004', '10.1109/tiv.2024.3387113', '10.1109/embc.2019.8857385', '10.1007/978-3-031-36616-1_22', '10.3390/s23063092']
