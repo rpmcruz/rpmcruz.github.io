@@ -93,6 +93,7 @@ def get_impact_factor(journal_name):
         'IEEE Transactions on Intelligent Vehicles': ('ieee', 7274857),
         'IEEE Transactions on Neural Networks and Learning Systems': ('ieee', 5962385),
         'IEEE Transactions on Cybernetics': ('ieee', 6221036),
+        'IEEE Transactions on Knowledge and Data Engineering': ('ieee', 69),
         'IEEE Access': ('ieee', 6287639),
         # without impact factor
         'Springer Lecture Notes in Computer Science': None,
@@ -146,6 +147,7 @@ def get_sjr_rank(journal_name):
         'IEEE Transactions on Intelligent Vehicles': 21100976127,
         'IEEE Transactions on Neural Networks and Learning Systems': 21100235616,
         'IEEE Transactions on Cybernetics': 21100274221,
+        'IEEE Transactions on Knowledge and Data Engineering': 17362,
         'IEEE Access': 21100374601,
     }
     id = journals_id[journal_name]
