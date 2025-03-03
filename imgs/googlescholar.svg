@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="svg10"
+   sodipodi:docname="Google_Scholar_logo_gray.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs14">
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Color Shift"
+       id="filter248"
+       x="0"
+       y="0"
+       width="1"
+       height="1">
+      <feColorMatrix
+         type="hueRotate"
+         values="330"
+         result="color1"
+         id="feColorMatrix244" />
+      <feColorMatrix
+         type="saturate"
+         values="0"
+         result="color2"
+         id="feColorMatrix246" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Color Shift"
+       id="filter254"
+       x="0"
+       y="0"
+       width="1"
+       height="1">
+      <feColorMatrix
+         type="hueRotate"
+         values="330"
+         result="color1"
+         id="feColorMatrix250" />
+      <feColorMatrix
+         type="saturate"
+         values="0"
+         result="color2"
+         id="feColorMatrix252" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Color Shift"
+       id="filter260"
+       x="0"
+       y="0"
+       width="1"
+       height="1">
+      <feColorMatrix
+         type="hueRotate"
+         values="330"
+         result="color1"
+         id="feColorMatrix256" />
+      <feColorMatrix
+         type="saturate"
+         values="0"
+         result="color2"
+         id="feColorMatrix258" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Color Shift"
+       id="filter266"
+       x="0"
+       y="0"
+       width="1"
+       height="1">
+      <feColorMatrix
+         type="hueRotate"
+         values="330"
+         result="color1"
+         id="feColorMatrix262" />
+      <feColorMatrix
+         type="saturate"
+         values="0"
+         result="color2"
+         id="feColorMatrix264" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="namedview12"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="0.56347572"
+     inkscape:cx="633.56768"
+     inkscape:cy="465.85858"
+     inkscape:window-width="1854"
+     inkscape:window-height="1003"
+     inkscape:window-x="66"
+     inkscape:window-y="40"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg10" />
+  <path
+     fill="#4285f4"
+     d="M256 411.12L0 202.667 256 0z"
+     id="path2"
+     style="filter:url(#filter266)" />
+  <path
+     fill="#356ac3"
+     d="M256 411.12l256-208.453L256 0z"
+     id="path4"
+     style="filter:url(#filter260)" />
+  <circle
+     fill="#a0c3ff"
+     cx="256"
+     cy="362.667"
+     r="149.333"
+     id="circle6"
+     style="filter:url(#filter254)" />
+  <path
+     fill="#76a7fa"
+     d="M121.037 298.667c23.968-50.453 75.392-85.334 134.963-85.334s110.995 34.881 134.963 85.334H121.037z"
+     id="path8"
+     style="filter:url(#filter248)" />
+</svg>

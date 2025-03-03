@@ -49,12 +49,18 @@ def get_hindices():
     print(f'Setting h-index to {hindex}', file=sys.stderr)
     hindices['[Scopus](https://www.scopus.com/authid/detail.uri?authorId=57192670388)'] = hindex
     # web of science
+    '''
     driver = webdriver.Chrome(options=chrome_options)
     driver.get('https://www.webofscience.com/wos/author/record/IQV-2746-2023')
     element = WebDriverWait(driver, 60).until(
         EC.presence_of_element_located((By.XPATH, '(//div[@class="wat-author-metric"])[1]')))
     hindices['[Web of Science](https://www.webofscience.com/wos/author/record/IQV-2746-2023)'] = int(element.text)
     driver.close()
+    '''
+    print('WebOfScience is forcing human verification - https://www.webofscience.com/wos/author/record/IQV-2746-2023', file=sys.stderr)
+    hindex = 4
+    print(f'Setting h-index to {hindex}', file=sys.stderr)
+    hindices['[Web of Science](https://www.webofscience.com/wos/author/record/IQV-2746-2023)'] = hindex
     return hindices
 
 @functools.cache

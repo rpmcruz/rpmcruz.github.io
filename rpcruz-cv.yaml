@@ -6,8 +6,9 @@ contact:
   email: 'ricardo.pdm.cruz@gmail.com'
   homepage: 'https://rpmcruz.github.io/'
   github: 'rpmcruz'
+  googlescholar: 'pSFY_gQAAAAJ'
   orcid: '0000-0002-5189-6228'
-biography: '**Ricardo P. M. Cruz** received a B.S. degree in Computer Science and an M.S. degree in Applied Mathematics, both from the University of Porto, Portugal. Since 2015, he has been a researcher at INESC TEC, working in machine learning with a particular emphasis on computer vision. He earned his Ph.D. in Computer Science in 2021 with a special emphasis on computer vision and deep learning. After this, he was a post-doctoral researcher on autonomous driving under the THEIA research project. Currently, Cruz is an Assistant Professor at the Faculty of Engineering of the University of Porto. He works on a wide range of machine learning topics, with particular emphasis on theoretical aspects of deep learning and computer vision – with 20+ publications and 100+ citations in such topics as: • adapting ranking models for class imbalance; • making convolutional neural networks invariant to background; • making them faster by adjusting the computational effort to each image; • losses for ordinal regression.'
+biography: '**Ricardo P. M. Cruz** is an Assistant Professor at the Faculty of Engineering of the University of Porto and a researcher at INESC TEC. His work focuses on machine learning, particularly deep learning, and computer vision. He received a B.Sc. degree in Computer Science (2012), an M.Sc. degree in Mathematical Engineering (2015), both from the University of Porto, and a Ph.D. degree in Computer Science (2021) jointly from the University of Porto, Aveiro and Minho. His topics cover transversal aspects of machine learning with applications to health and autonomous driving, detailed in over 20 publications with 100+ citations.'
 
 skills: [
     'PyTorch', 'TensorFlow', 'Python', 'R', 'Julia', 'MATLAB', 'Machine Learning', 'C/C++',

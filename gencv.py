@@ -18,7 +18,7 @@ out.begin_document(cv)
 out.paragraph(cv['biography'])
 
 if args.format == 'html':
-    print('<div style="border:1px solid;padding:2px">If you are a student that would like to do research for a project, masters dissertation or PhD, drop me <a href="mailto:rpcruz@fe.up.pt">an email</a>.</div>')
+    print('<div style="border:1px solid;padding:2px;background-color:yellow">If you are a student that would like to do research for a project, masters dissertation or PhD, drop me <a href="mailto:rpcruz@fe.up.pt">an email</a>.</div>')
 if args.format == 'latex':
     out.section('Skills')
     out.cvitem('', '• ' + ' • '.join(cv['skills']))
@@ -42,8 +42,9 @@ if args.format == 'latex':
 
 out.section('Publications')
 
-hindices = papers.get_hindices()
-out.table_small('h-index', [[str(v) for v in hindices.values()]], hindices.keys())
+if args.format != 'html':
+    hindices = papers.get_hindices()
+    out.table_small('h-index', [[str(v) for v in hindices.values()]], hindices.keys())
 
 out.paragraph("Sources for the following metrics: • Impact Factor (IF) as reported by the journal's webpage. • SJR rank quartiles are from Scimago and best quartile is chosen when multiple categories exist. • CORE rank is from ICORE for whatever last year is available for that conference. " + ('• Citation counts come from Crossref. ' if args.format == 'html' else '') + 'Last update: ' + datetime.now().strftime(r'%Y-%m-%d'))
 

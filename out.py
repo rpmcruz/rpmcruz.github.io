@@ -14,6 +14,7 @@ class Latex:
         print(r'\email{' + info['contact']['email'] + '}')
         print(r'\homepage{' + info['contact']['homepage'] + '}')
         print(r'\social[github]{' + info['contact']['github'] + '}')
+        print(r'\social[googlescholar]{' + info['contact']['googlescholar'] + '}')
         print(r'\social[orcid]{' + info['contact']['orcid'] + '}')
         print(r'\photo{photo}')
         print()
@@ -183,8 +184,9 @@ class HTML:
         print('<div class="container">')
         print('<h1><img width="120px" src="photo.jpg"> ' + info['firstname'] + ' ' + info['lastname'] + '</h1>')
         print('<p>')
-        for prefix, contact in [('mailto:', 'email'), ('https://github.com/', 'github'), ('https://orcid.org/', 'orcid')]:
-            print('<img width="22px" src="imgs/' + contact + '.svg">&nbsp;<a href="' + prefix + info['contact'][contact] + '">' + info['contact'][contact] + '</a>')
+        for prefix, contact, show in [('mailto:', 'email', None), ('https://github.com/', 'github', None), ('https://orcid.org/', 'orcid', None), ('https://scholar.google.com/citations?user=', 'googlescholar', 'scholar')]:
+            show = show if show != None else info['contact'][contact]
+            print('<img width="22px" src="imgs/' + contact + '.svg">&nbsp;<a href="' + prefix + info['contact'][contact] + '">' + show + '</a>')
         print('<img width="22px" src="imgs/pdf.svg">&nbsp;<a href="rpcruz-cv.pdf">PDF</a>')
         print('</p>')
 
