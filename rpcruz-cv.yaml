@@ -69,6 +69,9 @@ best_last_5_years: ['10.1109/icpr48806.2021.9413004', '10.1109/tiv.2024.3387113'
 best_overall: ['10.1109/icpr48806.2021.9413004', '10.1109/ijcnn.2016.7727469', '10.1109/ijcnn.2018.8489696', '10.1109/tiv.2024.3387113', '10.1109/embc.2019.8857385']
 
 supervisions: [
+  {date: current, type: 'PhD Advanced Project', student: 'Felipe Coelho', title: 'Ensembles for Ordinal Classification', institution: 'FEUP'},
+  {date: current, type: 'PhD Advanced Project', student: 'André Almeida Catarino', title: 'Data Marketplace for Driving Assistance Models', institution: 'FEUP'},
+
   {date: current, type: 'MSc Dissertation', student: 'Rúben Monteiro', title: 'Intelligent 3D Interaction', institution: 'FEUP', supervisor: 'Rui Rodrigues'},
   {date: current, type: 'BSc Project', student: 'Diogo Venade', title: 'How Robust are Ordinal Regression Methods against Adversarial Attacks?', institution: 'FEUP'},
   #{date: current, type: 'BSc Project', student: 'João Barão', title: 'Produce Explainability Maps by Prediction or Gradient Descent', institution: 'FEUP'},
