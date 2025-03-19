@@ -31,6 +31,7 @@ employment: [
 ]
 
 published_papers: [  # listed in publishing order
+  {doi: '10.1109/TAI.2025.3549740'},
   {doi: '10.1109/ACCESS.2025.3537601'},
   {doi: '10.1016/j.neucom.2024.128878'},
   {doi: '10.1007/s41060-024-00579-w'},
@@ -59,7 +60,6 @@ published_papers: [  # listed in publishing order
   {doi: '10.1109/IJCNN.2016.7727469'},
 ]
 submitted_papers: [
-  {type: 'journal', year: '', authors: '**[ACCEPTED]** J. Cardoso, __**R. Cruz**__, T. Albuquerque', title: "Unimodal Distributions for Ordinal Regression", where: 'IEEE Transactions on Artificial Intelligence', link: 'https://arxiv.org/abs/2303.04547'},
   {type: 'journal', year: '', authors: '**[SUBMITTED]** __**R. Cruz**__', title: "Spatial Early-Exit for Segmentation and Object Detection", where: 'Elsevier Computer Vision and Image Understanding'},
   {type: 'journal', year: '', authors: '**[SUBMITTED]** __**R. Cruz**__, J. Cardoso', title: "Interpretable Image Classification using Object Detection", where: 'IEEE Transactions on Knowledge and Data Engineering'},
   #{type: 'journal', year: '', authors: '**[SUBMITTED]** D. Teixeira, __**R. Cruz**__', title: "Quantifying How Deep 3D Representations Promote Label Efficiency", where: 'Elsevier Image and Vision Computing'},
