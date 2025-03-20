@@ -74,14 +74,27 @@ else:
                 out.cvitem(str(paper['year']), text)
 
 out.section('Supervisions')
-for type in ['MSc Dissertation', 'BSc Project', 'Internship']:
-    out.subsection(type)
+if args.format == 'html':
+    rows = []
     for entry in cv['supervisions']:
-        if entry['type'] == type:
-            title = '[' + entry['title'] + '](' + entry['link'] + ')' if 'link' in entry else entry['title']
-            note = ' (with co-supervisor: ' + entry['cosupervisor'] + ')' if 'cosupervisor' in entry else ''
-            note = ' (main supervisor: ' + entry['supervisor'] + ', co-supervisor: R. Cruz)' if 'supervisor' in entry else ''
-            text = entry['student'] + ', "' + title + '", *' + entry['institution'] + '*' + note
-            out.cvitem(str(entry['date']), text)
+        title = '[' + entry['title'] + '](' + entry['link'] + ')' if 'link' in entry else entry['title']
+        note = 'with co-supervisor: ' + entry['cosupervisor'] if 'cosupervisor' in entry else ''
+        note = '(co-supervision) Main supervisor: ' + entry['supervisor'] if 'supervisor' in entry else ''
+        note = 'Internship @ ' + entry['internship'] if 'internship' in entry else ''
+        rows.append([entry['date'], entry['type'], entry['student'], title, entry['institution'], note])
+    columns = ['Year', 'Type', 'Student', 'Title', 'Institution', 'Observation']
+    types = ['sort', 'filter', 'text', 'sort', 'sort', 'text']
+    out.table_large(rows, columns, types)
+else:
+    for type in ['MSc Dissertation', 'BSc Project', 'Internship', 'PhD Advanced Project']:
+        out.subsection(type + 's')
+        for entry in cv['supervisions']:
+            if entry['type'] == type:
+                title = '[' + entry['title'] + '](' + entry['link'] + ')' if 'link' in entry else entry['title']
+                note = ' (with co-supervisor: ' + entry['cosupervisor'] + ')' if 'cosupervisor' in entry else ''
+                note = ' (main supervisor: ' + entry['supervisor'] + ', co-supervisor: R. Cruz)' if 'supervisor' in entry else ''
+                note = ' (internship @ ' + entry['internship'] + ')' if 'internship' in entry else ''
+                text = entry['student'] + ', "' + title + '", *' + entry['institution'] + '*' + note
+                out.cvitem(str(entry['date']), text)
 
 out.end_document()

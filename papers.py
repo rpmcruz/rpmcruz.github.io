@@ -45,7 +45,7 @@ def get_hindices():
     driver.close()
     '''
     print('Scopus is forcing human verification - https://www.scopus.com/authid/detail.uri?authorId=57192670388', file=sys.stderr)
-    hindex = 5
+    hindex = 6
     print(f'Setting h-index to {hindex}', file=sys.stderr)
     hindices['[Scopus](https://www.scopus.com/authid/detail.uri?authorId=57192670388)'] = hindex
     # web of science
