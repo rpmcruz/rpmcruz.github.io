@@ -78,9 +78,13 @@ if args.format == 'html':
     rows = []
     for entry in cv['supervisions']:
         title = '[' + entry['title'] + '](' + entry['link'] + ')' if 'link' in entry else entry['title']
-        note = 'with co-supervisor: ' + entry['cosupervisor'] if 'cosupervisor' in entry else ''
-        note = '(co-supervision) Main supervisor: ' + entry['supervisor'] if 'supervisor' in entry else ''
-        note = 'Internship @ ' + entry['internship'] if 'internship' in entry else ''
+        note = ''
+        if 'cosupervisor' in entry:
+            note = 'with co-supervisor: ' + entry['cosupervisor']
+        if 'supervisor' in entry:
+            note = '(co-supervision) Main supervisor: ' + entry['supervisor']
+        if 'internship' in entry:
+            note = 'Internship @ ' + entry['internship']
         rows.append([entry['date'], entry['type'], entry['student'], title, entry['institution'], note])
     columns = ['Year', 'Type', 'Student', 'Title', 'Institution', 'Observation']
     types = ['sort', 'filter', 'text', 'sort', 'sort', 'text']
@@ -91,9 +95,13 @@ else:
         for entry in cv['supervisions']:
             if entry['type'] == type:
                 title = '[' + entry['title'] + '](' + entry['link'] + ')' if 'link' in entry else entry['title']
-                note = ' (with co-supervisor: ' + entry['cosupervisor'] + ')' if 'cosupervisor' in entry else ''
-                note = ' (main supervisor: ' + entry['supervisor'] + ', co-supervisor: R. Cruz)' if 'supervisor' in entry else ''
-                note = ' (internship @ ' + entry['internship'] + ')' if 'internship' in entry else ''
+                note = ''
+                if 'cosupervisor' in entry:
+                    note = ' (with co-supervisor: ' + entry['cosupervisor'] + ')'
+                if 'supervisor' in entry:
+                    note = ' (main supervisor: ' + entry['supervisor'] + ', co-supervisor: R. Cruz)'
+                if 'internship' in entry:
+                    note = ' (internship @ ' + entry['internship'] + ')'
                 text = entry['student'] + ', "' + title + '", *' + entry['institution'] + '*' + note
                 out.cvitem(str(entry['date']), text)
 

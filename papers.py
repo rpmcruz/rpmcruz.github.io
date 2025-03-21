@@ -11,11 +11,6 @@ from selenium.webdriver.chrome.options import Options
 chrome_options = Options()
 chrome_options.add_argument('--disable-search-engine-choice-screen')
 
-proceedings = {
-    'Advances in Computational Intelligence': ('International Work-Conference on Artificial Neural Networks', 'IWANN'),
-    'Pattern Recognition and Image Analysis': ('Iberian Conference on Pattern Recognition and Image Analysis', 'IbPRIA'),
-}
-
 #sjr_categories = {  # for purposes of SJR Quartile Rank
 #  'Applied Mathematics', 'Artificial Intelligence', 'Bioengineering',
 #  'Biomedical Engineering', 'Computational Mathematics',
@@ -94,6 +89,7 @@ def get_impact_factor(journal_name):
         'IEEE Transactions on Neural Networks and Learning Systems': ('ieee', 5962385),
         'IEEE Transactions on Cybernetics': ('ieee', 6221036),
         'IEEE Transactions on Knowledge and Data Engineering': ('ieee', 69),
+        'IEEE Transactions on Image Processing': ('ieee', 83),
         'IEEE Access': ('ieee', 6287639),
         # without impact factor
         'Springer Lecture Notes in Computer Science': None,
@@ -148,6 +144,7 @@ def get_sjr_rank(journal_name):
         'IEEE Transactions on Neural Networks and Learning Systems': 21100235616,
         'IEEE Transactions on Cybernetics': 21100274221,
         'IEEE Transactions on Knowledge and Data Engineering': 17362,
+        'IEEE Transactions on Image Processing': 25534,
         'IEEE Access': 21100374601,
     }
     id = journals_id[journal_name]
