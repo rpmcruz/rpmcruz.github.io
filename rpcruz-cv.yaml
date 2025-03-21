@@ -60,8 +60,8 @@ published_papers: [  # listed in publishing order
   {doi: '10.1109/IJCNN.2016.7727469'},
 ]
 submitted_papers: [
+  {type: 'journal', year: '', authors: '**[SUBMITTED]** __**R. Cruz**__, J. Cardoso', title: "Interpretable Image Classification using Object Detection", where: 'IEEE Transactions on Image Processing'},
   {type: 'journal', year: '', authors: '**[SUBMITTED]** __**R. Cruz**__', title: "Spatial Early-Exit for Segmentation and Object Detection", where: 'Elsevier Computer Vision and Image Understanding'},
-  #{type: 'journal', year: '', authors: '**[SUBMITTED]** __**R. Cruz**__, J. Cardoso', title: "Interpretable Image Classification using Object Detection", where: 'IEEE Transactions on Knowledge and Data Engineering'},
   #{type: 'journal', year: '', authors: '**[SUBMITTED]** D. Teixeira, __**R. Cruz**__', title: "Quantifying How Deep 3D Representations Promote Label Efficiency", where: 'Elsevier Image and Vision Computing'},
   #{type: 'journal', year: '', authors: '**[SUBMITTED]** __**R. Cruz**__, J. Cardoso', title: "Navigating the Landscape of Deep Ordinal Methods: An In-Depth Review", where: 'IEEE Transactions on Neural Networks and Learning Systems'},
 ]
