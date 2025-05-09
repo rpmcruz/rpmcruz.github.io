@@ -97,13 +97,14 @@ def get_impact_factor(journal_name):
         'IEEE Transactions on Artificial Intelligence': None,
     }
     methods = {
-        'springer': (False, 'https://link.springer.com/journal/', '//dd[@data-test="impact-factor-value"]/b/text()', lambda s: s.split()[0]),
+        'springer': (False, 'https://link.springer.com/journal/', '//dd[@data-test="impact-factor-value"]/span/text()', lambda s: s.split()[0]),
         'elsevier': (True, 'https://www.sciencedirect.com/journal/', '//div[contains(@class, "js-impact-factor")]//span[contains(@class, "text-l")]', None),
         'peerj': (False, 'https://peerj.com/', '//a[@id="cta_home_statsbar_impact_factor"]/b/text()', None),
         'mdpi': (False, 'https://www.mdpi.com/journal/', '//div[@class="journal__description"]/div[2]/text()', lambda s: s.split()[0]),
         'ieee': (True, 'https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=', '//a[@class="stats-jhp_metric_impact_factor"]/span[1]', None),
     }
     id = journal_id[journal_name]
+    print(journal_name, id, file=sys.stderr)
     if id == None:
         return 'n/a'
     use_selenium, url, xpath, postprocess = methods[id[0]]
