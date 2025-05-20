@@ -102,60 +102,65 @@ supervisions: [
 ]
 
 jury_participation: [
-  {'when': '2025/02/12', 'what': 'Internal Examiner @ FEUP: PhD Thesis "Edge intelligence for UAV-Based fault detection in photovoltaic plants through knowledge distillation"', supervisor: 'Andry Pinto', student: 'Lourenço Sousa de Pinho'},
-  {'when': '2024/12/05', 'what': 'External Examiner @ U.Minho: MSc Dissertation "CarSight: Real-Time Vehicle Identification for Theft Mitigation"'},
-  {'when': '2024/07/23', 'what': 'External Examiner @ FCUP: MSc Dissertation "Incremental Matrix Factorization for Real-time Recommender Systems"'},
-  {'when': '2023/12', 'what': 'External Examiner @ U.Minho: MSc Dissertation "Prediction System for Municipal Waste Containers"'},
-  {'when': '2023/07', 'what': 'Examiner @ INESC TEC: Evaluation of 6 summer interships (SCI 2023) on computer vision and machine learning'},
-  {'when': '2022/10', 'what': 'External Examiner @ FEUP: MSc Dissertation "Neuroblastoma Cancer Radiogenomics"'},
-  {'when': '2022/10', 'what': 'External Examiner @ FEUP: MSc Dissertation "AI-Based Models to Predict The Traumatic Brain Injury Outcome"'},
-  {'when': '2022/07', 'what': 'Examiner @ INESC TEC: Evaluation of 2 summer interships (SCI 2022) on computer vision and machine learning'},
-  {'when': '2022/07', 'what': 'Chairman @ FEUP: MSc Dissertation "Learning to write medical reports from EEG data"'},
-  {'when': '2022/07', 'what': 'External Examiner @ U.Minho: MSc Dissertation "Detection and classification of small impacts on vehicles based on deep learning algorithms"'},
-  {'when': '2021/12', 'what': 'External Examiner @ FCUP: MSc Dissertation "3D Lung Computed Tomography Synthesis using Generative Adversarial Networks"'},
-  {'when': '2021/09', 'what': 'External Examiner @ U.Minho: MSc Dissertation "Feasibility of using autoencoders for learning car interior background models"'},
-  {'when': '2021/07', 'what': 'Examiner @ INESC TEC: Evaluation of 4 summer interships (SCI 2021) on computer vision and machine learning'},
+  {'2025/02/12': 'Internal Examiner @ FEUP: PhD Thesis "Edge intelligence for UAV-Based fault detection in photovoltaic plants through knowledge distillation"', supervisor: 'Andry Pinto', student: 'Lourenço Sousa de Pinho'},
+  {'2024/12/05': 'External Examiner @ U.Minho: MSc Dissertation "CarSight: Real-Time Vehicle Identification for Theft Mitigation"'},
+  {'2024/07/23': 'External Examiner @ FCUP: MSc Dissertation "Incremental Matrix Factorization for Real-time Recommender Systems"'},
+  {'2023/12': 'External Examiner @ U.Minho: MSc Dissertation "Prediction System for Municipal Waste Containers"'},
+  {'2023/07': 'Examiner @ INESC TEC: Evaluation of 6 summer interships (SCI 2023) on computer vision and machine learning'},
+  {'2022/10': 'External Examiner @ FEUP: MSc Dissertation "Neuroblastoma Cancer Radiogenomics"'},
+  {'2022/10': 'External Examiner @ FEUP: MSc Dissertation "AI-Based Models to Predict The Traumatic Brain Injury Outcome"'},
+  {'2022/07': 'Examiner @ INESC TEC: Evaluation of 2 summer interships (SCI 2022) on computer vision and machine learning'},
+  {'2022/07': 'Chairman @ FEUP: MSc Dissertation "Learning to write medical reports from EEG data"'},
+  {'2022/07': 'External Examiner @ U.Minho: MSc Dissertation "Detection and classification of small impacts on vehicles based on deep learning algorithms"'},
+  {'2021/12': 'External Examiner @ FCUP: MSc Dissertation "3D Lung Computed Tomography Synthesis using Generative Adversarial Networks"'},
+  {'2021/09': 'External Examiner @ U.Minho: MSc Dissertation "Feasibility of using autoencoders for learning car interior background models"'},
+  {'2021/07': 'Examiner @ INESC TEC: Evaluation of 4 summer interships (SCI 2021) on computer vision and machine learning'},
 ]
 
 awards: [
-  {'when': '2022', 'what': '[Bosch for Mobility:](https://noticias.up.pt/estudantes-da-u-porto-brilham-em-concurso-de-conducao-autonoma-da-bosch/) My students won Best New Participating Team in an autonomous driving competition'},
-  {'when': '2021', 'what': '[INESC TEC Outstanding Recognition Award:](https://bip.inesctec.pt/en/especiaisdecorrida/ricardo-cruz-ctm-2/) INESC TEC internal award, reason: maintenance of the HPC infrastructure'},
-  {'when': '2021', 'what': 'Pedagogic award (voted by students): University of Porto (FEUP)'},
-  {'when': '2021', 'what': '[Best paper and presentation:](https://noticias.up.pt/investigadores-da-u-porto-dominam-premios-do-recpad-2021/) RECPAD national conference'},
-  {'when': '2018', 'what': '[INESC TEC Outstanding Recognition Award:](http://bip-archive.inesctec.pt/en/196/fora-de-serie.html) INESC TEC internal award, reason: help organizing workshops'},
-  {'when': '2017', 'what': 'Kaggle Bronze Medal (competition) and Silver (engagement)'},
+  {'2022': '[Bosch for Mobility:](https://noticias.up.pt/estudantes-da-u-porto-brilham-em-concurso-de-conducao-autonoma-da-bosch/) My students won Best New Participating Team in an autonomous driving competition'},
+  {'2021': '[INESC TEC Outstanding Recognition Award:](https://bip.inesctec.pt/en/especiaisdecorrida/ricardo-cruz-ctm-2/) INESC TEC internal award, reason: maintenance of the HPC infrastructure'},
+  {'2021': 'Pedagogic award (voted by students): University of Porto (FEUP)'},
+  {'2021': '[Best paper and presentation:](https://noticias.up.pt/investigadores-da-u-porto-dominam-premios-do-recpad-2021/) RECPAD national conference'},
+  {'2018': '[INESC TEC Outstanding Recognition Award:](http://bip-archive.inesctec.pt/en/196/fora-de-serie.html) INESC TEC internal award, reason: help organizing workshops'},
+  {'2017': 'Kaggle Bronze Medal (competition) and Silver (engagement)'},
 ]
 
 scientific_projects: [
-  {when: 2021--2023, what: "**THEIA -- Automated Perception Driving (POCI-01-0247-FEDER-047264) [](https://sigarra.up.pt/feup/pt/projectos_geral.ficha_projecto?p_id=78377)**\nDuring this Bosch-UP collaboration, I was a post-doc researcher working on the deliverables, HPC infrastructure, and supervising students (over 5 masters dissertations and publications)."},
-  #"{when: 2018--2021, what: "**CLARE -- Computer-aided cervical cancer screening (POCI-01-0145-FEDER-028857) [](https://www.inesctec.pt/pt/projetos/clare)**\nResearch member while doing my PhD."},
-  {when: '2021', what: "**CLARE: Sistema de apoio ao rastreio do cancro cervical (POCI-01-0145-FEDER-028857 PTDC/EMD-EMD/28857/2017)**\nResearch member while doing my PhD."},
-  {when: '2019', what: "**BCCT.plan: Ferramenta 3D para o planeamento do tratamento conservador do cancro da mama (NORTE-01-0247-FEDER-017688)**\nResearch member while doing my PhD."},
-  {when: 2015--2016, what: "**NanoSTIMA -- Macro-to-Nano Human Sensing: Towards Integrated Multimodal Health Monitoring and Analytics (NORTE-01-0145-FEDER-000016)**\nResearch member while doing my PhD."},
-  {when: '2014', what: "**PEst-C/MAT/UI0144/2013**\nResearch grant during my masters dissertation."},
+  {'2021--2023': "**THEIA -- Automated Perception Driving (POCI-01-0247-FEDER-047264) [](https://sigarra.up.pt/feup/pt/projectos_geral.ficha_projecto?p_id=78377)**\nDuring this Bosch-UP collaboration, I was a post-doc researcher working on the deliverables, HPC infrastructure, and supervising students (over 5 masters dissertations and publications)."},
+  #{'2018--2021': "**CLARE -- Computer-aided cervical cancer screening (POCI-01-0145-FEDER-028857) [](https://www.inesctec.pt/pt/projetos/clare)**\nResearch member while doing my PhD."},
+  {'2021': "**CLARE: Sistema de apoio ao rastreio do cancro cervical (POCI-01-0145-FEDER-028857 PTDC/EMD-EMD/28857/2017)**\nResearch member while doing my PhD."},
+  {'2019': "**BCCT.plan: Ferramenta 3D para o planeamento do tratamento conservador do cancro da mama (NORTE-01-0247-FEDER-017688)**\nResearch member while doing my PhD."},
+  {'2015--2016': "**NanoSTIMA -- Macro-to-Nano Human Sensing: Towards Integrated Multimodal Health Monitoring and Analytics (NORTE-01-0145-FEDER-000016)**\nResearch member while doing my PhD."},
+  {'2014': "**PEst-C/MAT/UI0144/2013**\nResearch grant during my masters dissertation."},
 ]
 
 scientific_events: [
-  {'when': '2023', 'what': '**5th IEEE International Conference on Sustainable Technologies for Industry 5.0 (STI2023)**: program committee'},
-  {'when': '2020', 'what': '**iMIMIC/MIL3ID/LABELS 2020 workshop proceedings (MICCAI 2020):** co-editor [](https://link.springer.com/book/10.1007/978-3-030-61166-8)'},
-  {'when': '2020', 'what': '**iMIMIC 2020 workshop (MICCAI 2020):** committee sponsor chair [](https://imimic-workshop.com/previous_editions/2020/index.html)'},
-  {'when': '2014', 'what': '**3rd International Conference on Dynamics, Games and Science (2014):** president of the organizing committee [](https://www.fc.up.pt/dgsiii/)'},
+  {'2023': '**5th IEEE International Conference on Sustainable Technologies for Industry 5.0 (STI2023)**: program committee'},
+  {'2020': '**iMIMIC/MIL3ID/LABELS 2020 workshop proceedings (MICCAI 2020):** co-editor [](https://link.springer.com/book/10.1007/978-3-030-61166-8)'},
+  {'2020': '**iMIMIC 2020 workshop (MICCAI 2020):** committee sponsor chair [](https://imimic-workshop.com/previous_editions/2020/index.html)'},
+  {'2014': '**3rd International Conference on Dynamics, Games and Science (2014):** president of the organizing committee [](https://www.fc.up.pt/dgsiii/)'},
 ]
 
 editor_or_evaluator: [
-  {'when': '2021', 'what': "**A3ES:** student member (as a PhD student) of three evaluation committees: a master's course and two doctorates."},
-  {'when': '2020', 'what': '**iMIMIC/MIL3ID/LABELS 2020 workshop proceedings (MICCAI 2020):** helped organize the iMIMIC 2020 workshop (part of MICCAI 2020) and was later co-editor of the publication of the joint proceedings of three MICCAI 2020 workshops.'},
+  {'2021': "**A3ES:** student member (as a PhD student) of three evaluation committees: a master's course and two doctorates."},
+  {'2020': '**iMIMIC/MIL3ID/LABELS 2020 workshop proceedings (MICCAI 2020):** helped organize the iMIMIC 2020 workshop (part of MICCAI 2020) and was later co-editor of the publication of the joint proceedings of three MICCAI 2020 workshops.'},
 ]
 
 public_workshops_talks: [
-  {when: '2019', what: '**DSPT Day:** lightning talk (a two-day machine learning event for a public audience.'},
-  {when: '2018', what: '**VISUM Summer School:** I helped to prepare a computational framework in which students submitted processes and generated Kaggle-style leaderboards (using Google Cloud) for the competitions that take place during the VISUM computer vision summer school, a framework that continues to be used today.'},
-  {when: '2017', what: 'Organized some workshops, especially at INESC TEC, namely **Learning from Data,** which was part of the CTM Open Day. (The CTM is the INESC TEC unit that I was part of.) [](https://opendayctm.inesctec.pt/2017/index.php/learning-from-data/)'},
-  {when: '2017', what: 'Free public workshop, in collaboration with João Machado, in the **Python Meetup** entitled *NumPy and Scikit-Learn.* The Python Meetup was a monthly meeting about Python in Porto, which has since been discontinued. [](https://youtu.be/klr1z1EJ1yY)'},
+  {'2019': '**DSPT Day:** lightning talk (a two-day machine learning event for a public audience.'},
+  {'2018': '**VISUM Summer School:** I helped to prepare a computational framework in which students submitted processes and generated Kaggle-style leaderboards (using Google Cloud) for the competitions that take place during the VISUM computer vision summer school, a framework that continues to be used today.'},
+  {'2017': 'Organized some workshops, especially at INESC TEC, namely **Learning from Data,** which was part of the CTM Open Day. (The CTM is the INESC TEC unit that I was part of.) [](https://opendayctm.inesctec.pt/2017/index.php/learning-from-data/)'},
+  {'2017': 'Free public workshop, in collaboration with João Machado, in the **Python Meetup** entitled *NumPy and Scikit-Learn.* The Python Meetup was a monthly meeting about Python in Porto, which has since been discontinued. [](https://youtu.be/klr1z1EJ1yY)'},
 ]
 
 public_outreach: [
-  '2022: **Bosch for Mobility:** My students won Best New Participating Team in an autonomous driving competition promoted by Bosch Romania. [](https://noticias.up.pt/estudantes-da-u-porto-brilham-em-concurso-de-conducao-autonoma-da-bosch/)',
-  '2018: **Junior University:** organized with my supervisor (Prof. Jaime Cardoso) an activity for the Junior University entitled “Escondidos nos Dados”. The Junior University is an opportunity that the University of Porto gives children to get to know and do activities at the university. This activity took place for a month, with classes with different children every day, from the 8th and 9th grades. The website archives is not working, but this link describes an award I received from INESC TEC for organizing these activities, among others. [](http://bip-archive.inesctec.pt/196/fora-de-serie.html)',
-  '2018: **VISUM:** I helped to prepare a computational framework in which students submitted processes and generated Kaggle-style leaderboards (using Google Cloud) for the competitions that take place during the VISUM computer vision summer school, a framework that continues to be used today.',
+  {'2022: **Bosch for Mobility:** My students won Best New Participating Team in an autonomous driving competition promoted by Bosch Romania. [](https://noticias.up.pt/estudantes-da-u-porto-brilham-em-concurso-de-conducao-autonoma-da-bosch/)'},
+  {'2018: **Junior University:** organized with my supervisor (Prof. Jaime Cardoso) an activity for the Junior University entitled “Escondidos nos Dados”. The Junior University is an opportunity that the University of Porto gives children to get to know and do activities at the university. This activity took place for a month, with classes with different children every day, from the 8th and 9th grades. The website archives is not working, but this link describes an award I received from INESC TEC for organizing these activities, among others. [](http://bip-archive.inesctec.pt/196/fora-de-serie.html)'},
+  {'2018: **VISUM:** I helped to prepare a computational framework in which students submitted processes and generated Kaggle-style leaderboards (using Google Cloud) for the competitions that take place during the VISUM computer vision summer school, a framework that continues to be used today.'},
+]
+
+educative_training: [
+  {'2025/05/20': 'Avaliação na Era da Inteligência Artificial'},
+  {'2025/05/07': 'A câmara de vídeo em contexto educativo - Como falar para a câmara?'},
 ]
