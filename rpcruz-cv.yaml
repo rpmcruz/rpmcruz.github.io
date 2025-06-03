@@ -77,7 +77,7 @@ supervisions: [
   {date: active, type: 'MSc Dissertation', student: 'João Ricardo Ramos Alves', title: 'Self-supervised Occupancy Networks in Autonomous Driving', institution: 'FEUP', internship: 'Bosch Car Multimedia (Filipe Gonçalves)'},
   {date: active, type: 'MSc Dissertation', student: 'Luís Paulo da Rocha Miranda', title: 'Unsupervised Active Learning: Which Frames are Most Important in Autonomous Driving?', institution: 'FEUP', internship: 'Bosch Car Multimedia (Filipe Gonçalves)'},
   {date: active, type: 'MSc Dissertation', student: 'Bruno Vieira Dias', title: 'Trust or not to trust: When to trust the label prediction', institution: 'FEUP', internship: 'Bosch Car Multimedia (Lucas Agostinho)'},
-  {date: active, type: 'MSc Dissertation', student: 'Alexandre Ferreira Nunes', title: 'Semi-supervised Learning on 2D Projections for Autonomous Driving', institution: 'FEUP'},
+  {date: active, type: 'MSc Dissertation', student: 'Alexandre Ferreira Nunes', title: 'From Classification to Detection: Adapting Semi-Supervised Frameworks to Object Detection', institution: 'FEUP'},
   {date: active, type: 'MSc Dissertation', student: 'Sofía Lucía', title: 'Ordinal losses for range estimation in autonomous driving', institution: 'FEUP'},
   {date: '2023 Sept--2024 Feb', type: 'PhD Advanced Project', student: 'Felipe Coelho', title: 'Ensembles for Ordinal Classification', institution: 'FEUP'},
   {date: '2024 July', type: 'Internship', student: 'Isabel Gomes de Sá', title: 'Making Sense of Ordinal Images Without Labels', institution: 'INESC TEC', link: 'https://github.com/Isabel-Sa3/ordinal-without-labels'},
