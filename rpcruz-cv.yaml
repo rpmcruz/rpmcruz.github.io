@@ -78,7 +78,7 @@ supervisions: [
   {date: active, type: 'MSc Dissertation', student: 'Luís Paulo da Rocha Miranda', title: 'Unsupervised Active Learning: Which Frames are Most Important in Autonomous Driving?', institution: 'FEUP', internship: 'Bosch Car Multimedia (Filipe Gonçalves)'},
   {date: active, type: 'MSc Dissertation', student: 'Bruno Vieira Dias', title: 'Trust or not to trust: When to trust the label prediction', institution: 'FEUP', internship: 'Bosch Car Multimedia (Lucas Agostinho)'},
   {date: active, type: 'MSc Dissertation', student: 'Alexandre Ferreira Nunes', title: 'From Classification to Detection: Adapting Semi-Supervised Frameworks to Object Detection', institution: 'FEUP'},
-  {date: active, type: 'MSc Dissertation', student: 'Sofía Lucía', title: 'Ordinal losses for range estimation in autonomous driving', institution: 'FEUP'},
+  {date: active, type: 'MSc Dissertation', student: 'Sofía Lucía', title: 'Ordinal Methods for Monocular Depth Estimation', institution: 'FEUP'},
   {date: '2023 Sept--2024 Feb', type: 'PhD Advanced Project', student: 'Felipe Coelho', title: 'Ensembles for Ordinal Classification', institution: 'FEUP'},
   {date: '2024 July', type: 'Internship', student: 'Isabel Gomes de Sá', title: 'Making Sense of Ordinal Images Without Labels', institution: 'INESC TEC', link: 'https://github.com/Isabel-Sa3/ordinal-without-labels'},
   {date: 2024, type: 'MSc Dissertation', student: 'Diana Teixeira Silva', title: 'Quantifying How Deep 3D Representations Promote Label Efficiency', institution: 'FEUP', link: 'https://repositorio-aberto.up.pt/handle/10216/161730'},
