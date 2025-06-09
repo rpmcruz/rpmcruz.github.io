@@ -70,7 +70,7 @@ best_overall: ['10.1109/icpr48806.2021.9413004', '10.1109/ijcnn.2016.7727469', '
 
 supervisions: [
   {date: active, type: 'PhD Advanced Project', student: 'André Almeida Catarino', title: 'Data Marketplace for Driving Assistance Models', institution: 'FEUP'},
-  {date: active, type: 'MSc Dissertation', student: 'Rúben Monteiro', title: 'Intelligent 3D Interaction', institution: 'FEUP', supervisor: 'Rui Rodrigues'},
+  {date: active, type: 'MSc Dissertation', student: 'Rúben Monteiro', title: 'Multimodal Modular Neural Network Frameworks for VR Interaction: a Comparative Study', institution: 'FEUP', supervisor: 'Rui Rodrigues'},
   {date: active, type: 'BSc Project', student: 'Diogo Venade', title: 'How Robust are Ordinal Regression Methods against Adversarial Attacks?', institution: 'FEUP'},
   {date: active, type: 'BSc Project', student: 'Bruno Ferreira', title: 'Automatic Recognition of Pig Behavior', institution: 'FEUP', cosupervisor: 'Nuno Lavado (ISEC)'},
   {date: active, type: 'BSc Project', student: 'Isabel Sá', title: 'Automatic Recognition of Pig Behavior', institution: 'FEUP', cosupervisor: 'Nuno Lavado (ISEC)'},
