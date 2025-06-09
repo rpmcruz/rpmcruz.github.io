@@ -76,7 +76,7 @@ supervisions: [
   {date: active, type: 'BSc Project', student: 'Isabel Sá', title: 'Automatic Recognition of Pig Behavior', institution: 'FEUP', cosupervisor: 'Nuno Lavado (ISEC)'},
   {date: active, type: 'MSc Dissertation', student: 'João Ricardo Ramos Alves', title: 'Self-supervised Occupancy Networks in Autonomous Driving', institution: 'FEUP', internship: 'Bosch Car Multimedia (Filipe Gonçalves)'},
   {date: active, type: 'MSc Dissertation', student: 'Luís Paulo da Rocha Miranda', title: 'Unsupervised Active Learning: Which Frames are Most Important in Autonomous Driving?', institution: 'FEUP', internship: 'Bosch Car Multimedia (Filipe Gonçalves)'},
-  {date: active, type: 'MSc Dissertation', student: 'Bruno Vieira Dias', title: 'Trust or not to trust: When to trust the label prediction', institution: 'FEUP', internship: 'Bosch Car Multimedia (Lucas Agostinho)'},
+  {date: active, type: 'MSc Dissertation', student: 'Bruno Vieira Dias', title: 'Beyond Confidence Thresholds: Pseudo-Label Selection Strategies for Semi-Supervised Learning', institution: 'FEUP', internship: 'Bosch Car Multimedia (Lucas Agostinho)'},
   {date: active, type: 'MSc Dissertation', student: 'Alexandre Ferreira Nunes', title: 'From Classification to Detection: Adapting Semi-Supervised Frameworks to Object Detection', institution: 'FEUP'},
   {date: active, type: 'MSc Dissertation', student: 'Sofía Lucía', title: 'Ordinal Methods for Monocular Depth Estimation', institution: 'FEUP'},
   {date: '2023 Sept--2024 Feb', type: 'PhD Advanced Project', student: 'Felipe Coelho', title: 'Ensembles for Ordinal Classification', institution: 'FEUP'},
