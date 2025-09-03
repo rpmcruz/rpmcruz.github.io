@@ -1,106 +1,41 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Maternidade, Porto</title>
 <style>
-.center {
-  text-align: center;
+.banner { background: yellow; padding: 20px; }
+/* rules for ordinary computer screens */
+@media screen and (min-width: 800px) {
+  .row { display: flex; gap: 20px; }
+  .maxwidth { max-width: 800px; margin: 0 auto; }
+  iframe { width: 300px; aspect-ratio: 9/16; }
 }
-.padding {
-  padding: 60px;
+/* otherwise (mobile) */
+@media screen and (max-width: 799px) {
+  iframe { width: 80%; aspect-ratio: 9/16; }
 }
-.container {
-    max-width:800px;
-    margin:0 auto;
-    margin-bottom: 80px;
-}
-.yellow {
-    background-color: #fff5db;
-}
-
-.bigfont {
-    font-size: 30px;
-}
-
-iframe { width:100%; max-width: 700px; height: 394px; }
-
-.info {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-.info ul {
-  margin: 0;
-  width: 340px;
-}
-
-.quartos {
-  display: flex;
-  flex-direction: column;
-}
-.quarto {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-.quarto-foto {
-  flex-grow: 0;
-}
-.quarto-info {
-  flex-grow: 1;
-  width: 300px;
-}
-img.foto {
-  width: 325px;
-  border: 5px solid blue;
-}
-.foto-container {
-  position: relative;
-}
-.foto-text {
-  position: absolute;
-  bottom: 8px;
-  right: 16px;
-  color: white;
-  font-size: x-small;
-}
-.pricing {
-  margin: auto;
-  width: 50%;
-  color: green;
-}
-.bold {
-  font-weight: bold;
-}
-
-.occupied {color: red;}
-.vacant {color: green;}
-.soon-available {color: orange;}
+.row { margin: 40px 0; }
+.column { flex: 1; }
+.column img { max-width: 100%; height: auto; }
+/* miscellaneous */
+.bigfont { font-size: 30px; }
+.center { text-align: center; }
 </style>
 </head>
-
 <body>
 
-<div class="yellow">
-<div class="container center padding">
+<div class="banner center">
 <h1>Rua da Maternidade, 83 &ndash; Porto</h1>
-<h3>In Porto Downtown!</h3>
-</div>
-</div>
-
-<div class="container center">
-<p class="text-dark bigfont"><img width="45" height="40" src="room.svg"> 3 <img width="45" height="40" src="wc.svg"> 1</p>
+<p>In Porto Downtown!</p>
 </div>
 
-<div class="container">
-<!-- <div class="pricing bold">
-<p>Pricing:</p>
-<ul class="green"><li>1-2 people: 900€/month</li><li>3 people: 1050€/month</li></ul>
-</div> -->
+<p class="center bigfont"><img width="45" height="40" src="room.svg"> 3 <img width="45" height="40" src="wc.svg"> 1</p>
 
-<div class="info">
+<div class="maxwidth">
+<div class="row">
+<div class="column">
 <ul>
 <li>Near stores, monuments, in the historical center of Porto!</li>
 <li>5 minutes walking for Hospital Santo António</li>
@@ -108,6 +43,8 @@ img.foto {
 <li>15 minutes walking for FLUP/ISPUP</li>
 <li>20 minutes walking for FCUP/FAUP/FCNAUP</li>
 </ul>
+</div>
+<div class="column">
 <ul>
 <li>University Gym is in the street (see <a href="https://cdup.up.pt/upfit/o-programa">CDUP Boa Hora</a>)</li>
 <li>You can cook at home or eat for cheap in the University cafeterias nearby</li>
@@ -115,144 +52,130 @@ img.foto {
 </ul>
 </div>
 </div>
-
-<div class="container">
-<center>
-<iframe src="https://www.youtube.com/embed/U_EkM3q_rLM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</center>
 </div>
 
-<div class="yellow">
-<div class="container">
-<div class="quartos">
-
-<div class="quarto">
-    <div class="quarto-foto">
-    <a href="https://photos.app.goo.gl/tXBNrZ56wqPSNuJY6"><div class="foto-container"><img class="foto" src="https://lh3.googleusercontent.com/nxeTkek-r9BwqsWhPuK7o90tdbqkEATYI6HwVjWm9u9gTMKcffhrLjIl2b6mL3vDcCtTAKxraXWwG-KCe6gRs0v2nJLeKI8Hmz1iScwnD2BSsK2oZ8m4KC6opa_kAPuT3nPUAVUL=w1016-h762-no"><div class="foto-text">(Click for more photos)</div></div></a>
-    </div>
-    <div class="quarto-info">
-    <b>Room #1 <!-- (<span class="occupied">occupied</span>) --></b>
-    <ul>
-    <!-- <li>350&euro;/month (bills included)</li>-->
-    <li>Size: 4.1m x 3.1m</li>
-    <li>It has a lot of natural light, view to the street</li>
-    <li>Blackouts provide full darkness for the night</li>
-    <li>Furniture: double bed+desk+closet including bed clothes</li>
-    <li>Fortnightly cleaning of the common areas</li>
-    </ul>
-    </div>
+<div class="center">
+<iframe src="https://www.youtube.com/embed/QRZd62MMzAk?si=KFnIVbp9EqXI-aE9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
-<div class="quarto">
-    <div class="quarto-foto">
-    <a href="https://photos.app.goo.gl/CZJAPttQrDueACyc7"><div class="foto-container"><img class="foto" src="https://lh3.googleusercontent.com/pw/ABLVV85f88PTn0KPx0e4vofvKoe9v68zw41x9GJMIS3Db8tH8FEmns8tCcjwo-EuuhcS8urPpzR35kjfC_kuO2JiWVSm25BGWqPz08eCb19Ml6K6Lne1M88m5KNt8pof55Ut8B0xjgtL8VIIn2vVgRYQ025D=w1279-h959-s-no-gm"><div class="foto-text">(Click for more photos)</div></div></a>
-    </div>
-    <div class="quarto-info">
-    <b>Room #2 <!-- (<span class="occupied">occupied</span>) --></b>
-    <ul>
-    <!-- <li>330&euro;/month (bills included)</li> -->
-    <li>Size: 3.1m x 3.0m</li>
-    <li>It has a lot of light, but not direct light</li>
-    <li>Blackouts provide full darkness for the night</li>
-    <li>Furniture: bed+desk+closet including bed clothes</li>
-    <li>Second bed for an occasional guest</li>
-    <li>Fortnightly cleaning of the common areas</li>
-    </ul>
-    </div>
+<div class="row">
+<div class="column">
+<b>Room #1</b>
+<ul>
+<li>Size: 4.1m x 3.1m</li>
+<li>It has a lot of natural light, view to the street</li>
+<li>Blackouts provide full darkness for the night</li>
+<li>Bed: big enough for two people (140x200cm)</li>
+<li>Furniture: double bed+desk+closet including bed clothes</li>
+<li>Fortnightly cleaning of the common areas</li>
+</ul>
 </div>
-
-<div class="quarto">
-    <div class="quarto-foto">
-    <a href="https://photos.app.goo.gl/3v6htjE67yS2adgm8"><div class="foto-container"><img class="foto" src="https://lh3.googleusercontent.com/w5NDhH6Oy4AldB0kvsx5QeRd1Gwxjvuk-Gymm-No_qR_hK7ar5o9_IuUSFekMtCeQukzBwv-ONvR8vNJRqvroIIfKfRWvymmQ9J_ajFwJqW-mIvxfwwODyxPFopiLt8GekM6j90C=w718-h539-no"><div class="foto-text">(Click for more photos)</div></div></a>
-    </div>
-    <div class="quarto-info">
-    <b>Room #3 <!-- (<span class="vacant">vacant</span>) --></b>
-    <ul>
-    <!-- <li>315&euro;/month (bills included)</li> -->
-    <li>Size: 3.5m x 2.2m (small)</li>
-    <li>It has a lot of natural light, view to the street</li>
-    <li>Blackouts provide full darkness for the night</li>
-    <li>Furniture: bed+desk+closet including bed clothes</li>
-    <li>Fortnightly cleaning of the common areas</li>
-    </ul>
-    </div>
+<div class="column">
+<a href="https://photos.app.goo.gl/dGb2PX2BpkJyp6qo9"><img src="https://lh3.googleusercontent.com/pw/AP1GczPtEiN9souGp7qOt_EYB3j_R3bnBn11CGfqVOaxZRkMDfSvp9-oM7_sDm0QzyG3eZShUTowo2WEdNtMpZEO9BpeI9_wqiEcGHUOOgpX1G3ZrtNGyKcCUAu-gCltzeQOOP57ncCq0-kG5oRluIlc2ZJz=w1244-h933-s-no-gm?authuser=0"></a>
 </div>
-
-<div class="quarto">
-    <div class="quarto-foto">
-    <a href="https://photos.app.goo.gl/Zif8y62R9EhEW2pD6"><div class="foto-container"><img class="foto" src="https://lh3.googleusercontent.com/787yuosfDBGMlcEHyv3hOT6zUiDFS56SkMH3i-24jaLRm927GxDFuI0HskupnG_TwAIXhIOmUgvOnncsNeNwlCn1yKpugY6E9VEa6aurhaoCYd_Q9u5MDK1aZFB-7eFTzTtP1MiG=w2400"><div class="foto-text">(Click for more photos)</div></div></a>
-    </div>
-    <div class="quarto-info">
-    <b>Kitchen</b>
-    <ul>
-    <li>Kitchen</li>
-    <li>Appliances: ceramic hob+micro-wave+oven+fridge</li>
-    <li>Washing machine</li>
-    </ul>
-    </div>
-</div>
-
-<div class="quarto">
-    <div class="quarto-foto">
-    <a href="https://photos.app.goo.gl/JExis4EhbP2y5PNp6"><div class="foto-container"><img class="foto" src="https://lh3.googleusercontent.com/xhY5KrsQ_Nt3QfbQIE5730jsTlHxMxM3rhMyPQAy7T2CXflLxYLgoOIUuRRATaQ5zddqjjIkQz1R3c65q_njqUpedS2CMz4iXMF2Tu1q1IXRQTk94AFneqlfZ-MicdZQkKjMfrOg=w2400"><div class="foto-text">(Click for more photos)</div></div></a>
-    </div>
-    <div class="quarto-info">
-    <b>Living room</b>
-    <ul>
-    <li>Living room with small balcony</li>
-    <li>Furniture: television+sofa+puffes</li>
-    </ul>
-    </div>
-</div>
-
-<div class="quarto">
-    <div class="quarto-foto">
-    <a href="https://photos.app.goo.gl/gdc1vkeBPpeUSQuc6"><div class="foto-container"><img class="foto" src="https://lh3.googleusercontent.com/ZpdsdQ1Rth2vhNckLnG9nALuan1rmTxjMPy2sZeM_KBhL0UuHNLCswrxkVCXxPDXLRgYoKo19ZrcxZPmYodEl2pzPu5zRxyD8nRAgogPOxb3TuL58OdF8PGW1rSh2371K6mN3Zyz=w1016-h762-no"><div class="foto-text">(Click for more photos)</div></div></a>
-    </div>
-    <div class="quarto-info">
-    <b>WC</b>
-    <ul>
-    <li>Includes an hair dryer</li>
-    </ul>
-    </div>
-</div>
-
-</div>
+<div class="column">
+<a href="https://photos.app.goo.gl/gTdkjhHhyhKQeVPJA"><img src="https://lh3.googleusercontent.com/pw/AP1GczMS1KXJUtgsn-VOoXykZztWaGCjSOhXebv3olwPS2txejnhZHfx-Toy7jKXzm6E75FpbfgkhrkJlMphOxr-yn6qDfv8XGlE65ms5dkaqXASypz3Sb_PT_CcA8YzYGjiNss4xctq4ATBfOxYmTYyr6dx=w1244-h933-s-no-gm?authuser=0"></a>
 </div>
 </div>
 
-<div class="pricing">
-<p>Conditions: <a href="https://docs.google.com/document/d/1pNyfwfIRaXvK28mecRVvF0Px1Q14IkE9tiV4Hgrtwag/edit?usp=sharing">see here.</a></p>
+<div class="row">
+<div class="column">
+<b>Room #2</b>
+<ul>
+<li>Size: 3.1m x 3.0m</li>
+<li>It has a lot of light, but not direct light</li>
+<li>Blackouts provide full darkness for the night</li>
+<li>Furniture: bed+desk+closet including bed clothes</li>
+<li>It has a second bed for an occasional guest</li>
+<li>Fortnightly cleaning of the common areas</li>
+</ul>
+</div>
+<div class="column">
+<a href="https://photos.app.goo.gl/JqwRJms8HSmTatfTA"><img src="https://lh3.googleusercontent.com/pw/AP1GczNqtE22bA6k3jXxLINEmP3y-pVAb-18-93ZmiauYl9zP5iBzQPJqlmS4-jL-J453D8SEBGgxKkJI9vpvg2Se0oM52z8GGGytNUwNdDsUjfI5ewlLK5xBDLn21m84NfLAut8OZSIv4YgnLypO-rSe7ZD=w1858-h858-s-no-gm?authuser=0"></a>
+</div>
+<div class="column">
+<a href="https://photos.app.goo.gl/UrwLQovbHnK6y2ww9"><img src="https://lh3.googleusercontent.com/pw/AP1GczPZDDDULWR0pimRLM8BY_U0sAROwA2_qdzKulZe8u0JsZ3hIObCpLIh0HvB8S7aemAs6bBODFTOJQChw93YhICaE7MFc92YFIG7AHV8WXFfjlW9rz1rqr3EgitWj239durcefP16mOTdnxfmr-UQXnC=w1244-h933-s-no-gm?authuser=0"></a>
+</div>
 </div>
 
+<div class="row">
+<div class="column">
+<b>Room #3</b>
+<ul>
+<li>Size: 3.5m x 2.2m (small)</li>
+<li>It has a lot of natural light, view to the street</li>
+<li>Blackouts provide full darkness for the night</li>
+<li>Furniture: bed+desk+closet including bed clothes</li>
+<li>Fortnightly cleaning of the common areas</li>
+</ul>
+</div>
+<div class="column">
+<a href="https://photos.app.goo.gl/e9E6cN6X2kAYkmph8"><img src="https://lh3.googleusercontent.com/pw/AP1GczPIoh0VpWgzKsgJXV_adFpV9qOijiD4NgbvsBjlFdGkBAuJYXHtmkvsCi1gulqj2hNO-9xAzq--Zk7D5kS3Wp4GkOhhjKQfIQcxPhlwDon86jMUjUuUPoicd4WDzSpg7vVc_IaLz4PRgNapjOw58IqA=w1244-h933-s-no-gm?authuser=0"></a>
+</div>
+<div class="column">
+<a href="https://photos.app.goo.gl/eeuTz1q4DTzFATia9"><img src="https://lh3.googleusercontent.com/pw/AP1GczPzPn-j8GfITXLHNmC5GpAAMS_fgezcv4Uag-SAc_CagLj6z-sqKaobRfwkXClnRV-ly24Za0GNpPwXIXAOcd9g5LEMbUruQC8_1IXf3Y9phkf2llULwoKRfKgWtn7gVk8DAlq9KTrvRYlcO8r19aBS=w1244-h933-s-no-gm?authuser=0"></a>
+</div>
+</div>
 
-<center>
+<div class="row">
+<div class="column">
+<b>Kitchen</b>
+<ul>
+<li>Appliances: ceramic hob+micro-wave+oven+fridge</li>
+<li>Washing machine</li>
+</ul>
+</div>
+<div class="column">
+<a href="https://photos.app.goo.gl/KmBuX6bcxUubzUFM7"><img src="https://lh3.googleusercontent.com/pw/AP1GczMK1IMLlryythe31lENgnJtI7QzyS1kWEUQZsHRXy1C11eeOLbtjQjaB_WBG2tONF_yaWt6LEiSfOnK1tEihxSKw3OaCqw1AE5zlV5pZ9MODVFOhk8H7r9AiqHEvcB897V9Rx5GpCwaA_NBN7i8ZWZ1=w1244-h933-s-no-gm?authuser=0"></a>
+</div>
+<div class="column">
+<a href="https://photos.app.goo.gl/anNF2zaR27d32GVE7"><img src="https://lh3.googleusercontent.com/pw/AP1GczMhF4DKIygTeUWDHLTqbK3ygm0sBSpAKle6_acrhmnIx8IYo8Eq39YkvKj3GA4QUnzqFw8WIghFNr-k1nDfijHtH2MnmQpnbi3Vj8Nfhd7xRGvF_vXaAeJr3RTuYB2_TRjUGrjAjc1Bkntu2BE6KPcj=w1244-h933-s-no-gm?authuser=0"></a>
+</div>
+</div>
+
+<div class="row">
+<div class="column">
+<b>Living room</b>
+<ul>
+<li>Furniture: television+sofa</li>
+<li>Small balcony</li>
+</ul>
+</div>
+<div class="column">
+<a href="https://photos.app.goo.gl/cNc9sDqJTizhxMzV6"><img src="https://lh3.googleusercontent.com/pw/AP1GczPZbPUIQYD4_1bYpH7mx4ee1Q7ZU4sWhCFGRhkrwpLbuXQHDzqxhwxkY6HWAms9PJWWQi_HeiiBPZoaWrvBi2O7lEBeS0i7TSNIkjit3kN1qvM1COG1bwm_zHTCiD8e0nQ7LSLJTlQIBbEJpSLfh3he=w1244-h933-s-no-gm?authuser=0"></a>
+</div>
+<div class="column">
+<a href="https://photos.app.goo.gl/YiQxFGLeeaGoPCsaA"><img src="https://lh3.googleusercontent.com/pw/AP1GczPk2V34YQcqTIrLsjpAwZIkw5E-6rl8BF_0KpGyr6tN_11vqJ64chUqLsNtwDEwQiEQe51cwC6FsIOcLIgo0Jj2JRWBKuuDzUrViqaz5Uqhf5lPcYGVO_DHNlUcU1RsNYzIx5J5XAcPBjoJrqwNgCv2=w1244-h933-s-no-gm?authuser=0"></a>
+</div>
+</div>
+
+<div class="row">
+<div class="column">
+<b>Bathroom (WC)</b>
+<ul>
+<li>Includes an hair dryer</li>
+</ul>
+</div>
+<div class="column">
+<a href="https://photos.app.goo.gl/AGfUtSpQSwXM2chQ8"><img src="https://lh3.googleusercontent.com/pw/AP1GczPnNQSGn2iWWFG7Fvj79A0xqLRwNvix6wTfYRmA9aU5RRXN3dC9VXHnYbwuWGPJKlF5MCSZWHWkooU7BMUOhANzyzvqO73FJ1vAbrR2cgQ_8h94LBSSyZuzY5tl1-Ic7FySnYfJSUNnzhs6E-EXssn9=w1244-h933-s-no-gm?authuser=0"></a>
+</div>
+<div class="column">
+<a href="https://photos.app.goo.gl/7Mo4nJ2X2dHDNgRp7"><img src="https://lh3.googleusercontent.com/pw/AP1GczMv6f057VNkFmkXKpQUSxwXDM1sxqljeAOC-GlygqSgwePpcoWDJotJ_oj9MNyL5vq98Fb6sfGS3ZSG4aexhseI178559VsT9vNQkej00dr-IvekL5rrXt5dihVcbYEGuZ6Adxdj2M0iPJZy-x3jHtT=w1244-h933-s-no-gm?authuser=0"></a>
+</div>
+</div>
+
+<div class="banner">
+<div class="center">
 <div class="embed-responsive embed-responsive-16by9">
 <iframe class="embed-responsive-item" src="https://www.google.com/maps/d/u/0/embed?mid=1suqXq2rTb-bReey0rJTjQYsEGVGPjZed" width="600" height="400"></iframe>
 </div>
-<p>Rua da Maternidade, 83, 4050-370 Porto, Portugal</p>
-<p><img width="22" src="email.svg"> <a href="mailto:ricardo.pdm.cruz@gmail.com?subject=Maternidade Rental">ricardo.pdm.cruz@gmail.com</a></p>
-</center>
+</div>
 
-<!--
-<h2><s>I am interested!</s> Sorry, but we are currently all booked.</h2>
-
-<table style="margin-left:auto;margin-right:auto;">
-<form action="https://formspree.io/f/mqkoawwr" method="POST">
-<tr><td align="right"><label for="name">Name:</label></td><td><input type="text" id="name" name="name"></td></tr>
-<tr><td align="right"><label for="phone"><img src="whatsapp.png"> WhatsApp Contact:</label></td><td><input type="tel" id="phone" name="phone"></td></tr>
-
-<tr><td align="right"><label for="questions">Any questions you have?</label></td><td><textarea id="questions" name="questions" rows="4" cols="50"></textarea></td></tr>
-
-<tr><td align="right"><label for="country">Where do you come from?</label></td><td><input type="text" id="country" name="country"></td></tr>
-<tr><td align="right"><label for="people">For how many people?</label></td><td><select name="people" id="people"><option value="alone">Just me</option><option value="two">We are two persons</option><option value="three">We are three persons</option><option value="four">We are four persons</option></select></td></tr>
-<tr><td align="right"><label for="start">Estimated start date:</label></td><td><input type="date" id="start" name="start"></td></tr>
-<tr><td align="right"><label for="end">Estimated end date:</label></td><td><input type="date" id="end" name="end"></td></tr>
-<tr><td align="right"><label for="purpose">Are you coming to Porto to study/work? Where?</label></td><td><input type="text" id="purpose" name="purpose"></td></tr>
-<tr><td></td><td><button type="submit" disabled>Send!</button></td></tr>
-</form>
-</table>
--->
+<p class="center">Rua da Maternidade, 83, 4050-370 Porto, Portugal</p>
+<p class="center">&#x27A1; Conditions: <a href="https://docs.google.com/document/d/1pNyfwfIRaXvK28mecRVvF0Px1Q14IkE9tiV4Hgrtwag/edit?usp=sharing">see here</a> &#x2B05;</p>
+<p class="center"><img width="22" src="email.svg"> <a href="mailto:ricardo.pdm.cruz@gmail.com?subject=Maternidade Rental">ricardo.pdm.cruz@gmail.com</a></p>
+</div>
 
 </body>
 </html>
+
