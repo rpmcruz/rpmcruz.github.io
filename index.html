@@ -1,526 +1,528 @@
-<html xmlns:citation-name="http://www.cienciavitae.pt/ns/citation-name">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>Ricardo P. M. Cruz</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-          body { background-color: #f5f5f5; margin: 0; }
-          .container { background: white; padding: 10px; box-shadow: none; }
-          @media (min-width: 768px) {
-            body { margin: 0 40px; }
-            .container { max-width: 1200px; margin: 0 auto; padding: 30px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-          }
-          h1 { color: #412605ff; border-bottom: 3px solid #412605ff; padding-bottom: 10px; }
-          h2 { color: #74440aff; margin-top: 40px; border-bottom: 2px solid #74440aff; padding-bottom: 8px; }
-          .header-info { background-color: #ecf0f1; padding: 20px; border-radius: 5px; margin-bottom: 30px; }
-          .header-info p { margin: 5px 0; }
-          table { border-collapse: collapse; width: 100%; margin: 20px 0; }
-          th { background-color: #74440aff; color: white; padding: 12px; text-align: left; font-weight: bold; }
-          td { border: 1px solid #ddd; padding: 10px; vertical-align: top; }
-          tr:nth-child(even) { background-color: #f9f9f9; }
-          a.cell-link { display: block; width: 100%; height: 100%; text-decoration: none; color: inherit; padding: 10px; }
-          td:has(a.cell-link) { padding: 0; }
-          tr:has(a.cell-link):hover { background-color: #efe2d0ff !important; cursor: pointer; }
-          .year { font-weight: bold; color: #74440aff; width: 6em; }
-          .type, .venue { font-style: italic; color: #656565ff; }
-          .metric { width: 2em; font-family: monospace; }
+          body { max-width: 1200px; margin: 2em auto; padding: 0 16px; color: #111; background: #fff;
+                 font: 18px/1.5 ui-monospace, "JetBrains Mono", "Fira Code", Menlo, Consolas, "DejaVu Sans Mono", monospace; }
+          h1::before { content: "# "; color: #aaa; }
+          h2::before { content: "## "; color: #aaa; }
+          a { color: #0645ad; text-decoration: none; }
+          a:hover { text-decoration: underline; }
+          .wrap { overflow-x: auto; }
+          table { border-collapse: collapse; border: 2px solid #111; width: 100%; }
+          th, td { border: 1px solid #ccc; padding: 8px 10px; text-align: left; vertical-align: top; }
+          th { background: #eee; border-bottom: 2px solid #111; white-space: nowrap; }
+          td:first-child { color: #999; }
+          td i { color: #666; font-style: normal; }
+          th.paper { width: 40%; }
+          select { font: inherit; width: 100%; }
+          .tag { display: inline-block; background: #eee; color: #333; padding: 0 6px; margin: 2px 0; font-size: 0.8em; white-space: nowrap; }
+          .tag.active { background: #111; color: #fff; }
         </style>
 </head>
-<body><div class="container">
-<div class="header-info">
+<body>
 <h1>Ricardo P. M. Cruz</h1>
-<p><strong>Email: </strong><a href="mailto:rpcruz@fe.up.pt">rpcruz@fe.up.pt</a></p>
-<p><strong>About: </strong>Ricardo P. M. Cruz is an Assistant Professor at the Faculty of Engineering of the University of Porto and a researcher at INESC TEC. His work focuses on machine learning, particularly deep learning, and computer vision. He received a B.Sc. degree in Computer Science (2012), an M.Sc. degree in Mathematical Engineering (2015), both from the University of Porto, and a Ph.D. degree in Computer Science (2021) jointly from the University of Porto, Aveiro and Minho. His topics cover transversal aspects of machine learning with applications to health and autonomous driving, detailed in over 20 publications with 100+ citations.</p>
-</div>
+<p>Email: <a href="mailto:rpcruz@fe.up.pt">rpcruz@fe.up.pt</a></p>
+<p>Ricardo P. M. Cruz is a recent Assistant Professor at the Faculty of Engineering of the University of Porto and a researcher at INESC TEC. His research focuses on machine learning — particularly deep learning, ordinal classification, and computer vision — with applications to healthcare and autonomous driving. He holds a B.Sc. in Computer Science (2012) and an M.Sc. in Mathematical Engineering (2015) from the University of Porto, and a Ph.D. in Computer Science (2021) jointly from the Universities of Porto, Aveiro, and Minho. He has authored over 30 publications with 100+ citations.</p>
 <h2>Publications</h2>
-<table>
+<div class="wrap"><table id="papers" border="1" cellpadding="4">
+<thead><tr>
+<th>#</th>
+<th data-type="sort" data-first="desc">Year</th>
+<th class="paper">Paper</th>
+<th data-type="filter">Type</th>
+<th data-type="filter" data-multi="1">Tags</th>
+<th data-type="sort" data-first="desc">Citations</th>
+<th data-type="sort" data-first="desc">IF</th>
+<th data-type="sort" data-first="asc">SJR</th>
+<th data-type="sort" data-first="asc">CORE</th>
+</tr></thead>
+<tbody>
 <tr>
-<th>Year</th>
-<th>Title</th>
-<th>Type</th>
-<th>Venue</th>
-<th>Citations</th>
-<th>Impact Factor</th>
-<th>SJR Rank</th>
-<th>CORE Rank</th>
+<td>1</td>
+<td>2027</td>
+<td>
+<a href="https://doi.org/10.1007/978-3-032-44472-1_11">Object Detection as a Differentiable Interpretability Bottleneck</a><br><i>EPIA Conference on Artificial Intelligence</i>
+</td>
+<td>conference</td>
+<td>
+<a class="tag" href="#">interpretability</a> <a class="tag" href="#">object detection</a> </td>
+<td>0</td>
+<td></td>
+<td></td>
+<td>n/a</td>
 </tr>
 <tr>
-<td class="year">2026</td>
-<td>Preserving Ordinality in Diabetic Retinopathy Grading through a Distribution-Based Loss Function</td>
-<td class="type">Conference paper</td>
-<td class="venue">Northern Lights Deep Learning Conference 2026</td>
-<td class="metric citations"><span title="National conferences, not indexed">*</span></td>
-<td class="metric impact-factor"></td>
-<td class="metric sjr-rank"></td>
-<td class="metric core-rank"></td>
+<td>2</td>
+<td>2025</td>
+<td>
+<a href="https://doi.org/10.1016/j.neucom.2024.128878">CNN explanation methods for ordinal regression tasks</a><br><i>Neurocomputing</i>
+</td>
+<td>journal</td>
+<td>
+<a class="tag" href="#">interpretability</a> <a class="tag" href="#">ordinal</a> </td>
+<td>8</td>
+<td>6.7</td>
+<td>Q1</td>
+<td></td>
 </tr>
 <tr>
-<td class="year">2025</td>
-<td>Towards an Automated System for Pig Aggression Detection and Tracking</td>
-<td class="type">Conference paper</td>
-<td class="venue">PAMDAS 2025 - International conference on Physical Asset Management and Data Science</td>
-<td class="metric citations"><span title="National conferences, not indexed">*</span></td>
-<td class="metric impact-factor"></td>
-<td class="metric sjr-rank"></td>
-<td class="metric core-rank"></td>
+<td>3</td>
+<td>2025</td>
+<td>
+<a href="https://doi.org/10.1109/ACCESS.2025.3537601">Learning Ordinality in Semantic Segmentation</a><br><i>IEEE Access</i>
+</td>
+<td>journal</td>
+<td>
+<a class="tag" href="#">ordinal</a> <a class="tag" href="#">semantic segmentation</a> <a class="tag" href="#">loss functions</a> <a class="tag" href="#">medical images</a> <a class="tag" href="#">autonomous driving</a> </td>
+<td>3</td>
+<td>4.2</td>
+<td>Q1</td>
+<td></td>
 </tr>
 <tr>
-<td class="year">2025</td>
-<td>Ordinal Methods for Monocular Depth Estimation</td>
-<td class="type">Conference poster</td>
-<td class="venue">Portuguese Conference on Pattern Recognition (RECPAD)</td>
-<td class="metric citations"><span title="National conferences, not indexed">*</span></td>
-<td class="metric impact-factor"></td>
-<td class="metric sjr-rank"></td>
-<td class="metric core-rank"></td>
+<td>4</td>
+<td>2025</td>
+<td>
+<a href="https://doi.org/10.1109/tai.2025.3549740">Unimodal Distributions for Ordinal Regression</a><br><i>IEEE Transactions on Artificial Intelligence</i>
+</td>
+<td>journal</td>
+<td>
+<a class="tag" href="#">ordinal</a> <a class="tag" href="#">loss functions</a> </td>
+<td>9</td>
+<td>n/a</td>
+<td>Q1</td>
+<td></td>
 </tr>
 <tr>
-<td class="year"><a class="cell-link" href="https://doi.org/10.1016/j.neucom.2024.128878">2025</a></td>
-<td><a class="cell-link" href="https://doi.org/10.1016/j.neucom.2024.128878">CNN explanation methods for ordinal regression tasks</a></td>
-<td class="type"><a class="cell-link" href="https://doi.org/10.1016/j.neucom.2024.128878">Journal article</a></td>
-<td class="venue"><a class="cell-link" href="https://doi.org/10.1016/j.neucom.2024.128878">Neurocomputing</a></td>
-<td class="metric citations"><a class="cell-link" href="https://doi.org/10.1016/j.neucom.2024.128878">5</a></td>
-<td class="metric impact-factor"><a class="cell-link" href="https://doi.org/10.1016/j.neucom.2024.128878">6.5</a></td>
-<td class="metric sjr-rank"><a class="cell-link" href="https://doi.org/10.1016/j.neucom.2024.128878">Q1</a></td>
-<td class="metric core-rank"><a class="cell-link" href="https://doi.org/10.1016/j.neucom.2024.128878"></a></td>
+<td>5</td>
+<td>2024</td>
+<td>
+<a href="https://doi.org/10.1007/s41060-024-00579-w">A case study on phishing detection with a machine learning net</a><br><i>International Journal of Data Science and Analytics</i>
+</td>
+<td>journal</td>
+<td>
+<a class="tag" href="#">class imbalance</a> </td>
+<td>17</td>
+<td>2.9</td>
+<td>Q2</td>
+<td></td>
 </tr>
 <tr>
-<td class="year"><a class="cell-link" href="https://doi.org/10.1109/ACCESS.2025.3537601">2025</a></td>
-<td><a class="cell-link" href="https://doi.org/10.1109/ACCESS.2025.3537601">Learning Ordinality in Semantic Segmentation</a></td>
-<td class="type"><a class="cell-link" href="https://doi.org/10.1109/ACCESS.2025.3537601">Journal article</a></td>
-<td class="venue"><a class="cell-link" href="https://doi.org/10.1109/ACCESS.2025.3537601">IEEE Access</a></td>
-<td class="metric citations"><a class="cell-link" href="https://doi.org/10.1109/ACCESS.2025.3537601">2</a></td>
-<td class="metric impact-factor"><a class="cell-link" href="https://doi.org/10.1109/ACCESS.2025.3537601">3.6</a></td>
-<td class="metric sjr-rank"><a class="cell-link" href="https://doi.org/10.1109/ACCESS.2025.3537601">Q1</a></td>
-<td class="metric core-rank"><a class="cell-link" href="https://doi.org/10.1109/ACCESS.2025.3537601"></a></td>
+<td>6</td>
+<td>2024</td>
+<td>
+<a href="https://doi.org/10.1109/tiv.2024.3387113">Weather and Meteorological Optical Range Classification for Autonomous Driving</a><br><i>IEEE Transactions on Intelligent Vehicles</i>
+</td>
+<td>journal</td>
+<td>
+<a class="tag" href="#">autonomous driving</a> <a class="tag" href="#">multi-task learning</a> <a class="tag" href="#">efficiency</a> </td>
+<td>11</td>
+<td>14.3</td>
+<td>Q1</td>
+<td></td>
 </tr>
 <tr>
-<td class="year"><a class="cell-link" href="https://doi.org/10.1109/tai.2025.3549740">2025</a></td>
-<td><a class="cell-link" href="https://doi.org/10.1109/tai.2025.3549740">Unimodal Distributions for Ordinal Regression</a></td>
-<td class="type"><a class="cell-link" href="https://doi.org/10.1109/tai.2025.3549740">Journal article</a></td>
-<td class="venue"><a class="cell-link" href="https://doi.org/10.1109/tai.2025.3549740">IEEE Transactions on Artificial Intelligence</a></td>
-<td class="metric citations"><a class="cell-link" href="https://doi.org/10.1109/tai.2025.3549740">2</a></td>
-<td class="metric impact-factor"><a class="cell-link" href="https://doi.org/10.1109/tai.2025.3549740">n/a</a></td>
-<td class="metric sjr-rank"><a class="cell-link" href="https://doi.org/10.1109/tai.2025.3549740">Q1</a></td>
-<td class="metric core-rank"><a class="cell-link" href="https://doi.org/10.1109/tai.2025.3549740"></a></td>
+<td>7</td>
+<td>2024</td>
+<td>
+<a href="https://doi.org/10.1007/978-3-031-49018-7_40">YOLOMM – You Only Look Once for Multi-modal Multi-tasking</a><br><i>Iberoamerican Congress on Pattern Recognition</i>
+</td>
+<td>conference</td>
+<td>
+<a class="tag" href="#">object detection</a> <a class="tag" href="#">multi-task learning</a> </td>
+<td>0</td>
+<td></td>
+<td></td>
+<td>C</td>
 </tr>
 <tr>
-<td class="year"><a class="cell-link" href="https://doi.org/10.1007/978-3-031-49018-7_40">2024</a></td>
-<td><a class="cell-link" href="https://doi.org/10.1007/978-3-031-49018-7_40">YOLOMM – You Only Look Once for Multi-modal Multi-tasking</a></td>
-<td class="type"><a class="cell-link" href="https://doi.org/10.1007/978-3-031-49018-7_40">Book chapter</a></td>
-<td class="venue"><a class="cell-link" href="https://doi.org/10.1007/978-3-031-49018-7_40">Iberoamerican Congress on Pattern Recognition</a></td>
-<td class="metric citations"><a class="cell-link" href="https://doi.org/10.1007/978-3-031-49018-7_40">0</a></td>
-<td class="metric impact-factor"><a class="cell-link" href="https://doi.org/10.1007/978-3-031-49018-7_40"></a></td>
-<td class="metric sjr-rank"><a class="cell-link" href="https://doi.org/10.1007/978-3-031-49018-7_40"></a></td>
-<td class="metric core-rank"><a class="cell-link" href="https://doi.org/10.1007/978-3-031-49018-7_40">C</a></td>
+<td>8</td>
+<td>2024</td>
+<td>
+<a href="https://doi.org/10.1007/978-3-031-49018-7_38">Active Supervision: Human in the Loop</a><br><i>Iberoamerican Congress on Pattern Recognition</i>
+</td>
+<td>conference</td>
+<td>
+<a class="tag" href="#">human-in-the-loop</a> </td>
+<td>0</td>
+<td></td>
+<td></td>
+<td>C</td>
 </tr>
 <tr>
-<td class="year"><a class="cell-link" href="https://doi.org/10.1007/978-3-031-49018-7_38">2024</a></td>
-<td><a class="cell-link" href="https://doi.org/10.1007/978-3-031-49018-7_38">Active Supervision: Human in the Loop</a></td>
-<td class="type"><a class="cell-link" href="https://doi.org/10.1007/978-3-031-49018-7_38">Book chapter</a></td>
-<td class="venue"><a class="cell-link" href="https://doi.org/10.1007/978-3-031-49018-7_38">Iberoamerican Congress on Pattern Recognition</a></td>
-<td class="metric citations"><a class="cell-link" href="https://doi.org/10.1007/978-3-031-49018-7_38">0</a></td>
-<td class="metric impact-factor"><a class="cell-link" href="https://doi.org/10.1007/978-3-031-49018-7_38"></a></td>
-<td class="metric sjr-rank"><a class="cell-link" href="https://doi.org/10.1007/978-3-031-49018-7_38"></a></td>
-<td class="metric core-rank"><a class="cell-link" href="https://doi.org/10.1007/978-3-031-49018-7_38">C</a></td>
+<td>9</td>
+<td>2024</td>
+<td>
+<a href="https://doi.org/10.1007/978-3-031-49018-7_39">Condition Invariance for Autonomous Driving by Adversarial Learning</a><br><i>Iberoamerican Congress on Pattern Recognition</i>
+</td>
+<td>conference</td>
+<td>
+<a class="tag" href="#">autonomous driving</a> <a class="tag" href="#">domain shift</a> </td>
+<td>0</td>
+<td></td>
+<td></td>
+<td>C</td>
 </tr>
 <tr>
-<td class="year"><a class="cell-link" href="https://doi.org/10.1007/978-3-031-49018-7_39">2024</a></td>
-<td><a class="cell-link" href="https://doi.org/10.1007/978-3-031-49018-7_39">Condition Invariance for Autonomous Driving by Adversarial Learning</a></td>
-<td class="type"><a class="cell-link" href="https://doi.org/10.1007/978-3-031-49018-7_39">Book chapter</a></td>
-<td class="venue"><a class="cell-link" href="https://doi.org/10.1007/978-3-031-49018-7_39">Iberoamerican Congress on Pattern Recognition</a></td>
-<td class="metric citations"><a class="cell-link" href="https://doi.org/10.1007/978-3-031-49018-7_39">0</a></td>
-<td class="metric impact-factor"><a class="cell-link" href="https://doi.org/10.1007/978-3-031-49018-7_39"></a></td>
-<td class="metric sjr-rank"><a class="cell-link" href="https://doi.org/10.1007/978-3-031-49018-7_39"></a></td>
-<td class="metric core-rank"><a class="cell-link" href="https://doi.org/10.1007/978-3-031-49018-7_39">C</a></td>
+<td>10</td>
+<td>2023</td>
+<td>
+<a href="https://doi.org/10.1117/12.2679881">Two-Stage Semantic Segmentation in Neural Networks</a><br><i>Fifteenth International Conference on Machine Vision (ICMV 2022)</i>
+</td>
+<td>conference</td>
+<td>
+<a class="tag" href="#">semantic segmentation</a> <a class="tag" href="#">efficiency</a> </td>
+<td>0</td>
+<td></td>
+<td></td>
+<td>C</td>
 </tr>
 <tr>
-<td class="year">2024</td>
-<td>Tracking group-housed pigs and classification of aggressive behaviours’ using computer vision</td>
-<td class="type">Conference abstract</td>
-<td class="venue"></td>
-<td class="metric citations"><span title="National conferences, not indexed">*</span></td>
-<td class="metric impact-factor"></td>
-<td class="metric sjr-rank"></td>
-<td class="metric core-rank"></td>
+<td>11</td>
+<td>2023</td>
+<td>
+<a href="https://doi.org/10.3390/s23063092">Two-Stage Framework for Faster Semantic Segmentation</a><br><i>Sensors</i>
+</td>
+<td>journal</td>
+<td>
+<a class="tag" href="#">semantic segmentation</a> <a class="tag" href="#">efficiency</a> <a class="tag" href="#">medical images</a> <a class="tag" href="#">autonomous driving</a> </td>
+<td>2</td>
+<td>n/a</td>
+<td>Q1</td>
+<td></td>
 </tr>
 <tr>
-<td class="year"><a class="cell-link" href="https://doi.org/10.1007/s41060-024-00579-w">2024</a></td>
-<td><a class="cell-link" href="https://doi.org/10.1007/s41060-024-00579-w">A case study on phishing detection with a machine learning net</a></td>
-<td class="type"><a class="cell-link" href="https://doi.org/10.1007/s41060-024-00579-w">Journal article</a></td>
-<td class="venue"><a class="cell-link" href="https://doi.org/10.1007/s41060-024-00579-w">International Journal of Data Science and Analytics</a></td>
-<td class="metric citations"><a class="cell-link" href="https://doi.org/10.1007/s41060-024-00579-w">10</a></td>
-<td class="metric impact-factor"><a class="cell-link" href="https://doi.org/10.1007/s41060-024-00579-w">2.8</a></td>
-<td class="metric sjr-rank"><a class="cell-link" href="https://doi.org/10.1007/s41060-024-00579-w">Q2</a></td>
-<td class="metric core-rank"><a class="cell-link" href="https://doi.org/10.1007/s41060-024-00579-w"></a></td>
+<td>12</td>
+<td>2023</td>
+<td>
+<a href="https://doi.org/10.1016/j.iswa.2022.200170">Rethinking low-cost microscopy workflow: Image enhancement using deep based Extended Depth of Field methods</a><br><i>Intelligent Systems with Applications</i>
+</td>
+<td>journal</td>
+<td>
+<a class="tag" href="#">medical images</a> </td>
+<td>3</td>
+<td>5.5</td>
+<td>Q1</td>
+<td></td>
 </tr>
 <tr>
-<td class="year"><a class="cell-link" href="https://doi.org/10.1109/tiv.2024.3387113">2024</a></td>
-<td><a class="cell-link" href="https://doi.org/10.1109/tiv.2024.3387113">Weather and Meteorological Optical Range Classification for Autonomous Driving</a></td>
-<td class="type"><a class="cell-link" href="https://doi.org/10.1109/tiv.2024.3387113">Journal article</a></td>
-<td class="venue"><a class="cell-link" href="https://doi.org/10.1109/tiv.2024.3387113">IEEE Transactions on Intelligent Vehicles</a></td>
-<td class="metric citations"><a class="cell-link" href="https://doi.org/10.1109/tiv.2024.3387113">6</a></td>
-<td class="metric impact-factor"><a class="cell-link" href="https://doi.org/10.1109/tiv.2024.3387113">14.3</a></td>
-<td class="metric sjr-rank"><a class="cell-link" href="https://doi.org/10.1109/tiv.2024.3387113">Q1</a></td>
-<td class="metric core-rank"><a class="cell-link" href="https://doi.org/10.1109/tiv.2024.3387113"></a></td>
+<td>13</td>
+<td>2023</td>
+<td>
+<a href="https://doi.org/10.1007/978-3-031-36616-1_22">Interpretability-Guided Human Feedback During Neural Network Training</a><br><i>Iberian Conference on Pattern Recognition and Image Analysis</i>
+</td>
+<td>conference</td>
+<td>
+<a class="tag" href="#">interpretability</a> <a class="tag" href="#">human-in-the-loop</a> </td>
+<td>2</td>
+<td></td>
+<td></td>
+<td>n/a</td>
 </tr>
 <tr>
-<td class="year"><a class="cell-link" href="https://doi.org/10.1007/978-3-031-36616-1_22">2023</a></td>
-<td><a class="cell-link" href="https://doi.org/10.1007/978-3-031-36616-1_22">Interpretability-Guided Human Feedback During Neural Network Training</a></td>
-<td class="type"><a class="cell-link" href="https://doi.org/10.1007/978-3-031-36616-1_22">Book chapter</a></td>
-<td class="venue"><a class="cell-link" href="https://doi.org/10.1007/978-3-031-36616-1_22">Iberian Conference on Pattern Recognition and Image Analysis</a></td>
-<td class="metric citations"><a class="cell-link" href="https://doi.org/10.1007/978-3-031-36616-1_22">1</a></td>
-<td class="metric impact-factor"><a class="cell-link" href="https://doi.org/10.1007/978-3-031-36616-1_22"></a></td>
-<td class="metric sjr-rank"><a class="cell-link" href="https://doi.org/10.1007/978-3-031-36616-1_22"></a></td>
-<td class="metric core-rank"><a class="cell-link" href="https://doi.org/10.1007/978-3-031-36616-1_22">n/a</a></td>
+<td>14</td>
+<td>2023</td>
+<td>
+<a href="https://doi.org/10.1007/978-3-031-43078-7_43">Evaluating the Performance of Explanation Methods on Ordinal Regression CNN Models</a><br><i>International Work-Conference on Artificial Neural Networks</i>
+</td>
+<td>conference</td>
+<td>
+<a class="tag" href="#">interpretability</a> <a class="tag" href="#">ordinal</a> </td>
+<td>2</td>
+<td></td>
+<td></td>
+<td>n/a</td>
 </tr>
 <tr>
-<td class="year"><a class="cell-link" href="https://doi.org/10.1007/978-3-031-43078-7_43">2023</a></td>
-<td><a class="cell-link" href="https://doi.org/10.1007/978-3-031-43078-7_43">Evaluating the Performance of Explanation Methods on Ordinal Regression CNN Models</a></td>
-<td class="type"><a class="cell-link" href="https://doi.org/10.1007/978-3-031-43078-7_43">Book chapter</a></td>
-<td class="venue"><a class="cell-link" href="https://doi.org/10.1007/978-3-031-43078-7_43">International Work-Conference on Artificial Neural Networks</a></td>
-<td class="metric citations"><a class="cell-link" href="https://doi.org/10.1007/978-3-031-43078-7_43">2</a></td>
-<td class="metric impact-factor"><a class="cell-link" href="https://doi.org/10.1007/978-3-031-43078-7_43"></a></td>
-<td class="metric sjr-rank"><a class="cell-link" href="https://doi.org/10.1007/978-3-031-43078-7_43"></a></td>
-<td class="metric core-rank"><a class="cell-link" href="https://doi.org/10.1007/978-3-031-43078-7_43">n/a</a></td>
+<td>15</td>
+<td>2022</td>
+<td>
+<a href="https://doi.org/10.3390/math10060980">Quasi-Unimodal Distributions for Ordinal Classification</a><br><i>MATHEMATICS</i>
+</td>
+<td>journal</td>
+<td>
+<a class="tag" href="#">ordinal</a> <a class="tag" href="#">loss functions</a> </td>
+<td>9</td>
+<td>n/a</td>
+<td>Q2</td>
+<td></td>
 </tr>
 <tr>
-<td class="year"><a class="cell-link" href="https://doi.org/10.1117/12.2679881">2023</a></td>
-<td><a class="cell-link" href="https://doi.org/10.1117/12.2679881">Two-Stage Semantic Segmentation in Neural Networks</a></td>
-<td class="type"><a class="cell-link" href="https://doi.org/10.1117/12.2679881">Conference paper</a></td>
-<td class="venue"><a class="cell-link" href="https://doi.org/10.1117/12.2679881">Fifteenth International Conference on Machine Vision (ICMV 2022)</a></td>
-<td class="metric citations"><a class="cell-link" href="https://doi.org/10.1117/12.2679881">0</a></td>
-<td class="metric impact-factor"><a class="cell-link" href="https://doi.org/10.1117/12.2679881"></a></td>
-<td class="metric sjr-rank"><a class="cell-link" href="https://doi.org/10.1117/12.2679881"></a></td>
-<td class="metric core-rank"><a class="cell-link" href="https://doi.org/10.1117/12.2679881">C</a></td>
+<td>16</td>
+<td>2022</td>
+<td>
+<a href="https://doi.org/10.1101/2022.02.22.481410">Deep learning-based system for real-time behavior recognition and closed-loop control of behavioral mazes using depth sensing</a><br><i></i>
+</td>
+<td>preprint</td>
+<td></td>
+<td>3</td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
-<td class="year"><a class="cell-link" href="https://doi.org/10.3390/s23063092">2023</a></td>
-<td><a class="cell-link" href="https://doi.org/10.3390/s23063092">Two-Stage Framework for Faster Semantic Segmentation</a></td>
-<td class="type"><a class="cell-link" href="https://doi.org/10.3390/s23063092">Journal article</a></td>
-<td class="venue"><a class="cell-link" href="https://doi.org/10.3390/s23063092">Sensors</a></td>
-<td class="metric citations"><a class="cell-link" href="https://doi.org/10.3390/s23063092">1</a></td>
-<td class="metric impact-factor"><a class="cell-link" href="https://doi.org/10.3390/s23063092">n/a</a></td>
-<td class="metric sjr-rank"><a class="cell-link" href="https://doi.org/10.3390/s23063092">Q1</a></td>
-<td class="metric core-rank"><a class="cell-link" href="https://doi.org/10.3390/s23063092"></a></td>
+<td>17</td>
+<td>2021</td>
+<td>
+<a href="https://doi.org/10.1109/icpr48806.2021.9413004">Background Invariance by Adversarial Learning</a><br><i>2020 25th International Conference on Pattern Recognition (ICPR)</i>
+</td>
+<td>conference</td>
+<td>
+<a class="tag" href="#">domain shift</a> <a class="tag" href="#">data augmentation</a> </td>
+<td>1</td>
+<td></td>
+<td></td>
+<td>B</td>
 </tr>
 <tr>
-<td class="year"><a class="cell-link" href="https://doi.org/10.1016/j.iswa.2022.200170">2023</a></td>
-<td><a class="cell-link" href="https://doi.org/10.1016/j.iswa.2022.200170">Rethinking low-cost microscopy workflow: Image enhancement using deep based Extended Depth of Field methods</a></td>
-<td class="type"><a class="cell-link" href="https://doi.org/10.1016/j.iswa.2022.200170">Journal article</a></td>
-<td class="venue"><a class="cell-link" href="https://doi.org/10.1016/j.iswa.2022.200170">Intelligent Systems with Applications</a></td>
-<td class="metric citations"><a class="cell-link" href="https://doi.org/10.1016/j.iswa.2022.200170">2</a></td>
-<td class="metric impact-factor"><a class="cell-link" href="https://doi.org/10.1016/j.iswa.2022.200170">4.3</a></td>
-<td class="metric sjr-rank"><a class="cell-link" href="https://doi.org/10.1016/j.iswa.2022.200170">Q1</a></td>
-<td class="metric core-rank"><a class="cell-link" href="https://doi.org/10.1016/j.iswa.2022.200170"></a></td>
+<td>18</td>
+<td>2021</td>
+<td>
+<a href="https://doi.org/10.7717/peerj-cs.457">Ordinal losses for classification of cervical cancer risk</a><br><i>PEERJ COMPUTER SCIENCE</i>
+</td>
+<td>journal</td>
+<td>
+<a class="tag" href="#">ordinal</a> <a class="tag" href="#">loss functions</a> <a class="tag" href="#">medical images</a> </td>
+<td>39</td>
+<td>2.9</td>
+<td>Q1</td>
+<td></td>
 </tr>
 <tr>
-<td class="year">2023</td>
-<td>Unimodal Distributions for Ordinal Regression</td>
-<td class="type">Journal article</td>
-<td class="venue">CoRR</td>
-<td class="metric citations"><span title="National conferences, not indexed">*</span></td>
-<td class="metric impact-factor"></td>
-<td class="metric sjr-rank"></td>
-<td class="metric core-rank"></td>
+<td>19</td>
+<td>2019</td>
+<td>
+<a href="https://doi.org/10.1109/embc.2019.8857385">Averse Deep Semantic Segmentation</a><br><i>2019 41st Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC)</i>
+</td>
+<td>conference</td>
+<td>
+<a class="tag" href="#">semantic segmentation</a> <a class="tag" href="#">asymmetric errors</a> <a class="tag" href="#">loss functions</a> </td>
+<td>1</td>
+<td></td>
+<td></td>
+<td>C</td>
 </tr>
 <tr>
-<td class="year"><a class="cell-link" href="https://doi.org/10.3390/math10060980">2022</a></td>
-<td><a class="cell-link" href="https://doi.org/10.3390/math10060980">Quasi-Unimodal Distributions for Ordinal Classification</a></td>
-<td class="type"><a class="cell-link" href="https://doi.org/10.3390/math10060980">Journal article</a></td>
-<td class="venue"><a class="cell-link" href="https://doi.org/10.3390/math10060980">MATHEMATICS</a></td>
-<td class="metric citations"><a class="cell-link" href="https://doi.org/10.3390/math10060980">7</a></td>
-<td class="metric impact-factor"><a class="cell-link" href="https://doi.org/10.3390/math10060980">n/a</a></td>
-<td class="metric sjr-rank"><a class="cell-link" href="https://doi.org/10.3390/math10060980">Q2</a></td>
-<td class="metric core-rank"><a class="cell-link" href="https://doi.org/10.3390/math10060980"></a></td>
+<td>20</td>
+<td>2019</td>
+<td>
+<a href="https://doi.org/10.1016/j.compeleceng.2019.08.001">Insulator visual non-conformity detection in overhead power distribution lines using deep learning</a><br><i>Computers &amp; Electrical Engineering</i>
+</td>
+<td>journal</td>
+<td>
+<a class="tag" href="#">multi-task learning</a> <a class="tag" href="#">data augmentation</a> </td>
+<td>63</td>
+<td>4.9</td>
+<td>Q1</td>
+<td></td>
 </tr>
 <tr>
-<td class="year"><a class="cell-link" href="https://doi.org/10.1101/2022.02.22.481410">2022</a></td>
-<td><a class="cell-link" href="https://doi.org/10.1101/2022.02.22.481410">Deep learning-based system for real-time behavior recognition and closed-loop control of behavioral mazes using depth sensing</a></td>
-<td class="type"><a class="cell-link" href="https://doi.org/10.1101/2022.02.22.481410">Preprint</a></td>
-<td class="venue"><a class="cell-link" href="https://doi.org/10.1101/2022.02.22.481410"></a></td>
-<td class="metric citations"><a class="cell-link" href="https://doi.org/10.1101/2022.02.22.481410">3</a></td>
-<td class="metric impact-factor"><a class="cell-link" href="https://doi.org/10.1101/2022.02.22.481410"></a></td>
-<td class="metric sjr-rank"><a class="cell-link" href="https://doi.org/10.1101/2022.02.22.481410"></a></td>
-<td class="metric core-rank"><a class="cell-link" href="https://doi.org/10.1101/2022.02.22.481410"></a></td>
+<td>21</td>
+<td>2019</td>
+<td>
+<a href="https://doi.org/10.1007/978-3-030-30484-3_10">Automatic Augmentation by Hill Climbing</a><br><i>International Conference on Artificial Neural Networks</i>
+</td>
+<td>conference</td>
+<td>
+<a class="tag" href="#">data augmentation</a> <a class="tag" href="#">efficiency</a> </td>
+<td>1</td>
+<td></td>
+<td></td>
+<td>C</td>
 </tr>
 <tr>
-<td class="year"><a class="cell-link" href="https://doi.org/10.1109/icpr48806.2021.9413004">2021</a></td>
-<td><a class="cell-link" href="https://doi.org/10.1109/icpr48806.2021.9413004">Background Invariance by Adversarial Learning</a></td>
-<td class="type"><a class="cell-link" href="https://doi.org/10.1109/icpr48806.2021.9413004">Conference paper</a></td>
-<td class="venue"><a class="cell-link" href="https://doi.org/10.1109/icpr48806.2021.9413004">2020 25th International Conference on Pattern Recognition (ICPR)</a></td>
-<td class="metric citations"><a class="cell-link" href="https://doi.org/10.1109/icpr48806.2021.9413004">1</a></td>
-<td class="metric impact-factor"><a class="cell-link" href="https://doi.org/10.1109/icpr48806.2021.9413004"></a></td>
-<td class="metric sjr-rank"><a class="cell-link" href="https://doi.org/10.1109/icpr48806.2021.9413004"></a></td>
-<td class="metric core-rank"><a class="cell-link" href="https://doi.org/10.1109/icpr48806.2021.9413004">B</a></td>
+<td>22</td>
+<td>2018</td>
+<td>
+<a href="https://doi.org/10.1109/prni.2018.8423960">A Class Imbalance Ordinal Method for Alzheimer's Disease Classification</a><br><i>2018 International Workshop on Pattern Recognition in Neuroimaging (PRNI)</i>
+</td>
+<td>conference</td>
+<td>
+<a class="tag" href="#">ordinal</a> <a class="tag" href="#">class imbalance</a> <a class="tag" href="#">medical images</a> </td>
+<td>1</td>
+<td></td>
+<td></td>
+<td>n/a</td>
 </tr>
 <tr>
-<td class="year"><a class="cell-link" href="https://doi.org/10.7717/peerj-cs.457">2021</a></td>
-<td><a class="cell-link" href="https://doi.org/10.7717/peerj-cs.457">Ordinal losses for classification of cervical cancer risk</a></td>
-<td class="type"><a class="cell-link" href="https://doi.org/10.7717/peerj-cs.457">Journal article</a></td>
-<td class="venue"><a class="cell-link" href="https://doi.org/10.7717/peerj-cs.457">PEERJ COMPUTER SCIENCE</a></td>
-<td class="metric citations"><a class="cell-link" href="https://doi.org/10.7717/peerj-cs.457">29</a></td>
-<td class="metric impact-factor"><a class="cell-link" href="https://doi.org/10.7717/peerj-cs.457">2.5</a></td>
-<td class="metric sjr-rank"><a class="cell-link" href="https://doi.org/10.7717/peerj-cs.457">Q1</a></td>
-<td class="metric core-rank"><a class="cell-link" href="https://doi.org/10.7717/peerj-cs.457"></a></td>
+<td>23</td>
+<td>2018</td>
+<td>
+<a href="https://doi.org/10.1109/ijcnn.2018.8489696">Deep Image Segmentation by Quality Inference</a><br><i>2018 International Joint Conference on Neural Networks (IJCNN)</i>
+</td>
+<td>conference</td>
+<td>
+<a class="tag" href="#">semantic segmentation</a> <a class="tag" href="#">data augmentation</a> </td>
+<td>10</td>
+<td></td>
+<td></td>
+<td>B</td>
 </tr>
 <tr>
-<td class="year"><a class="cell-link" href="https://doi.org/10.1007/978-3-030-61166-8_30">2020</a></td>
-<td><a class="cell-link" href="https://doi.org/10.1007/978-3-030-61166-8_30">Correction to: Interpretable and Annotation-Efficient Learning for Medical Image Computing</a></td>
-<td class="type"><a class="cell-link" href="https://doi.org/10.1007/978-3-030-61166-8_30">Book chapter</a></td>
-<td class="venue"><a class="cell-link" href="https://doi.org/10.1007/978-3-030-61166-8_30">International Workshop on Interpretability of Machine Intelligence in Medical Image Computing</a></td>
-<td class="metric citations"><a class="cell-link" href="https://doi.org/10.1007/978-3-030-61166-8_30">2</a></td>
-<td class="metric impact-factor"><a class="cell-link" href="https://doi.org/10.1007/978-3-030-61166-8_30"></a></td>
-<td class="metric sjr-rank"><a class="cell-link" href="https://doi.org/10.1007/978-3-030-61166-8_30"></a></td>
-<td class="metric core-rank"><a class="cell-link" href="https://doi.org/10.1007/978-3-030-61166-8_30">n/a</a></td>
+<td>24</td>
+<td>2018</td>
+<td>
+<a href="https://doi.org/10.1007/s10044-018-0705-4">Binary ranking for ordinal class imbalance</a><br><i>Pattern Analysis and Applications</i>
+</td>
+<td>journal</td>
+<td>
+<a class="tag" href="#">ordinal</a> <a class="tag" href="#">class imbalance</a> </td>
+<td>2</td>
+<td>2.6</td>
+<td>Q2</td>
+<td></td>
 </tr>
 <tr>
-<td class="year"><a class="cell-link" href="https://doi.org/10.1007/978-3-030-30484-3_10">2019</a></td>
-<td><a class="cell-link" href="https://doi.org/10.1007/978-3-030-30484-3_10">Automatic Augmentation by Hill Climbing</a></td>
-<td class="type"><a class="cell-link" href="https://doi.org/10.1007/978-3-030-30484-3_10">Book chapter</a></td>
-<td class="venue"><a class="cell-link" href="https://doi.org/10.1007/978-3-030-30484-3_10">International Conference on Artificial Neural Networks</a></td>
-<td class="metric citations"><a class="cell-link" href="https://doi.org/10.1007/978-3-030-30484-3_10">1</a></td>
-<td class="metric impact-factor"><a class="cell-link" href="https://doi.org/10.1007/978-3-030-30484-3_10"></a></td>
-<td class="metric sjr-rank"><a class="cell-link" href="https://doi.org/10.1007/978-3-030-30484-3_10"></a></td>
-<td class="metric core-rank"><a class="cell-link" href="https://doi.org/10.1007/978-3-030-30484-3_10">C</a></td>
+<td>25</td>
+<td>2017</td>
+<td>
+<a href="https://doi.org/10.1007/978-3-319-59147-6_45">Fine-to-coarse ranking in ordinal and imbalanced domains: An application to liver transplantation</a><br><i>International Work-Conference on Artificial Neural Networks (IWANN)</i>
+</td>
+<td>conference</td>
+<td>
+<a class="tag" href="#">ordinal</a> <a class="tag" href="#">class imbalance</a> </td>
+<td>3</td>
+<td></td>
+<td></td>
+<td>n/a</td>
 </tr>
 <tr>
-<td class="year"><a class="cell-link" href="https://doi.org/10.1109/embc.2019.8857385">2019</a></td>
-<td><a class="cell-link" href="https://doi.org/10.1109/embc.2019.8857385">Averse Deep Semantic Segmentation</a></td>
-<td class="type"><a class="cell-link" href="https://doi.org/10.1109/embc.2019.8857385">Conference paper</a></td>
-<td class="venue"><a class="cell-link" href="https://doi.org/10.1109/embc.2019.8857385">2019 41st Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC)</a></td>
-<td class="metric citations"><a class="cell-link" href="https://doi.org/10.1109/embc.2019.8857385">1</a></td>
-<td class="metric impact-factor"><a class="cell-link" href="https://doi.org/10.1109/embc.2019.8857385"></a></td>
-<td class="metric sjr-rank"><a class="cell-link" href="https://doi.org/10.1109/embc.2019.8857385"></a></td>
-<td class="metric core-rank"><a class="cell-link" href="https://doi.org/10.1109/embc.2019.8857385">C</a></td>
+<td>26</td>
+<td>2017</td>
+<td>
+<a href="https://doi.org/10.1007/978-3-319-59147-6_46">Combining ranking with traditional methods for ordinal class imbalance</a><br><i>International Work-Conference on Artificial Neural Networks (IWANN)</i>
+</td>
+<td>conference</td>
+<td>
+<a class="tag" href="#">ordinal</a> <a class="tag" href="#">class imbalance</a> </td>
+<td>8</td>
+<td></td>
+<td></td>
+<td>n/a</td>
 </tr>
 <tr>
-<td class="year"><a class="cell-link" href="https://doi.org/10.1016/j.compeleceng.2019.08.001">2019</a></td>
-<td><a class="cell-link" href="https://doi.org/10.1016/j.compeleceng.2019.08.001">Insulator visual non-conformity detection in overhead power distribution lines using deep learning</a></td>
-<td class="type"><a class="cell-link" href="https://doi.org/10.1016/j.compeleceng.2019.08.001">Journal article</a></td>
-<td class="venue"><a class="cell-link" href="https://doi.org/10.1016/j.compeleceng.2019.08.001">Computers &amp; Electrical Engineering</a></td>
-<td class="metric citations"><a class="cell-link" href="https://doi.org/10.1016/j.compeleceng.2019.08.001">56</a></td>
-<td class="metric impact-factor"><a class="cell-link" href="https://doi.org/10.1016/j.compeleceng.2019.08.001">4.9</a></td>
-<td class="metric sjr-rank"><a class="cell-link" href="https://doi.org/10.1016/j.compeleceng.2019.08.001">Q1</a></td>
-<td class="metric core-rank"><a class="cell-link" href="https://doi.org/10.1016/j.compeleceng.2019.08.001"></a></td>
+<td>27</td>
+<td>2017</td>
+<td>
+<a href="https://doi.org/10.1007/978-3-319-59147-6_47">Constraining type II error: Building intentionally biased classifiers</a><br><i>International Work-Conference on Artificial Neural Networks (IWANN)</i>
+</td>
+<td>conference</td>
+<td>
+<a class="tag" href="#">asymmetric errors</a> </td>
+<td>3</td>
+<td></td>
+<td></td>
+<td>n/a</td>
 </tr>
 <tr>
-<td class="year"><a class="cell-link" href="https://doi.org/10.1109/prni.2018.8423960">2018</a></td>
-<td><a class="cell-link" href="https://doi.org/10.1109/prni.2018.8423960">A Class Imbalance Ordinal Method for Alzheimer's Disease Classification</a></td>
-<td class="type"><a class="cell-link" href="https://doi.org/10.1109/prni.2018.8423960">Conference paper</a></td>
-<td class="venue"><a class="cell-link" href="https://doi.org/10.1109/prni.2018.8423960">2018 International Workshop on Pattern Recognition in Neuroimaging (PRNI)</a></td>
-<td class="metric citations"><a class="cell-link" href="https://doi.org/10.1109/prni.2018.8423960">0</a></td>
-<td class="metric impact-factor"><a class="cell-link" href="https://doi.org/10.1109/prni.2018.8423960"></a></td>
-<td class="metric sjr-rank"><a class="cell-link" href="https://doi.org/10.1109/prni.2018.8423960"></a></td>
-<td class="metric core-rank"><a class="cell-link" href="https://doi.org/10.1109/prni.2018.8423960">n/a</a></td>
+<td>28</td>
+<td>2017</td>
+<td>
+<a href="https://doi.org/10.1007/978-3-319-58838-4_1">Ordinal class imbalance with ranking</a><br><i>Iberian Conference on Pattern Recognition and Image Analysis (IbPRIA)</i>
+</td>
+<td>conference</td>
+<td>
+<a class="tag" href="#">ordinal</a> <a class="tag" href="#">class imbalance</a> </td>
+<td>6</td>
+<td></td>
+<td></td>
+<td>n/a</td>
 </tr>
 <tr>
-<td class="year"><a class="cell-link" href="https://doi.org/10.1109/ijcnn.2018.8489696">2018</a></td>
-<td><a class="cell-link" href="https://doi.org/10.1109/ijcnn.2018.8489696">Deep Image Segmentation by Quality Inference</a></td>
-<td class="type"><a class="cell-link" href="https://doi.org/10.1109/ijcnn.2018.8489696">Conference paper</a></td>
-<td class="venue"><a class="cell-link" href="https://doi.org/10.1109/ijcnn.2018.8489696">2018 International Joint Conference on Neural Networks (IJCNN)</a></td>
-<td class="metric citations"><a class="cell-link" href="https://doi.org/10.1109/ijcnn.2018.8489696">10</a></td>
-<td class="metric impact-factor"><a class="cell-link" href="https://doi.org/10.1109/ijcnn.2018.8489696"></a></td>
-<td class="metric sjr-rank"><a class="cell-link" href="https://doi.org/10.1109/ijcnn.2018.8489696"></a></td>
-<td class="metric core-rank"><a class="cell-link" href="https://doi.org/10.1109/ijcnn.2018.8489696">B</a></td>
+<td>29</td>
+<td>2016</td>
+<td>
+<a href="https://doi.org/10.1109/ijcnn.2016.7727469">Tackling class imbalance with ranking</a><br><i>2016 International Joint Conference on Neural Networks (IJCNN)</i>
+</td>
+<td>conference</td>
+<td>
+<a class="tag" href="#">class imbalance</a> </td>
+<td>26</td>
+<td></td>
+<td></td>
+<td>B</td>
 </tr>
-<tr>
-<td class="year"><a class="cell-link" href="https://doi.org/10.1007/s10044-018-0705-4">2018</a></td>
-<td><a class="cell-link" href="https://doi.org/10.1007/s10044-018-0705-4">Binary ranking for ordinal class imbalance</a></td>
-<td class="type"><a class="cell-link" href="https://doi.org/10.1007/s10044-018-0705-4">Journal article</a></td>
-<td class="venue"><a class="cell-link" href="https://doi.org/10.1007/s10044-018-0705-4">Pattern Analysis and Applications</a></td>
-<td class="metric citations"><a class="cell-link" href="https://doi.org/10.1007/s10044-018-0705-4">2</a></td>
-<td class="metric impact-factor"><a class="cell-link" href="https://doi.org/10.1007/s10044-018-0705-4">2.0</a></td>
-<td class="metric sjr-rank"><a class="cell-link" href="https://doi.org/10.1007/s10044-018-0705-4">Q2</a></td>
-<td class="metric core-rank"><a class="cell-link" href="https://doi.org/10.1007/s10044-018-0705-4"></a></td>
-</tr>
-<tr>
-<td class="year"><a class="cell-link" href="https://doi.org/10.1007/978-3-319-59147-6_45">2017</a></td>
-<td><a class="cell-link" href="https://doi.org/10.1007/978-3-319-59147-6_45">Fine-to-coarse ranking in ordinal and imbalanced domains: An application to liver transplantation</a></td>
-<td class="type"><a class="cell-link" href="https://doi.org/10.1007/978-3-319-59147-6_45">Book</a></td>
-<td class="venue"><a class="cell-link" href="https://doi.org/10.1007/978-3-319-59147-6_45">International Work-Conference on Artificial Neural Networks (IWANN)</a></td>
-<td class="metric citations"><a class="cell-link" href="https://doi.org/10.1007/978-3-319-59147-6_45">2</a></td>
-<td class="metric impact-factor"><a class="cell-link" href="https://doi.org/10.1007/978-3-319-59147-6_45"></a></td>
-<td class="metric sjr-rank"><a class="cell-link" href="https://doi.org/10.1007/978-3-319-59147-6_45"></a></td>
-<td class="metric core-rank"><a class="cell-link" href="https://doi.org/10.1007/978-3-319-59147-6_45">n/a</a></td>
-</tr>
-<tr>
-<td class="year"><a class="cell-link" href="https://doi.org/10.1007/978-3-319-59147-6_46">2017</a></td>
-<td><a class="cell-link" href="https://doi.org/10.1007/978-3-319-59147-6_46">Combining ranking with traditional methods for ordinal class imbalance</a></td>
-<td class="type"><a class="cell-link" href="https://doi.org/10.1007/978-3-319-59147-6_46">Book</a></td>
-<td class="venue"><a class="cell-link" href="https://doi.org/10.1007/978-3-319-59147-6_46">International Work-Conference on Artificial Neural Networks (IWANN)</a></td>
-<td class="metric citations"><a class="cell-link" href="https://doi.org/10.1007/978-3-319-59147-6_46">8</a></td>
-<td class="metric impact-factor"><a class="cell-link" href="https://doi.org/10.1007/978-3-319-59147-6_46"></a></td>
-<td class="metric sjr-rank"><a class="cell-link" href="https://doi.org/10.1007/978-3-319-59147-6_46"></a></td>
-<td class="metric core-rank"><a class="cell-link" href="https://doi.org/10.1007/978-3-319-59147-6_46">n/a</a></td>
-</tr>
-<tr>
-<td class="year"><a class="cell-link" href="https://doi.org/10.1007/978-3-319-59147-6_47">2017</a></td>
-<td><a class="cell-link" href="https://doi.org/10.1007/978-3-319-59147-6_47">Constraining type II error: Building intentionally biased classifiers</a></td>
-<td class="type"><a class="cell-link" href="https://doi.org/10.1007/978-3-319-59147-6_47">Book</a></td>
-<td class="venue"><a class="cell-link" href="https://doi.org/10.1007/978-3-319-59147-6_47">International Work-Conference on Artificial Neural Networks (IWANN)</a></td>
-<td class="metric citations"><a class="cell-link" href="https://doi.org/10.1007/978-3-319-59147-6_47">3</a></td>
-<td class="metric impact-factor"><a class="cell-link" href="https://doi.org/10.1007/978-3-319-59147-6_47"></a></td>
-<td class="metric sjr-rank"><a class="cell-link" href="https://doi.org/10.1007/978-3-319-59147-6_47"></a></td>
-<td class="metric core-rank"><a class="cell-link" href="https://doi.org/10.1007/978-3-319-59147-6_47">n/a</a></td>
-</tr>
-<tr>
-<td class="year"><a class="cell-link" href="https://doi.org/10.1007/978-3-319-58838-4_1">2017</a></td>
-<td><a class="cell-link" href="https://doi.org/10.1007/978-3-319-58838-4_1">Ordinal class imbalance with ranking</a></td>
-<td class="type"><a class="cell-link" href="https://doi.org/10.1007/978-3-319-58838-4_1">Book</a></td>
-<td class="venue"><a class="cell-link" href="https://doi.org/10.1007/978-3-319-58838-4_1">Iberian Conference on Pattern Recognition and Image Analysis (IbPRIA)</a></td>
-<td class="metric citations"><a class="cell-link" href="https://doi.org/10.1007/978-3-319-58838-4_1">5</a></td>
-<td class="metric impact-factor"><a class="cell-link" href="https://doi.org/10.1007/978-3-319-58838-4_1"></a></td>
-<td class="metric sjr-rank"><a class="cell-link" href="https://doi.org/10.1007/978-3-319-58838-4_1"></a></td>
-<td class="metric core-rank"><a class="cell-link" href="https://doi.org/10.1007/978-3-319-58838-4_1">n/a</a></td>
-</tr>
-<tr>
-<td class="year"><a class="cell-link" href="https://doi.org/10.1109/ijcnn.2016.7727469">2016</a></td>
-<td><a class="cell-link" href="https://doi.org/10.1109/ijcnn.2016.7727469">Tackling class imbalance with ranking</a></td>
-<td class="type"><a class="cell-link" href="https://doi.org/10.1109/ijcnn.2016.7727469">Conference paper</a></td>
-<td class="venue"><a class="cell-link" href="https://doi.org/10.1109/ijcnn.2016.7727469">2016 International Joint Conference on Neural Networks (IJCNN)</a></td>
-<td class="metric citations"><a class="cell-link" href="https://doi.org/10.1109/ijcnn.2016.7727469">25</a></td>
-<td class="metric impact-factor"><a class="cell-link" href="https://doi.org/10.1109/ijcnn.2016.7727469"></a></td>
-<td class="metric sjr-rank"><a class="cell-link" href="https://doi.org/10.1109/ijcnn.2016.7727469"></a></td>
-<td class="metric core-rank"><a class="cell-link" href="https://doi.org/10.1109/ijcnn.2016.7727469">B</a></td>
-</tr>
-</table>
-<p>* National conferences, not indexed.</p>
-<h2>Master's Supervisions</h2>
-<table>
-<tr>
-<th>Year</th>
-<th>Student</th>
-<th>Title</th>
-<th>Role</th>
-<th>Institution</th>
-</tr>
-<tr>
-<td class="year">2025–2026</td>
-<td class="student">Rodrigo André Carvalho Póvoa</td>
-<td class="title">Automated Dressing Saturation Analysis</td>
-<td class="role">Co-supervisor</td>
-<td class="institution">Universidade do Porto Faculdade de Engenharia</td>
-</tr>
-<tr>
-<td class="year">2025–2026</td>
-<td class="student">Diogo Miranda de Figueiredo Sarmento</td>
-<td class="title">Object Insertion for Perception in Autonomous Driving</td>
-<td class="role">Supervisor</td>
-<td class="institution">Universidade do Porto Faculdade de Engenharia</td>
-</tr>
-<tr>
-<td class="year">2025–2026</td>
-<td class="student">Miguel Jorge Medeiros Garrido</td>
-<td class="title">Quantification and Qualification of Microglia Movements</td>
-<td class="role">Supervisor</td>
-<td class="institution">Universidade do Porto Faculdade de Engenharia</td>
-</tr>
-<tr>
-<td class="year">2025–2026</td>
-<td class="student">Pedro Miguel Meruge Ferreira</td>
-<td class="title">AI-based Diagnostic Tool of Primary Ciliary Dyskinesia</td>
-<td class="role">Supervisor</td>
-<td class="institution">Universidade do Porto Faculdade de Engenharia</td>
-</tr>
-<tr>
-<td class="year">2024–2025</td>
-<td class="student">Alexandre Ferreira Nunes</td>
-<td class="title">From Classification to Detection: Adapting Semi-Supervised Frameworks to Object Detection</td>
-<td class="role">Supervisor</td>
-<td class="institution">Universidade do Porto Faculdade de Engenharia</td>
-</tr>
-<tr>
-<td class="year">2024–2025</td>
-<td class="student">Rúben Lourinha Monteiro</td>
-<td class="title">Multimodal Modular Neural Network Frameworks for VR Interaction: a Comparative Study</td>
-<td class="role">Co-supervisor</td>
-<td class="institution">Universidade do Porto Faculdade de Engenharia</td>
-</tr>
-<tr>
-<td class="year">2024–2025</td>
-<td class="student">Luís Paulo da Rocha Miranda</td>
-<td class="title">Unsupervised Active Learning: Which Frames are Most Important in Autonomous Driving?</td>
-<td class="role">Supervisor</td>
-<td class="institution">Universidade do Porto Faculdade de Engenharia</td>
-</tr>
-<tr>
-<td class="year">2024–2025</td>
-<td class="student">João Ricardo Ramos Alves</td>
-<td class="title">Self-supervised Occupancy Networks in Autonomous Driving</td>
-<td class="role">Supervisor</td>
-<td class="institution">Universidade do Porto Faculdade de Engenharia</td>
-</tr>
-<tr>
-<td class="year">2024–2025</td>
-<td class="student">Bruno Vieira Dias</td>
-<td class="title">Beyond Confidence Thresholds: Pseudo-Label Selection Strategies for Semi-Supervised Learning</td>
-<td class="role">Supervisor</td>
-<td class="institution">Universidade do Porto Faculdade de Engenharia</td>
-</tr>
-<tr>
-<td class="year">2024–2025</td>
-<td class="student">Sofía Lucía</td>
-<td class="title">Ordinal losses for range estimation in autonomous driving</td>
-<td class="role">Supervisor</td>
-<td class="institution">Universidade do Porto Faculdade de Engenharia</td>
-</tr>
-<tr>
-<td class="year"><a class="cell-link" href="https://hdl.handle.net/10216/161730">2023–2024</a></td>
-<td class="student"><a class="cell-link" href="https://hdl.handle.net/10216/161730">Diana Teixeira Silva</a></td>
-<td class="title"><a class="cell-link" href="https://hdl.handle.net/10216/161730">Quantifying How Deep Implicit Representations Promote Label Efficiency</a></td>
-<td class="role"><a class="cell-link" href="https://hdl.handle.net/10216/161730">Supervisor</a></td>
-<td class="institution"><a class="cell-link" href="https://hdl.handle.net/10216/161730">Universidade do Porto Faculdade de Engenharia</a></td>
-</tr>
-<tr>
-<td class="year"><a class="cell-link" href="https://hdl.handle.net/10216/161042">2023–2024</a></td>
-<td class="student"><a class="cell-link" href="https://hdl.handle.net/10216/161042">Francisco Gonçalves Cerqueira	</a></td>
-<td class="title"><a class="cell-link" href="https://hdl.handle.net/10216/161042">Exploring Label Efficiency with Semi-Supervision and Self-Supervision Methods</a></td>
-<td class="role"><a class="cell-link" href="https://hdl.handle.net/10216/161042">Supervisor</a></td>
-<td class="institution"><a class="cell-link" href="https://hdl.handle.net/10216/161042">Universidade do Porto Faculdade de Engenharia</a></td>
-</tr>
-<tr>
-<td class="year"><a class="cell-link" href="https://hdl.handle.net/10216/157714">2023–2024</a></td>
-<td class="student"><a class="cell-link" href="https://hdl.handle.net/10216/157714">Airton Tiago</a></td>
-<td class="title"><a class="cell-link" href="https://hdl.handle.net/10216/157714">Data Augmentation for Ordinal Data</a></td>
-<td class="role"><a class="cell-link" href="https://hdl.handle.net/10216/157714">Supervisor</a></td>
-<td class="institution"><a class="cell-link" href="https://hdl.handle.net/10216/157714">Universidade do Porto Faculdade de Engenharia</a></td>
-</tr>
-<tr>
-<td class="year"><a class="cell-link" href="https://hdl.handle.net/10216/152109">2022–2023</a></td>
-<td class="student"><a class="cell-link" href="https://hdl.handle.net/10216/152109">Rafael Valente Cristino</a></td>
-<td class="title"><a class="cell-link" href="https://hdl.handle.net/10216/152109">Introducing Domain Knowledge to Scene Parsing in Autonomous Driving</a></td>
-<td class="role"><a class="cell-link" href="https://hdl.handle.net/10216/152109">Supervisor</a></td>
-<td class="institution"><a class="cell-link" href="https://hdl.handle.net/10216/152109">Universidade do Porto Faculdade de Engenharia</a></td>
-</tr>
-<tr>
-<td class="year"><a class="cell-link" href="https://hdl.handle.net/10216/152016">2022–2023</a></td>
-<td class="student"><a class="cell-link" href="https://hdl.handle.net/10216/152016">José António Barbosa da Fonseca Guerra</a></td>
-<td class="title"><a class="cell-link" href="https://hdl.handle.net/10216/152016">Uncertainty-Driven Out-of-Distribution Detection in 3D LiDAR Object Detection for Autonomous Driving (internship at Bosch Car Multimedia)</a></td>
-<td class="role"><a class="cell-link" href="https://hdl.handle.net/10216/152016">Supervisor</a></td>
-<td class="institution"><a class="cell-link" href="https://hdl.handle.net/10216/152016">Universidade do Porto Faculdade de Engenharia</a></td>
-</tr>
-<tr>
-<td class="year"><a class="cell-link" href="https://hdl.handle.net/10216/147350">2021–2022</a></td>
-<td class="student"><a class="cell-link" href="https://hdl.handle.net/10216/147350">Ana Bezerra	</a></td>
-<td class="title"><a class="cell-link" href="https://hdl.handle.net/10216/147350">Phishing Detection with a Machine Learning Net (internship at E-goi)</a></td>
-<td class="role"><a class="cell-link" href="https://hdl.handle.net/10216/147350">Supervisor</a></td>
-<td class="institution"><a class="cell-link" href="https://hdl.handle.net/10216/147350">Universidade do Porto Faculdade de Ciências</a></td>
-</tr>
-<tr>
-<td class="year"><a class="cell-link" href="https://hdl.handle.net/10216/142444">2021–2022</a></td>
-<td class="student"><a class="cell-link" href="https://hdl.handle.net/10216/142444">Pedro Silva Pedro João Cruz Serrano e Silva</a></td>
-<td class="title"><a class="cell-link" href="https://hdl.handle.net/10216/142444">Human Feedback during Neural Networks Training</a></td>
-<td class="role"><a class="cell-link" href="https://hdl.handle.net/10216/142444">Supervisor</a></td>
-<td class="institution"><a class="cell-link" href="https://hdl.handle.net/10216/142444">Universidade do Porto Faculdade de Engenharia</a></td>
-</tr>
-<tr>
-<td class="year"><a class="cell-link" href="https://hdl.handle.net/10216/142326">2021–2022</a></td>
-<td class="student"><a class="cell-link" href="https://hdl.handle.net/10216/142326">João Malheiro Baptista Marcos da Silva</a></td>
-<td class="title"><a class="cell-link" href="https://hdl.handle.net/10216/142326">Environment Detection for Railway Applications based on Automotive Technology (internship at Continental)</a></td>
-<td class="role"><a class="cell-link" href="https://hdl.handle.net/10216/142326">Supervisor</a></td>
-<td class="institution"><a class="cell-link" href="https://hdl.handle.net/10216/142326">Universidade do Porto Faculdade de Engenharia</a></td>
-</tr>
-</table>
-</div></body>
+</tbody>
+</table></div>
+<script>
+// Sortable and filterable table (ported from rpmcruz.github.io/mytable.js).
+// <th data-type="sort"> sorts on click (data-first gives the first direction);
+// <th data-type="filter"> becomes a dropdown; a cell with .tag links has several values.
+(function() {
+  const table = document.getElementById('papers');
+  const tbody = table.tBodies[0];
+  const rows = Array.from(tbody.rows);
+  const ths = Array.from(table.tHead.rows[0].cells);
+  const RANK = {'A*': 0, 'A': 1, 'B': 2, 'C': 3};  // CORE ranks, best first
+  const filters = {};
+  let sortCol = null, sortDir = 1;
+  function values(row, i) {
+    const tags = row.cells[i].querySelectorAll('.tag');
+    return tags.length ? Array.from(tags, t => t.textContent.trim()) : [row.cells[i].textContent.trim()];
+  }
+  function key(v) {
+    if (v in RANK) return RANK[v];
+    const n = parseFloat(v);
+    return isNaN(n) ? v.toLowerCase() : n;
+  }
+  function compare(a, b) {
+    if (a === '' || b === '') return (a === '') - (b === '');  // empty always last
+    const ka = key(a), kb = key(b);
+    if (typeof ka !== typeof kb) return typeof ka === 'number' ? -1 : 1;  // numbers before text
+    return sortDir * (ka < kb ? -1 : ka > kb ? 1 : 0);
+  }
+  function update() {
+    let shown = rows.filter(r => Object.entries(filters).every(([i, sel]) => sel.value === '' || values(r, i).includes(sel.value)));
+    if (sortCol !== null)
+      shown = shown.slice().sort((r1, r2) => compare(values(r1, sortCol)[0], values(r2, sortCol)[0]));
+    tbody.replaceChildren(...shown);
+    shown.forEach((r, i) => r.cells[0].textContent = i + 1);
+    const tag = tagCol >= 0 ? filters[tagCol].value : '';
+    table.querySelectorAll('.tag').forEach(t => t.classList.toggle('active', t.textContent.trim() === tag));
+  }
+  ths.forEach((th, i) => {
+    if (th.dataset.type === 'sort') {
+      const link = document.createElement('a');
+      link.href = '#';
+      link.textContent = th.textContent.trim();
+      const arrow = document.createElement('span');
+      arrow.className = 'arrow';
+      th.replaceChildren(link, arrow);
+      link.onclick = e => {
+        e.preventDefault();
+        sortDir = sortCol === i ? -sortDir : (th.dataset.first === 'desc' ? -1 : 1);
+        sortCol = i;
+        table.querySelectorAll('th .arrow').forEach(a => a.textContent = '');
+        arrow.textContent = sortDir === 1 ? ' ▲' : ' ▼';
+        update();
+      };
+    } else if (th.dataset.type === 'filter') {
+      const counts = {};
+      rows.forEach(r => values(r, i).forEach(v => { if (v) counts[v] = (counts[v] || 0) + 1; }));
+      const sel = document.createElement('select');
+      sel.add(new Option(th.textContent.trim(), ''));
+      Object.keys(counts).sort().forEach(v => sel.add(new Option(v + ' (' + counts[v] + ')', v)));
+      sel.onchange = update;
+      th.replaceChildren(sel);
+      filters[i] = sel;
+    }
+  });
+  // clicking a tag filters by it; clicking the active tag clears the filter
+  const tagCol = ths.findIndex(th => th.dataset.multi);
+  tbody.addEventListener('click', e => {
+    const t = e.target.closest('.tag');
+    if (!t || tagCol < 0) return;
+    e.preventDefault();
+    const sel = filters[tagCol];
+    sel.value = sel.value === t.textContent.trim() ? '' : t.textContent.trim();
+    update();
+  });
+  update();
+})();
+        </script>
+</body>
 </html>
