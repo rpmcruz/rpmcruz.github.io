@@ -1,0 +1,191 @@
+# Extra information merged into 3915-392E-21D4.xml by gencv.py.
+# Outputs are matched by DOI or, when they have none, by title (case and punctuation ignored).
+# Use "hide: true" to leave an output out of the generated HTML and LaTeX.
+#
+# Tags (each used by 2+ papers on the webpage): ordinal, class imbalance, loss functions, asymmetric errors,
+# interpretability, human-in-the-loop, semantic segmentation, object detection, multi-task learning,
+# data augmentation, domain shift, efficiency, medical images, autonomous driving.
+# Entries marked "title only" were tagged without an abstract.
+
+# Biography for the webpage (the LaTeX report keeps the Ciência Vitae one).
+# If used, {papers} and {citations} are counted by gencv.py over the papers shown on the webpage.
+resume: >-
+  Ricardo P. M. Cruz is an Assistant Professor at the Faculty of Engineering of the University of Porto
+  and a researcher at INESC TEC. He works on fundamental machine learning (ordinal classification,
+  class imbalance, interpretability and robustness), with applications in medical imaging and autonomous
+  driving. He holds a Ph.D. in Computer Science (2021) from the Universities of Porto, Aveiro and Minho,
+  and an M.Sc. in Mathematical Engineering (2015) and a B.Sc. in Computer Science (2012) from the
+  University of Porto.
+
+# Box shown after the biography on the webpage; {email} becomes a link to the preferred email.
+notice: >-
+  Looking for a master's or Ph.D. thesis topic, or a research project? Email me at {email}.
+
+outputs:
+  # ---- 2026-2027
+  10.1007/978-3-032-44472-1_11:  # Object Detection as a Differentiable Interpretability Bottleneck (title only)
+    tags: [interpretability, object detection]
+  Preserving Ordinality in Diabetic Retinopathy Grading through a Distribution-Based Loss Function:
+    tags: [ordinal, loss functions, class imbalance, medical images]
+  Consistency-Preserving and Unimodality-Promoting Ensembles for Ordinal Classification:  # title only
+    tags: [ordinal]
+
+  # ---- 2025
+  10.1016/j.neucom.2024.128878:  # CNN explanation methods for ordinal regression tasks
+    tags: [interpretability, ordinal]
+  10.1109/ACCESS.2025.3537601:  # Learning Ordinality in Semantic Segmentation
+    tags: [ordinal, semantic segmentation, loss functions, medical images, autonomous driving]
+  10.1109/tai.2025.3549740:  # Unimodal Distributions for Ordinal Regression
+    tags: [ordinal, loss functions]
+  Ordinal Methods for Monocular Depth Estimation:  # title only
+    tags: [ordinal, autonomous driving]
+  Towards an Automated System for Pig Aggression Detection and Tracking:
+    tags: [object detection]
+
+  # ---- 2024
+  10.1007/s41060-024-00579-w:  # A case study on phishing detection with a machine learning net
+    tags: [class imbalance]
+  10.1109/tiv.2024.3387113:  # Weather and Meteorological Optical Range Classification for Autonomous Driving
+    tags: [autonomous driving, multi-task learning, efficiency]
+  10.1007/978-3-031-49018-7_40:  # YOLOMM (title only)
+    tags: [object detection, multi-task learning]
+  10.1007/978-3-031-49018-7_38:  # Active Supervision: Human in the Loop (title only)
+    tags: [human-in-the-loop]
+  10.1007/978-3-031-49018-7_39:  # Condition Invariance for Autonomous Driving by Adversarial Learning (title only)
+    tags: [autonomous driving, domain shift]
+  Tracking group-housed pigs and classification of aggressive behaviours’ using computer vision:
+    tags: []
+
+  # ---- 2023
+  10.1117/12.2679881:  # Two-Stage Semantic Segmentation in Neural Networks
+    tags: [semantic segmentation, efficiency]
+  10.3390/s23063092:  # Two-Stage Framework for Faster Semantic Segmentation
+    tags: [semantic segmentation, efficiency, medical images, autonomous driving]
+  10.1016/j.iswa.2022.200170:  # Rethinking low-cost microscopy workflow
+    tags: [medical images]
+  10.1007/978-3-031-36616-1_22:  # Interpretability-Guided Human Feedback During Neural Network Training (title only)
+    tags: [interpretability, human-in-the-loop]
+  10.1007/978-3-031-43078-7_43:  # Evaluating the Performance of Explanation Methods on Ordinal Regression CNN Models (title only)
+    tags: [interpretability, ordinal]
+  Unimodal Distributions for Ordinal Regression:  # CoRR preprint of the IEEE TAI 2025 paper
+    tags: [ordinal, loss functions]
+
+  # ---- 2022
+  10.3390/math10060980:  # Quasi-Unimodal Distributions for Ordinal Classification
+    tags: [ordinal, loss functions]
+  10.1101/2022.02.22.481410:  # Real-time behavior recognition and closed-loop control of behavioral mazes (rodents)
+    tags: []
+
+  # ---- 2021
+  10.1109/icpr48806.2021.9413004:  # Background Invariance by Adversarial Learning
+    tags: [domain shift, data augmentation]
+  10.7717/peerj-cs.457:  # Ordinal losses for classification of cervical cancer risk
+    tags: [ordinal, loss functions, medical images]
+
+  # ---- 2020
+  10.1007/978-3-030-61166-8_30:  # Correction to: Interpretable and Annotation-Efficient Learning for Medical Image Computing (erratum)
+    hide: true
+
+  # ---- 2019
+  10.1109/embc.2019.8857385:  # Averse Deep Semantic Segmentation
+    tags: [semantic segmentation, asymmetric errors, loss functions]
+  10.1016/j.compeleceng.2019.08.001:  # Insulator visual non-conformity detection in overhead power distribution lines
+    tags: [multi-task learning, data augmentation]
+  10.1007/978-3-030-30484-3_10:  # Automatic Augmentation by Hill Climbing
+    tags: [data augmentation, efficiency]
+
+  # ---- 2018
+  10.1109/prni.2018.8423960:  # A Class Imbalance Ordinal Method for Alzheimer's Disease Classification
+    tags: [ordinal, class imbalance, medical images]
+  10.1109/ijcnn.2018.8489696:  # Deep Image Segmentation by Quality Inference
+    tags: [semantic segmentation, data augmentation]
+  10.1007/s10044-018-0705-4:  # Binary ranking for ordinal class imbalance
+    tags: [ordinal, class imbalance]
+
+  # ---- 2017
+  10.1007/978-3-319-59147-6_45:  # Fine-to-coarse ranking in ordinal and imbalanced domains (liver transplantation)
+    tags: [ordinal, class imbalance]
+  10.1007/978-3-319-59147-6_46:  # Combining ranking with traditional methods for ordinal class imbalance
+    tags: [ordinal, class imbalance]
+  10.1007/978-3-319-59147-6_47:  # Constraining type II error: Building intentionally biased classifiers
+    tags: [asymmetric errors]
+  10.1007/978-3-319-58838-4_1:  # Ordinal class imbalance with ranking
+    tags: [ordinal, class imbalance]
+
+  # ---- 2016
+  10.1109/ijcnn.2016.7727469:  # Tackling class imbalance with ranking
+    tags: [class imbalance]
+
+# ---- Downloaded by gencv.py (it rewrites everything below) ----
+# Reused while 'downloaded' is less than 30 days old: then nothing is downloaded (except for new papers or venues).
+# After that, everything is downloaded again, keeping the stored value of whatever fails to download or is n/a.
+# Delete 'downloaded' to force downloading. The footer of the webpage shows this date as "Last update".
+downloaded: '2026-11-22 21:54:00'
+# Journal (impact-factor, sjr-rank) or conference acronym (core-rank) -> metric -> value.
+# IEEE Transactions on Intelligent Vehicles' impact factor is from rpmcruz.github.io (commit e4a7481, 2026-01-24).
+metrics:
+  Neurocomputing: {impact-factor: 6.7, sjr-rank: Q1}
+  IEEE Access: {impact-factor: 4.2, sjr-rank: Q1}
+  IEEE Transactions on Artificial Intelligence: {impact-factor: n/a, sjr-rank: Q1}
+  International Journal of Data Science and Analytics: {impact-factor: 2.9, sjr-rank: Q2}
+  IEEE Transactions on Intelligent Vehicles: {impact-factor: 14.3, sjr-rank: Q1}
+  Sensors: {impact-factor: n/a, sjr-rank: Q1}
+  Intelligent Systems with Applications: {impact-factor: 5.5, sjr-rank: Q1}
+  Mathematics: {impact-factor: n/a, sjr-rank: Q2}
+  PeerJ Computer Science: {impact-factor: 2.9, sjr-rank: Q1}
+  Computers & Electrical Engineering: {impact-factor: 5.5, sjr-rank: Q1}
+  Pattern Analysis and Applications: {impact-factor: 2.6, sjr-rank: Q2}
+  CIARP: {core-rank: C}
+  ICMV: {core-rank: C}
+  ICPR: {core-rank: B}
+  ICANN: {core-rank: C}
+  EMBC: {core-rank: C}
+  IJCNN: {core-rank: B}
+  PRNI: {core-rank: n/a}
+  EPIA: {core-rank: n/a}
+  IbPRIA: {core-rank: n/a}
+  IWANN: {core-rank: n/a}
+# DOI -> Crossref citations, and the journal or conference (acronym) whose metrics are shown.
+papers:
+  10.1117/12.2679881: {citations: 0, venue: Fifteenth International Conference on Machine Vision (ICMV 2022), conference: ICMV}
+  10.1109/icpr48806.2021.9413004: {citations: 1, venue: 2020 25th International Conference on Pattern Recognition (ICPR), conference: ICPR}
+  10.1109/embc.2019.8857385: {citations: 1, venue: 2019 41st Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC), conference: EMBC}
+  10.1109/prni.2018.8423960: {citations: 1, venue: 2018 International Workshop on Pattern Recognition in Neuroimaging (PRNI), conference: PRNI}
+  10.1109/ijcnn.2018.8489696: {citations: 10, venue: 2018 International Joint Conference on Neural Networks (IJCNN), conference: IJCNN}
+  10.1109/ijcnn.2016.7727469: {citations: 26, venue: 2016 International Joint Conference on Neural Networks (IJCNN), conference: IJCNN}
+  10.1016/j.neucom.2024.128878: {citations: 8, journal: Neurocomputing}
+  10.1109/ACCESS.2025.3537601: {citations: 3, journal: IEEE Access}
+  10.1109/tai.2025.3549740: {citations: 9, journal: IEEE Transactions on Artificial Intelligence}
+  10.1007/s41060-024-00579-w: {citations: 18, journal: International Journal of Data Science and Analytics}
+  10.1109/tiv.2024.3387113: {citations: 11, journal: IEEE Transactions on Intelligent Vehicles}
+  10.3390/s23063092: {citations: 2, journal: Sensors}
+  10.1016/j.iswa.2022.200170: {citations: 3, journal: Intelligent Systems with Applications}
+  10.3390/math10060980: {citations: 9, journal: Mathematics}
+  10.7717/peerj-cs.457: {citations: 39, journal: PeerJ Computer Science}
+  10.1016/j.compeleceng.2019.08.001: {citations: 63, journal: Computers & Electrical Engineering}
+  10.1007/s10044-018-0705-4: {citations: 2, journal: Pattern Analysis and Applications}
+  10.1007/978-3-032-44472-1_11: {citations: 0, venue: EPIA Conference on Artificial Intelligence, conference: EPIA}
+  10.1007/978-3-031-49018-7_40: {citations: 0, venue: Iberoamerican Congress on Pattern Recognition, conference: CIARP}
+  10.1007/978-3-031-49018-7_38: {citations: 0, venue: Iberoamerican Congress on Pattern Recognition, conference: CIARP}
+  10.1007/978-3-031-49018-7_39: {citations: 0, venue: Iberoamerican Congress on Pattern Recognition, conference: CIARP}
+  10.1007/978-3-031-36616-1_22: {citations: 2, venue: Iberian Conference on Pattern Recognition and Image Analysis, conference: IbPRIA}
+  10.1007/978-3-031-43078-7_43: {citations: 2, venue: International Work-Conference on Artificial Neural Networks, conference: IWANN}
+  10.1007/978-3-030-30484-3_10: {citations: 1, venue: International Conference on Artificial Neural Networks, conference: ICANN}
+  10.1007/978-3-319-59147-6_45: {citations: 3, conference: IWANN}
+  10.1007/978-3-319-59147-6_46: {citations: 8, conference: IWANN}
+  10.1007/978-3-319-59147-6_47: {citations: 3, conference: IWANN}
+  10.1007/978-3-319-58838-4_1: {citations: 6, conference: IbPRIA}
+  10.1101/2022.02.22.481410: {citations: 3}
+# RENATES thesis id -> URL.
+theses:
+  '204110017': https://hdl.handle.net/10216/168290
+  '204119278': https://hdl.handle.net/10216/168829
+  '204111536': https://hdl.handle.net/10216/169058
+  '203856945': https://hdl.handle.net/10216/161730
+  '203857585': https://hdl.handle.net/10216/161042
+  '203855337': https://hdl.handle.net/10216/157714
+  '203426649': https://hdl.handle.net/10216/152109
+  '203428943': https://hdl.handle.net/10216/152016
+  '203191285': https://hdl.handle.net/10216/147350
+  '203171250': https://hdl.handle.net/10216/142444
+  '203167880': https://hdl.handle.net/10216/142326
