@@ -120,9 +120,18 @@ def get_extra_info(output):
     if 'conference' in paper:
         extra['core-rank'] = get_metric(paper['conference'], 'core-rank', scrap.get_core_rank)
     return extra
+def is_preprint(output, doi):
+    # Ciência Vitae's preprint type, or a preprint exported as a journal article (e.g. arXiv's "CoRR", from ORCID)
+    journal = output.xpath('./output:journal-article/output:journal/text()', namespaces=nsmap)
+    return (output.xpath('./output:output-type/@code', namespaces=nsmap)[0] == 'P127'
+            or bool(journal and re.search(r'\b(corr|\w*rxiv)\b', journal[0], re.I))  # CoRR, arXiv, bioRxiv, medRxiv...
+            or bool(doi and doi[0].lower().startswith('10.48550/')))  # arXiv DOI
 used_info = set()
 for output in tqdm(xml.xpath('//output:output', namespaces=nsmap), desc='scrap metrics'):
     doi = output.xpath('.//output:identifier[output:identifier-type/@code="doi"]/output:identifier/text()', namespaces=nsmap)
+    if is_preprint(output, doi):
+        output.getparent().remove(output)  # preprints are left out of both HTML and LaTeX (the user's choice)
+        continue
     title = output.xpath('./output:*/output:article-title/text() | ./output:*/output:paper-title/text() | ./output:*/output:chapter-title/text() | ./output:*/output:title/text()', namespaces=nsmap)
     key = normalize(doi[0] if doi else title[0])
     if key in outputs_info and outputs_info[key].get('hide'):

@@ -15,7 +15,7 @@ Turns a Ciência Vitae XML export into a webpage (HTML) and a LaTeX report. The 
 
 ## Files
 
-- `gencv.py`: reads the XML and the YAML, adds `extra:*` elements (citations, impact-factor, sjr-rank, core-rank, venue, tags) to each output, adds `extra:updated` (the date of `downloaded` in the YAML) for the webpage footer, then applies both XSLTs.
+- `gencv.py`: reads the XML and the YAML, adds `extra:*` elements (citations, impact-factor, sjr-rank, core-rank, venue, tags) to each output, adds `extra:updated` (the date of `downloaded` in the YAML) for the webpage footer, then applies both XSLTs. Preprints are removed first, from both HTML and LaTeX (the user does not want them): type P127, or a journal article whose journal is CoRR/arXiv/*Rxiv or whose DOI is arXiv's (ORCID imports arXiv papers as journal articles). Submissions under review are not preprints and stay.
 - `scrap.py`: Crossref (citations), journal websites (IF), Scimago (SJR quartile, by journal ID), CORE portal (conference rank), RENATES (thesis URLs). New journals must be added to the ID dictionaries in `get_impact_factor` and `get_quartile`. The browser (Playwright Chromium, headed) keeps its cookies between runs in `browser-profile/`.
 - `cienciavitae_to_html.xslt`: webpage. Header: name, links (only email and Google Scholar, per the user; Scholar URL built from the XML author identifier), biography (Ciência Vitae summary). Only papers (no supervisions), only outputs with a DOI. Sortable/filterable table with inline JS ported from `../mytable.js` (sort: Year, Citations, IF, SJR, CORE; dropdown filters: Type, Tags; clicking a tag filters by it). Footer: last update date and the source of each metric column; keep it in sync with `scrap.py` if a source changes.
 - `cienciavitae_to_tex.xslt`: LaTeX report (includes supervisions and outputs without DOI).
@@ -42,7 +42,7 @@ Turns a Ciência Vitae XML export into a webpage (HTML) and a LaTeX report. The 
 
 ## Webpage style (user preferences)
 
-Plain, old-school HTML with few CSS rules: monospace 18px, `#`/`##` heading markers, boxed table with light gray header, gray paper numbers, tags as small gray boxes. The user disliked a heavy black-and-white "blocky" design and the original brown/colored design. Type column shows only journal / conference / preprint.
+Plain, old-school HTML with few CSS rules: monospace 18px, `#`/`##` heading markers, boxed table with light gray header, gray paper numbers, tags as small gray boxes. The user disliked a heavy black-and-white "blocky" design and the original brown/colored design. Type column shows only journal / conference.
 
 ## Gotchas
 

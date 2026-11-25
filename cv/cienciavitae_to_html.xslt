@@ -180,9 +180,9 @@
         </tr>
       </thead>
       <tbody>
-        <!-- only outputs with a DOI (skips abstracts, posters, submissions and preprints without one) -->
+        <!-- only outputs with a DOI (skips abstracts, posters and submissions); gencv.py already removed the preprints -->
         <xsl:apply-templates select="output:outputs/output:output[output:*/output:identifiers/output:identifier[output:identifier-type/@code='doi']]">
-          <xsl:sort select="output:*/output:publication-date/@year | output:*/output:publication-year | output:conference-paper/output:presentation-date/@year | output:conference-poster/output:conference-date/@year | output:preprint/output:date-submitted/@year" order="descending"/>
+          <xsl:sort select="output:*/output:publication-date/@year | output:*/output:publication-year | output:conference-paper/output:presentation-date/@year | output:conference-poster/output:conference-date/@year" order="descending"/>
         </xsl:apply-templates>
       </tbody>
     </table>
@@ -208,9 +208,6 @@
           </xsl:when>
           <xsl:when test="output:conference-poster/output:conference-date/@year">
             <xsl:value-of select="output:conference-poster/output:conference-date/@year"/>
-          </xsl:when>
-          <xsl:when test="output:preprint/output:date-submitted/@year">
-            <xsl:value-of select="output:preprint/output:date-submitted/@year"/>
           </xsl:when>
         </xsl:choose>
       </td>
@@ -242,7 +239,6 @@
       <td>
         <xsl:choose>
           <xsl:when test="output:output-type/@code='P101'">journal</xsl:when>
-          <xsl:when test="output:output-type/@code='P127'">preprint</xsl:when>
           <xsl:otherwise>conference</xsl:otherwise>
         </xsl:choose>
       </td>

@@ -1,6 +1,6 @@
 # Extra information merged into 3915-392E-21D4.xml by gencv.py.
 # Outputs are matched by DOI or, when they have none, by title (case and punctuation ignored).
-# Use "hide: true" to leave an output out of the generated HTML and LaTeX.
+# Use "hide: true" to leave an output out of the generated HTML and LaTeX (preprints are left out automatically).
 #
 # Tags (each used by 2+ papers on the webpage): ordinal, class imbalance, loss functions, asymmetric errors,
 # interpretability, human-in-the-loop, semantic segmentation, object detection, multi-task learning,
@@ -57,14 +57,10 @@ outputs:
     tags: [interpretability, human-in-the-loop]
   10.1007/978-3-031-43078-7_43:  # Evaluating the Performance of Explanation Methods on Ordinal Regression CNN Models (title only)
     tags: [interpretability, ordinal]
-  Unimodal Distributions for Ordinal Regression:  # CoRR preprint of the IEEE TAI 2025 paper
-    tags: [ordinal, loss functions]
 
   # ---- 2022
   10.3390/math10060980:  # Quasi-Unimodal Distributions for Ordinal Classification
     tags: [ordinal, loss functions]
-  10.1101/2022.02.22.481410:  # Real-time behavior recognition and closed-loop control of behavioral mazes (rodents)
-    tags: []
 
   # ---- 2021
   10.1109/icpr48806.2021.9413004:  # Background Invariance by Adversarial Learning
@@ -165,7 +161,6 @@ papers:
   10.1007/978-3-319-59147-6_46: {citations: 8, conference: IWANN}
   10.1007/978-3-319-59147-6_47: {citations: 3, conference: IWANN}
   10.1007/978-3-319-58838-4_1: {citations: 6, conference: IbPRIA}
-  10.1101/2022.02.22.481410: {citations: 3}
 # RENATES thesis id -> URL.
 theses:
   '204110017': https://hdl.handle.net/10216/168290
