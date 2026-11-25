@@ -17,12 +17,12 @@ Turns a Ciência Vitae XML export into a webpage (HTML) and a LaTeX report. The 
 
 - `gencv.py`: reads the XML and the YAML, adds `extra:*` elements (citations, impact-factor, sjr-rank, core-rank, venue, tags) to each output, adds `extra:updated` (the date of `downloaded` in the YAML) for the webpage footer, then applies both XSLTs.
 - `scrap.py`: Crossref (citations), journal websites (IF), Scimago (SJR quartile, by journal ID), CORE portal (conference rank), RENATES (thesis URLs). New journals must be added to the ID dictionaries in `get_impact_factor` and `get_quartile`. The browser (Playwright Chromium, headed) keeps its cookies between runs in `browser-profile/`.
-- `cienciavitae_to_html.xslt`: webpage. Header: name, links (only email and Google Scholar, per the user; Scholar URL built from the XML author identifier), biography. Only papers (no supervisions), only outputs with a DOI. Sortable/filterable table with inline JS ported from `../mytable.js` (sort: Year, Citations, IF, SJR, CORE; dropdown filters: Type, Tags; clicking a tag filters by it). Footer: last update date and the source of each metric column; keep it in sync with `scrap.py` if a source changes.
+- `cienciavitae_to_html.xslt`: webpage. Header: name, links (only email and Google Scholar, per the user; Scholar URL built from the XML author identifier), biography (Ciência Vitae summary). Only papers (no supervisions), only outputs with a DOI. Sortable/filterable table with inline JS ported from `../mytable.js` (sort: Year, Citations, IF, SJR, CORE; dropdown filters: Type, Tags; clicking a tag filters by it). Footer: last update date and the source of each metric column; keep it in sync with `scrap.py` if a source changes.
 - `cienciavitae_to_tex.xslt`: LaTeX report (includes supervisions and outputs without DOI).
 
 ## The YAML (`<xml name>.yaml`, next to the XML)
 
-- `resume:` biography for the webpage (the LaTeX report keeps the Ciência Vitae one). gencv.py replaces `{papers}` and `{citations}` with counts over the papers shown on the webpage (with a DOI, not hidden; Crossref citations), so the numbers always match the table.
+- No biography here: the webpage and the LaTeX report both use the Ciência Vitae summary (`resume:resume` in the XML). The user edits it in Ciência Vitae and re-exports; do not hard-code it in this repo.
 - `notice:` text of the dashed box shown after the biography on the webpage (currently a call for thesis students); `{email}` becomes a link to the preferred email.
 - `outputs:` keyed by DOI, or by title when there is no DOI (matching ignores case and punctuation).
   - `tags: [...]`

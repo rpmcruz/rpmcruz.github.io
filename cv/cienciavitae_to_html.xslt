@@ -144,14 +144,9 @@
         · <a href="https://scholar.google.com/citations?user={author-identifier:identifier}">Google Scholar</a>
       </xsl:for-each>
     </p>
-    <xsl:choose>
-      <xsl:when test="extra:resume">  <!-- biography from the YAML -->
-        <p><xsl:value-of select="extra:resume"/></p>
-      </xsl:when>
-      <xsl:when test="identifying-info:identifying-info/resume:resume">
-        <p><xsl:value-of select="identifying-info:identifying-info/resume:resume"/></p>
-      </xsl:when>
-    </xsl:choose>
+    <xsl:if test="identifying-info:identifying-info/resume:resume">  <!-- biography from Ciência Vitae -->
+      <p><xsl:value-of select="identifying-info:identifying-info/resume:resume"/></p>
+    </xsl:if>
     <xsl:if test="extra:notice">  <!-- notice box from the YAML; {email} becomes a link -->
       <xsl:variable name="email" select="identifying-info:identifying-info/email:emails/email:email[@preferred-email='true']/email:email-address"/>
       <p class="notice">

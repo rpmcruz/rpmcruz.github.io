@@ -7,16 +7,6 @@
 # data augmentation, domain shift, efficiency, medical images, autonomous driving.
 # Entries marked "title only" were tagged without an abstract.
 
-# Biography for the webpage (the LaTeX report keeps the Ciência Vitae one).
-# If used, {papers} and {citations} are counted by gencv.py over the papers shown on the webpage.
-resume: >-
-  Ricardo P. M. Cruz is an Assistant Professor at the Faculty of Engineering of the University of Porto
-  and a researcher at INESC TEC. He works on fundamental machine learning (ordinal classification,
-  class imbalance, interpretability and robustness), with applications in medical imaging and autonomous
-  driving. He holds a Ph.D. in Computer Science (2021) from the Universities of Porto, Aveiro and Minho,
-  and an M.Sc. in Mathematical Engineering (2015) and a B.Sc. in Computer Science (2012) from the
-  University of Porto.
-
 # Box shown after the biography on the webpage; {email} becomes a link to the preferred email.
 notice: >-
   Looking for a master's or Ph.D. thesis topic, or a research project? Email me at {email}.

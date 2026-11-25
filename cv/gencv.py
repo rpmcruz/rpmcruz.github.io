@@ -142,12 +142,6 @@ for output in tqdm(xml.xpath('//output:output', namespaces=nsmap), desc='scrap m
     output.append(extra_elem)
 for key in outputs_info.keys() - used_info:
     print('warning: YAML entry matches no output:', key)
-# webpage biography: {papers} and {citations} over the papers shown on the webpage (those with a DOI)
-if 'resume' in info:
-    papers = [o for o in xml.xpath('//output:output', namespaces=nsmap) if o.xpath('.//output:identifier[output:identifier-type/@code="doi"]', namespaces=nsmap)]
-    citations = sum(int(c) for o in papers for c in o.xpath('./extra:extra/extra:citations/text()', namespaces=nsmap) if c.isdigit())
-    resume = str(info['resume']).replace('{papers}', str(len(papers))).replace('{citations}', str(citations))
-    etree.SubElement(xml.getroot(), '{http://extra}resume').text = resume
 # webpage notice box ({email} is turned into a link by the XSLT)
 if 'notice' in info:
     etree.SubElement(xml.getroot(), '{http://extra}notice').text = str(info['notice'])
